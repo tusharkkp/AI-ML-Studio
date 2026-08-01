@@ -1,0 +1,84 @@
+# CONTENT_MAP — AIML Studio Content & Source Material Inventory
+
+> Authoritative mapping between the syllabus for **Artificial Intelligence and Machine Learning (2304322T)** and instructor teaching materials.
+
+## 1. Summary Statistics
+- **Total Syllabus Topics & Modules:** 70
+- **Fully Covered by Sources:** 37
+- **Partially Covered by Sources:** 15
+- **Gaps (To Author From Syllabus & Canonical Knowledge):** 18
+
+## 2. Topic-by-Topic Mapping
+
+| Unit | ID | Topic Name | Kind | Hrs | Status | Primary Source Material | Seed Lab / Module |
+|---|---|---|---|---|---|---|---|
+| 1 | `u1-history-foundations` | AI Foundations & History | `core` | 0.8 | **COVERED** | `Unit 1/3_Unit I Introduction_History and Foundation.pdf` | `timeline/ai-milestones` |
+| 1 | `u1-types-applications` | Applications & Types of AI | `core` | 0.8 | **COVERED** | `Unit 1/1_Unit I Articial I Intelligence Introduction and Applications.pdf` | `ai-types-classifier` |
+| 1 | `u1-ethics-impact` | Impact & Ethical Concerns of AI | `core` | 0.8 | **PARTIAL** | `Unit 1/1_Unit I Articial I Intelligence Introduction and Applications.pdf` | `ethics/trolley-self-driving` |
+| 1 | `u1-intelligent-agents` | Intelligent Agents: Rational Agents, PEAS, Environment & Agent Types | `core` | 1.2 | **COVERED** | `Unit 1/2_Unit I Intelligent_Rational Agent.pdf`<br>`Unit 1/Vaccum_Cleaner.ipynb` | `agent/vacuum-peas` |
+| 1 | `u1-knowledge-representation` | Introduction to Reasoning & Knowledge Representation | `core` | 0.8 | **COVERED** | `Unit 1/4_Logic.pdf` | `logic/truth-tables` |
+| 1 | `u1-first-order-logic` | First-Order Logic (FOL) | `core` | 1.2 | **COVERED** | `Unit 1/4_Logic.pdf`<br>`Unit 1/FamilyTree.pl`<br>`Unit 1/STUDENT_TEACHER.pl` | `logic/fol-unification` |
+| 1 | `u1-rule-based-reasoning` | Rule-Based Reasoning: Forward & Backward Chaining | `core` | 1.0 | **COVERED** | `Unit 1/Firstexample.pl`<br>`Unit 1/Recommendation.pl`<br>`Unit 1/trans.pl`<br>`Unit 1/blood.pl` | `rules/chaining-visualizer` |
+| 1 | `u1-expert-systems` | Architecture of Expert Systems | `core` | 0.8 | **PARTIAL** | `Unit 1/Recommendation.pl`<br>`Unit 1/blood.pl` | `expert/mini-system` |
+| 1 | `u1-knowledge-acquisition` | Knowledge Acquisition | `core` | 0.6 | **PARTIAL** | `Unit 1/4_Logic.pdf` | `expert/knowledge-pipeline` |
+| 1 | `u1-case-medical` | Case Study: Medical Diagnosis System | `case-study` | 0.5 | **PARTIAL** | `Unit 1/blood.pl`<br>`Unit 1/blood(1).pl` | `case-studies/medical-diagnosis` |
+| 1 | `u1-case-self-driving` | Case Study: Self-Driving Vehicle | `case-study` | 0.5 | **GAP** | *None (Syllabus only)* | `case-studies/self-driving-peas` |
+| 1 | `u1-self-chatbot` | Self-Study: Chatbot | `self-study` | 0.5 | **COVERED** | `Unit 1/eliza.pl` | `chatbot/eliza-pattern` |
+| 1 | `u1-self-prompt-eng` | Self-Study: Prompt Engineering | `self-study` | 0.5 | **GAP** | *None (Syllabus only)* | `prompt/prompt-sandbox` |
+| 1 | `u1-further-agi` | Further Reading: Artificial General Intelligence (AGI) | `further-reading` | 0.3 | **GAP** | *None (Syllabus only)* | `readings/agi-frontiers` |
+| 2 | `u2-state-space-search` | State-Space Search Formulation | `core` | 0.8 | **COVERED** | `UNIT II/Search Stratergies Lecture 1.pdf`<br>`UNIT II/Uninformed Search Stratergies.pdf` | `search/state-space-builder` |
+| 2 | `u2-uninformed-search` | Uninformed Search (BFS, DFS, DLS, IDDFS, Bidirectional) | `core` | 1.8 | **COVERED** | `UNIT II/Uninformed Search Stratergies.pdf`<br>`UNIT II/DFS.ipynb`<br>`UNIT II/BFS DEMO.pptx`<br>`UNIT II/missionariesandcannibals_BFS.ipynb`<br>`UNIT II/MAZE/maze.py`<br>`UNIT II/mc.py`<br>`UNIT II/mc.pl` | `search/uninformed-race` |
+| 2 | `u2-informed-search` | Heuristic Search (Greedy Best-First, A*, Admissibility & Consistency) | `core` | 1.6 | **COVERED** | `UNIT II/Informed Search.pdf`<br>`UNIT II/A_STAR.ipynb` | `search/astar-admissibility` |
+| 2 | `u2-local-search` | Local Search: Hill Climbing & Variants | `core` | 1.0 | **COVERED** | `UNIT II/Local Search Algorithms.pdf`<br>`UNIT II/AIHC.ipynb` | `search/hill-climb-landscape` |
+| 2 | `u2-csp` | Constraint Satisfaction Problems (CSP): Backtracking, AC-3, Forward Checking, Heuristics | `core` | 1.4 | **COVERED** | `UNIT II/CSP.pdf`<br>`UNIT II/NQueen.ipynb` | `csp/nqueens-ac3` |
+| 2 | `u2-adversarial-search` | Adversarial Search: Game Trees, Minimax, Alpha-Beta Pruning | `core` | 1.4 | **COVERED** | `UNIT II/Adversarial Search.pdf`<br>`UNIT II/MinMax.ipynb`<br>`UNIT II/AlphaBeta.ipynb` | `game/minimax-alphabeta` |
+| 2 | `u2-case-gps` | Case Study: GPS Navigation | `case-study` | 0.5 | **PARTIAL** | `UNIT II/Informed Search.pdf` | `case-studies/gps-navigator` |
+| 2 | `u2-case-chess` | Case Study: Chess Game AI | `case-study` | 0.5 | **PARTIAL** | `UNIT II/Adversarial Search.pdf` | `case-studies/chess-evaluation` |
+| 2 | `u2-self-genetic` | Self-Study: Genetic Algorithm | `self-study` | 0.5 | **COVERED** | `UNIT II/GENETIC ALGORITHM.pdf`<br>`UNIT II/GeneticAlgorithm.ipynb` | `search/genetic-algorithm-lab` |
+| 2 | `u2-further-game-theory` | Further Reading: Game Theory | `further-reading` | 0.3 | **PARTIAL** | `UNIT II/Adversarial Search.pdf` | `game/payoff-matrix` |
+| 3 | `u3-ml-paradigms` | ML Paradigms: Supervised, Unsupervised & Reinforcement Overview | `core` | 0.8 | **COVERED** | `UNIT III Machine Learning Fundamentals/1_INTRODUCTION MACHINE LEARNING.pdf`<br>`UNIT III Machine Learning Fundamentals/2_ML_TASK_Features.pdf` | `paradigms/paradigm-sorter` |
+| 3 | `u3-simple-linear-regression` | Simple Linear Regression & Cost Function (MSE) | `core` | 1.0 | **COVERED** | `UNIT III Machine Learning Fundamentals/3_Linear_Regression_Introduction.pdf`<br>`UNIT III Machine Learning Fundamentals/4_Linear Regression Cost Function.pdf`<br>`UNIT III Machine Learning Fundamentals/Linear Regression/SimpleRegression.ipynb`<br>`UNIT III Machine Learning Fundamentals/Linear Regression/Salary_Data.csv` | `reg/drag-points-regression` |
+| 3 | `u3-gradient-descent` | Gradient Descent Optimization & Learning Dynamics | `core` | 1.0 | **COVERED** | `UNIT III Machine Learning Fundamentals/Linear Regression/GradientDescent.ipynb`<br>`UNIT III Machine Learning Fundamentals/Linear Regression/LinearRegressionGD.ipynb`<br>`UNIT III Machine Learning Fundamentals/Linear Regression/Linear_Regression_Gradient_Descent_IMP.ipynb` | `reg/cost-contour-gd` |
+| 3 | `u3-multiple-linear-regression` | Multiple Linear Regression & Normal Equation | `core` | 0.8 | **COVERED** | `UNIT III Machine Learning Fundamentals/Linear Regression/MLR.ipynb`<br>`UNIT III Machine Learning Fundamentals/Linear Regression/Linear_X_Train.csv`<br>`UNIT III Machine Learning Fundamentals/Linear Regression/Linear_Y_Train.csv` | `reg/multiple-regression` |
+| 3 | `u3-polynomial-regression` | Polynomial Regression | `core` | 0.8 | **COVERED** | `UNIT III Machine Learning Fundamentals/5_Polynomial regression.pdf`<br>`UNIT III Machine Learning Fundamentals/Linear Regression/ML_LAB_AS_4B.ipynb` | `reg/polynomial-overfit` |
+| 3 | `u3-bias-variance-tradeoff` | Bias-Variance Tradeoff & Model Complexity | `core` | 0.8 | **COVERED** | `UNIT III Machine Learning Fundamentals/6_BiasVariance.pptx.pdf` | `reg/bias-variance-curve` |
+| 3 | `u3-locally-weighted-regression` | Locally Weighted Linear Regression (LWR) | `core` | 0.6 | **COVERED** | `UNIT III Machine Learning Fundamentals/7_Locally Weighted Linear Regression.pdf`<br>`UNIT III Machine Learning Fundamentals/Linear Regression/LoWtLiRr.ipynb` | `reg/lwr-bandwidth` |
+| 3 | `u3-feature-engineering` | Feature Engineering (Scaling, Encoding, Imputation) | `core` | 0.6 | **COVERED** | `UNIT III Machine Learning Fundamentals/Feature Engineering/FeatureEngg.ipynb`<br>`UNIT III Machine Learning Fundamentals/Feature Engineering/Numpy.ipynb`<br>`UNIT III Machine Learning Fundamentals/Feature Engineering/Pandas.ipynb` | `fe/feature-pipeline-lab` |
+| 3 | `u3-regression-metrics` | Regression Evaluation Metrics (MSE, RMSE, MAE, R²) | `core` | 0.6 | **COVERED** | `UNIT III Machine Learning Fundamentals/Linear Regression/FirstLR_MSE.py.ipynb`<br>`UNIT III Machine Learning Fundamentals/Linear Regression/SimpleRegression.ipynb` | `eval/regression-metrics` |
+| 3 | `u3-case-real-estate` | Case Study: Real-Estate Price Prediction | `case-study` | 0.5 | **COVERED** | `UNIT III Machine Learning Fundamentals/Linear Regression/kc_house_data.csv` | `case-studies/house-price-prediction` |
+| 3 | `u3-case-healthcare` | Case Study: Healthcare Application | `case-study` | 0.5 | **GAP** | *None (Syllabus only)* | `case-studies/healthcare-regression` |
+| 3 | `u3-self-regularization` | Self-Study: Ridge, Lasso & Elastic Net Regularization | `self-study` | 0.5 | **PARTIAL** | `UNIT III Machine Learning Fundamentals/Linear Regression/Ridge_Lasso.ipynb` | `reg/regularization-shrinkage` |
+| 3 | `u3-further-kfold-cv` | Further Reading: K-Fold Cross-Validation Case Study | `further-reading` | 0.3 | **GAP** | *None (Syllabus only)* | `eval/kfold-cross-validation` |
+| 4 | `u4-bayes-theorem` | Bayes' Theorem & Probabilistic Foundations | `core` | 1.0 | **COVERED** | `UNIT IV INSTANCES AND PROBABILISTIC MODEL/Study Notes/ProbabilitySSB.pdf` | `prob/bayes-natural-frequency` |
+| 4 | `u4-naive-bayes` | Naive Bayes & Conditional Independence Assumption | `core` | 1.2 | **COVERED** | `UNIT IV INSTANCES AND PROBABILISTIC MODEL/Study Notes/Naive Bayes.pdf`<br>`UNIT IV INSTANCES AND PROBABILISTIC MODEL/NBClassifier.ipynb`<br>`UNIT IV INSTANCES AND PROBABILISTIC MODEL/NaiveBayesLIB.ipynb` | `prob/naive-bayes-stepwise` |
+| 4 | `u4-laplace-smoothing` | Laplace / Additive Smoothing | `core` | 0.6 | **PARTIAL** | `UNIT IV INSTANCES AND PROBABILISTIC MODEL/Study Notes/Naive Bayes.pdf` | `prob/laplace-smoothing` |
+| 4 | `u4-logistic-regression` | Logistic Regression for Classification & Decision Boundaries | `core` | 1.4 | **COVERED** | `UNIT IV INSTANCES AND PROBABILISTIC MODEL/Study Notes/LOGISTIC REGRESSION.pdf`<br>`UNIT IV INSTANCES AND PROBABILISTIC MODEL/Study Notes/Classification.pdf` | `cls/logistic-decision-boundary` |
+| 4 | `u4-classification-metrics` | Classification Metrics (Confusion Matrix, Precision, Recall, F1) | `core` | 0.9 | **COVERED** | `UNIT IV INSTANCES AND PROBABILISTIC MODEL/Study Notes/Classification.pdf`<br>`UNIT IV INSTANCES AND PROBABILISTIC MODEL/KNNMODEL.ipynb` | `eval/confusion-matrix-lab` |
+| 4 | `u4-roc-auc` | ROC Curve & Area Under Curve (ROC-AUC) | `core` | 0.9 | **PARTIAL** | `UNIT IV INSTANCES AND PROBABILISTIC MODEL/Study Notes/Classification.pdf` | `eval/roc-auc-curve` |
+| 4 | `u4-case-churn` | Case Study: Customer Churn Prediction | `case-study` | 0.5 | **PARTIAL** | `UNIT IV INSTANCES AND PROBABILISTIC MODEL/Social_Network_Ads.csv` | `case-studies/customer-churn` |
+| 4 | `u4-self-knn` | Self-Study: k-Nearest Neighbors (k-NN) for Regression & Classification | `self-study` | 0.8 | **COVERED** | `UNIT IV INSTANCES AND PROBABILISTIC MODEL/Study Notes/KNN.pdf`<br>`UNIT IV INSTANCES AND PROBABILISTIC MODEL/Copy of KNN_GLASS.ipynb`<br>`UNIT IV INSTANCES AND PROBABILISTIC MODEL/K-Nearest Neighbour.ipynb`<br>`UNIT IV INSTANCES AND PROBABILISTIC MODEL/KNNMODEL.ipynb`<br>`UNIT IV INSTANCES AND PROBABILISTIC MODEL/Copy of glass.csv` | `cls/knn-decision-regions` |
+| 4 | `u4-further-variational-inference` | Further Reading: Variational Inference | `further-reading` | 0.3 | **GAP** | *None (Syllabus only)* | `readings/variational-inference` |
+| 5 | `u5-decision-trees` | Decision Tree Fundamentals & Structure | `core` | 0.8 | **COVERED** | `UNIT V LINEAR AND DECISION MODELS/Decision Tree/DecisionTrees.pdf`<br>`UNIT V LINEAR AND DECISION MODELS/Decision Tree/mitchell-dectrees.pdf`<br>`UNIT V LINEAR AND DECISION MODELS/Decision Tree/Copy of SSB_DecisionTree.ipynb`<br>`UNIT V LINEAR AND DECISION MODELS/Decision Tree/Copy of play_tennis.csv` | `tree/tree-split-builder` |
+| 5 | `u5-impurity-split-criteria` | Impurity Measures: Entropy, Information Gain, Gini Impurity | `core` | 1.0 | **COVERED** | `UNIT V LINEAR AND DECISION MODELS/Decision Tree/DecisionTrees.pdf`<br>`UNIT V LINEAR AND DECISION MODELS/Decision Tree/Copy of CART.ipynb` | `tree/impurity-calculator` |
+| 5 | `u5-tree-pruning` | Tree Pruning & Overfitting Control | `core` | 0.8 | **PARTIAL** | `UNIT V LINEAR AND DECISION MODELS/Decision Tree/mitchell-dectrees.pdf` | `tree/pruning-explorer` |
+| 5 | `u5-svm-fundamentals` | Support Vector Machines (SVM): Hyperplane, Margin & Support Vectors | `core` | 1.2 | **COVERED** | `UNIT V LINEAR AND DECISION MODELS/SVM/Support Victor Machine.pdf`<br>`UNIT V LINEAR AND DECISION MODELS/SVM/Copy of SSB_SVM_SCRATCH_NOTES__.ipynb`<br>`UNIT V LINEAR AND DECISION MODELS/SVM/Copy of SVM_LIB_SSB.ipynb` | `cls/svm-margin-lab` |
+| 5 | `u5-svm-kernels` | SVM Soft-Margin & The Kernel Trick (Linear, Poly, RBF) | `core` | 1.2 | **COVERED** | `UNIT V LINEAR AND DECISION MODELS/SVM/Support Victor Machine.pdf`<br>`UNIT V LINEAR AND DECISION MODELS/SVM/Copy of SVM_SSB.ipynb` | `cls/svm-kernel-trick` |
+| 5 | `u5-ensemble-significance` | Ensemble Learning Significance (Bias vs Variance) | `core` | 0.6 | **COVERED** | `UNIT V LINEAR AND DECISION MODELS/Ensemble Learning.pdf` | `ens/ensemble-intuition` |
+| 5 | `u5-bagging-random-forests` | Bagging (Bootstrap Aggregation) & Random Forests | `core` | 1.0 | **COVERED** | `UNIT V LINEAR AND DECISION MODELS/Ensemble Learning.pdf`<br>`UNIT V LINEAR AND DECISION MODELS/Bagging using ensemble learning.ipynb`<br>`UNIT V LINEAR AND DECISION MODELS/RF_Ensemble learning.ipynb` | `ens/bagging-forest-visualizer` |
+| 5 | `u5-boosting-stacking` | Boosting Concepts & Stacking (Stacked Generalization) | `core` | 0.8 | **PARTIAL** | `UNIT V LINEAR AND DECISION MODELS/Ensemble Learning.pdf`<br>`UNIT V LINEAR AND DECISION MODELS/Ensemble_Models.ipynb` | `ens/boosting-stacking-diagram` |
+| 5 | `u5-performance-evaluation` | Systematic Performance Evaluation of ML Models | `core` | 0.6 | **COVERED** | `UNIT V LINEAR AND DECISION MODELS/Decision Tree/UNIT II Classification.pdf` | `eval/model-comparison-arena` |
+| 5 | `u5-case-diabetes` | Case Study: Pima Diabetes Prediction | `case-study` | 0.5 | **COVERED** | `UNIT V LINEAR AND DECISION MODELS/Decision Tree/Copy of data.csv` | `case-studies/diabetes-prediction` |
+| 5 | `u5-self-adaboost` | Self-Study: AdaBoost Algorithm Mechanics | `self-study` | 0.5 | **PARTIAL** | `UNIT V LINEAR AND DECISION MODELS/Ensemble Learning.pdf`<br>`UNIT V LINEAR AND DECISION MODELS/Ensemble_Models.ipynb` | `ens/adaboost-reweighting` |
+| 5 | `u5-further-dt-regression` | Further Reading: Decision Tree for Regression | `further-reading` | 0.3 | **PARTIAL** | `UNIT V LINEAR AND DECISION MODELS/Decision Tree/Copy of CART.ipynb` | `tree/regression-tree-split` |
+| 6 | `u6-association-rules` | Association Rule Mining: Itemsets, Support, Confidence & Lift | `core` | 1.0 | **GAP** | *None (Syllabus only)* | `assoc/market-basket-rules` |
+| 6 | `u6-apriori-algorithm` | Apriori Algorithm & Downward-Closure Property | `core` | 1.2 | **GAP** | *None (Syllabus only)* | `assoc/apriori-stepwise` |
+| 6 | `u6-clustering-overview` | Clustering Paradigms: Partitional, Hierarchical, Density-Based | `core` | 0.6 | **GAP** | *None (Syllabus only)* | `cluster/clustering-taxonomy` |
+| 6 | `u6-kmeans-clustering` | k-Means Clustering, Inertia, Elbow Method & Silhouette Score | `core` | 1.4 | **GAP** | *None (Syllabus only)* | `cluster/kmeans-elbow` |
+| 6 | `u6-hierarchical-clustering` | Hierarchical Clustering & Dendrograms | `core` | 1.0 | **GAP** | *None (Syllabus only)* | `cluster/dendrogram-slicer` |
+| 6 | `u6-dbscan-clustering` | Density-Based Clustering: DBSCAN & Noise Detection | `core` | 1.2 | **GAP** | *None (Syllabus only)* | `cluster/dbscan-density` |
+| 6 | `u6-dim-reduction-motivation` | Dimensionality Reduction: Motivation & Curse of Dimensionality | `core` | 0.6 | **GAP** | *None (Syllabus only)* | `dimred/curse-of-dimensionality` |
+| 6 | `u6-feature-selection-extraction` | Feature Selection vs Feature Extraction | `core` | 0.6 | **GAP** | *None (Syllabus only)* | `dimred/selection-vs-extraction` |
+| 6 | `u6-pca` | Principal Component Analysis (PCA) | `core` | 1.4 | **GAP** | *None (Syllabus only)* | `dimred/pca-axes-rotation` |
+| 6 | `u6-case-anomaly-noise` | Case Study: Anomaly Detection & Noise Reduction | `case-study` | 0.5 | **GAP** | *None (Syllabus only)* | `case-studies/anomaly-noise-reduction` |
+| 6 | `u6-self-gmm-em` | Self-Study: Probability-Distribution-Based Methods (GMM & EM) | `self-study` | 0.5 | **GAP** | *None (Syllabus only)* | `cluster/gmm-em-visualizer` |
+| 6 | `u6-further-lda` | Further Reading: Linear Discriminant Analysis (LDA) | `further-reading` | 0.3 | **GAP** | *None (Syllabus only)* | `readings/lda-discriminant` |

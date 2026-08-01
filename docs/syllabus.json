@@ -1,0 +1,509 @@
+{
+  "course": {
+    "name": "Artificial Intelligence and Machine Learning",
+    "code": "2304322T",
+    "institution": "MIT Academy of Engineering",
+    "level": "Third Year B.Tech",
+    "scheme": "Rev. 2023 NEP",
+    "academic_year": "AY 2025-26",
+    "total_hours": 45
+  },
+  "course_outcomes": {
+    "CO1": "Apply principles of Perception, Knowledge Representation, Inference, Reasoning and Search. (Bloom Level L3)",
+    "CO2": "Use ML statistical algorithms on real-world applications. (Bloom Level L3)",
+    "CO3": "Evaluate ML models through systematic hyper-parameter optimization. (Bloom Level L4)",
+    "CO4": "Analyze strengths and limitations of different AI and ML approaches. (Bloom Level L4)"
+  },
+  "units": [
+    {
+      "unit": 1,
+      "title": "Basics of AI",
+      "hours": 8,
+      "cos": [
+        "CO1",
+        "CO4"
+      ],
+      "topics": [
+        {
+          "id": "u1-history-foundations",
+          "name": "AI Foundations & History",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u1-types-applications",
+          "name": "Applications & Types of AI",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u1-ethics-impact",
+          "name": "Impact & Ethical Concerns of AI",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u1-intelligent-agents",
+          "name": "Intelligent Agents: Rational Agents, PEAS, Environment & Agent Types",
+          "kind": "core",
+          "hours": 1.2
+        },
+        {
+          "id": "u1-knowledge-representation",
+          "name": "Introduction to Reasoning & Knowledge Representation",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u1-first-order-logic",
+          "name": "First-Order Logic (FOL)",
+          "kind": "core",
+          "hours": 1.2
+        },
+        {
+          "id": "u1-rule-based-reasoning",
+          "name": "Rule-Based Reasoning: Forward & Backward Chaining",
+          "kind": "core",
+          "hours": 1.0
+        },
+        {
+          "id": "u1-expert-systems",
+          "name": "Architecture of Expert Systems",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u1-knowledge-acquisition",
+          "name": "Knowledge Acquisition",
+          "kind": "core",
+          "hours": 0.6
+        },
+        {
+          "id": "u1-case-medical",
+          "name": "Case Study: Medical Diagnosis System",
+          "kind": "case-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u1-case-self-driving",
+          "name": "Case Study: Self-Driving Vehicle",
+          "kind": "case-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u1-self-chatbot",
+          "name": "Self-Study: Chatbot",
+          "kind": "self-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u1-self-prompt-eng",
+          "name": "Self-Study: Prompt Engineering",
+          "kind": "self-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u1-further-agi",
+          "name": "Further Reading: Artificial General Intelligence (AGI)",
+          "kind": "further-reading",
+          "hours": 0.3
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "AI Search Strategies",
+      "hours": 8,
+      "cos": [
+        "CO1",
+        "CO4"
+      ],
+      "topics": [
+        {
+          "id": "u2-state-space-search",
+          "name": "State-Space Search Formulation",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u2-uninformed-search",
+          "name": "Uninformed Search (BFS, DFS, DLS, IDDFS, Bidirectional)",
+          "kind": "core",
+          "hours": 1.8
+        },
+        {
+          "id": "u2-informed-search",
+          "name": "Heuristic Search (Greedy Best-First, A*, Admissibility & Consistency)",
+          "kind": "core",
+          "hours": 1.6
+        },
+        {
+          "id": "u2-local-search",
+          "name": "Local Search: Hill Climbing & Variants",
+          "kind": "core",
+          "hours": 1.0
+        },
+        {
+          "id": "u2-csp",
+          "name": "Constraint Satisfaction Problems (CSP): Backtracking, AC-3, Forward Checking, Heuristics",
+          "kind": "core",
+          "hours": 1.4
+        },
+        {
+          "id": "u2-adversarial-search",
+          "name": "Adversarial Search: Game Trees, Minimax, Alpha-Beta Pruning",
+          "kind": "core",
+          "hours": 1.4
+        },
+        {
+          "id": "u2-case-gps",
+          "name": "Case Study: GPS Navigation",
+          "kind": "case-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u2-case-chess",
+          "name": "Case Study: Chess Game AI",
+          "kind": "case-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u2-self-genetic",
+          "name": "Self-Study: Genetic Algorithm",
+          "kind": "self-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u2-further-game-theory",
+          "name": "Further Reading: Game Theory",
+          "kind": "further-reading",
+          "hours": 0.3
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "ML Fundamentals",
+      "hours": 7,
+      "cos": [
+        "CO2",
+        "CO3",
+        "CO4"
+      ],
+      "topics": [
+        {
+          "id": "u3-ml-paradigms",
+          "name": "ML Paradigms: Supervised, Unsupervised & Reinforcement Overview",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u3-simple-linear-regression",
+          "name": "Simple Linear Regression & Cost Function (MSE)",
+          "kind": "core",
+          "hours": 1.0
+        },
+        {
+          "id": "u3-gradient-descent",
+          "name": "Gradient Descent Optimization & Learning Dynamics",
+          "kind": "core",
+          "hours": 1.0
+        },
+        {
+          "id": "u3-multiple-linear-regression",
+          "name": "Multiple Linear Regression & Normal Equation",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u3-polynomial-regression",
+          "name": "Polynomial Regression",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u3-bias-variance-tradeoff",
+          "name": "Bias-Variance Tradeoff & Model Complexity",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u3-locally-weighted-regression",
+          "name": "Locally Weighted Linear Regression (LWR)",
+          "kind": "core",
+          "hours": 0.6
+        },
+        {
+          "id": "u3-feature-engineering",
+          "name": "Feature Engineering (Scaling, Encoding, Imputation)",
+          "kind": "core",
+          "hours": 0.6
+        },
+        {
+          "id": "u3-regression-metrics",
+          "name": "Regression Evaluation Metrics (MSE, RMSE, MAE, R\u00b2)",
+          "kind": "core",
+          "hours": 0.6
+        },
+        {
+          "id": "u3-case-real-estate",
+          "name": "Case Study: Real-Estate Price Prediction",
+          "kind": "case-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u3-case-healthcare",
+          "name": "Case Study: Healthcare Application",
+          "kind": "case-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u3-self-regularization",
+          "name": "Self-Study: Ridge, Lasso & Elastic Net Regularization",
+          "kind": "self-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u3-further-kfold-cv",
+          "name": "Further Reading: K-Fold Cross-Validation Case Study",
+          "kind": "further-reading",
+          "hours": 0.3
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "Instances & Probabilistic Models",
+      "hours": 6,
+      "cos": [
+        "CO2",
+        "CO3",
+        "CO4"
+      ],
+      "topics": [
+        {
+          "id": "u4-bayes-theorem",
+          "name": "Bayes' Theorem & Probabilistic Foundations",
+          "kind": "core",
+          "hours": 1.0
+        },
+        {
+          "id": "u4-naive-bayes",
+          "name": "Naive Bayes & Conditional Independence Assumption",
+          "kind": "core",
+          "hours": 1.2
+        },
+        {
+          "id": "u4-laplace-smoothing",
+          "name": "Laplace / Additive Smoothing",
+          "kind": "core",
+          "hours": 0.6
+        },
+        {
+          "id": "u4-logistic-regression",
+          "name": "Logistic Regression for Classification & Decision Boundaries",
+          "kind": "core",
+          "hours": 1.4
+        },
+        {
+          "id": "u4-classification-metrics",
+          "name": "Classification Metrics (Confusion Matrix, Precision, Recall, F1)",
+          "kind": "core",
+          "hours": 0.9
+        },
+        {
+          "id": "u4-roc-auc",
+          "name": "ROC Curve & Area Under Curve (ROC-AUC)",
+          "kind": "core",
+          "hours": 0.9
+        },
+        {
+          "id": "u4-case-churn",
+          "name": "Case Study: Customer Churn Prediction",
+          "kind": "case-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u4-self-knn",
+          "name": "Self-Study: k-Nearest Neighbors (k-NN) for Regression & Classification",
+          "kind": "self-study",
+          "hours": 0.8
+        },
+        {
+          "id": "u4-further-variational-inference",
+          "name": "Further Reading: Variational Inference",
+          "kind": "further-reading",
+          "hours": 0.3
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "Linear & Decision Models",
+      "hours": 8,
+      "cos": [
+        "CO2",
+        "CO3",
+        "CO4"
+      ],
+      "topics": [
+        {
+          "id": "u5-decision-trees",
+          "name": "Decision Tree Fundamentals & Structure",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u5-impurity-split-criteria",
+          "name": "Impurity Measures: Entropy, Information Gain, Gini Impurity",
+          "kind": "core",
+          "hours": 1.0
+        },
+        {
+          "id": "u5-tree-pruning",
+          "name": "Tree Pruning & Overfitting Control",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u5-svm-fundamentals",
+          "name": "Support Vector Machines (SVM): Hyperplane, Margin & Support Vectors",
+          "kind": "core",
+          "hours": 1.2
+        },
+        {
+          "id": "u5-svm-kernels",
+          "name": "SVM Soft-Margin & The Kernel Trick (Linear, Poly, RBF)",
+          "kind": "core",
+          "hours": 1.2
+        },
+        {
+          "id": "u5-ensemble-significance",
+          "name": "Ensemble Learning Significance (Bias vs Variance)",
+          "kind": "core",
+          "hours": 0.6
+        },
+        {
+          "id": "u5-bagging-random-forests",
+          "name": "Bagging (Bootstrap Aggregation) & Random Forests",
+          "kind": "core",
+          "hours": 1.0
+        },
+        {
+          "id": "u5-boosting-stacking",
+          "name": "Boosting Concepts & Stacking (Stacked Generalization)",
+          "kind": "core",
+          "hours": 0.8
+        },
+        {
+          "id": "u5-performance-evaluation",
+          "name": "Systematic Performance Evaluation of ML Models",
+          "kind": "core",
+          "hours": 0.6
+        },
+        {
+          "id": "u5-case-diabetes",
+          "name": "Case Study: Pima Diabetes Prediction",
+          "kind": "case-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u5-self-adaboost",
+          "name": "Self-Study: AdaBoost Algorithm Mechanics",
+          "kind": "self-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u5-further-dt-regression",
+          "name": "Further Reading: Decision Tree for Regression",
+          "kind": "further-reading",
+          "hours": 0.3
+        }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "Unsupervised Learning",
+      "hours": 8,
+      "cos": [
+        "CO2",
+        "CO3",
+        "CO4"
+      ],
+      "topics": [
+        {
+          "id": "u6-association-rules",
+          "name": "Association Rule Mining: Itemsets, Support, Confidence & Lift",
+          "kind": "core",
+          "hours": 1.0
+        },
+        {
+          "id": "u6-apriori-algorithm",
+          "name": "Apriori Algorithm & Downward-Closure Property",
+          "kind": "core",
+          "hours": 1.2
+        },
+        {
+          "id": "u6-clustering-overview",
+          "name": "Clustering Paradigms: Partitional, Hierarchical, Density-Based",
+          "kind": "core",
+          "hours": 0.6
+        },
+        {
+          "id": "u6-kmeans-clustering",
+          "name": "k-Means Clustering, Inertia, Elbow Method & Silhouette Score",
+          "kind": "core",
+          "hours": 1.4
+        },
+        {
+          "id": "u6-hierarchical-clustering",
+          "name": "Hierarchical Clustering & Dendrograms",
+          "kind": "core",
+          "hours": 1.0
+        },
+        {
+          "id": "u6-dbscan-clustering",
+          "name": "Density-Based Clustering: DBSCAN & Noise Detection",
+          "kind": "core",
+          "hours": 1.2
+        },
+        {
+          "id": "u6-dim-reduction-motivation",
+          "name": "Dimensionality Reduction: Motivation & Curse of Dimensionality",
+          "kind": "core",
+          "hours": 0.6
+        },
+        {
+          "id": "u6-feature-selection-extraction",
+          "name": "Feature Selection vs Feature Extraction",
+          "kind": "core",
+          "hours": 0.6
+        },
+        {
+          "id": "u6-pca",
+          "name": "Principal Component Analysis (PCA)",
+          "kind": "core",
+          "hours": 1.4
+        },
+        {
+          "id": "u6-case-anomaly-noise",
+          "name": "Case Study: Anomaly Detection & Noise Reduction",
+          "kind": "case-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u6-self-gmm-em",
+          "name": "Self-Study: Probability-Distribution-Based Methods (GMM & EM)",
+          "kind": "self-study",
+          "hours": 0.5
+        },
+        {
+          "id": "u6-further-lda",
+          "name": "Further Reading: Linear Discriminant Analysis (LDA)",
+          "kind": "further-reading",
+          "hours": 0.3
+        }
+      ]
+    }
+  ]
+}

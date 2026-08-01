@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing and coverage
+coverage/
+*.lcov
+
+# Build outputs
+dist/
+web/dist/
+build/
+
+# Ingestion text extracts & temporary analysis files (DO NOT COMMIT)
+tools/ingest/out/
+tools/fixtures/.venv/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Reference textbooks (Copyrighted)
+Unit 1/Artificial Intelligence_ A Modern Approach_RusselAndNorving.pdf
+Unit 1/Artificial Intelligence_RichAndKnight.pdf
+**/Artificial Intelligence_*.pdf
+
+# Environment and secrets (Strict: no secrets needed)
+.env
+.env.local
+.env.*.local
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
