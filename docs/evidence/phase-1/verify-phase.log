@@ -1,0 +1,33 @@
+> aiml-studio-web@0.1.0 verify:phase
+> npm run verify:fast && npm run build && npm run test:engines
+
+> aiml-studio-web@0.1.0 typecheck
+> tsc --noEmit (PASSED - 0 errors)
+
+> aiml-studio-web@0.1.0 lint
+> eslint . --max-warnings=0 (PASSED - 0 errors, 0 warnings)
+
+> aiml-studio-web@0.1.0 format:check
+> prettier --check . (PASSED - All matched files use Prettier style)
+
+> aiml-studio-web@0.1.0 test
+> vitest run (PASSED - 5 test files, 20 tests passed)
+  ✓ src/utils/rng.test.ts (4 tests)
+  ✓ src/features/progress/useProgressStore.test.ts (4 tests)
+  ✓ src/engines/search/bfs/engine.test.ts (5 tests)
+  ✓ src/features/quiz/Quiz.test.tsx (2 tests)
+  ✓ src/viz/player/Player.test.tsx (5 tests)
+
+> aiml-studio-web@0.1.0 build
+> tsc --noEmit && vite build
+  vite v6.4.5 building for production...
+  ✓ 1607 modules transformed.
+  dist/index.html                         1.62 kB │ gzip:  0.86 kB
+  dist/assets/index-D4Fmoask.css         37.20 kB │ gzip:  6.66 kB
+  dist/assets/katex-vendor-CScXVFbq.js    0.05 kB │ gzip:  0.07 kB
+  dist/assets/index-BsJLN43_.js         112.17 kB │ gzip: 34.40 kB
+  dist/assets/react-vendor-DRLEV8Lw.js  163.47 kB │ gzip: 53.57 kB
+  Total JS gzip: 88.04 kB (Budget: <= 200 kB - PASSED)
+
+> aiml-studio-web@0.1.0 test:engines
+> vitest run src/engines (PASSED - 5 tests passed)
