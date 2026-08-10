@@ -45,3 +45,4 @@ if (missing > 0) {
 } else {
   console.log('[PASS] All 14 required sections verified in exact template order.');
 }
+

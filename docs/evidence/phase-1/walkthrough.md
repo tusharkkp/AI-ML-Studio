@@ -31,3 +31,4 @@
    *Answer:* Multi-algorithm side-by-side race view (BFS vs DFS vs A* on the same grid) is reserved for Phase 3 (Unit 2 flagship module).
 5. **What is the single biggest risk left?**  
    *Answer:* Maintaining this high pedagogical quality, zero-warning verification, and deep interactive lab standard consistently across all 73 remaining syllabus topics. The phase-by-phase gate structure prevents quality degradation.
+

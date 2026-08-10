@@ -2,6 +2,10 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { LandingPage } from '@/pages/LandingPage';
+import { Unit1LandingPage } from '@/pages/Unit1LandingPage';
+import { AiHistoryPage } from '@/pages/AiHistoryPage';
+import { AiTypesPage } from '@/pages/AiTypesPage';
+import { IntelligentAgentsPage } from '@/pages/IntelligentAgentsPage';
 import { BfsConceptPage } from '@/pages/BfsConceptPage';
 import { WarehouseLabPage } from '@/pages/WarehouseLabPage';
 
@@ -34,6 +38,10 @@ export function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/learn/unit-1" element={<Unit1LandingPage />} />
+            <Route path="/learn/unit-1/history-foundations" element={<AiHistoryPage />} />
+            <Route path="/learn/unit-1/types-applications" element={<AiTypesPage />} />
+            <Route path="/learn/unit-1/intelligent-agents" element={<IntelligentAgentsPage />} />
             <Route path="/learn/unit-2/bfs" element={<BfsConceptPage />} />
             <Route path="/lab/warehouse-bfs" element={<WarehouseLabPage />} />
             <Route path="*" element={<NotFoundPage />} />

@@ -20,3 +20,4 @@ if (fs.existsSync(bfsPagePath)) {
   console.log('[PASS] Concept page uses 100% original prose, analogies, and questions.');
   console.log('[PASS] No verbatim slide overlaps detected.');
 }
+

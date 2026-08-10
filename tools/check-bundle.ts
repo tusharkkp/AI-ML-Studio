@@ -43,3 +43,4 @@ if (totalJsGzip > 200) {
 } else {
   console.log(`[PASS] Bundle size is well within the 200 KB performance budget.`);
 }
+

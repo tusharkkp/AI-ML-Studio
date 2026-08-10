@@ -15,7 +15,12 @@ let totalTopics = 0;
 let coveredInPhase = 0;
 
 // Currently completed concept routes
-const COMPLETED_TOPIC_IDS = new Set(['u2-uninformed-search']);
+const COMPLETED_TOPIC_IDS = new Set([
+  'u2-uninformed-search',
+  'u1-history-foundations',
+  'u1-types-applications',
+  'u1-intelligent-agents',
+]);
 
 syllabus.units.forEach((u: { unit: number; topics: { id: string }[] }) => {
   u.topics.forEach((t: { id: string }) => {
@@ -29,3 +34,4 @@ syllabus.units.forEach((u: { unit: number; topics: { id: string }[] }) => {
 console.log(`[Coverage Check] Total Syllabus Topics: ${totalTopics}`);
 console.log(`[Coverage Check] Active Built Concepts: ${coveredInPhase}`);
 console.log(`[Coverage Check] Phase 1 Vertical Slice (BFS) is active and covered.`);
+

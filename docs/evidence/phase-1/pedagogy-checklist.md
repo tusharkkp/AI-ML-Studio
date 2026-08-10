@@ -22,3 +22,4 @@
 - [x] **All jargon has a glossary entry:** Hover cards implemented for `frontier`, `explored set`, `branching factor`, `completeness`, `optimality`.
 - [x] **Original wording (originality check passed):** Passed `check:originality` with zero overlap against lecture slides or textbooks.
 - [x] **Exam & viva corner included:** 5-mark question comparing BFS vs DFS with model outline, plus viva voce question on why IDDFS solves the BFS memory trap.
+

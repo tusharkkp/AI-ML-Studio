@@ -20,9 +20,15 @@ venv/
 __pycache__/
 *.pyc
 
-# Reference textbooks (Copyrighted)
-Unit 1/Artificial Intelligence_ A Modern Approach_RusselAndNorving.pdf
-Unit 1/Artificial Intelligence_RichAndKnight.pdf
+# Reference textbooks & raw instructor materials (Copyrighted/Courseware)
+Unit 1/
+UNIT II/
+UNIT III Machine Learning Fundamentals/
+UNIT IV INSTANCES AND PROBABILISTIC MODEL/
+UNIT V LINEAR AND DECISION MODELS/
+Unit VI/
+ML/
+.agents/
 **/Artificial Intelligence_*.pdf
 
 # Environment and secrets (Strict: no secrets needed)
