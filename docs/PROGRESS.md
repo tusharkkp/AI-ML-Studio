@@ -2,14 +2,14 @@
 
 ## Now
 - **Phase:** 2 (Unit 1 — Basics of AI)
-- **Task:** Completing Batch 1, Proceeding to Batch 2 (T2.05 Truth Table, T2.06 First-Order Logic, T2.07 Chaining)
-- **Status:** Batch 1 verified green (`verify:fast` green, 25 tests passing). Starting Batch 2.
-- **Last green commit:** `b5a87d1` `feat(phase1): foundation, design system, algorithm player and BFS vertical slice`
+- **Task:** Completed Batch 2 (T2.05, T2.06, T2.07). Ready for Batch 3 (T2.08 Expert Systems, T2.09 Medical Case Study, T2.10 Self-Driving Case Study).
+- **Status:** Batch 2 verified green (`verify:fast` green, `verify:content` green, 45 tests passing, 133.32 KB gzip).
+- **Last green commit:** `f6553ef` `feat(unit1): foundations, history timeline, types classifier, and vacuum agent lab`
 
 ## Phase Checklist
 - [x] **Phase 0 — Discovery & Plan** *(Approved by Human)*
 - [x] **Phase 1 — Platform Foundation & Vertical Slice (BFS)** *(Signed Off by Human)*
-- [ ] **Phase 2 — Unit 1: Basics of AI (8 hrs)** *(Batch 1 complete; Batch 2 in progress)*
+- [ ] **Phase 2 — Unit 1: Basics of AI (8 hrs)** *(Batch 1 & Batch 2 complete; Batch 3 in progress)*
 - [ ] **Phase 3 — Unit 2: AI Search Strategies (8 hrs)**
 - [ ] **Phase 4 — Unit 3: ML Fundamentals (7 hrs)**
 - [ ] **Phase 5 — Unit 4: Instances & Probabilistic Models (6 hrs)**
@@ -19,15 +19,20 @@
 - [ ] **Phase 9 — Hardening, Accessibility, Verification & $0 Deploy**
 
 ## Task Log (latest first)
+- **2026-10-30 | Phase 2 Batch 2 Implemented & Verified**
+  - Implemented Propositional Logic Engine (`web/src/engines/logic/truth-table/`) with operator precedence, truth table model checking, and entailment verifier ($KB \models \alpha$) with countermodel detection.
+  - Built interactive `TruthTableLab.tsx` and 14-section `KnowledgeRepresentationPage.tsx` (/learn/unit-1/knowledge-representation).
+  - Implemented First-Order Logic Robinson Unification Engine with Occurs-Check (`web/src/engines/logic/unify/`).
+  - Built interactive `UnificationLab.tsx` and 14-section `FirstOrderLogicPage.tsx` (/learn/unit-1/first-order-logic).
+  - Implemented Rule-Based Inference Engines (`web/src/engines/rules/chaining/`) with linear-time data-driven Forward Chaining and cycle-safe goal-driven Backward Chaining.
+  - Built interactive `ChainingLab.tsx` and 14-section `RuleBasedReasoningPage.tsx` (/learn/unit-1/rule-based-reasoning).
+  - Unit tests expanded from 25 to 45 passing tests across 9 test files.
+  - Bundle size: 133.32 KB gzip (budget $\le 200$ KB).
 - **2026-10-30 | Phase 2 Batch 1 Implemented & Verified**
   - Implemented pure TypeScript Vacuum Cleaner Agent simulation engine (`web/src/engines/agent/vacuum/`) supporting Simple Reflex, Model-Based, Goal-Based, and Utility-Based architectures.
   - Implemented Vacuum World interactive SVG lab (`web/src/labs/vacuum-world/VacuumWorldLab.tsx`) with room toggling, battery tracking, and interactive PEAS Framework builder.
-  - Authored 4 comprehensive pages:
-    - `/learn/unit-1`: Unit 1 overview, curriculum progress tracker, and concept card directory.
-    - `/learn/unit-1/history`: AI Foundations & History Timeline with interactive period filters and winter causes.
-    - `/learn/unit-1/types`: AI Applications & Types Classifier with ANI/AGI/ASI interactive sorter.
-    - `/learn/unit-1/agents`: 14-section Intelligent Agents deep dive with PEAS matrices and interactive vacuum player.
-  - All 25 unit tests green, zero TypeScript errors, zero ESLint warnings.
+  - Authored 4 comprehensive pages: `/learn/unit-1`, `/learn/unit-1/history`, `/learn/unit-1/types`, `/learn/unit-1/agents`.
+  - All 25 unit tests green, zero TypeScript errors, zero ESLint warnings. Commit: `f6553ef`.
 - **2026-10-30 | Phase 2 Plan Approved by Human**
   - Approved Phase 2 plan (artifact `phase-2-implementation-plan.md`).
 - **2026-10-30 | Phase 1 Signed Off by Human**

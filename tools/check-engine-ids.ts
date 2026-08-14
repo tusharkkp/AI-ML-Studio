@@ -6,7 +6,13 @@ const ENGINES_DIR = path.join(ROOT_DIR, 'web', 'src', 'engines');
 
 console.log('=== ENGINE IDS CHECK (L4 CHECK) ===');
 
-const requiredEngineIds = ['search/bfs', 'agent/vacuum'];
+const requiredEngineIds = [
+  'search/bfs',
+  'agent/vacuum',
+  'logic/truth-table',
+  'logic/unify',
+  'rules/chaining',
+];
 
 requiredEngineIds.forEach((id) => {
   const enginePath = path.join(ENGINES_DIR, ...id.split('/'), 'engine.ts');
