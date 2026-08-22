@@ -12,6 +12,9 @@ const requiredEngineIds = [
   'logic/truth-table',
   'logic/unify',
   'rules/chaining',
+  'expert/knowledge-base',
+  'expert/diagnosis',
+  'agent/self-driving',
 ];
 
 requiredEngineIds.forEach((id) => {

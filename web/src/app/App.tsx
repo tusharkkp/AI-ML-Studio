@@ -9,6 +9,9 @@ import { IntelligentAgentsPage } from '@/pages/IntelligentAgentsPage';
 import { KnowledgeRepresentationPage } from '@/pages/KnowledgeRepresentationPage';
 import { FirstOrderLogicPage } from '@/pages/FirstOrderLogicPage';
 import { RuleBasedReasoningPage } from '@/pages/RuleBasedReasoningPage';
+import { ExpertSystemsPage } from '@/pages/ExpertSystemsPage';
+import { MedicalDiagnosisCaseStudy } from '@/pages/MedicalDiagnosisCaseStudy';
+import { SelfDrivingCaseStudy } from '@/pages/SelfDrivingCaseStudy';
 import { BfsConceptPage } from '@/pages/BfsConceptPage';
 import { WarehouseLabPage } from '@/pages/WarehouseLabPage';
 
@@ -51,6 +54,9 @@ export function App() {
             />
             <Route path="/learn/unit-1/first-order-logic" element={<FirstOrderLogicPage />} />
             <Route path="/learn/unit-1/rule-based-reasoning" element={<RuleBasedReasoningPage />} />
+            <Route path="/learn/unit-1/expert-systems" element={<ExpertSystemsPage />} />
+            <Route path="/case-studies/medical-diagnosis" element={<MedicalDiagnosisCaseStudy />} />
+            <Route path="/case-studies/self-driving-vehicle" element={<SelfDrivingCaseStudy />} />
             <Route path="/learn/unit-2/bfs" element={<BfsConceptPage />} />
             <Route path="/lab/warehouse-bfs" element={<WarehouseLabPage />} />
             <Route path="*" element={<NotFoundPage />} />
