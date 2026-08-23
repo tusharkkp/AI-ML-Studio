@@ -12,6 +12,11 @@ import { RuleBasedReasoningPage } from '@/pages/RuleBasedReasoningPage';
 import { ExpertSystemsPage } from '@/pages/ExpertSystemsPage';
 import { MedicalDiagnosisCaseStudy } from '@/pages/MedicalDiagnosisCaseStudy';
 import { SelfDrivingCaseStudy } from '@/pages/SelfDrivingCaseStudy';
+import { EthicsImpactPage } from '@/pages/EthicsImpactPage';
+import { ChatbotPromptEngPage } from '@/pages/ChatbotPromptEngPage';
+import { AgiFrontiersPage } from '@/pages/AgiFrontiersPage';
+import { Unit1ExamPage } from '@/pages/Unit1ExamPage';
+import { Unit1CheatSheetPage } from '@/pages/Unit1CheatSheetPage';
 import { BfsConceptPage } from '@/pages/BfsConceptPage';
 import { WarehouseLabPage } from '@/pages/WarehouseLabPage';
 
@@ -57,6 +62,14 @@ export function App() {
             <Route path="/learn/unit-1/expert-systems" element={<ExpertSystemsPage />} />
             <Route path="/case-studies/medical-diagnosis" element={<MedicalDiagnosisCaseStudy />} />
             <Route path="/case-studies/self-driving-vehicle" element={<SelfDrivingCaseStudy />} />
+            <Route path="/learn/unit-1/ethics-impact" element={<EthicsImpactPage />} />
+            <Route
+              path="/learn/unit-1/chatbot-prompt-engineering"
+              element={<ChatbotPromptEngPage />}
+            />
+            <Route path="/learn/unit-1/agi" element={<AgiFrontiersPage />} />
+            <Route path="/learn/unit-1/exam" element={<Unit1ExamPage />} />
+            <Route path="/cheatsheets/unit-1" element={<Unit1CheatSheetPage />} />
             <Route path="/learn/unit-2/bfs" element={<BfsConceptPage />} />
             <Route path="/lab/warehouse-bfs" element={<WarehouseLabPage />} />
             <Route path="*" element={<NotFoundPage />} />

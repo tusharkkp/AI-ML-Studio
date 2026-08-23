@@ -15,6 +15,7 @@ const requiredEngineIds = [
   'expert/knowledge-base',
   'expert/diagnosis',
   'agent/self-driving',
+  'chatbot/eliza',
 ];
 
 requiredEngineIds.forEach((id) => {

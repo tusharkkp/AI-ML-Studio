@@ -1,15 +1,17 @@
 # PROGRESS — AIML Studio
 
 ## Now
+
 - **Phase:** 2 (Unit 1 — Basics of AI)
-- **Task:** Completed Batch 3 (T2.08, T2.09, T2.10). Ready for Batch 4 (T2.11 Ethics, T2.12 Chatbot & Prompt Engineering, T2.13 AGI Frontiers, T2.14 Assessment Bank & Cheat Sheet, T2.15 Exit Gate).
-- **Status:** Batch 3 verified green (`verify:fast` green, `verify:content` green, 61 tests passing, 154.41 KB gzip).
-- **Last green commit:** `326060b` `feat(unit1): propositional logic, Robinson unification, and Horn rule chaining engines and labs`
+- **Task:** T2.15 Phase 2 Exit Gate Complete & Ready for Human Sign-Off.
+- **Status:** All Phase 2 Batches 1–4 complete and verified green (`verify:phase` green, `verify:content` green, `check:bundle` green: 67 tests passing across 13 test files, 182.59 KB gzip JS <= 200 KB budget).
+- **Last green commit:** `e7e6b97` `feat(unit1): expert systems, medical diagnosis case study, and self-driving vehicle simulation`
 
 ## Phase Checklist
-- [x] **Phase 0 — Discovery & Plan** *(Approved by Human)*
-- [x] **Phase 1 — Platform Foundation & Vertical Slice (BFS)** *(Signed Off by Human)*
-- [ ] **Phase 2 — Unit 1: Basics of AI (8 hrs)** *(Batches 1, 2, 3 complete; Batch 4 in progress)*
+
+- [x] **Phase 0 — Discovery & Plan** _(Approved by Human)_
+- [x] **Phase 1 — Platform Foundation & Vertical Slice (BFS)** _(Signed Off by Human)_
+- [x] **Phase 2 — Unit 1: Basics of AI (8 hrs)** _(Batches 1, 2, 3, 4 complete — 100% verified, awaiting Human Sign-Off)_
 - [ ] **Phase 3 — Unit 2: AI Search Strategies (8 hrs)**
 - [ ] **Phase 4 — Unit 3: ML Fundamentals (7 hrs)**
 - [ ] **Phase 5 — Unit 4: Instances & Probabilistic Models (6 hrs)**
@@ -19,6 +21,16 @@
 - [ ] **Phase 9 — Hardening, Accessibility, Verification & $0 Deploy**
 
 ## Task Log (latest first)
+
+- **2026-10-30 | Phase 2 Batch 4 Implemented & Exit Gate Verified (Phase 2 Complete)**
+  - Implemented Joseph Weizenbaum 1966 ELIZA pattern-matching engine (`web/src/engines/chatbot/eliza/`) with regex decomposition, transformation rules, memory buffers, and pronoun reversal.
+  - Built interactive Chatbot & Prompt Engineering Sandbox (`web/src/labs/chatbot-prompt/ChatbotPromptLab.tsx`) featuring real-time ELIZA chat and side-by-side prompt engineering comparison (Zero-Shot, Few-Shot, CoT, System Persona, Self-Consistency).
+  - Built interactive AI Ethics & Fairness Lab (`web/src/labs/ethics/EthicsScenarioLab.tsx`) demonstrating EEOC 4/5ths Disparate Impact rule, Demographic Parity, Equalized Odds, and Kleinberg's Impossibility Theorem with real-time threshold slider.
+  - Implemented Searle's Chinese Room interactive thought experiment lab and Bostrom's Treacherous Turn simulation in `/learn/unit-1/agi`.
+  - Authored comprehensive 20-question Unit 1 Assessment Bank (`web/src/features/quiz/unit1QuestionBank.ts`) mapped to CO1, CO2, CO3, and CO4 with immediate feedback, detailed rationales, and exam timer in `/learn/unit-1/exam`.
+  - Authored printable/foldable Unit 1 Master Revision Cheat Sheet (`web/src/pages/Unit1CheatSheetPage.tsx`) in `/cheatsheets/unit-1`.
+  - Verification Exit Gate: 67 vitest tests passing, 0 TypeScript errors, 0 ESLint warnings, all 14 required sections verified, 182.59 KB JS gzip (within 200 KB budget). Evidence recorded in `docs/evidence/phase-2/verify-phase.log` and `docs/evidence/phase-2/walkthrough.md`.
+
 - **2026-10-30 | Phase 2 Batch 3 Implemented & Verified**
   - Implemented Knowledge Acquisition & Rule Consistency Validator (`web/src/engines/expert/knowledge-base/`) detecting redundancy, subsumption, contradictions, and cycles.
   - Implemented Clinical Consultation & Transfusion Crossmatch Engine (`web/src/engines/expert/diagnosis/`) with real-time "Why" and "How" explanation facilities and ABO-Rh compatibility checking from `blood.pl`/`trans.pl`.

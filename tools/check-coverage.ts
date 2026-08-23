@@ -19,6 +19,7 @@ const COMPLETED_TOPIC_IDS = new Set([
   'u2-uninformed-search',
   'u1-history-foundations',
   'u1-types-applications',
+  'u1-ethics-impact',
   'u1-intelligent-agents',
   'u1-knowledge-representation',
   'u1-first-order-logic',
@@ -27,6 +28,9 @@ const COMPLETED_TOPIC_IDS = new Set([
   'u1-knowledge-acquisition',
   'u1-case-medical',
   'u1-case-self-driving',
+  'u1-self-chatbot',
+  'u1-self-prompt-eng',
+  'u1-further-agi',
 ]);
 
 syllabus.units.forEach((u: { unit: number; topics: { id: string }[] }) => {
