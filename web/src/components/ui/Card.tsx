@@ -14,15 +14,14 @@ export function Card({
   children,
   ...props
 }: CardProps) {
-  const accentBorder = unitAccent ? `hover:border-unit-${unitAccent}` : '';
+  const accentBorder = unitAccent ? `hover:border-unit-${unitAccent}/40` : '';
 
   return (
     <div
       className={twMerge(
         clsx(
-          'rounded-xl border border-studio-200 bg-white p-6 shadow-subtle dark:border-studio-800 dark:bg-studio-900 transition-all duration-200',
-          interactive &&
-            'cursor-pointer hover:shadow-studio hover:-translate-y-0.5 active:translate-y-0',
+          'rounded-xl border border-card-edge bg-card-fill backdrop-blur-sm p-6 sm:opacity-95 sm:hover:opacity-100 hover:border-card-edge-hover transition-all duration-300',
+          interactive && 'cursor-pointer active:scale-[0.99]',
           accentBorder,
           className
         )
@@ -55,7 +54,7 @@ export function CardTitle({
     <h3
       className={twMerge(
         clsx(
-          'font-display text-lg font-bold tracking-tight text-studio-900 dark:text-studio-50',
+          'font-montserrat text-base sm:text-lg font-semibold tracking-tight text-foreground',
           className
         )
       )}
@@ -74,7 +73,7 @@ export function CardDescription({
   return (
     <p
       className={twMerge(
-        clsx('text-sm text-studio-500 dark:text-studio-400 leading-relaxed', className)
+        clsx('text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed', className)
       )}
       {...props}
     >
@@ -102,9 +101,7 @@ export function CardFooter({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={twMerge(
-        clsx('flex items-center pt-4 border-t border-studio-100 dark:border-studio-800', className)
-      )}
+      className={twMerge(clsx('flex items-center pt-4 border-t border-card-edge', className))}
       {...props}
     >
       {children}

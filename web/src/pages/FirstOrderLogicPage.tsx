@@ -175,7 +175,7 @@ export function FirstOrderLogicPage() {
           First-Order Logic & Robinson Unification
         </h1>
         <p className="text-lg text-warm-600 dark:text-warm-400 font-sans leading-relaxed">
-          Express complex relational worlds with objects, predicates, and quantifiers—and discover
+          Express complex relational worlds with objects, predicates, and quantifiers, and discover
           how pattern unification drives automated reasoning engines like Prolog.
         </p>
       </header>

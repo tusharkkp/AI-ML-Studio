@@ -78,7 +78,7 @@ export function UnificationLab() {
   const activeStep = currentStep !== null && steps[currentStep] ? steps[currentStep] : null;
 
   return (
-    <Card className="p-6 my-6 border-warm-200 dark:border-warm-800 bg-white dark:bg-warm-900/40 shadow-sm">
+    <Card className="p-6 my-6 border-warm-200 dark:border-warm-800 bg-white dark:bg-warm-900/40">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-warm-200 dark:border-warm-800 pb-4">
         <div>
           <span className="text-xs uppercase tracking-wider font-semibold text-warm-500">
@@ -253,7 +253,7 @@ export function UnificationLab() {
                   onClick={() => setCurrentStep(idx)}
                   className={`p-3 rounded border text-xs cursor-pointer transition-colors ${
                     isSelected
-                      ? 'bg-white dark:bg-warm-900 border-accent-primary ring-1 ring-accent-primary shadow-sm'
+                      ? 'bg-white dark:bg-warm-900 border-accent-primary ring-1 ring-accent-primary'
                       : 'bg-warm-100/50 dark:bg-warm-800/50 border-warm-200 dark:border-warm-700 hover:bg-white dark:hover:bg-warm-800'
                   }`}
                 >

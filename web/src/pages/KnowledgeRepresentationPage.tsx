@@ -204,7 +204,7 @@ export function KnowledgeRepresentationPage() {
         <p className="text-warm-700 dark:text-warm-300 leading-relaxed">
           In reflex agents, actions are hardcoded reflexes triggered by current sensor inputs. But
           in complex, partially observable environments, an agent must construct an internal model
-          of the world—a <strong>Knowledge Base (KB)</strong>.
+          of the world: a <strong>Knowledge Base (KB)</strong>.
         </p>
         <p className="text-warm-700 dark:text-warm-300 leading-relaxed">
           A knowledge base is not a disorganized bag of strings; it consists of sentences in a

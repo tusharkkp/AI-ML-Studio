@@ -22,19 +22,20 @@ export function Badge({
   };
 
   const variantStyles = {
+    // ChaiUI status: text and thin outline, never heavy fills
     default:
-      'bg-studio-100 text-studio-800 dark:bg-studio-800 dark:text-studio-200 border-transparent',
+      'bg-transparent text-neutral-600 dark:text-neutral-400 border-neutral-300 dark:border-neutral-800',
     outline:
-      'bg-transparent border border-studio-300 text-studio-700 dark:border-studio-700 dark:text-studio-300',
+      'bg-transparent border border-neutral-300 text-neutral-700 dark:border-neutral-700 dark:text-neutral-300',
     success:
-      'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800',
+      'bg-transparent text-emerald-600 border-emerald-500/30 dark:text-emerald-400 dark:border-emerald-500/30',
     warning:
-      'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800',
+      'bg-transparent text-amber-600 border-amber-500/30 dark:text-amber-400 dark:border-amber-500/30',
     danger:
-      'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800',
+      'bg-transparent text-rose-600 border-rose-500/30 dark:text-rose-400 dark:border-rose-500/30',
     unit: unit
-      ? `bg-unit-${unit}/10 text-unit-${unit} border-unit-${unit}/30 dark:bg-unit-${unit}/20`
-      : 'bg-unit-2/10 text-unit-2 border-unit-2/30',
+      ? `bg-transparent text-unit-${unit} border-unit-${unit}/30`
+      : 'bg-transparent text-neutral-400 border-neutral-700',
   };
 
   return (
@@ -50,6 +51,32 @@ export function Badge({
       {...props}
     >
       {children}
+    </span>
+  );
+}
+
+/**
+ * Signature ChaiUI AnimatedBadge: 1px rotating glint along border
+ */
+export function AnimatedBadge({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={twMerge('relative inline-flex w-fit overflow-hidden rounded-full p-px', className)}
+    >
+      <span
+        aria-hidden
+        className="absolute top-1/2 left-1/2 h-5 w-[320px] rounded-full bg-gradient-to-r from-transparent via-transparent to-orange-500 motion-safe:animate-[chai-spin_4s_linear_infinite]"
+        style={{ transform: 'translate(-50%,-50%)' }}
+      />
+      <span className="relative z-10 rounded-full bg-neutral-50 px-4 py-1.5 text-xs sm:text-sm font-medium text-neutral-800 dark:bg-[#121212] dark:text-neutral-100">
+        {children}
+      </span>
     </span>
   );
 }

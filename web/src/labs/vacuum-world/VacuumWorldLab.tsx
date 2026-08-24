@@ -62,17 +62,17 @@ export function VacuumWorldLab({ onCleanAll }: { onCleanAll?: () => void }) {
   const currentSnapshot = currentStep?.state;
 
   return (
-    <div className="rounded-2xl border border-studio-200 bg-studio-50/70 p-5 shadow-studio dark:border-studio-800 dark:bg-studio-900/60 my-6">
+    <div className="rounded-2xl border border-card-edge bg-card-fill backdrop-blur-sm p-5 my-6">
       {/* Top tabs: Simulator vs PEAS Builder */}
-      <div className="flex items-center justify-between border-b border-studio-200 pb-3 mb-5 dark:border-studio-800">
+      <div className="flex items-center justify-between border-b border-card-edge pb-3 mb-5">
         <div className="flex space-x-2">
           <button
             type="button"
             onClick={() => setActiveTab('simulator')}
-            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-colors ${
+            className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
               activeTab === 'simulator'
-                ? 'bg-unit-1 text-white shadow-subtle'
-                : 'bg-white text-studio-600 hover:bg-studio-100 dark:bg-studio-800 dark:text-studio-300'
+                ? 'bg-neutral-900 text-white dark:bg-white dark:text-black'
+                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300'
             }`}
           >
             Agent Simulator
@@ -80,10 +80,10 @@ export function VacuumWorldLab({ onCleanAll }: { onCleanAll?: () => void }) {
           <button
             type="button"
             onClick={() => setActiveTab('peas')}
-            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-colors ${
+            className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
               activeTab === 'peas'
-                ? 'bg-unit-1 text-white shadow-subtle'
-                : 'bg-white text-studio-600 hover:bg-studio-100 dark:bg-studio-800 dark:text-studio-300'
+                ? 'bg-neutral-900 text-white dark:bg-white dark:text-black'
+                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300'
             }`}
           >
             PEAS Framework Builder
@@ -187,7 +187,7 @@ export function VacuumWorldLab({ onCleanAll }: { onCleanAll?: () => void }) {
                     onClick={() => toggleTile(room)}
                     className={`relative flex flex-col items-center justify-between p-5 rounded-xl border-2 cursor-pointer transition-all ${
                       isAgentHere
-                        ? 'border-unit-1 bg-unit-1/5 shadow-subtle'
+                        ? 'border-unit-1 bg-unit-1/5'
                         : isDirty
                           ? 'border-amber-300 bg-amber-50/60 dark:border-amber-900 dark:bg-amber-950/20'
                           : 'border-studio-200 bg-studio-50/50 dark:border-studio-800 dark:bg-studio-900/30'
@@ -278,14 +278,14 @@ export function VacuumWorldLab({ onCleanAll }: { onCleanAll?: () => void }) {
           </p>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="p-4 rounded-xl border border-emerald-200 bg-emerald-50/50 dark:border-emerald-800 dark:bg-emerald-950/20">
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
-                P — Performance Measure
+            <div className="p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5">
+              <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                P: Performance measure
               </span>
-              <p className="text-sm font-semibold text-studio-900 dark:text-studio-100 mt-1 mb-2">
+              <p className="text-sm font-semibold text-foreground mt-1 mb-2">
                 What constitutes success?
               </p>
-              <ul className="text-xs text-studio-700 dark:text-studio-300 space-y-1 list-disc pl-4">
+              <ul className="text-xs text-neutral-600 dark:text-neutral-400 space-y-1 list-disc pl-4">
                 <li>+50 points per clean room over time.</li>
                 <li>-10 penalty per suck operation.</li>
                 <li>-5 penalty per move (energy conservation).</li>
@@ -293,14 +293,14 @@ export function VacuumWorldLab({ onCleanAll }: { onCleanAll?: () => void }) {
               </ul>
             </div>
 
-            <div className="p-4 rounded-xl border border-sky-200 bg-sky-50/50 dark:border-sky-800 dark:bg-sky-950/20">
-              <span className="text-xs font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">
-                E — Environment
+            <div className="p-4 rounded-xl border border-sky-500/20 bg-sky-500/5">
+              <span className="text-xs font-semibold text-sky-600 dark:text-sky-400">
+                E: Environment
               </span>
-              <p className="text-sm font-semibold text-studio-900 dark:text-studio-100 mt-1 mb-2">
+              <p className="text-sm font-semibold text-foreground mt-1 mb-2">
                 Where does the agent operate?
               </p>
-              <ul className="text-xs text-studio-700 dark:text-studio-300 space-y-1 list-disc pl-4">
+              <ul className="text-xs text-neutral-600 dark:text-neutral-400 space-y-1 list-disc pl-4">
                 <li>Rooms A, B (or grid tiles).</li>
                 <li>Partially Observable vs Fully Observable.</li>
                 <li>Deterministic vs Stochastic dirt accumulation.</li>
@@ -308,14 +308,14 @@ export function VacuumWorldLab({ onCleanAll }: { onCleanAll?: () => void }) {
               </ul>
             </div>
 
-            <div className="p-4 rounded-xl border border-amber-200 bg-amber-50/50 dark:border-amber-800 dark:bg-amber-950/20">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
-                A — Actuators
+            <div className="p-4 rounded-xl border border-amber-500/20 bg-amber-500/5">
+              <span className="text-xs font-semibold text-amber-600 dark:text-amber-400">
+                A: Actuators
               </span>
-              <p className="text-sm font-semibold text-studio-900 dark:text-studio-100 mt-1 mb-2">
+              <p className="text-sm font-semibold text-foreground mt-1 mb-2">
                 How does the agent affect the world?
               </p>
-              <ul className="text-xs text-studio-700 dark:text-studio-300 space-y-1 list-disc pl-4">
+              <ul className="text-xs text-neutral-600 dark:text-neutral-400 space-y-1 list-disc pl-4">
                 <li>Drive wheels (Left, Right, Forward, Backward).</li>
                 <li>Suction motor (Suck).</li>
                 <li>Brush roller rotation.</li>
@@ -323,14 +323,14 @@ export function VacuumWorldLab({ onCleanAll }: { onCleanAll?: () => void }) {
               </ul>
             </div>
 
-            <div className="p-4 rounded-xl border border-violet-200 bg-violet-50/50 dark:border-violet-800 dark:bg-violet-950/20">
-              <span className="text-xs font-bold uppercase tracking-wider text-violet-700 dark:text-violet-400">
-                S — Sensors
+            <div className="p-4 rounded-xl border border-violet-500/20 bg-violet-500/5">
+              <span className="text-xs font-semibold text-violet-600 dark:text-violet-400">
+                S: Sensors
               </span>
-              <p className="text-sm font-semibold text-studio-900 dark:text-studio-100 mt-1 mb-2">
+              <p className="text-sm font-semibold text-foreground mt-1 mb-2">
                 How does the agent perceive the world?
               </p>
-              <ul className="text-xs text-studio-700 dark:text-studio-300 space-y-1 list-disc pl-4">
+              <ul className="text-xs text-neutral-600 dark:text-neutral-400 space-y-1 list-disc pl-4">
                 <li>Location sensor (Wheel odometry / RFID tag).</li>
                 <li>Optical dirt detector sensor (Clean / Dirty).</li>
                 <li>Bump sensor / Infrared cliff sensor.</li>

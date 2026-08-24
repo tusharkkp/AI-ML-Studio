@@ -128,7 +128,7 @@ export function ChatbotPromptLab() {
   ];
 
   return (
-    <Card className="p-6 my-6 border-warm-200 dark:border-warm-800 bg-white dark:bg-warm-900/40 shadow-sm">
+    <Card className="p-6 my-6 border-warm-200 dark:border-warm-800 bg-white dark:bg-warm-900/40">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-warm-200 dark:border-warm-800 pb-4">
         <div>
           <span className="text-xs uppercase tracking-wider font-semibold text-warm-500">
@@ -197,7 +197,7 @@ export function ChatbotPromptLab() {
                   className={`max-w-[80%] rounded-2xl px-4 py-2 text-xs leading-relaxed ${
                     m.sender === 'user'
                       ? 'bg-blue-600 text-white rounded-br-none'
-                      : 'bg-white dark:bg-warm-800 text-warm-900 dark:text-warm-100 border border-warm-200 dark:border-warm-700 rounded-bl-none shadow-sm'
+                      : 'bg-white dark:bg-warm-800 text-warm-900 dark:text-warm-100 border border-warm-200 dark:border-warm-700 rounded-bl-none'
                   }`}
                 >
                   {m.text}

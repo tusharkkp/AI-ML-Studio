@@ -34,9 +34,9 @@ export function GlossaryTerm({ term, displayText }: GlossaryTermProps) {
       {isOpen && (
         <span
           role="dialog"
-          className="absolute bottom-full left-1/2 z-50 mb-2 w-64 -translate-x-1/2 rounded-xl border border-studio-200 bg-white p-3 text-left text-xs shadow-studio-lg dark:border-studio-700 dark:bg-studio-900 pointer-events-none animate-in fade-in zoom-in-95 duration-150"
+          className="absolute bottom-full left-1/2 z-50 mb-2 w-64 -translate-x-1/2 rounded-xl border border-card-edge bg-card-fill backdrop-blur-md p-3 text-left text-xs pointer-events-none animate-in fade-in zoom-in-95 duration-150"
         >
-          <span className="block font-display font-bold text-studio-900 dark:text-studio-50 mb-1">
+          <span className="block font-montserrat font-semibold text-foreground mb-1">
             {entry.term}
           </span>
           <span className="block text-studio-600 dark:text-studio-300 leading-relaxed font-normal">

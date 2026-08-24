@@ -16,4 +16,3 @@ export interface ElizaResponse {
   matchedPattern: string;
   transposedInput: string;
 }
-

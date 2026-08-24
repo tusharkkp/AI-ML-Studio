@@ -19,20 +19,21 @@ import { Unit1ExamPage } from '@/pages/Unit1ExamPage';
 import { Unit1CheatSheetPage } from '@/pages/Unit1CheatSheetPage';
 import { BfsConceptPage } from '@/pages/BfsConceptPage';
 import { WarehouseLabPage } from '@/pages/WarehouseLabPage';
+import { Backdrop } from '@/components/layout/Backdrop';
 
 function NotFoundPage() {
   return (
-    <div className="mx-auto max-w-2xl px-4 py-24 text-center">
-      <h1 className="font-display text-4xl font-extrabold text-studio-900 dark:text-studio-50">
-        404 — Topic Not Found
+    <div className="mx-auto max-w-2xl px-6 py-24 text-center">
+      <h1 className="font-display text-4xl font-semibold tracking-tight text-foreground">
+        404: Topic Not Found
       </h1>
-      <p className="mt-3 text-studio-600 dark:text-studio-400">
+      <p className="mt-3 text-neutral-600 dark:text-neutral-400">
         The concept you are looking for has not been explored yet or the path has changed.
       </p>
       <div className="mt-6">
         <Link
           to="/"
-          className="inline-flex items-center px-4 py-2 rounded-lg bg-unit-2 text-white font-medium text-sm hover:opacity-90"
+          className="btn-asym inline-flex h-9 items-center gap-2 bg-neutral-900 px-4 text-sm font-medium text-white transition-colors duration-200 hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
         >
           Return to Course Home
         </Link>
@@ -44,7 +45,8 @@ function NotFoundPage() {
 export function App() {
   return (
     <BrowserRouter>
-      <div className="flex min-h-screen flex-col bg-studio-50 text-studio-900 dark:bg-studio-950 dark:text-studio-50">
+      <div className="relative isolate min-h-screen flex flex-col overflow-x-clip bg-background text-foreground">
+        <Backdrop />
         <Navbar />
         <main className="flex-1">
           <Routes>

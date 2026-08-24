@@ -161,7 +161,7 @@ export function Unit1ExamPage() {
 
       {/* Results Scorecard (if submitted) */}
       {submitted && results && (
-        <Card className="p-6 border-warm-300 dark:border-warm-700 bg-gradient-to-br from-warm-50 to-warm-100/60 dark:from-warm-900/60 dark:to-warm-950/60 shadow-md">
+        <Card className="p-6 border-card-edge bg-card-fill backdrop-blur-sm">
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-warm-200 dark:border-warm-800 pb-4 mb-4">
             <div>
               <span className="text-xs uppercase tracking-wider font-bold text-warm-500">

@@ -450,8 +450,8 @@ print(eliza_respond("I am feeling overwhelmed by work"))
           >
             <p className="text-xs leading-relaxed">
               While trivial prompt phrasing tricks may fade as models improve, structured prompt
-              engineering—specifying system schemas, decomposition workflows, and tool execution
-              protocols—remains the fundamental programming interface for cognitive AI
+              engineering (specifying system schemas, decomposition workflows, and tool execution
+              protocols) remains the fundamental programming interface for cognitive AI
               architectures.
             </p>
           </Callout>

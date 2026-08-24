@@ -283,7 +283,7 @@ export function AiHistoryPage() {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-12 rounded-2xl border border-studio-200 bg-studio-50/70 p-5 dark:border-studio-800 dark:bg-studio-900/60 shadow-studio">
+        <div className="grid gap-6 md:grid-cols-12 rounded-2xl border border-card-edge bg-card-fill backdrop-blur-sm p-5">
           {/* Timeline scrollbar */}
           <div className="md:col-span-5 space-y-2 max-h-[420px] overflow-y-auto pr-2">
             {MILESTONES.map((m) => (
@@ -293,8 +293,8 @@ export function AiHistoryPage() {
                 onClick={() => setSelectedMilestone(m)}
                 className={`w-full text-left p-3 rounded-xl border transition-all flex items-start gap-3 ${
                   selectedMilestone.year === m.year
-                    ? 'bg-unit-1 text-white border-unit-1 shadow-subtle'
-                    : 'bg-white text-studio-800 border-studio-200 hover:bg-studio-100 dark:bg-studio-900 dark:text-studio-200 dark:border-studio-800'
+                    ? 'bg-neutral-900 text-white dark:bg-white dark:text-black border-border'
+                    : 'bg-card text-foreground border-border hover:bg-neutral-100 dark:hover:bg-neutral-900'
                 }`}
               >
                 <span className="font-mono font-bold text-xs px-2 py-0.5 rounded bg-black/10 dark:bg-white/10">
@@ -349,7 +349,7 @@ export function AiHistoryPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-studio-200 bg-white p-5 dark:border-studio-800 dark:bg-studio-900">
             <h3 className="font-display font-bold text-base text-studio-900 dark:text-studio-100 mb-2">
-              Symbolic AI (GOFAI — Good Old-Fashioned AI)
+              Symbolic AI (GOFAI: Good Old-Fashioned AI)
             </h3>
             <ul className="text-xs text-studio-600 dark:text-studio-400 space-y-1.5 list-disc pl-4">
               <li>

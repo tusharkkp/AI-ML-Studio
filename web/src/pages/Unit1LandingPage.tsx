@@ -104,34 +104,50 @@ export function Unit1LandingPage() {
         </Link>
 
         <div className="flex flex-wrap items-center gap-2 mb-3">
-          <Badge variant="unit" unit={1}>
+          <Badge variant="outline" size="sm">
             Unit 1 of 6
           </Badge>
-          <span className="flex items-center text-xs text-studio-500 ml-auto">
+          <span className="flex items-center text-xs text-neutral-500 ml-auto font-mono">
             <Clock className="h-3.5 w-3.5 mr-1" />8 Syllabus Hours
           </span>
         </div>
 
-        <h1 className="font-display text-3xl font-extrabold tracking-tight text-studio-900 dark:text-studio-50 sm:text-5xl">
+        <h1 className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-5xl">
           Unit 1: Basics of Artificial Intelligence
         </h1>
-        <p className="mt-4 text-base sm:text-lg text-studio-600 dark:text-studio-300 max-w-3xl leading-relaxed">
-          Explore the philosophical roots, rational agent architectures, formal symbolic logic, and
-          rule-based expert systems that laid the foundation for modern machine intelligence.
+        <p className="mt-4 text-base sm:text-lg text-neutral-700 dark:text-neutral-400 max-w-3xl leading-relaxed">
+          Explore the philosophical roots, rational agent architectures, formal symbolic logic, and{' '}
+          <span className="highlight">rule-based expert systems</span> that laid the foundation for
+          modern machine intelligence.
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-6 text-xs text-studio-600 dark:text-studio-400 pt-4 border-t border-studio-100 dark:border-studio-800">
-          <div className="flex items-center gap-1.5">
-            <Award className="h-4 w-4 text-unit-1" />
-            <span>
-              <strong>CO1:</strong> Apply Principles of Perception, KR & Reasoning (L3)
-            </span>
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-card-edge">
+          <div className="flex flex-wrap items-center gap-6 text-xs text-neutral-600 dark:text-neutral-400">
+            <div className="flex items-center gap-1.5">
+              <Award className="h-4 w-4 text-emerald-500" />
+              <span>
+                <strong>CO1:</strong> Apply principles of perception, KR and reasoning (L3)
+              </span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <ShieldAlert className="h-4 w-4 text-emerald-500" />
+              <span>
+                <strong>CO4:</strong> Analyze strengths and limitations of symbolic AI (L4)
+              </span>
+            </div>
           </div>
-          <div className="flex items-center gap-1.5">
-            <ShieldAlert className="h-4 w-4 text-unit-1" />
-            <span>
-              <strong>CO4:</strong> Analyze Strengths & Limitations of Symbolic AI (L4)
-            </span>
+
+          <div className="flex items-center gap-2">
+            <Link to="/cheatsheets/unit-1">
+              <Button variant="secondary" size="sm">
+                Revision cheat sheet
+              </Button>
+            </Link>
+            <Link to="/learn/unit-1/exam">
+              <Button variant="solid" size="sm">
+                Take unit exam
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -143,33 +159,31 @@ export function Unit1LandingPage() {
           const isDone = progress?.read && progress?.quizPassed;
 
           return (
-            <Card key={m.id} interactive className="flex flex-col justify-between">
+            <Card key={m.id} className="flex flex-col justify-between group">
               <div>
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[11px] font-mono font-bold text-studio-400">
-                      {m.hours}
-                    </span>
+                    <span className="text-[11px] font-mono text-neutral-500">{m.hours}</span>
                     {isDone ? (
                       <Badge variant="success" size="sm">
                         <CheckCircle className="h-3 w-3 mr-1" />
                         Completed
                       </Badge>
                     ) : m.kind === 'flagship' ? (
-                      <Badge variant="unit" unit={1} size="sm">
-                        Flagship Lab
+                      <Badge variant="outline" size="sm">
+                        Flagship lab
                       </Badge>
                     ) : null}
                   </div>
-                  <CardTitle className="text-base">{m.title}</CardTitle>
+                  <CardTitle className="text-base text-foreground">{m.title}</CardTitle>
                   <CardDescription className="text-xs leading-relaxed">{m.desc}</CardDescription>
                 </CardHeader>
               </div>
 
-              <CardContent className="pt-3 border-t border-studio-100 dark:border-studio-800">
+              <CardContent className="pt-3 border-t border-card-edge">
                 <Link to={m.href}>
-                  <Button variant="ghost" size="sm" className="w-full justify-between text-xs">
-                    <span>{isDone ? 'Review Concept' : 'Start Concept'}</span>
+                  <Button variant="secondary" size="sm" className="w-full justify-between text-xs">
+                    <span>{isDone ? 'Review concept' : 'Start concept'}</span>
                     <span>→</span>
                   </Button>
                 </Link>

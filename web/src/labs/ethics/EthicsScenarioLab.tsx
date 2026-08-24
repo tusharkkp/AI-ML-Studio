@@ -146,7 +146,7 @@ export function EthicsScenarioLab() {
   const passesFourFifthsRule = Number(disparityRatio) >= 0.8;
 
   return (
-    <Card className="p-6 my-6 border-warm-200 dark:border-warm-800 bg-white dark:bg-warm-900/40 shadow-sm">
+    <Card className="p-6 my-6 border-warm-200 dark:border-warm-800 bg-white dark:bg-warm-900/40">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-warm-200 dark:border-warm-800 pb-4">
         <div>
           <span className="text-xs uppercase tracking-wider font-semibold text-warm-500">
@@ -300,7 +300,7 @@ export function EthicsScenarioLab() {
         <div className="mt-4 p-4 rounded-lg bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-300 dark:border-emerald-800 text-xs text-emerald-900 dark:text-emerald-100">
           <strong>Decision Impact Audit:</strong> Choosing{' '}
           <em>&ldquo;{selectedOption.label}&rdquo;</em> demonstrates that algorithmic fairness is
-          rarely a technical optimization with a single perfect solution—it requires explicit moral
+          rarely a technical optimization with a single perfect solution; it requires explicit moral
           choices between competing notions of justice.
         </div>
       )}

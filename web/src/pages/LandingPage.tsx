@@ -6,10 +6,11 @@ import {
   Database,
   Network,
   Search,
+  ArrowUpRight,
+  ChevronsDown,
   ArrowRight,
-  Sparkles,
 } from 'lucide-react';
-import { Badge } from '@/components/ui/Badge';
+import { Badge, AnimatedBadge } from '@/components/ui/Badge';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
@@ -20,21 +21,20 @@ export function LandingPage() {
       title: 'Basics of AI',
       hours: 8,
       accent: 'emerald',
-      color: 'bg-emerald-500',
       icon: Cpu,
       description:
         'Rational agents, PEAS framework, First-Order Logic, inference engines, and expert systems.',
       href: '/learn/unit-1',
+      activeBadge: 'Unit 1 Complete',
     },
     {
       number: 2,
       title: 'AI Search Strategies',
       hours: 8,
       accent: 'sky',
-      color: 'bg-sky-500',
       icon: Compass,
       description:
-        'Uninformed BFS/DFS races, A* admissibility, CSP constraint propagation, Minimax, and Genetic Algorithms.',
+        'Uninformed BFS and DFS races, A* admissibility, CSP constraint propagation, Minimax, and Genetic Algorithms.',
       href: '/learn/unit-2/bfs',
       activeBadge: 'Vertical Slice Ready',
     },
@@ -43,10 +43,9 @@ export function LandingPage() {
       title: 'ML Fundamentals',
       hours: 7,
       accent: 'amber',
-      color: 'bg-amber-500',
       icon: Network,
       description:
-        'Linear & polynomial regression, gradient descent contour dynamics, bias-variance tradeoff, and regularisation.',
+        'Linear and polynomial regression, gradient descent contour dynamics, bias-variance tradeoff, and regularisation.',
       href: '/learn/unit-3',
     },
     {
@@ -54,7 +53,6 @@ export function LandingPage() {
       title: 'Instances & Probabilistic Models',
       hours: 6,
       accent: 'violet',
-      color: 'bg-violet-500',
       icon: Database,
       description:
         'Bayes Theorem natural frequencies, Naive Bayes, Logistic Regression decision boundaries, ROC-AUC curves, and k-NN.',
@@ -65,10 +63,9 @@ export function LandingPage() {
       title: 'Linear & Decision Models',
       hours: 8,
       accent: 'rose',
-      color: 'bg-rose-500',
       icon: Search,
       description:
-        'Decision trees Gini/Entropy splitting, SVM maximum margins with 2D→3D kernel trick, and Bagging/Boosting ensembles.',
+        'Decision trees Gini and Entropy splitting, SVM maximum margins with kernel trick, and Bagging and Boosting ensembles.',
       href: '/learn/unit-5',
     },
     {
@@ -76,56 +73,60 @@ export function LandingPage() {
       title: 'Unsupervised Learning',
       hours: 8,
       accent: 'teal',
-      color: 'bg-teal-500',
       icon: BookOpen,
       description:
-        'Apriori association rules, k-Means elbow/silhouette, Hierarchical dendrograms, DBSCAN density, and PCA axes rotation.',
+        'Apriori association rules, k-Means elbow and silhouette, Hierarchical dendrograms, DBSCAN density, and PCA axes rotation.',
       href: '/learn/unit-6',
     },
   ];
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-6xl px-6 py-12 sm:px-12">
       {/* Hero Section */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-unit-2/10 border border-unit-2/20 text-unit-2 text-xs font-bold uppercase tracking-wider mb-6">
-          <Sparkles className="h-3.5 w-3.5" />
-          MIT AOE · B.Tech Third Year (2304322T)
-        </div>
+      <section className="text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
+        <AnimatedBadge className="mb-6">MIT AOE · Third Year B.Tech (2304322T)</AnimatedBadge>
 
-        <h1 className="font-display text-4xl font-extrabold tracking-tight text-studio-900 dark:text-studio-50 sm:text-6xl mb-6">
+        <h1 className="text-[42px] font-semibold tracking-tight leading-tight md:text-6xl lg:text-7xl text-foreground mb-4 font-display">
           AIML Studio
         </h1>
 
-        <p className="font-display text-xl sm:text-2xl font-bold text-unit-2 mb-4">
-          "Don't just read the algorithm. Watch it think, break it, fix it, and then code it."
+        <p className="mt-2 max-w-2xl text-base text-neutral-700 sm:text-lg md:text-xl dark:text-neutral-400 leading-relaxed">
+          Don't just read the algorithm.{' '}
+          <span className="highlight">Watch it think, break it, fix it, and then code it</span>.
         </p>
 
-        <p className="text-base sm:text-lg text-studio-600 dark:text-studio-300 leading-relaxed mb-8 max-w-2xl mx-auto">
-          An interactive, zero-cost, visual learning studio built specifically for the Rev. 2023 NEP
-          Artificial Intelligence & Machine Learning syllabus.
+        <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-400 max-w-xl">
+          An interactive learning studio tailored for the Rev. 2023 NEP Artificial Intelligence and
+          Machine Learning syllabus.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <Link to="/learn/unit-2/bfs">
-            <Button variant="primary" size="lg" className="shadow-studio-lg">
-              Explore Demo Vertical Slice (BFS)
-              <ArrowRight className="h-4 w-4 ml-2" />
-            </Button>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            to="/learn/unit-1"
+            className="btn-asym inline-flex h-9 items-center gap-2 bg-neutral-900 px-4 text-sm font-medium text-white transition-colors duration-200 hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+          >
+            Start Unit 1: AI Basics
+            <ArrowUpRight className="-ml-1 size-4" aria-hidden="true" />
           </Link>
-          <a href="#units">
-            <Button variant="outline" size="lg">
-              View Syllabus Map (45 Hours)
-            </Button>
+          <a
+            href="#units"
+            className="btn-asym-mirror inline-flex h-9 items-center gap-2 border border-border bg-transparent px-4 text-sm font-medium text-foreground transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-900"
+          >
+            Explore syllabus
+            <ChevronsDown className="-ml-1 size-4" aria-hidden="true" />
           </a>
         </div>
-      </div>
+      </section>
 
       {/* Course Outcomes (CO1 - CO4) */}
       <section className="mb-20">
-        <h2 className="font-display text-xl font-bold text-center text-studio-900 dark:text-studio-50 mb-8">
-          Target Course Outcomes (NEP Framework)
+        <h2 className="text-2xl font-medium sm:text-[30px] text-center text-foreground mb-3 font-display">
+          Target course outcomes
         </h2>
+        <p className="text-center text-sm text-neutral-600 dark:text-neutral-400 mb-8 max-w-xl mx-auto">
+          Aligned with the NEP engineering framework: from fundamental{' '}
+          <span className="highlight">knowledge representation</span> to model evaluation.
+        </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             {
@@ -149,30 +150,32 @@ export function LandingPage() {
               desc: 'Analyze strengths, failure modes, and fundamental limitations of AI/ML approaches.',
             },
           ].map((co) => (
-            <Card key={co.id} className="p-5">
-              <div className="flex items-center justify-between mb-2">
-                <Badge variant="outline" size="sm">
-                  {co.id}
-                </Badge>
-                <span className="text-[11px] font-bold text-unit-2">{co.level}</span>
+            <Card key={co.id} className="p-5 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <Badge variant="outline" size="sm">
+                    {co.id}
+                  </Badge>
+                  <span className="text-[11px] font-mono text-neutral-500">{co.level}</span>
+                </div>
+                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  {co.desc}
+                </p>
               </div>
-              <p className="text-xs text-studio-600 dark:text-studio-400 leading-relaxed font-medium">
-                {co.desc}
-              </p>
             </Card>
           ))}
         </div>
       </section>
 
       {/* Unit Cards */}
-      <section id="units" className="mb-16">
+      <section id="units" className="mb-20">
         <div className="text-center mb-10">
-          <h2 className="font-display text-2xl sm:text-3xl font-bold text-studio-900 dark:text-studio-50">
-            Course Curriculum Units (45 Hours)
+          <h2 className="text-2xl font-medium sm:text-[30px] text-foreground font-display">
+            Course curriculum units
           </h2>
-          <p className="text-sm text-studio-500 mt-2">
-            Each unit is a complete interactive learning lab with step-through animations, quizzes,
-            and code.
+          <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2 max-w-xl mx-auto">
+            Explore 45 lecture hours of interactive labs with{' '}
+            <span className="highlight">step-through animations</span>, quizzes, and live code.
           </p>
         </div>
 
@@ -180,13 +183,12 @@ export function LandingPage() {
           {units.map((u) => {
             const Icon = u.icon;
             return (
-              <Card key={u.number} interactive className="flex flex-col justify-between">
+              <Card key={u.number} className="flex flex-col justify-between group">
                 <div>
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        <span className={`w-2.5 h-2.5 rounded-full ${u.color}`}></span>
-                        <span className="text-xs font-bold uppercase tracking-wider text-studio-500">
+                        <span className="text-xs font-mono text-neutral-500">
                           Unit {u.number} · {u.hours} Hours
                         </span>
                       </div>
@@ -196,19 +198,19 @@ export function LandingPage() {
                         </Badge>
                       )}
                     </div>
-                    <CardTitle className="flex items-center gap-2">
-                      <Icon className="h-5 w-5 text-studio-700 dark:text-studio-300" />
+                    <CardTitle className="flex items-center gap-2 text-foreground">
+                      <Icon className="h-4 w-4 text-neutral-500" />
                       {u.title}
                     </CardTitle>
                     <CardDescription>{u.description}</CardDescription>
                   </CardHeader>
                 </div>
 
-                <CardContent className="pt-4 border-t border-studio-100 dark:border-studio-800">
+                <CardContent className="pt-4 border-t border-card-edge">
                   <Link to={u.href}>
-                    <Button variant="ghost" size="sm" className="w-full justify-between">
-                      <span>Start Learning</span>
-                      <ArrowRight className="h-4 w-4" />
+                    <Button variant="secondary" size="sm" className="w-full justify-between">
+                      <span>Start learning</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
                     </Button>
                   </Link>
                 </CardContent>

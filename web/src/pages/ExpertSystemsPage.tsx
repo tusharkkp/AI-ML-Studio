@@ -188,7 +188,7 @@ export function ExpertSystemsPage() {
             because identifying specific bacteria required 48 hours of culturing. MYCIN, a
             rule-based expert system developed by Edward Shortliffe, matched 600 rules against
             patient vitals and outperformed Stanford medical faculty in selecting correct
-            antimicrobial therapy—with an explanation for every single choice.&rdquo;
+            antimicrobial therapy, with an explanation for every single choice.&rdquo;
           </p>
         </Card>
       </section>
@@ -272,7 +272,7 @@ export function ExpertSystemsPage() {
               {prediction === 'tacit' ? (
                 <p className="text-emerald-700 dark:text-emerald-300 font-medium">
                   <strong>Exactly right!</strong> Human expertise is largely{' '}
-                  <em>tacit and heuristic</em>—compiled from thousands of past patient encounters.
+                  <em>tacit and heuristic</em>, compiled from thousands of past patient encounters.
                   This communication gap between human instinct and formal computer logic is the
                   renowned <strong>Knowledge Acquisition Bottleneck</strong>.
                 </p>

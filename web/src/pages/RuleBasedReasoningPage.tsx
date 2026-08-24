@@ -173,7 +173,7 @@ export function RuleBasedReasoningPage() {
           Rule-Based Reasoning: Forward &amp; Backward Chaining
         </h1>
         <p className="text-lg text-warm-600 dark:text-warm-400 font-sans leading-relaxed">
-          How production expert systems derive actionable insights from Horn clauses—contrasting
+          How production expert systems derive actionable insights from Horn clauses, contrasting
           bottom-up data-driven exploration against top-down goal-directed hypothesis testing.
         </p>
       </header>
@@ -569,8 +569,8 @@ def forward_chain(rules, initial_facts, target_goal=None):
           >
             <p className="text-xs leading-relaxed">
               Rule engines (like Drools, CLIPS, and modern neuro-symbolic wrappers) remain dominant
-              in regulated industries—tax law, avionics, medical eligibility, compliance—where 100%
-              deterministic traceability and legal auditability are strictly mandated.
+              in regulated industries (tax law, avionics, medical eligibility, compliance) where
+              100% deterministic traceability and legal auditability are strictly mandated.
             </p>
           </Callout>
         </div>

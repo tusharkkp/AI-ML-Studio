@@ -85,15 +85,11 @@ export function Quiz({ conceptId, items, unitAccent = 2, onPass }: QuizProps) {
   const isPassed = score >= 75;
 
   return (
-    <div className="my-8 rounded-2xl border border-studio-200 bg-white p-6 shadow-studio dark:border-studio-800 dark:bg-studio-900">
-      <div className="flex items-center justify-between border-b border-studio-100 pb-4 dark:border-studio-800">
+    <div className="my-8 rounded-2xl border border-card-edge bg-card-fill backdrop-blur-sm p-6">
+      <div className="flex items-center justify-between border-b border-card-edge pb-4">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-unit-2">
-            Knowledge Check
-          </span>
-          <h3 className="font-display text-xl font-bold text-studio-900 dark:text-studio-50">
-            Check Yourself
-          </h3>
+          <span className="text-xs font-mono text-neutral-500">Knowledge check</span>
+          <h3 className="font-montserrat text-xl font-semibold text-foreground">Check Yourself</h3>
         </div>
         <span className="text-xs font-medium text-studio-500">
           {answeredCount} of {totalQuestions} answered

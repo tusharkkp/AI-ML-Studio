@@ -88,7 +88,7 @@ export function SelfDrivingLab() {
   };
 
   return (
-    <Card className="p-6 my-6 border-warm-200 dark:border-warm-800 bg-white dark:bg-warm-900/40 shadow-sm">
+    <Card className="p-6 my-6 border-warm-200 dark:border-warm-800 bg-white dark:bg-warm-900/40">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-warm-200 dark:border-warm-800 pb-4">
         <div>
           <span className="text-xs uppercase tracking-wider font-semibold text-warm-500">
@@ -144,15 +144,13 @@ export function SelfDrivingLab() {
         <div className="absolute top-2 right-4 flex items-center gap-1.5 p-1.5 rounded-lg bg-black/80 border border-stone-600">
           <div
             className={`w-3.5 h-3.5 rounded-full ${
-              activeStep.sensors.cameraTrafficLight === 'red'
-                ? 'bg-rose-500 shadow-lg shadow-rose-500/50'
-                : 'bg-rose-950'
+              activeStep.sensors.cameraTrafficLight === 'red' ? 'bg-rose-500' : 'bg-rose-950'
             }`}
           />
           <div
             className={`w-3.5 h-3.5 rounded-full ${
               activeStep.sensors.cameraTrafficLight === 'green'
-                ? 'bg-emerald-500 shadow-lg shadow-emerald-500/50'
+                ? 'bg-emerald-500'
                 : 'bg-emerald-950'
             }`}
           />
@@ -187,7 +185,7 @@ export function SelfDrivingLab() {
           </div>
 
           <div
-            className={`w-14 h-7 rounded-md border flex items-center justify-between px-1.5 text-[9px] font-bold text-white shadow-lg ${
+            className={`w-14 h-7 rounded-md border flex items-center justify-between px-1.5 text-[9px] font-bold text-white ${
               activeStep.controls.emergencyBrakeActive
                 ? 'bg-rose-600 border-rose-400 ring-2 ring-rose-400'
                 : 'bg-blue-600 border-blue-400'
@@ -213,7 +211,7 @@ export function SelfDrivingLab() {
               transform: 'translateY(-50%)',
             }}
           >
-            <div className="w-14 h-7 rounded-md bg-stone-700 border border-stone-500 flex items-center justify-center text-[9px] font-bold text-stone-200 shadow-md">
+            <div className="w-14 h-7 rounded-md bg-stone-700 border border-stone-500 flex items-center justify-center text-[9px] font-bold text-stone-200">
               TARGET
             </div>
             <span className="text-[9px] font-mono text-stone-400 mt-0.5">

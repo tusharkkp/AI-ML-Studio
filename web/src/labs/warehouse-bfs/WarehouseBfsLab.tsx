@@ -107,22 +107,20 @@ export function WarehouseBfsLab({
 
   return (
     <div
-      className={`flex flex-col space-y-5 rounded-2xl border border-studio-200 bg-studio-50/70 p-5 shadow-studio dark:border-studio-800 dark:bg-studio-900/60 ${className}`}
+      className={`flex flex-col space-y-5 rounded-2xl border border-card-edge bg-card-fill backdrop-blur-sm p-5 ${className}`}
     >
       {/* Header bar: Presets & Make it fail */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center space-x-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-studio-500">
-            Preset:
-          </span>
+          <span className="text-xs font-mono text-neutral-500">Preset:</span>
           {PRESETS.map((p) => (
             <button
               key={p.id}
               onClick={() => setSelectedPresetId(p.id)}
               className={`text-xs px-3 py-1.5 rounded-lg font-semibold transition-all ${
                 selectedPresetId === p.id
-                  ? 'bg-unit-2 text-white shadow-subtle'
-                  : 'bg-white text-studio-700 hover:bg-studio-100 dark:bg-studio-800 dark:text-studio-200 border border-studio-200 dark:border-studio-700'
+                  ? 'bg-neutral-900 text-white dark:bg-white dark:text-black'
+                  : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200 border border-border'
               }`}
             >
               {p.name}
@@ -229,7 +227,7 @@ export function WarehouseBfsLab({
       <div className="flex items-center justify-center p-3 rounded-xl bg-white dark:bg-studio-950 border border-studio-200 dark:border-studio-800 overflow-x-auto">
         <svg
           viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-          className="max-h-[380px] w-auto drop-shadow-sm select-none"
+          className="max-h-[380px] w-auto select-none"
           role="img"
           aria-label={`Warehouse grid search visualization at step ${currentStep.index + 1}`}
         >

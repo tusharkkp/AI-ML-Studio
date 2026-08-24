@@ -72,7 +72,7 @@ export function MedicalDiagnosisLab() {
   };
 
   return (
-    <Card className="p-6 my-6 border-warm-200 dark:border-warm-800 bg-white dark:bg-warm-900/40 shadow-sm">
+    <Card className="p-6 my-6 border-warm-200 dark:border-warm-800 bg-white dark:bg-warm-900/40">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-warm-200 dark:border-warm-800 pb-4">
         <div>
           <span className="text-xs uppercase tracking-wider font-semibold text-warm-500">
@@ -150,7 +150,7 @@ export function MedicalDiagnosisLab() {
               {showWhy && consultation.whyExplanation && (
                 <div className="p-3 mb-4 rounded-lg bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800 text-xs text-purple-900 dark:text-purple-200 leading-relaxed">
                   <div className="font-bold mb-1">
-                    [Explanation Facility — &lsquo;Why&rsquo; Response]
+                    [Explanation Facility: &lsquo;Why&rsquo; Response]
                   </div>
                   {consultation.whyExplanation.rationale}
                 </div>
@@ -215,7 +215,7 @@ export function MedicalDiagnosisLab() {
               {showHow && (
                 <div className="p-4 mt-3 bg-white dark:bg-warm-900 border border-warm-200 dark:border-warm-700 rounded-lg text-xs space-y-2">
                   <div className="font-bold text-blue-900 dark:text-blue-200">
-                    [Explanation Facility — &lsquo;How&rsquo; Proof Tree]
+                    [Explanation Facility: &lsquo;How&rsquo; Proof Tree]
                   </div>
                   <p className="text-warm-600 dark:text-warm-400">
                     Conclusion was derived via Rule{' '}

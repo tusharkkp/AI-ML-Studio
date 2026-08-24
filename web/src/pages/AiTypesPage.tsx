@@ -93,7 +93,7 @@ export function AiTypesPage() {
           text: 'Artificial Narrow Intelligence (ANI)',
           isCorrect: true,
           explanation:
-            'All modern systems — including LLMs, facial recognition, recommendation engines, and medical imaging — are ANI systems specialized in pattern recognition.',
+            'All modern systems (including LLMs, facial recognition, recommendation engines, and medical imaging) are ANI systems specialized in pattern recognition.',
         },
         {
           id: 'C',
@@ -221,8 +221,8 @@ export function AiTypesPage() {
             The World Champion That Can't Play Tic-Tac-Toe
           </h2>
           <p className="text-base text-studio-700 dark:text-studio-300 leading-relaxed">
-            In 2016, DeepMind’s AlphaGo played "Move 37" against 18-time world champion Lee Sedol —
-            a move so creative it stunned master commentators. Yet, if you placed a 3×3 Tic-Tac-Toe
+            In 2016, DeepMind’s AlphaGo played "Move 37" against 18-time world champion Lee Sedol: a
+            move so creative it stunned master commentators. Yet, if you placed a 3×3 Tic-Tac-Toe
             board in front of AlphaGo, it could not make a single legal move. Why? Because AlphaGo
             is an <strong>Artificial Narrow Intelligence</strong>.
           </p>
@@ -303,7 +303,7 @@ export function AiTypesPage() {
           Test your conceptual understanding by categorizing these systems into ANI, AGI, or ASI:
         </p>
 
-        <div className="rounded-2xl border border-studio-200 bg-studio-50/70 p-5 dark:border-studio-800 dark:bg-studio-900/60 shadow-studio space-y-4">
+        <div className="rounded-2xl border border-card-edge bg-card-fill backdrop-blur-sm p-5 space-y-4">
           <div className="divide-y divide-studio-200 dark:divide-studio-800">
             {CLASSIFIER_ITEMS.map((item) => {
               const selected = userSelections[item.id];

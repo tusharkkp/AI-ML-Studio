@@ -206,9 +206,9 @@ export function AgiFrontiersPage() {
                 ) : (
                   <p>
                     <strong>The Systems Reply:</strong> While the man inside does not understand
-                    Chinese, the <em>whole system</em>—the man, the rulebook, and the scratchpad—as
-                    a unified computational entity DOES understand Chinese, just as no single neuron
-                    in your brain understands English!
+                    Chinese, the <em>whole system</em> (the man, the rulebook, and the scratchpad)
+                    as a unified computational entity DOES understand Chinese, just as no single
+                    neuron in your brain understands English!
                   </p>
                 )}
               </div>
@@ -272,7 +272,7 @@ export function AgiFrontiersPage() {
               and RL compute will organically induce world models and true AGI. Conversely,{' '}
               <strong>Neuro-Symbolic</strong> researchers (like Gary Marcus and Judea Pearl)
               maintain that deep learning cannot perform causal reasoning or formal mathematical
-              proofs without symbolic knowledge structures—the very foundation explored in this
+              proofs without symbolic knowledge structures, the very foundation explored in this
               unit!
             </p>
           </Callout>

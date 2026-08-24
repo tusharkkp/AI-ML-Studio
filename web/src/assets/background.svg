@@ -1,0 +1,38 @@
+<svg width="2842" height="1132" viewBox="0 0 2842 1132" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Central warm glow -->
+    <radialGradient id="glow" cx="50%" cy="15%" r="45%" fx="50%" fy="15%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.22" />
+      <stop offset="35%" stop-color="#c2410c" stop-opacity="0.12" />
+      <stop offset="70%" stop-color="#7c2d12" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="ambient" cx="50%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.08" />
+      <stop offset="50%" stop-color="#9a3412" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <!-- Hexagon pattern -->
+    <pattern id="hex-grid" width="56" height="97" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
+      <path d="M28 0 L56 16.17 L56 48.5 L28 64.67 L0 48.5 L0 16.17 Z M28 48.5 L56 64.67 L56 97 L28 113.17 L0 97 L0 64.67 Z" 
+            stroke="white" stroke-width="0.75" stroke-opacity="0.035" fill="none" />
+      <path d="M56 16.17 L84 32.33 L84 64.67 L56 80.83 L28 64.67 L28 32.33 Z" 
+            stroke="white" stroke-width="0.75" stroke-opacity="0.035" fill="none" />
+      <circle cx="28" cy="48.5" r="1" fill="white" fill-opacity="0.06" />
+    </pattern>
+  </defs>
+
+  <!-- Base dark layer -->
+  <rect width="2842" height="1132" fill="#0a0a0a" />
+
+  <!-- Ambient warm fills -->
+  <rect width="2842" height="1132" fill="url(#ambient)" />
+  <ellipse cx="1421" cy="220" rx="900" ry="420" fill="url(#glow)" />
+
+  <!-- Hexagonal lattice -->
+  <rect width="2842" height="1132" fill="url(#hex-grid)" />
+
+  <!-- Subtle accent highlight arc -->
+  <ellipse cx="1421" cy="0" rx="720" ry="260" stroke="#ea580c" stroke-width="1" stroke-opacity="0.12" fill="none" />
+  <ellipse cx="1421" cy="0" rx="1050" ry="380" stroke="#f97316" stroke-width="0.75" stroke-opacity="0.06" fill="none" />
+</svg>

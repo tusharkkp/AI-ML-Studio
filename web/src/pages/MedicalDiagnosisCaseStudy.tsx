@@ -210,7 +210,7 @@ recipient_antibodies('O-', ['Anti-A', 'Anti-B', 'Anti-Rh']).`}</pre>
                 Required clinicians to manually type 40 symptoms into a slow green-screen terminal.
               </li>
               <li>
-                Legal liability: if MYCIN gave bad advice, who is sued—Stanford, the programmer, or
+                Legal liability: if MYCIN gave bad advice, who is sued: Stanford, the programmer, or
                 the doctor?
               </li>
               <li>Zero integration with early non-digital paper medical charts.</li>

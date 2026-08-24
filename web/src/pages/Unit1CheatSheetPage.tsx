@@ -22,7 +22,7 @@ export function Unit1CheatSheetPage() {
             </span>
           </nav>
           <h1 className="text-2xl font-extrabold text-warm-950 dark:text-warm-50 font-serif">
-            Unit 1: Basics of AI — Master Revision Sheet
+            Unit 1: Basics of AI (Master Revision Sheet)
           </h1>
         </div>
 

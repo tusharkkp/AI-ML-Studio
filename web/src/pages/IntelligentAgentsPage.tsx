@@ -275,7 +275,7 @@ export function IntelligentAgentsPage() {
                 <td className="p-3">3</td>
                 <td className="p-3">[A, Clean]</td>
                 <td className="p-3 text-rose-600 font-bold">Move Right (Infinite loop!)</td>
-                <td className="p-3">—</td>
+                <td className="p-3">None</td>
                 <td className="p-3 text-studio-400 font-sans">Already halted</td>
               </tr>
             </tbody>

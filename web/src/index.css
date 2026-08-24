@@ -3,38 +3,77 @@
 @tailwind utilities;
 
 :root {
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius: 0.625rem;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', 'Manrope', system-ui, sans-serif;
+  --font-brand: 'Onest', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Theme tokens - Direction A (Modern Editorial Studio) */
-  --bg-primary: #fbfbfd;
-  --bg-surface: #ffffff;
-  --bg-subtle: #f1f5f9;
-  --border-subtle: #e2e8f0;
+  /* ChaiUI Tokens (Light) */
+  --background: #ffffff;
+  --foreground: #171717;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --primary: #262626;
+  --primary-foreground: #fafafa;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --border: #e5e5e5;
+  --brand: #ea580c;
+  --highlight: #854d0e; /* yellow-800 */
+  --card-edge: rgba(120, 53, 15, 0.15); /* amber-900/15 */
+  --card-edge-hover: rgba(120, 53, 15, 0.28);
+  --card-fill: rgba(255, 255, 255, 0.7);
+
+  /* Compatibility mappings */
+  --bg-primary: var(--background);
+  --bg-surface: var(--card);
+  --bg-subtle: var(--muted);
+  --border-subtle: var(--border);
   --border-strong: #cbd5e1;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --accent-ring: rgba(2, 132, 199, 0.25);
+  --text-primary: var(--foreground);
+  --text-secondary: #525252;
+  --text-muted: var(--muted-foreground);
+  --accent-ring: rgba(234, 88, 12, 0.2);
 }
 
 .dark {
-  --bg-primary: #0b0f19;
-  --bg-surface: #111827;
-  --bg-subtle: #1e293b;
-  --border-subtle: #1f2937;
-  --border-strong: #374151;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --accent-ring: rgba(56, 189, 248, 0.3);
+  /* ChaiUI Tokens (Dark - Near-black default) */
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #141414;
+  --card-foreground: #fafafa;
+  --primary: #f5f5f5;
+  --primary-foreground: #171717;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --border: rgba(255, 255, 255, 0.1);
+  --brand: #f97316;
+  --highlight: #ffedd5; /* orange-100 */
+  --card-edge: rgba(255, 247, 237, 0.15); /* orange-50/15 */
+  --card-edge-hover: rgba(255, 247, 237, 0.3);
+  --card-fill: rgba(0, 0, 0, 0.2);
+
+  /* Compatibility mappings */
+  --bg-primary: var(--background);
+  --bg-surface: #121212;
+  --bg-subtle: #1c1c1c;
+  --border-subtle: var(--border);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --text-primary: var(--foreground);
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+  --accent-ring: rgba(249, 115, 22, 0.25);
 }
 
 @layer base {
+  * {
+    border-color: var(--border);
+  }
+
   body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+    background-color: var(--background);
+    color: var(--foreground);
     font-family: var(--font-sans);
   }
 
@@ -46,6 +85,65 @@
   h6 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* The highlight phrase: one per paragraph */
+  .highlight {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    text-transform: capitalize;
+    color: var(--highlight);
+  }
+
+  /* The warm hairline card: no shadow, faint fill, slight blur */
+  .card-chai {
+    border-radius: calc(var(--radius) + 4px);
+    border: 1px solid var(--card-edge);
+    background: var(--card-fill);
+    backdrop-filter: blur(4px);
+    box-shadow: none !important;
+    transition:
+      border-color 300ms,
+      opacity 300ms;
+  }
+
+  .card-chai:hover {
+    border-color: var(--card-edge-hover);
+  }
+
+  /* Asymmetric corners: solid takes top-right + bottom-left, outline mirrors */
+  .btn-asym {
+    border-radius: 0 var(--radius) 0 var(--radius);
+  }
+
+  .btn-asym-mirror {
+    border-radius: var(--radius) 0 var(--radius) 0;
+  }
+
+  /* Backdrop: warm hexagon glow at top, masked to fade out */
+  .chai-backdrop {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2842px;
+    max-width: none;
+    transform: translateX(-50%);
+    z-index: -50;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  }
+
+  :root:not(.dark) .chai-backdrop {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
+
+@keyframes chai-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 

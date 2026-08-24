@@ -208,7 +208,7 @@ export function BfsConceptPage() {
         <Callout type="tip" title="Why FIFO is the Secret">
           Because the queue is First-In First-Out, nodes added earlier (closer to the start) are
           always pulled off and expanded before nodes added later (further away). No math tricks
-          needed — the data structure itself enforces the order!
+          needed: the data structure itself enforces the order!
         </Callout>
       </section>
 
@@ -261,7 +261,7 @@ export function BfsConceptPage() {
             <tbody className="divide-y divide-studio-100 dark:divide-studio-800 font-mono">
               <tr className="bg-white dark:bg-studio-900">
                 <td className="p-3">0</td>
-                <td className="p-3 text-studio-400">—</td>
+                <td className="p-3 text-studio-400">None</td>
                 <td className="p-3 text-unit-2 font-bold">[A]</td>
                 <td className="p-3">{'{A}'}</td>
                 <td className="p-3 font-sans">Initialize with start node A.</td>
@@ -415,7 +415,7 @@ def bfs(graph, start, goal):
             branching factor is \(b = 10\) at depth \(d = 12\)?
           </p>
           <p className="text-sm text-studio-700 dark:text-studio-300 leading-relaxed">
-            At \(b = 10\) and depth \(d = 12\), BFS requires storing over \(10^{12}\) nodes —
+            At \(b = 10\) and depth \(d = 12\), BFS requires storing over \(10^{12}\) nodes:
             exceeding <strong>1 Terabyte of RAM</strong>. In modern computers, BFS will crash with
             an <code>OutOfMemoryError</code> long before the CPU finishes running. This is why AI
             researchers invented heuristic search like A*.

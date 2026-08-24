@@ -116,7 +116,7 @@ export function SelfDrivingCaseStudy() {
           <Card className="p-4 border-cyan-200 dark:border-cyan-800 bg-cyan-50/40 dark:bg-cyan-950/20">
             <h4 className="font-bold text-cyan-900 dark:text-cyan-100 mb-1">Optical Cameras</h4>
             <p className="text-warm-600 dark:text-warm-400 mb-2">
-              <strong>Superpower:</strong> High-resolution semantic understanding—reads road text,
+              <strong>Superpower:</strong> High-resolution semantic understanding: reads road text,
               traffic light colors, and painted lane lines.
             </p>
             <p className="text-rose-600 dark:text-rose-400 font-medium">
@@ -238,7 +238,7 @@ export function SelfDrivingCaseStudy() {
             <li>Option C: Swerve off the cliff edge.</li>
           </ul>
           <p className="text-xs text-warm-700 dark:text-warm-300 leading-relaxed font-semibold">
-            How do you write a utility function for human lives? Who decides the weights—the
+            How do you write a utility function for human lives? Who decides the weights: the
             passenger, the automaker, or the government? These questions bridge Unit 1 technical
             architectures directly into Ethical Considerations.
           </p>

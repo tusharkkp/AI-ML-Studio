@@ -76,7 +76,7 @@ export function Player<S>({
 
   return (
     <div
-      className={`flex flex-col space-y-3 rounded-xl border border-studio-200 bg-white p-4 shadow-subtle dark:border-studio-800 dark:bg-studio-900 ${className}`}
+      className={`flex flex-col space-y-3 rounded-xl border border-card-edge bg-card-fill backdrop-blur-sm p-4 ${className}`}
     >
       {/* Metrics strip */}
       {currentStep?.metrics && Object.keys(currentStep.metrics).length > 0 && (

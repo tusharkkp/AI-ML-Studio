@@ -5,6 +5,22 @@ export default {
   theme: {
     extend: {
       colors: {
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        primary: {
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
+        },
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+        border: 'var(--border)',
+        brand: 'var(--brand)',
+        highlight: 'var(--highlight)',
+        'card-edge': 'var(--card-edge)',
+        'card-edge-hover': 'var(--card-edge-hover)',
+        'card-fill': 'var(--card-fill)',
         studio: {
           50: '#F8FAFC',
           100: '#F1F5F9',
@@ -28,14 +44,24 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Manrope', 'system-ui', 'sans-serif'],
+        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        montserrat: ['Montserrat', 'system-ui', 'sans-serif'],
+        brand: ['Onest', 'system-ui', 'sans-serif'],
+        display: ['Montserrat', 'Manrope', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
       boxShadow: {
-        subtle: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        studio: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)',
-        'studio-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.05)',
+        subtle: 'none',
+        studio: 'none',
+        'studio-lg': 'none',
+      },
+      animation: {
+        'chai-spin': 'chai-spin 4s linear infinite',
       },
     },
   },
