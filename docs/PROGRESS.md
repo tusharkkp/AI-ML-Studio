@@ -1,26 +1,34 @@
-# PROGRESS — AIML Studio
+# PROGRESS: AIML Studio
 
 ## Now
 
-- **Phase:** 2 (Unit 1 — Basics of AI)
-- **Task:** T2.15 Phase 2 Exit Gate Complete & Ready for Human Sign-Off.
-- **Status:** All Phase 2 Batches 1–4 complete and verified green (`verify:phase` green, `verify:content` green, `check:bundle` green: 67 tests passing across 13 test files, 182.59 KB gzip JS <= 200 KB budget).
-- **Last green commit:** `e7e6b97` `feat(unit1): expert systems, medical diagnosis case study, and self-driving vehicle simulation`
+- **Phase:** 3 (Unit 2: AI Search Strategies)
+- **Task:** Phase 3 Plan Mode (Implementation Plan authored in artifact `phase-3-implementation-plan.md`, awaiting user sign-off).
+- **Status:** Phase 2 and ChaiUI enhancements approved and signed off. Ready for Batch 1 (T3.01, T3.02, T3.03).
+- **Last green commit:** `9fe0279` `feat(ui): enhance frontend with ChaiUI design system and styling`
 
 ## Phase Checklist
 
-- [x] **Phase 0 — Discovery & Plan** _(Approved by Human)_
-- [x] **Phase 1 — Platform Foundation & Vertical Slice (BFS)** _(Signed Off by Human)_
-- [x] **Phase 2 — Unit 1: Basics of AI (8 hrs)** _(Batches 1, 2, 3, 4 complete — 100% verified, awaiting Human Sign-Off)_
-- [ ] **Phase 3 — Unit 2: AI Search Strategies (8 hrs)**
-- [ ] **Phase 4 — Unit 3: ML Fundamentals (7 hrs)**
-- [ ] **Phase 5 — Unit 4: Instances & Probabilistic Models (6 hrs)**
-- [ ] **Phase 6 — Unit 5: Linear & Decision Models (8 hrs)**
-- [ ] **Phase 7 — Unit 6: Unsupervised Learning (8 hrs)**
-- [ ] **Phase 8 — Integration, Exam Prep, Capstone & Chooser**
-- [ ] **Phase 9 — Hardening, Accessibility, Verification & $0 Deploy**
+- [x] **Phase 0: Discovery & Plan** _(Approved by Human)_
+- [x] **Phase 1: Platform Foundation & Vertical Slice (BFS)** _(Signed Off by Human)_
+- [x] **Phase 2: Unit 1: Basics of AI (8 hrs)** _(Signed Off by Human)_
+- [ ] **Phase 3: Unit 2: AI Search Strategies (8 hrs)** _(Plan Mode Awaiting Approval)_
+- [ ] **Phase 4: Unit 3: ML Fundamentals (7 hrs)**
+- [ ] **Phase 5: Unit 4: Instances & Probabilistic Models (6 hrs)**
+- [ ] **Phase 6: Unit 5: Linear & Decision Models (8 hrs)**
+- [ ] **Phase 7: Unit 6: Unsupervised Learning (8 hrs)**
+- [ ] **Phase 8: Integration, Exam Prep, Capstone & Chooser**
+- [ ] **Phase 9: Hardening, Accessibility, Verification & $0 Deploy**
 
 ## Task Log (latest first)
+
+- **2026-10-30 | ChaiUI Design System Frontend Enhancement Complete & Verified**
+  - Restyled entire frontend to ChaiUI design system (`oklch(0.145 0 0)` dark background, Google Fonts Manrope + Montserrat + Onest, no drop shadows, 1 highlight phrase per paragraph, asymmetric solid buttons, warm hairline cards).
+  - Authored authentic 2842x1132 SVG backdrop with hexagon glow and radial mask.
+  - Replaced all em dashes with colons, commas, or parentheses.
+  - All L0-L5 verification checks green (67 tests, 183.97 KB gzip JS). Commit: `9fe0279`.
+- **2026-10-30 | Phase 2 Signed Off by Human**
+  - Unit 1 completed with all 14 topics, 8 pure engines, interactive labs, 20-Q exam, and cheat sheet. Commit: `7eb85bf`.
 
 - **2026-10-30 | Phase 2 Batch 4 Implemented & Exit Gate Verified (Phase 2 Complete)**
   - Implemented Joseph Weizenbaum 1966 ELIZA pattern-matching engine (`web/src/engines/chatbot/eliza/`) with regex decomposition, transformation rules, memory buffers, and pronoun reversal.
