@@ -96,8 +96,8 @@ export function LandingPage() {
         </p>
 
         <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-400 max-w-xl">
-          An interactive learning studio tailored for the Rev. 2023 NEP Artificial Intelligence and
-          Machine Learning syllabus.
+          An interactive learning studio tailored Artificial Intelligence and Machine Learning
+          syllabus.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

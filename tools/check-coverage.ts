@@ -16,6 +16,7 @@ let coveredInPhase = 0;
 
 // Currently completed concept routes
 const COMPLETED_TOPIC_IDS = new Set([
+  'u2-state-space-search',
   'u2-uninformed-search',
   'u1-history-foundations',
   'u1-types-applications',

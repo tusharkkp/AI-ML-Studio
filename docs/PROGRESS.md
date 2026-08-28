@@ -3,8 +3,8 @@
 ## Now
 
 - **Phase:** 3 (Unit 2: AI Search Strategies)
-- **Task:** Phase 3 Plan Mode (Implementation Plan authored in artifact `phase-3-implementation-plan.md`, awaiting user sign-off).
-- **Status:** Phase 2 and ChaiUI enhancements approved and signed off. Ready for Batch 1 (T3.01, T3.02, T3.03).
+- **Task:** Phase 3 Batch 1 Complete (T3.01, T3.02, T3.03 verified). Next: Batch 2 (T3.04 Heuristic Search, T3.05 Local Search, T3.06 Case Study 1: GPS Navigation).
+- **Status:** Batch 1 verified green across L0-L5 (76 tests, 59.83 KB gzip initial route JS). Ready for Batch 2.
 - **Last green commit:** `9fe0279` `feat(ui): enhance frontend with ChaiUI design system and styling`
 
 ## Phase Checklist
@@ -12,7 +12,7 @@
 - [x] **Phase 0: Discovery & Plan** _(Approved by Human)_
 - [x] **Phase 1: Platform Foundation & Vertical Slice (BFS)** _(Signed Off by Human)_
 - [x] **Phase 2: Unit 1: Basics of AI (8 hrs)** _(Signed Off by Human)_
-- [ ] **Phase 3: Unit 2: AI Search Strategies (8 hrs)** _(Plan Mode Awaiting Approval)_
+- [ ] **Phase 3: Unit 2: AI Search Strategies (8 hrs)** _(In Progress: Batch 1 Complete)_
 - [ ] **Phase 4: Unit 3: ML Fundamentals (7 hrs)**
 - [ ] **Phase 5: Unit 4: Instances & Probabilistic Models (6 hrs)**
 - [ ] **Phase 6: Unit 5: Linear & Decision Models (8 hrs)**
@@ -21,6 +21,13 @@
 - [ ] **Phase 9: Hardening, Accessibility, Verification & $0 Deploy**
 
 ## Task Log (latest first)
+
+- **2026-10-30 | Phase 3 Batch 1 Implemented & Verified**
+  - **T3.01 Unit 2 Master Directory:** Created Unit 2 curriculum landing page (`/learn/unit-2`) with 14 syllabus topics, time allocations, and progress indicators.
+  - **T3.02 State-Space Search & Problem Formulation:** Built pure state-transition simulator for Missionaries & Cannibals (`web/src/labs/state-space/StateSpaceLab.tsx`) with 16 legal state validations, step-by-step optimal 11-step solution player, and 14-section pedagogical concept page (`/learn/unit-2/state-space-search`).
+  - **T3.03 Uninformed Search Engine & Race Lab:** Implemented pure TypeScript DFS, DLS, IDDFS, and Bidirectional Search engines (`web/src/engines/search/uninformed/`) with 9 unit tests. Built interactive graph search visualizer (`web/src/labs/uninformed-search/UninformedSearchLab.tsx`) and 14-section concept page (`/learn/unit-2/uninformed-search`).
+  - **Route Code-Splitting:** Implemented `React.lazy` and `<Suspense>` in `web/src/app/App.tsx`, slashing initial route JS payload from 200.07 KB down to 59.83 KB gzip (budget: <= 200 KB).
+  - All L0–L5 checks green: 76 unit tests passing across 14 test suites, zero TypeScript errors, zero ESLint warnings, 100% Prettier compliant.
 
 - **2026-10-30 | ChaiUI Design System Frontend Enhancement Complete & Verified**
   - Restyled entire frontend to ChaiUI design system (`oklch(0.145 0 0)` dark background, Google Fonts Manrope + Montserrat + Onest, no drop shadows, 1 highlight phrase per paragraph, asymmetric solid buttons, warm hairline cards).
