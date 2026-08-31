@@ -45,10 +45,10 @@ Thumbs.db
 !.vscode/extensions.json
 .idea/
 
+# Local documentation and AI instructions
 01_MASTER_PROMPT.md
 AGENT.md
 Automated Verification Loops.md
 LOOP_ENGINEERING.md
 RECOMMENDED_WORKFLOW.md
-
 docs/
