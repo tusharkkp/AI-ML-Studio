@@ -17,6 +17,8 @@ const requiredEngineIds = [
   'agent/self-driving',
   'chatbot/eliza',
   'search/uninformed',
+  'search/astar',
+  'search/local',
 ];
 
 requiredEngineIds.forEach((id) => {

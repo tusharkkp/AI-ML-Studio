@@ -18,6 +18,9 @@ let coveredInPhase = 0;
 const COMPLETED_TOPIC_IDS = new Set([
   'u2-state-space-search',
   'u2-uninformed-search',
+  'u2-informed-search',
+  'u2-local-search',
+  'u2-case-gps',
   'u1-history-foundations',
   'u1-types-applications',
   'u1-ethics-impact',

@@ -69,6 +69,17 @@ const UninformedSearchPage = lazy(() =>
 const BfsConceptPage = lazy(() =>
   import('@/pages/BfsConceptPage').then((m) => ({ default: m.BfsConceptPage }))
 );
+const HeuristicSearchPage = lazy(() =>
+  import('@/pages/HeuristicSearchPage').then((m) => ({ default: m.HeuristicSearchPage }))
+);
+const LocalSearchPage = lazy(() =>
+  import('@/pages/LocalSearchPage').then((m) => ({ default: m.LocalSearchPage }))
+);
+const GpsNavigationCaseStudyPage = lazy(() =>
+  import('@/pages/GpsNavigationCaseStudyPage').then((m) => ({
+    default: m.GpsNavigationCaseStudyPage,
+  }))
+);
 const WarehouseLabPage = lazy(() =>
   import('@/pages/WarehouseLabPage').then((m) => ({ default: m.WarehouseLabPage }))
 );
@@ -146,6 +157,9 @@ export function App() {
               <Route path="/learn/unit-2" element={<Unit2LandingPage />} />
               <Route path="/learn/unit-2/state-space-search" element={<StateSpaceSearchPage />} />
               <Route path="/learn/unit-2/uninformed-search" element={<UninformedSearchPage />} />
+              <Route path="/learn/unit-2/informed-search" element={<HeuristicSearchPage />} />
+              <Route path="/learn/unit-2/local-search" element={<LocalSearchPage />} />
+              <Route path="/case-studies/gps-navigation" element={<GpsNavigationCaseStudyPage />} />
               <Route path="/learn/unit-2/bfs" element={<BfsConceptPage />} />
               <Route path="/lab/warehouse-bfs" element={<WarehouseLabPage />} />
               <Route path="*" element={<NotFoundPage />} />
