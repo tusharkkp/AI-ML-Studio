@@ -29,13 +29,15 @@ export function GpsNavigationCaseStudyPage() {
           id: 'B',
           text: 'Dijkstra algorithm is mathematically unable to handle one-way streets.',
           isCorrect: false,
-          explanation: 'Dijkstra works fine on directed graphs, but suffers from sheer combinatorial explosion.',
+          explanation:
+            'Dijkstra works fine on directed graphs, but suffers from sheer combinatorial explosion.',
         },
         {
           id: 'C',
           text: 'GPS satellites forbid running Dijkstra algorithms due to frequency interference.',
           isCorrect: false,
-          explanation: 'Satellites do not execute routing algorithms; they broadcast atomic timestamps.',
+          explanation:
+            'Satellites do not execute routing algorithms; they broadcast atomic timestamps.',
         },
       ],
     },
@@ -55,13 +57,15 @@ export function GpsNavigationCaseStudyPage() {
           id: 'B',
           text: 'h(n) = (Physical distance) * (Average city traffic speed).',
           isCorrect: false,
-          explanation: 'Multiplying distance by speed produces dimensionally invalid units (km * km/h).',
+          explanation:
+            'Multiplying distance by speed produces dimensionally invalid units (km * km/h).',
         },
         {
           id: 'C',
           text: 'h(n) must always be set to zero.',
           isCorrect: false,
-          explanation: 'Setting h=0 is admissible but reduces A* to Dijkstra, destroying the directional heuristic pruning.',
+          explanation:
+            'Setting h=0 is admissible but reduces A* to Dijkstra, destroying the directional heuristic pruning.',
         },
       ],
     },
@@ -87,7 +91,8 @@ export function GpsNavigationCaseStudyPage() {
           id: 'C',
           text: 'Storing the precomputed shortest path between every pair of intersections in a static lookup table.',
           isCorrect: false,
-          explanation: 'All-pairs lookup tables for 50M nodes require petabytes of storage, which is intractable.',
+          explanation:
+            'All-pairs lookup tables for 50M nodes require petabytes of storage, which is intractable.',
         },
       ],
     },

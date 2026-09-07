@@ -15,8 +15,7 @@ export function LocalSearchPage() {
   const quizItems = [
     {
       id: 'local-q1',
-      question:
-        'Why does basic steepest-ascent hill climbing fail on flat plateaus or shoulders?',
+      question: 'Why does basic steepest-ascent hill climbing fail on flat plateaus or shoulders?',
       options: [
         {
           id: 'A',
@@ -55,7 +54,8 @@ export function LocalSearchPage() {
           id: 'B',
           text: 'The acceptance probability increases to 1.0, making the search completely random.',
           isCorrect: false,
-          explanation: 'High temperature causes high acceptance; as T -> 0, acceptance approaches 0.',
+          explanation:
+            'High temperature causes high acceptance; as T -> 0, acceptance approaches 0.',
         },
         {
           id: 'C',
@@ -319,16 +319,16 @@ export function LocalSearchPage() {
               Topology of State-Space Landscapes
             </h3>
             <p>
-              A local search problem is defined by an objective function f: S &rarr; ℝ.
-              The state-space landscape contains four distinct topological structures:
+              A local search problem is defined by an objective function f: S &rarr; ℝ. The
+              state-space landscape contains four distinct topological structures:
             </p>
             <ul className="list-disc pl-5 space-y-1 text-xs text-neutral-400">
               <li>
                 <strong>Global Maximum:</strong> the state s* where f(s*) &ge; f(s) for all s ∈ S.
               </li>
               <li>
-                <strong>Local Maximum:</strong> a state s where f(s) &ge; f(n) for all
-                neighbors n ∈ Neighbors(s), but f(s) &lt; f(s*).
+                <strong>Local Maximum:</strong> a state s where f(s) &ge; f(n) for all neighbors n ∈
+                Neighbors(s), but f(s) &lt; f(s*).
               </li>
               <li>
                 <strong>Plateau (Flat Local Maximum):</strong> a connected region of states where

@@ -19,6 +19,8 @@ const requiredEngineIds = [
   'search/uninformed',
   'search/astar',
   'search/local',
+  'csp/solver',
+  'adversarial/minimax',
 ];
 
 requiredEngineIds.forEach((id) => {

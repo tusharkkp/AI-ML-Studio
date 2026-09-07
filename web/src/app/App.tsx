@@ -80,6 +80,13 @@ const GpsNavigationCaseStudyPage = lazy(() =>
     default: m.GpsNavigationCaseStudyPage,
   }))
 );
+const CspPage = lazy(() => import('@/pages/CspPage').then((m) => ({ default: m.CspPage })));
+const AdversarialSearchPage = lazy(() =>
+  import('@/pages/AdversarialSearchPage').then((m) => ({ default: m.AdversarialSearchPage }))
+);
+const ChessCaseStudyPage = lazy(() =>
+  import('@/pages/ChessCaseStudyPage').then((m) => ({ default: m.ChessCaseStudyPage }))
+);
 const WarehouseLabPage = lazy(() =>
   import('@/pages/WarehouseLabPage').then((m) => ({ default: m.WarehouseLabPage }))
 );
@@ -160,6 +167,9 @@ export function App() {
               <Route path="/learn/unit-2/informed-search" element={<HeuristicSearchPage />} />
               <Route path="/learn/unit-2/local-search" element={<LocalSearchPage />} />
               <Route path="/case-studies/gps-navigation" element={<GpsNavigationCaseStudyPage />} />
+              <Route path="/learn/unit-2/csp" element={<CspPage />} />
+              <Route path="/learn/unit-2/adversarial-search" element={<AdversarialSearchPage />} />
+              <Route path="/case-studies/chess-game-engine" element={<ChessCaseStudyPage />} />
               <Route path="/learn/unit-2/bfs" element={<BfsConceptPage />} />
               <Route path="/lab/warehouse-bfs" element={<WarehouseLabPage />} />
               <Route path="*" element={<NotFoundPage />} />
