@@ -24,6 +24,8 @@ const COMPLETED_TOPIC_IDS = new Set([
   'u2-csp',
   'u2-adversarial-search',
   'u2-case-chess',
+  'u2-self-genetic',
+  'u2-further-game-theory',
   'u1-history-foundations',
   'u1-types-applications',
   'u1-ethics-impact',

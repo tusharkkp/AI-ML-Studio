@@ -82,7 +82,7 @@ export function Unit2LandingPage() {
       kind: 'case-study',
     },
     {
-      id: 'u2-genetic-algorithms',
+      id: 'u2-self-genetic',
       title: 'Self-Study: Genetic Algorithms (GA)',
       hours: '0.6 hrs',
       desc: 'Evolutionary optimization: bit-string chromosomes, fitness functions, crossover, and mutation.',
@@ -90,7 +90,7 @@ export function Unit2LandingPage() {
       kind: 'self-study',
     },
     {
-      id: 'u2-game-theory',
+      id: 'u2-further-game-theory',
       title: 'Further Reading: Game Theory & Nash Equilibrium',
       hours: '0.4 hrs',
       desc: 'Prisoner&apos;s Dilemma, payoff matrices, dominant strategies, and multi-agent strategic rationality.',

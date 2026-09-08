@@ -21,6 +21,7 @@ const requiredEngineIds = [
   'search/local',
   'csp/solver',
   'adversarial/minimax',
+  'genetic/optimizer',
 ];
 
 requiredEngineIds.forEach((id) => {

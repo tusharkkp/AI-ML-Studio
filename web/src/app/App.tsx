@@ -87,6 +87,18 @@ const AdversarialSearchPage = lazy(() =>
 const ChessCaseStudyPage = lazy(() =>
   import('@/pages/ChessCaseStudyPage').then((m) => ({ default: m.ChessCaseStudyPage }))
 );
+const GeneticAlgorithmsPage = lazy(() =>
+  import('@/pages/GeneticAlgorithmsPage').then((m) => ({ default: m.GeneticAlgorithmsPage }))
+);
+const GameTheoryPage = lazy(() =>
+  import('@/pages/GameTheoryPage').then((m) => ({ default: m.GameTheoryPage }))
+);
+const Unit2ExamPage = lazy(() =>
+  import('@/pages/Unit2ExamPage').then((m) => ({ default: m.Unit2ExamPage }))
+);
+const Unit2CheatSheetPage = lazy(() =>
+  import('@/pages/Unit2CheatSheetPage').then((m) => ({ default: m.Unit2CheatSheetPage }))
+);
 const WarehouseLabPage = lazy(() =>
   import('@/pages/WarehouseLabPage').then((m) => ({ default: m.WarehouseLabPage }))
 );
@@ -170,6 +182,10 @@ export function App() {
               <Route path="/learn/unit-2/csp" element={<CspPage />} />
               <Route path="/learn/unit-2/adversarial-search" element={<AdversarialSearchPage />} />
               <Route path="/case-studies/chess-game-engine" element={<ChessCaseStudyPage />} />
+              <Route path="/learn/unit-2/genetic-algorithms" element={<GeneticAlgorithmsPage />} />
+              <Route path="/learn/unit-2/game-theory" element={<GameTheoryPage />} />
+              <Route path="/learn/unit-2/exam" element={<Unit2ExamPage />} />
+              <Route path="/cheatsheets/unit-2" element={<Unit2CheatSheetPage />} />
               <Route path="/learn/unit-2/bfs" element={<BfsConceptPage />} />
               <Route path="/lab/warehouse-bfs" element={<WarehouseLabPage />} />
               <Route path="*" element={<NotFoundPage />} />

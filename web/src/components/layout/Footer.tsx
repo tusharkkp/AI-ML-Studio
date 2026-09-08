@@ -8,7 +8,7 @@ export function Footer() {
           </p>
           <p className="mt-0.5">MIT Academy of Engineering · Third Year B.Tech (AY 2025-26)</p>
         </div>
-        <p className="font-semibold text-neutral-800 dark:text-neutral-200">By Tushar Kaldate</p>
+        <p className="font-semibold text-neutral-800 dark:text-neutral-200">By Tushar Kalyanrao Kaldate</p>
       </div>
     </footer>
   );
