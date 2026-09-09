@@ -87,3 +87,4 @@ describe('Genetic Algorithm Optimizer (genetic/optimizer)', () => {
     expect(result.finalBest.fitness).toBeGreaterThanOrEqual(7);
   });
 });
+

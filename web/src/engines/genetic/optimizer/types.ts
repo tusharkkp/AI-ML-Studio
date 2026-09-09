@@ -36,3 +36,4 @@ export interface GaResult {
   generationsCompleted: number;
   converged: boolean;
 }
+

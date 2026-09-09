@@ -38,3 +38,4 @@ export interface AStarResult {
   isOptimal: boolean;
   heuristicUsed: HeuristicType;
 }
+

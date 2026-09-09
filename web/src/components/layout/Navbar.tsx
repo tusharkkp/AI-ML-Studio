@@ -19,7 +19,7 @@ export function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Unit 1: AI Basics', href: '/learn/unit-1' },
-    { name: 'Unit 2: BFS', href: '/learn/unit-2/bfs' },
+    { name: 'Unit 2: Search', href: '/learn/unit-2' },
     { name: 'Lab Sandbox', href: '/lab/warehouse-bfs' },
     { name: 'Cheat Sheet', href: '/cheatsheets/unit-1' },
   ];

@@ -40,3 +40,4 @@ export interface CspResult {
   backtracks: number;
   nodesExpanded: number;
 }
+
