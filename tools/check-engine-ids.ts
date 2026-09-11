@@ -22,6 +22,7 @@ const requiredEngineIds = [
   'csp/solver',
   'adversarial/minimax',
   'genetic/optimizer',
+  'regression/linear',
 ];
 
 requiredEngineIds.forEach((id) => {

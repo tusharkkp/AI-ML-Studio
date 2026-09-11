@@ -30,4 +30,3 @@ export interface MinimaxResult {
   prunedNodeIds: string[];
   steps: MinimaxStep[];
 }
-

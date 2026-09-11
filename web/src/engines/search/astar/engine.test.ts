@@ -127,4 +127,3 @@ describe('A* & Greedy Best-First Engine (search/astar)', () => {
     expect(result.pathCost).toBeCloseTo(3 * 1.414, 1);
   });
 });
-

@@ -102,6 +102,20 @@ const Unit2CheatSheetPage = lazy(() =>
 const WarehouseLabPage = lazy(() =>
   import('@/pages/WarehouseLabPage').then((m) => ({ default: m.WarehouseLabPage }))
 );
+const Unit3LandingPage = lazy(() =>
+  import('@/pages/Unit3LandingPage').then((m) => ({ default: m.Unit3LandingPage }))
+);
+const MlParadigmsPage = lazy(() =>
+  import('@/pages/MlParadigmsPage').then((m) => ({ default: m.MlParadigmsPage }))
+);
+const SimpleLinearRegressionPage = lazy(() =>
+  import('@/pages/SimpleLinearRegressionPage').then((m) => ({
+    default: m.SimpleLinearRegressionPage,
+  }))
+);
+const GradientDescentPage = lazy(() =>
+  import('@/pages/GradientDescentPage').then((m) => ({ default: m.GradientDescentPage }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -188,6 +202,13 @@ export function App() {
               <Route path="/cheatsheets/unit-2" element={<Unit2CheatSheetPage />} />
               <Route path="/learn/unit-2/bfs" element={<BfsConceptPage />} />
               <Route path="/lab/warehouse-bfs" element={<WarehouseLabPage />} />
+              <Route path="/learn/unit-3" element={<Unit3LandingPage />} />
+              <Route path="/learn/unit-3/ml-paradigms" element={<MlParadigmsPage />} />
+              <Route
+                path="/learn/unit-3/simple-linear-regression"
+                element={<SimpleLinearRegressionPage />}
+              />
+              <Route path="/learn/unit-3/gradient-descent" element={<GradientDescentPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

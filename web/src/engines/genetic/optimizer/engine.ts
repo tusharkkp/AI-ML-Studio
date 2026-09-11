@@ -1,10 +1,4 @@
-import type {
-  Individual,
-  GaConfig,
-  GaStep,
-  GaResult,
-  CrossoverMethod,
-} from './types';
+import type { Individual, GaConfig, GaStep, GaResult, CrossoverMethod } from './types';
 
 // Simple deterministic PRNG for reproducible test runs
 function createRng(seed: number = 42) {

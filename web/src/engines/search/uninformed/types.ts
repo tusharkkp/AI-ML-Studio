@@ -45,4 +45,3 @@ export interface UninformedSearchResult {
   cutoffOccurred?: boolean;
   iterations?: number;
 }
-
