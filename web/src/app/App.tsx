@@ -116,6 +116,24 @@ const SimpleLinearRegressionPage = lazy(() =>
 const GradientDescentPage = lazy(() =>
   import('@/pages/GradientDescentPage').then((m) => ({ default: m.GradientDescentPage }))
 );
+const MultipleLinearRegressionPage = lazy(() =>
+  import('@/pages/MultipleLinearRegressionPage').then((m) => ({
+    default: m.MultipleLinearRegressionPage,
+  }))
+);
+const PolynomialRegressionPage = lazy(() =>
+  import('@/pages/PolynomialRegressionPage').then((m) => ({
+    default: m.PolynomialRegressionPage,
+  }))
+);
+const BiasVariancePage = lazy(() =>
+  import('@/pages/BiasVariancePage').then((m) => ({ default: m.BiasVariancePage }))
+);
+const LocallyWeightedRegressionPage = lazy(() =>
+  import('@/pages/LocallyWeightedRegressionPage').then((m) => ({
+    default: m.LocallyWeightedRegressionPage,
+  }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -209,6 +227,19 @@ export function App() {
                 element={<SimpleLinearRegressionPage />}
               />
               <Route path="/learn/unit-3/gradient-descent" element={<GradientDescentPage />} />
+              <Route
+                path="/learn/unit-3/multiple-linear-regression"
+                element={<MultipleLinearRegressionPage />}
+              />
+              <Route
+                path="/learn/unit-3/polynomial-regression"
+                element={<PolynomialRegressionPage />}
+              />
+              <Route path="/learn/unit-3/bias-variance-tradeoff" element={<BiasVariancePage />} />
+              <Route
+                path="/learn/unit-3/locally-weighted-regression"
+                element={<LocallyWeightedRegressionPage />}
+              />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

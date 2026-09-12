@@ -23,6 +23,9 @@ const requiredEngineIds = [
   'adversarial/minimax',
   'genetic/optimizer',
   'regression/linear',
+  'regression/multiple',
+  'regression/polynomial',
+  'regression/locally-weighted',
 ];
 
 requiredEngineIds.forEach((id) => {

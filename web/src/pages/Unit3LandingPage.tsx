@@ -186,7 +186,9 @@ export function Unit3LandingPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {modules.map((m) => {
           const progress = getProgress(m.id);
-          const isDone = Boolean(progress?.quizPassed || (progress?.read && progress?.labCompleted));
+          const isDone = Boolean(
+            progress?.quizPassed || (progress?.read && progress?.labCompleted)
+          );
 
           return (
             <Card
