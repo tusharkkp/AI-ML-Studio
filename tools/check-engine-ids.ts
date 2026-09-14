@@ -26,6 +26,7 @@ const requiredEngineIds = [
   'regression/multiple',
   'regression/polynomial',
   'regression/locally-weighted',
+  'preprocessing/features',
 ];
 
 requiredEngineIds.forEach((id) => {

@@ -134,6 +134,26 @@ const LocallyWeightedRegressionPage = lazy(() =>
     default: m.LocallyWeightedRegressionPage,
   }))
 );
+const FeatureEngineeringPage = lazy(() =>
+  import('@/pages/FeatureEngineeringPage').then((m) => ({
+    default: m.FeatureEngineeringPage,
+  }))
+);
+const RegressionMetricsPage = lazy(() =>
+  import('@/pages/RegressionMetricsPage').then((m) => ({
+    default: m.RegressionMetricsPage,
+  }))
+);
+const RealEstateCaseStudyPage = lazy(() =>
+  import('@/pages/RealEstateCaseStudyPage').then((m) => ({
+    default: m.RealEstateCaseStudyPage,
+  }))
+);
+const HealthcareCaseStudyPage = lazy(() =>
+  import('@/pages/HealthcareCaseStudyPage').then((m) => ({
+    default: m.HealthcareCaseStudyPage,
+  }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -239,6 +259,19 @@ export function App() {
               <Route
                 path="/learn/unit-3/locally-weighted-regression"
                 element={<LocallyWeightedRegressionPage />}
+              />
+              <Route
+                path="/learn/unit-3/feature-engineering"
+                element={<FeatureEngineeringPage />}
+              />
+              <Route path="/learn/unit-3/regression-metrics" element={<RegressionMetricsPage />} />
+              <Route
+                path="/case-studies/real-estate-pricing"
+                element={<RealEstateCaseStudyPage />}
+              />
+              <Route
+                path="/case-studies/healthcare-regression"
+                element={<HealthcareCaseStudyPage />}
               />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
