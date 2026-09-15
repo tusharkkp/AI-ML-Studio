@@ -37,6 +37,8 @@ const COMPLETED_TOPIC_IDS = new Set([
   'u3-regression-metrics',
   'u3-case-real-estate',
   'u3-case-healthcare',
+  'u3-self-regularization',
+  'u3-further-kfold-cv',
   'u1-history-foundations',
   'u1-types-applications',
   'u1-ethics-impact',

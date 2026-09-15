@@ -154,6 +154,26 @@ const HealthcareCaseStudyPage = lazy(() =>
     default: m.HealthcareCaseStudyPage,
   }))
 );
+const RegularizationPage = lazy(() =>
+  import('@/pages/RegularizationPage').then((m) => ({
+    default: m.RegularizationPage,
+  }))
+);
+const CrossValidationPage = lazy(() =>
+  import('@/pages/CrossValidationPage').then((m) => ({
+    default: m.CrossValidationPage,
+  }))
+);
+const Unit3ExamPage = lazy(() =>
+  import('@/pages/Unit3ExamPage').then((m) => ({
+    default: m.Unit3ExamPage,
+  }))
+);
+const Unit3CheatSheetPage = lazy(() =>
+  import('@/pages/Unit3CheatSheetPage').then((m) => ({
+    default: m.Unit3CheatSheetPage,
+  }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -273,6 +293,13 @@ export function App() {
                 path="/case-studies/healthcare-regression"
                 element={<HealthcareCaseStudyPage />}
               />
+              <Route path="/learn/unit-3/regularization" element={<RegularizationPage />} />
+              <Route
+                path="/learn/unit-3/kfold-cross-validation"
+                element={<CrossValidationPage />}
+              />
+              <Route path="/learn/unit-3/exam" element={<Unit3ExamPage />} />
+              <Route path="/cheatsheets/unit-3" element={<Unit3CheatSheetPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
