@@ -28,6 +28,7 @@ const requiredEngineIds = [
   'regression/locally-weighted',
   'preprocessing/features',
   'regression/regularization',
+  'probabilistic/naive-bayes',
 ];
 
 requiredEngineIds.forEach((id) => {

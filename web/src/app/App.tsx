@@ -174,6 +174,26 @@ const Unit3CheatSheetPage = lazy(() =>
     default: m.Unit3CheatSheetPage,
   }))
 );
+const Unit4LandingPage = lazy(() =>
+  import('@/pages/Unit4LandingPage').then((m) => ({
+    default: m.Unit4LandingPage,
+  }))
+);
+const BayesTheoremPage = lazy(() =>
+  import('@/pages/BayesTheoremPage').then((m) => ({
+    default: m.BayesTheoremPage,
+  }))
+);
+const NaiveBayesPage = lazy(() =>
+  import('@/pages/NaiveBayesPage').then((m) => ({
+    default: m.NaiveBayesPage,
+  }))
+);
+const LaplaceSmoothingPage = lazy(() =>
+  import('@/pages/LaplaceSmoothingPage').then((m) => ({
+    default: m.LaplaceSmoothingPage,
+  }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -300,6 +320,10 @@ export function App() {
               />
               <Route path="/learn/unit-3/exam" element={<Unit3ExamPage />} />
               <Route path="/cheatsheets/unit-3" element={<Unit3CheatSheetPage />} />
+              <Route path="/learn/unit-4" element={<Unit4LandingPage />} />
+              <Route path="/learn/unit-4/bayes-theorem" element={<BayesTheoremPage />} />
+              <Route path="/learn/unit-4/naive-bayes" element={<NaiveBayesPage />} />
+              <Route path="/learn/unit-4/laplace-smoothing" element={<LaplaceSmoothingPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

@@ -21,6 +21,7 @@ export function Navbar() {
     { name: 'Unit 1: AI Basics', href: '/learn/unit-1' },
     { name: 'Unit 2: Search', href: '/learn/unit-2' },
     { name: 'Unit 3: ML', href: '/learn/unit-3' },
+    { name: 'Unit 4: Probabilistic', href: '/learn/unit-4' },
     { name: 'Lab Sandbox', href: '/lab/warehouse-bfs' },
     { name: 'Cheat Sheet', href: '/cheatsheets/unit-1' },
   ];
