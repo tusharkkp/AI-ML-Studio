@@ -194,6 +194,21 @@ const LaplaceSmoothingPage = lazy(() =>
     default: m.LaplaceSmoothingPage,
   }))
 );
+const LogisticRegressionPage = lazy(() =>
+  import('@/pages/LogisticRegressionPage').then((m) => ({
+    default: m.LogisticRegressionPage,
+  }))
+);
+const ClassificationMetricsPage = lazy(() =>
+  import('@/pages/ClassificationMetricsPage').then((m) => ({
+    default: m.ClassificationMetricsPage,
+  }))
+);
+const RocAucPage = lazy(() =>
+  import('@/pages/RocAucPage').then((m) => ({
+    default: m.RocAucPage,
+  }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -324,6 +339,15 @@ export function App() {
               <Route path="/learn/unit-4/bayes-theorem" element={<BayesTheoremPage />} />
               <Route path="/learn/unit-4/naive-bayes" element={<NaiveBayesPage />} />
               <Route path="/learn/unit-4/laplace-smoothing" element={<LaplaceSmoothingPage />} />
+              <Route
+                path="/learn/unit-4/logistic-regression"
+                element={<LogisticRegressionPage />}
+              />
+              <Route
+                path="/learn/unit-4/classification-metrics"
+                element={<ClassificationMetricsPage />}
+              />
+              <Route path="/learn/unit-4/roc-auc" element={<RocAucPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

@@ -29,6 +29,8 @@ const requiredEngineIds = [
   'preprocessing/features',
   'regression/regularization',
   'probabilistic/naive-bayes',
+  'classification/logistic',
+  'classification/metrics',
 ];
 
 requiredEngineIds.forEach((id) => {
