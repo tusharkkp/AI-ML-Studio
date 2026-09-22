@@ -31,6 +31,7 @@ const requiredEngineIds = [
   'probabilistic/naive-bayes',
   'classification/logistic',
   'classification/metrics',
+  'instance/knn',
 ];
 
 requiredEngineIds.forEach((id) => {

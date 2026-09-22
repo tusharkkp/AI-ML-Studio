@@ -209,6 +209,17 @@ const RocAucPage = lazy(() =>
     default: m.RocAucPage,
   }))
 );
+const KnnPage = lazy(() => import('@/pages/KnnPage').then((m) => ({ default: m.KnnPage })));
+const CustomerChurnCaseStudyPage = lazy(() =>
+  import('@/pages/CustomerChurnCaseStudyPage').then((m) => ({
+    default: m.CustomerChurnCaseStudyPage,
+  }))
+);
+const VariationalInferencePage = lazy(() =>
+  import('@/pages/VariationalInferencePage').then((m) => ({
+    default: m.VariationalInferencePage,
+  }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -348,6 +359,12 @@ export function App() {
                 element={<ClassificationMetricsPage />}
               />
               <Route path="/learn/unit-4/roc-auc" element={<RocAucPage />} />
+              <Route path="/learn/unit-4/knn" element={<KnnPage />} />
+              <Route path="/case-studies/customer-churn" element={<CustomerChurnCaseStudyPage />} />
+              <Route
+                path="/learn/unit-4/variational-inference"
+                element={<VariationalInferencePage />}
+              />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
