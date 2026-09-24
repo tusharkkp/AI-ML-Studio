@@ -220,6 +220,12 @@ const VariationalInferencePage = lazy(() =>
     default: m.VariationalInferencePage,
   }))
 );
+const Unit4ExamPage = lazy(() =>
+  import('@/pages/Unit4ExamPage').then((m) => ({ default: m.Unit4ExamPage }))
+);
+const Unit4CheatSheetPage = lazy(() =>
+  import('@/pages/Unit4CheatSheetPage').then((m) => ({ default: m.Unit4CheatSheetPage }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -365,6 +371,8 @@ export function App() {
                 path="/learn/unit-4/variational-inference"
                 element={<VariationalInferencePage />}
               />
+              <Route path="/learn/unit-4/exam" element={<Unit4ExamPage />} />
+              <Route path="/cheatsheets/unit-4" element={<Unit4CheatSheetPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
