@@ -226,6 +226,18 @@ const Unit4ExamPage = lazy(() =>
 const Unit4CheatSheetPage = lazy(() =>
   import('@/pages/Unit4CheatSheetPage').then((m) => ({ default: m.Unit4CheatSheetPage }))
 );
+const Unit5LandingPage = lazy(() =>
+  import('@/pages/Unit5LandingPage').then((m) => ({ default: m.Unit5LandingPage }))
+);
+const DecisionTreesPage = lazy(() =>
+  import('@/pages/DecisionTreesPage').then((m) => ({ default: m.DecisionTreesPage }))
+);
+const ImpurityCriteriaPage = lazy(() =>
+  import('@/pages/ImpurityCriteriaPage').then((m) => ({ default: m.ImpurityCriteriaPage }))
+);
+const TreePruningPage = lazy(() =>
+  import('@/pages/TreePruningPage').then((m) => ({ default: m.TreePruningPage }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -373,6 +385,13 @@ export function App() {
               />
               <Route path="/learn/unit-4/exam" element={<Unit4ExamPage />} />
               <Route path="/cheatsheets/unit-4" element={<Unit4CheatSheetPage />} />
+              <Route path="/learn/unit-5" element={<Unit5LandingPage />} />
+              <Route path="/learn/unit-5/decision-trees" element={<DecisionTreesPage />} />
+              <Route
+                path="/learn/unit-5/impurity-split-criteria"
+                element={<ImpurityCriteriaPage />}
+              />
+              <Route path="/learn/unit-5/tree-pruning" element={<TreePruningPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
