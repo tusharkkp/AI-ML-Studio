@@ -33,6 +33,7 @@ const requiredEngineIds = [
   'classification/metrics',
   'instance/knn',
   'tree/decision-tree',
+  'classification/svm',
 ];
 
 requiredEngineIds.forEach((id) => {

@@ -238,6 +238,12 @@ const ImpurityCriteriaPage = lazy(() =>
 const TreePruningPage = lazy(() =>
   import('@/pages/TreePruningPage').then((m) => ({ default: m.TreePruningPage }))
 );
+const SvmFundamentalsPage = lazy(() =>
+  import('@/pages/SvmFundamentalsPage').then((m) => ({ default: m.SvmFundamentalsPage }))
+);
+const SvmKernelsPage = lazy(() =>
+  import('@/pages/SvmKernelsPage').then((m) => ({ default: m.SvmKernelsPage }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -392,6 +398,8 @@ export function App() {
                 element={<ImpurityCriteriaPage />}
               />
               <Route path="/learn/unit-5/tree-pruning" element={<TreePruningPage />} />
+              <Route path="/learn/unit-5/svm-fundamentals" element={<SvmFundamentalsPage />} />
+              <Route path="/learn/unit-5/svm-kernels" element={<SvmKernelsPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

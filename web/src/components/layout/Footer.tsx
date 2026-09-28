@@ -12,9 +12,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <p className="font-semibold text-neutral-800 dark:text-neutral-200">
-            By Tushar Kaldate
-          </p>
+          <p className="font-semibold text-neutral-800 dark:text-neutral-200">By Tushar Kaldate</p>
 
           {/* Social media logos directly below your name */}
           <div className="flex items-center justify-center gap-5">

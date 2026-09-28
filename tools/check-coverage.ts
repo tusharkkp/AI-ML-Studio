@@ -51,6 +51,8 @@ const COMPLETED_TOPIC_IDS = new Set([
   'u5-decision-trees',
   'u5-impurity-split-criteria',
   'u5-tree-pruning',
+  'u5-svm-fundamentals',
+  'u5-svm-kernels',
   'u1-history-foundations',
   'u1-types-applications',
   'u1-ethics-impact',
