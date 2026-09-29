@@ -55,14 +55,139 @@ const UNITS: UnitNavItem[] = [
   },
 ];
 
+interface CheatsheetNavItem {
+  id: string;
+  badge: string;
+  unit: string;
+  title: string;
+  href: string;
+}
+
+const CHEATSHEET_ITEMS: CheatsheetNavItem[] = [
+  {
+    id: 'cs-all',
+    badge: 'HUB',
+    unit: 'All Units',
+    title: 'Quick Revision Directory',
+    href: '/cheatsheets',
+  },
+  {
+    id: 'cs-u1',
+    badge: 'U1',
+    unit: 'Unit 1',
+    title: 'Basics of AI Cheat Sheet',
+    href: '/cheatsheets/unit-1',
+  },
+  {
+    id: 'cs-u2',
+    badge: 'U2',
+    unit: 'Unit 2',
+    title: 'AI Search Strategies Cheat Sheet',
+    href: '/cheatsheets/unit-2',
+  },
+  {
+    id: 'cs-u3',
+    badge: 'U3',
+    unit: 'Unit 3',
+    title: 'ML Fundamentals Cheat Sheet',
+    href: '/cheatsheets/unit-3',
+  },
+  {
+    id: 'cs-u4',
+    badge: 'U4',
+    unit: 'Unit 4',
+    title: 'Probabilistic Models Cheat Sheet',
+    href: '/cheatsheets/unit-4',
+  },
+];
+
+interface LabNavItem {
+  id: string;
+  badge: string;
+  title: string;
+  desc: string;
+  href: string;
+}
+
+const FLAGSHIP_LABS: LabNavItem[] = [
+  {
+    id: 'lab-all',
+    badge: 'HUB',
+    title: 'Browse All 15+ Labs Hub',
+    desc: 'Search & filter interactive laboratories across all units',
+    href: '/lab',
+  },
+  {
+    id: 'lab-bfs',
+    badge: 'U2',
+    title: 'Warehouse Robot BFS',
+    desc: '2D grid world pathfinding & FIFO queue frontier step playback',
+    href: '/lab/warehouse-bfs',
+  },
+  {
+    id: 'lab-grad',
+    badge: 'U3',
+    title: 'Gradient Descent Dynamics',
+    desc: '2D/3D loss contours, learning rate η tuning & divergence',
+    href: '/learn/unit-3/gradient-descent',
+  },
+  {
+    id: 'lab-logistic',
+    badge: 'U4',
+    title: 'Logistic Decision Boundary',
+    desc: '2D decision boundary studio with XOR failure modes',
+    href: '/learn/unit-4/logistic-regression',
+  },
+  {
+    id: 'lab-roc',
+    badge: 'U4',
+    title: 'ROC Curve & AUC Sweeper',
+    desc: 'Dual Gaussian densities & sweeping threshold τ',
+    href: '/learn/unit-4/roc-auc',
+  },
+  {
+    id: 'lab-dt',
+    badge: 'U5',
+    title: 'Decision Tree Split Builder',
+    desc: 'Orthogonal axis splits, entropy & Gini reduction',
+    href: '/learn/unit-5/decision-trees',
+  },
+  {
+    id: 'lab-svm',
+    badge: 'U5',
+    title: 'SVM Maximum Margin Studio',
+    desc: 'Separating hyperplane, margin gutters & support vector halos',
+    href: '/learn/unit-5/svm-fundamentals',
+  },
+  {
+    id: 'lab-kernel',
+    badge: 'U5',
+    title: 'SVM Kernel Trick 3D Lift',
+    desc: '2D non-linear rings lifted to 3D parabolic space',
+    href: '/learn/unit-5/svm-kernels',
+  },
+  {
+    id: 'lab-rf',
+    badge: 'U5',
+    title: 'Random Forest & OOB Error',
+    desc: 'Bootstrap aggregation, subspace sampling & boundary smoothing',
+    href: '/learn/unit-5/bagging-random-forests',
+  },
+];
+
 export function Navbar() {
   const location = useLocation();
   const theme = useProgressStore((state) => state.theme);
   const toggleTheme = useProgressStore((state) => state.toggleTheme);
   const [scrolled, setScrolled] = useState(false);
   const [unitsOpen, setUnitsOpen] = useState(false);
+  const [labsOpen, setLabsOpen] = useState(false);
+  const [cheatsheetsOpen, setCheatsheetsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const unitsRef = useRef<HTMLDivElement>(null);
+  const labsRef = useRef<HTMLDivElement>(null);
+  const cheatsheetsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -71,16 +196,25 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close dropdown on outside click or escape
+  // Close dropdowns on outside click or escape
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+      if (unitsRef.current && !unitsRef.current.contains(target)) {
         setUnitsOpen(false);
+      }
+      if (labsRef.current && !labsRef.current.contains(target)) {
+        setLabsOpen(false);
+      }
+      if (cheatsheetsRef.current && !cheatsheetsRef.current.contains(target)) {
+        setCheatsheetsOpen(false);
       }
     }
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
         setUnitsOpen(false);
+        setLabsOpen(false);
+        setCheatsheetsOpen(false);
         setMobileMenuOpen(false);
       }
     }
@@ -95,10 +229,14 @@ export function Navbar() {
   // Close menus on route change
   useEffect(() => {
     setUnitsOpen(false);
+    setLabsOpen(false);
+    setCheatsheetsOpen(false);
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
   const isUnitsActive = location.pathname.startsWith('/learn/unit-');
+  const isLabsActive = location.pathname.startsWith('/lab');
+  const isCheatsheetsActive = location.pathname.startsWith('/cheatsheets');
 
   return (
     <header
@@ -136,10 +274,14 @@ export function Navbar() {
           </Link>
 
           {/* Units Dropdown */}
-          <div className="relative" ref={dropdownRef}>
+          <div className="relative" ref={unitsRef}>
             <button
               type="button"
-              onClick={() => setUnitsOpen(!unitsOpen)}
+              onClick={() => {
+                setUnitsOpen(!unitsOpen);
+                setLabsOpen(false);
+                setCheatsheetsOpen(false);
+              }}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:text-brand ${
                 isUnitsActive || unitsOpen
                   ? 'text-foreground font-semibold dark:text-white'
@@ -197,29 +339,151 @@ export function Navbar() {
             )}
           </div>
 
-          <Link
-            to="/lab/warehouse-bfs"
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:text-brand ${
-              location.pathname.startsWith('/lab')
-                ? 'text-foreground font-semibold dark:text-white'
-                : 'text-neutral-600 dark:text-neutral-400'
-            }`}
-          >
-            <FlaskConical className="size-4" />
-            <span>Lab Sandbox</span>
-          </Link>
+          {/* Lab Sandbox Dropdown */}
+          <div className="relative" ref={labsRef}>
+            <button
+              type="button"
+              onClick={() => {
+                setLabsOpen(!labsOpen);
+                setUnitsOpen(false);
+                setCheatsheetsOpen(false);
+              }}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:text-brand ${
+                isLabsActive || labsOpen
+                  ? 'text-foreground font-semibold dark:text-white'
+                  : 'text-neutral-600 dark:text-neutral-400'
+              }`}
+              aria-expanded={labsOpen}
+              aria-haspopup="true"
+            >
+              <FlaskConical className="size-4" />
+              <span>Lab Sandbox</span>
+              <ChevronDown
+                className={`size-3.5 transition-transform duration-200 ${labsOpen ? 'rotate-180' : ''}`}
+              />
+            </button>
 
-          <Link
-            to="/cheatsheets/unit-1"
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:text-brand ${
-              location.pathname.startsWith('/cheatsheets')
-                ? 'text-foreground font-semibold dark:text-white'
-                : 'text-neutral-600 dark:text-neutral-400'
-            }`}
-          >
-            <FileText className="size-4" />
-            <span>Cheat Sheets</span>
-          </Link>
+            {labsOpen && (
+              <div
+                className="absolute top-full left-0 mt-2 w-84 rounded-xl border border-orange-50/15 dark:border-orange-50/15 border-amber-900/15 bg-[#0c0a09]/95 dark:bg-[#0c0a09]/95 bg-white/95 backdrop-blur-md p-2 shadow-none z-50 max-h-[80vh] overflow-y-auto"
+                role="menu"
+              >
+                <div className="flex items-center justify-between px-3 py-1.5 border-b border-orange-50/10 mb-1">
+                  <span className="text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
+                    Interactive Laboratories
+                  </span>
+                  <Link
+                    to="/lab"
+                    onClick={() => setLabsOpen(false)}
+                    className="text-[10px] font-mono text-brand hover:underline"
+                  >
+                    View All &rarr;
+                  </Link>
+                </div>
+                <div className="space-y-1">
+                  {FLAGSHIP_LABS.map((lab) => {
+                    const isCurrent = location.pathname === lab.href;
+                    return (
+                      <Link
+                        key={lab.id}
+                        to={lab.href}
+                        onClick={() => setLabsOpen(false)}
+                        className={`flex items-start gap-3 rounded-lg p-2.5 transition-colors ${
+                          isCurrent
+                            ? 'bg-neutral-100 dark:bg-white/10 text-foreground dark:text-white'
+                            : 'hover:bg-neutral-100 dark:hover:bg-white/5 text-neutral-700 dark:text-neutral-300'
+                        }`}
+                        role="menuitem"
+                      >
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-orange-50/20 bg-neutral-200 dark:bg-black/40 text-[10px] font-mono font-bold text-neutral-800 dark:text-neutral-200">
+                          {lab.badge}
+                        </span>
+                        <div className="flex flex-col">
+                          <span className="text-xs font-semibold font-manrope">{lab.title}</span>
+                          <span className="text-[11px] text-neutral-500 dark:text-neutral-400 leading-snug">
+                            {lab.desc}
+                          </span>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Cheat Sheets Dropdown */}
+          <div className="relative" ref={cheatsheetsRef}>
+            <button
+              type="button"
+              onClick={() => {
+                setCheatsheetsOpen(!cheatsheetsOpen);
+                setUnitsOpen(false);
+                setLabsOpen(false);
+              }}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:text-brand ${
+                isCheatsheetsActive || cheatsheetsOpen
+                  ? 'text-foreground font-semibold dark:text-white'
+                  : 'text-neutral-600 dark:text-neutral-400'
+              }`}
+              aria-expanded={cheatsheetsOpen}
+              aria-haspopup="true"
+            >
+              <FileText className="size-4" />
+              <span>Cheat Sheets</span>
+              <ChevronDown
+                className={`size-3.5 transition-transform duration-200 ${cheatsheetsOpen ? 'rotate-180' : ''}`}
+              />
+            </button>
+
+            {cheatsheetsOpen && (
+              <div
+                className="absolute top-full right-0 mt-2 w-72 rounded-xl border border-orange-50/15 dark:border-orange-50/15 border-amber-900/15 bg-[#0c0a09]/95 dark:bg-[#0c0a09]/95 bg-white/95 backdrop-blur-md p-2 shadow-none z-50"
+                role="menu"
+              >
+                <div className="flex items-center justify-between px-3 py-1.5 border-b border-orange-50/10 mb-1">
+                  <span className="text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
+                    Exam Revision Sheets
+                  </span>
+                  <Link
+                    to="/cheatsheets"
+                    onClick={() => setCheatsheetsOpen(false)}
+                    className="text-[10px] font-mono text-brand hover:underline"
+                  >
+                    All Hub &rarr;
+                  </Link>
+                </div>
+                <div className="space-y-1">
+                  {CHEATSHEET_ITEMS.map((item) => {
+                    const isCurrent = location.pathname === item.href;
+                    return (
+                      <Link
+                        key={item.id}
+                        to={item.href}
+                        onClick={() => setCheatsheetsOpen(false)}
+                        className={`flex items-center gap-3 rounded-lg p-2.5 transition-colors ${
+                          isCurrent
+                            ? 'bg-neutral-100 dark:bg-white/10 text-foreground dark:text-white'
+                            : 'hover:bg-neutral-100 dark:hover:bg-white/5 text-neutral-700 dark:text-neutral-300'
+                        }`}
+                        role="menuitem"
+                      >
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-orange-50/20 bg-neutral-200 dark:bg-black/40 text-[10px] font-mono font-bold text-neutral-800 dark:text-neutral-200">
+                          {item.badge}
+                        </span>
+                        <div className="flex flex-col">
+                          <span className="text-xs font-semibold font-manrope">{item.title}</span>
+                          <span className="text-[10px] text-neutral-500 dark:text-neutral-400">
+                            {item.unit}
+                          </span>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Right side: Theme toggle + Mobile Menu Button */}
@@ -252,7 +516,7 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-border bg-background/95 backdrop-blur-md px-6 py-4 space-y-4">
+        <div className="md:hidden border-b border-border bg-background/95 backdrop-blur-md px-6 py-4 space-y-4 max-h-[85vh] overflow-y-auto">
           <Link
             to="/"
             onClick={() => setMobileMenuOpen(false)}
@@ -282,23 +546,75 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="pt-2 border-t border-border/50 flex flex-col gap-2">
-            <Link
-              to="/lab/warehouse-bfs"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2 text-xs font-medium text-neutral-700 dark:text-neutral-300 hover:text-brand"
-            >
-              <FlaskConical className="size-3.5" />
-              <span>Lab Sandbox</span>
-            </Link>
-            <Link
-              to="/cheatsheets/unit-1"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2 text-xs font-medium text-neutral-700 dark:text-neutral-300 hover:text-brand"
-            >
-              <FileText className="size-3.5" />
-              <span>Cheat Sheets</span>
-            </Link>
+          <div>
+            <div className="flex items-center justify-between text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-2">
+              <span>Interactive Labs</span>
+              <Link
+                to="/lab"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-[10px] font-mono text-brand"
+              >
+                All &rarr;
+              </Link>
+            </div>
+            <div className="space-y-1.5 pl-2 border-l border-border">
+              <Link
+                to="/lab"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-xs py-1 font-semibold text-brand"
+              >
+                Browse All 15+ Labs Hub
+              </Link>
+              <Link
+                to="/lab/warehouse-bfs"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-xs py-1 text-neutral-700 dark:text-neutral-300 hover:text-brand"
+              >
+                Warehouse Robot BFS
+              </Link>
+              <Link
+                to="/learn/unit-3/gradient-descent"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-xs py-1 text-neutral-700 dark:text-neutral-300 hover:text-brand"
+              >
+                Gradient Descent Dynamics
+              </Link>
+              <Link
+                to="/learn/unit-5/svm-fundamentals"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-xs py-1 text-neutral-700 dark:text-neutral-300 hover:text-brand"
+              >
+                SVM Maximum Margin Studio
+              </Link>
+            </div>
+          </div>
+
+          <div className="pt-2 border-t border-border/50">
+            <div className="flex items-center justify-between text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-2">
+              <span>Revision Cheat Sheets</span>
+              <Link
+                to="/cheatsheets"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-[10px] font-mono text-brand"
+              >
+                All &rarr;
+              </Link>
+            </div>
+            <div className="space-y-1.5 pl-2 border-l border-border">
+              {CHEATSHEET_ITEMS.map((c) => (
+                <Link
+                  key={c.id}
+                  to={c.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-xs py-1 text-neutral-700 dark:text-neutral-300 hover:text-brand"
+                >
+                  <span className="font-semibold text-foreground dark:text-white mr-1.5">
+                    {c.badge}:
+                  </span>
+                  {c.title}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       )}

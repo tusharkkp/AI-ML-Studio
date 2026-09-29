@@ -34,6 +34,7 @@ const requiredEngineIds = [
   'instance/knn',
   'tree/decision-tree',
   'classification/svm',
+  'ensemble/forest',
 ];
 
 requiredEngineIds.forEach((id) => {

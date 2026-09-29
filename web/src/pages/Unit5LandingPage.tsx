@@ -109,7 +109,7 @@ export const Unit5LandingPage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-12">
+    <div className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-12 space-y-12">
       {/* Hero Header */}
       <div className="space-y-4">
         <div className="flex flex-wrap items-center gap-2">

@@ -244,6 +244,26 @@ const SvmFundamentalsPage = lazy(() =>
 const SvmKernelsPage = lazy(() =>
   import('@/pages/SvmKernelsPage').then((m) => ({ default: m.SvmKernelsPage }))
 );
+const EnsembleSignificancePage = lazy(() =>
+  import('@/pages/EnsembleSignificancePage').then((m) => ({ default: m.EnsembleSignificancePage }))
+);
+const BaggingRandomForestsPage = lazy(() =>
+  import('@/pages/BaggingRandomForestsPage').then((m) => ({ default: m.BaggingRandomForestsPage }))
+);
+const BoostingStackingPage = lazy(() =>
+  import('@/pages/BoostingStackingPage').then((m) => ({ default: m.BoostingStackingPage }))
+);
+const PerformanceEvaluationPage = lazy(() =>
+  import('@/pages/PerformanceEvaluationPage').then((m) => ({
+    default: m.PerformanceEvaluationPage,
+  }))
+);
+const CheatsheetsDirectoryPage = lazy(() =>
+  import('@/pages/CheatsheetsDirectoryPage').then((m) => ({ default: m.CheatsheetsDirectoryPage }))
+);
+const LabsDirectoryPage = lazy(() =>
+  import('@/pages/LabsDirectoryPage').then((m) => ({ default: m.LabsDirectoryPage }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -400,6 +420,21 @@ export function App() {
               <Route path="/learn/unit-5/tree-pruning" element={<TreePruningPage />} />
               <Route path="/learn/unit-5/svm-fundamentals" element={<SvmFundamentalsPage />} />
               <Route path="/learn/unit-5/svm-kernels" element={<SvmKernelsPage />} />
+              <Route
+                path="/learn/unit-5/ensemble-significance"
+                element={<EnsembleSignificancePage />}
+              />
+              <Route
+                path="/learn/unit-5/bagging-random-forests"
+                element={<BaggingRandomForestsPage />}
+              />
+              <Route path="/learn/unit-5/boosting-stacking" element={<BoostingStackingPage />} />
+              <Route
+                path="/learn/unit-5/performance-evaluation"
+                element={<PerformanceEvaluationPage />}
+              />
+              <Route path="/cheatsheets" element={<CheatsheetsDirectoryPage />} />
+              <Route path="/lab" element={<LabsDirectoryPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
