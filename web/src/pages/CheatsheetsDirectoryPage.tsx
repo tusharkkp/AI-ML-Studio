@@ -6,7 +6,7 @@ import { FileText, ArrowRight, Printer, Sparkles, GraduationCap } from 'lucide-r
 
 interface CheatsheetMeta {
   unitNumber: number;
-  badge: 'U1' | 'U2' | 'U3' | 'U4';
+  badge: 'U1' | 'U2' | 'U3' | 'U4' | 'U5';
   title: string;
   subtitle: string;
   hours: number;
@@ -102,6 +102,28 @@ const CHEATSHEETS: CheatsheetMeta[] = [
       'σ(z) = 1 / (1 + exp(-z))',
       'J_BCE = -(1/m) Σ [y ln(p) + (1-y) ln(1-p)]',
       'P(w_i|C) = (count + α) / (N + α|V|)',
+    ],
+  },
+  {
+    unitNumber: 5,
+    badge: 'U5',
+    title: 'Linear & Decision Models',
+    subtitle: 'Decision trees, SVM hyperplanes & kernels, bagging, random forests, and AdaBoost',
+    hours: 8,
+    href: '/cheatsheets/unit-5',
+    examHref: '/learn/unit-5/exam',
+    topics: [
+      'Decision Trees: Entropy, Information Gain, and Gini Impurity split criteria',
+      'Tree Pruning: Minimal cost-complexity pruning and overfitting containment',
+      'Support Vector Machines: Maximum margin hyperplane, support vectors, and convex QP',
+      'Kernel Trick: Non-linear projection via Polynomial and RBF (Gaussian) kernels',
+      'Ensemble Learning: Random Forests, Out-of-Bag error, AdaBoost, and Stacking meta-models',
+    ],
+    formulas: [
+      'Gini(S) = 1 - Σ (p_k)²',
+      'γ = 2 / ||w||₂',
+      'K_RBF(x, z) = exp(-γ ||x - z||²)',
+      'α_t = 0.5 ln((1 - ε_t) / ε_t)',
     ],
   },
 ];
@@ -227,7 +249,7 @@ export function CheatsheetsDirectoryPage() {
         ))}
       </div>
 
-      {/* Unit 5 In-Progress Banner */}
+      {/* Unit 6 In-Progress Banner */}
       <Card className="p-6 border border-dashed border-orange-50/20 bg-neutral-900/20 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-start gap-3">
           <div className="size-8 rounded-lg bg-brand/10 border border-brand/20 flex items-center justify-center text-brand shrink-0">
@@ -235,18 +257,18 @@ export function CheatsheetsDirectoryPage() {
           </div>
           <div>
             <h3 className="font-manrope text-base font-semibold text-foreground dark:text-white">
-              Unit 5: Linear & Decision Models Cheat Sheet
+              Unit 6: Unsupervised Learning Cheat Sheet (Upcoming)
             </h3>
             <p className="text-xs text-neutral-400 mt-0.5 font-montserrat">
-              Currently compiling formulas for Decision Trees (Entropy, Gini, Information Gain),
-              Support Vector Machines (Max Margin, Dual Form, Kernels), and Ensembles (Condorcet,
-              Bagging, AdaBoost).
+              Next in syllabus: Association Rule Mining (Support, Confidence, Lift, Apriori),
+              Partitional Clustering (k-Means, inertia, elbow method), Hierarchical Dendrograms, and
+              Density-Based Clustering (DBSCAN).
             </p>
           </div>
         </div>
         <Link to="/learn/unit-5">
           <Button size="sm" variant="outline" className="text-xs whitespace-nowrap">
-            Explore Unit 5 Modules &rarr;
+            Unit 5 Active Hub &rarr;
           </Button>
         </Link>
       </Card>

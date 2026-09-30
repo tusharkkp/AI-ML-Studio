@@ -99,6 +99,13 @@ const CHEATSHEET_ITEMS: CheatsheetNavItem[] = [
     title: 'Probabilistic Models Cheat Sheet',
     href: '/cheatsheets/unit-4',
   },
+  {
+    id: 'cs-u5',
+    badge: 'U5',
+    unit: 'Unit 5',
+    title: 'Linear & Decision Models Cheat Sheet',
+    href: '/cheatsheets/unit-5',
+  },
 ];
 
 interface LabNavItem {

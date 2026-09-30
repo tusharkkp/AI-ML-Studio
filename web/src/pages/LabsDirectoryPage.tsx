@@ -278,6 +278,54 @@ const LABS: LabItem[] = [
       'K-Fold Boxplot Distribution',
     ],
   },
+  {
+    id: 'pima-diabetes',
+    title: 'Pima Indians Diabetes Clinical Diagnostic Pipeline',
+    unit: 5,
+    unitBadge: 'U5',
+    category: 'ensembles',
+    tag: 'Clinical Tabular Lab',
+    description:
+      'Impute biologically impossible zeroes with class-aware medians, train Random Forests vs SVM, and tune cost-sensitive screening thresholds to minimize patient risk.',
+    href: '/case-studies/diabetes-prediction',
+    interactiveFeatures: [
+      'Missing Value Imputation Strategy',
+      'Clinical Screening Cutoff tau',
+      'Biomarker Scatter Visualizer',
+    ],
+  },
+  {
+    id: 'adaboost-mechanics',
+    title: 'AdaBoost Sequential Reweighting Engine',
+    unit: 5,
+    unitBadge: 'U5',
+    category: 'ensembles',
+    tag: 'Freund & Schapire Algorithm',
+    description:
+      'Scrub through sequential boosting iterations, watch misclassified point weights swell exponentially, and explore the alpha voting curve across error rates.',
+    href: '/learn/unit-5/adaboost',
+    interactiveFeatures: [
+      'Sequential Round Scrubber',
+      'Point Weight Bubble Radii',
+      'Interactive Alpha Curve',
+    ],
+  },
+  {
+    id: 'dt-regression',
+    title: 'CART Continuous Regression Tree Studio',
+    unit: 5,
+    unitBadge: 'U5',
+    category: 'decision-svm',
+    tag: 'Variance Reduction',
+    description:
+      'Explore recursive variance reduction creating piecewise constant step functions, and observe the severe flat extrapolation trap on queries outside training range.',
+    href: '/learn/unit-5/decision-tree-regression',
+    interactiveFeatures: [
+      'Staircase Step Approximator',
+      'Max Depth 1-6 Slider',
+      'Extrapolation Flat Trap Demo',
+    ],
+  },
 ];
 
 type CategoryFilter =

@@ -258,6 +258,25 @@ const PerformanceEvaluationPage = lazy(() =>
     default: m.PerformanceEvaluationPage,
   }))
 );
+const DiabetesPredictionCaseStudyPage = lazy(() =>
+  import('@/pages/DiabetesPredictionCaseStudyPage').then((m) => ({
+    default: m.DiabetesPredictionCaseStudyPage,
+  }))
+);
+const AdaBoostPage = lazy(() =>
+  import('@/pages/AdaBoostPage').then((m) => ({ default: m.AdaBoostPage }))
+);
+const DecisionTreeRegressionPage = lazy(() =>
+  import('@/pages/DecisionTreeRegressionPage').then((m) => ({
+    default: m.DecisionTreeRegressionPage,
+  }))
+);
+const Unit5ExamPage = lazy(() =>
+  import('@/pages/Unit5ExamPage').then((m) => ({ default: m.Unit5ExamPage }))
+);
+const Unit5CheatSheetPage = lazy(() =>
+  import('@/pages/Unit5CheatSheetPage').then((m) => ({ default: m.Unit5CheatSheetPage }))
+);
 const CheatsheetsDirectoryPage = lazy(() =>
   import('@/pages/CheatsheetsDirectoryPage').then((m) => ({ default: m.CheatsheetsDirectoryPage }))
 );
@@ -433,6 +452,17 @@ export function App() {
                 path="/learn/unit-5/performance-evaluation"
                 element={<PerformanceEvaluationPage />}
               />
+              <Route
+                path="/case-studies/diabetes-prediction"
+                element={<DiabetesPredictionCaseStudyPage />}
+              />
+              <Route path="/learn/unit-5/adaboost" element={<AdaBoostPage />} />
+              <Route
+                path="/learn/unit-5/decision-tree-regression"
+                element={<DecisionTreeRegressionPage />}
+              />
+              <Route path="/learn/unit-5/exam" element={<Unit5ExamPage />} />
+              <Route path="/cheatsheets/unit-5" element={<Unit5CheatSheetPage />} />
               <Route path="/cheatsheets" element={<CheatsheetsDirectoryPage />} />
               <Route path="/lab" element={<LabsDirectoryPage />} />
               <Route path="*" element={<NotFoundPage />} />
