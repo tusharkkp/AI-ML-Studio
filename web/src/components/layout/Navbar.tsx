@@ -1,6 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Moon, Sun, ChevronDown, Menu, X, BookOpen, FlaskConical, FileText } from 'lucide-react';
+import {
+  Moon,
+  Sun,
+  ChevronDown,
+  Menu,
+  X,
+  BookOpen,
+  FlaskConical,
+  FileText,
+  GitCompare,
+} from 'lucide-react';
 import { useProgressStore } from '@/features/progress/useProgressStore';
 
 interface UnitNavItem {
@@ -491,6 +501,19 @@ export function Navbar() {
               </div>
             )}
           </div>
+
+          {/* Algorithm Chooser / Compare */}
+          <Link
+            to="/compare"
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:text-brand ${
+              location.pathname === '/compare'
+                ? 'text-foreground font-semibold dark:text-white'
+                : 'text-neutral-600 dark:text-neutral-400'
+            }`}
+          >
+            <GitCompare className="size-4" />
+            <span>Compare</span>
+          </Link>
         </div>
 
         {/* Right side: Theme toggle + Mobile Menu Button */}
@@ -622,6 +645,17 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
+          </div>
+
+          <div className="pt-2 border-t border-border/50">
+            <Link
+              to="/compare"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 py-1 text-xs font-semibold text-foreground dark:text-white hover:text-brand"
+            >
+              <GitCompare className="size-3.5 text-brand" />
+              <span>Algorithm Chooser &amp; Comparison</span>
+            </Link>
           </div>
         </div>
       )}
