@@ -286,6 +286,9 @@ const LabsDirectoryPage = lazy(() =>
 const ComparePage = lazy(() =>
   import('@/pages/ComparePage').then((m) => ({ default: m.ComparePage }))
 );
+const PracticePage = lazy(() =>
+  import('@/pages/PracticePage').then((m) => ({ default: m.PracticePage }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -469,6 +472,7 @@ export function App() {
               <Route path="/cheatsheets" element={<CheatsheetsDirectoryPage />} />
               <Route path="/lab" element={<LabsDirectoryPage />} />
               <Route path="/compare" element={<ComparePage />} />
+              <Route path="/practice" element={<PracticePage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

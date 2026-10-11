@@ -10,6 +10,7 @@ import {
   FlaskConical,
   FileText,
   GitCompare,
+  GraduationCap,
 } from 'lucide-react';
 import { useProgressStore } from '@/features/progress/useProgressStore';
 
@@ -514,6 +515,19 @@ export function Navbar() {
             <GitCompare className="size-4" />
             <span>Compare</span>
           </Link>
+
+          {/* Practice & Exams */}
+          <Link
+            to="/practice"
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:text-brand ${
+              location.pathname === '/practice'
+                ? 'text-foreground font-semibold dark:text-white'
+                : 'text-neutral-600 dark:text-neutral-400'
+            }`}
+          >
+            <GraduationCap className="size-4" />
+            <span>Practice</span>
+          </Link>
         </div>
 
         {/* Right side: Theme toggle + Mobile Menu Button */}
@@ -647,7 +661,7 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="pt-2 border-t border-border/50">
+          <div className="pt-2 border-t border-border/50 space-y-1">
             <Link
               to="/compare"
               onClick={() => setMobileMenuOpen(false)}
@@ -655,6 +669,14 @@ export function Navbar() {
             >
               <GitCompare className="size-3.5 text-brand" />
               <span>Algorithm Chooser &amp; Comparison</span>
+            </Link>
+            <Link
+              to="/practice"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 py-1 text-xs font-semibold text-foreground dark:text-white hover:text-brand"
+            >
+              <GraduationCap className="size-3.5 text-brand" />
+              <span>Practice &amp; Mock Exams</span>
             </Link>
           </div>
         </div>
