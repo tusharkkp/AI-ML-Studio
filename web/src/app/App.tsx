@@ -289,6 +289,12 @@ const ComparePage = lazy(() =>
 const PracticePage = lazy(() =>
   import('@/pages/PracticePage').then((m) => ({ default: m.PracticePage }))
 );
+const GlossaryPage = lazy(() =>
+  import('@/pages/GlossaryPage').then((m) => ({ default: m.GlossaryPage }))
+);
+const FailureGalleryPage = lazy(() =>
+  import('@/pages/FailureGalleryPage').then((m) => ({ default: m.FailureGalleryPage }))
+);
 
 function PageLoadingFallback() {
   return (
@@ -473,6 +479,9 @@ export function App() {
               <Route path="/lab" element={<LabsDirectoryPage />} />
               <Route path="/compare" element={<ComparePage />} />
               <Route path="/practice" element={<PracticePage />} />
+              <Route path="/glossary" element={<GlossaryPage />} />
+              <Route path="/failure-gallery" element={<FailureGalleryPage />} />
+              <Route path="/make-it-fail" element={<FailureGalleryPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

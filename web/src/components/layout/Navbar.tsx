@@ -11,6 +11,7 @@ import {
   FileText,
   GitCompare,
   GraduationCap,
+  AlertTriangle,
 } from 'lucide-react';
 import { useProgressStore } from '@/features/progress/useProgressStore';
 
@@ -383,7 +384,7 @@ export function Navbar() {
 
             {labsOpen && (
               <div
-                className="absolute top-full left-0 mt-2 w-84 rounded-xl border border-orange-50/15 dark:border-orange-50/15 border-amber-900/15 bg-[#0c0a09]/95 dark:bg-[#0c0a09]/95 bg-white/95 backdrop-blur-md p-2 shadow-none z-50 max-h-[80vh] overflow-y-auto"
+                className="absolute top-full left-0 mt-2 w-[420px] rounded-xl border border-orange-50/15 dark:border-orange-50/15 border-amber-900/15 bg-[#0c0a09]/95 dark:bg-[#0c0a09]/95 bg-white/95 backdrop-blur-md p-2 shadow-none z-50 max-h-[80vh] overflow-y-auto"
                 role="menu"
               >
                 <div className="flex items-center justify-between px-3 py-1.5 border-b border-orange-50/10 mb-1">
@@ -527,6 +528,32 @@ export function Navbar() {
           >
             <GraduationCap className="size-4" />
             <span>Practice</span>
+          </Link>
+
+          {/* Glossary */}
+          <Link
+            to="/glossary"
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:text-brand ${
+              location.pathname === '/glossary'
+                ? 'text-foreground font-semibold dark:text-white'
+                : 'text-neutral-600 dark:text-neutral-400'
+            }`}
+          >
+            <BookOpen className="size-4" />
+            <span>Glossary</span>
+          </Link>
+
+          {/* Make It Fail Gallery */}
+          <Link
+            to="/failure-gallery"
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:text-brand ${
+              location.pathname === '/failure-gallery'
+                ? 'text-foreground font-semibold dark:text-white'
+                : 'text-neutral-600 dark:text-neutral-400'
+            }`}
+          >
+            <AlertTriangle className="size-4 text-red-400" />
+            <span>Failures</span>
           </Link>
         </div>
 
@@ -677,6 +704,22 @@ export function Navbar() {
             >
               <GraduationCap className="size-3.5 text-brand" />
               <span>Practice &amp; Mock Exams</span>
+            </Link>
+            <Link
+              to="/glossary"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 py-1 text-xs font-semibold text-foreground dark:text-white hover:text-brand"
+            >
+              <BookOpen className="size-3.5 text-brand" />
+              <span>Syllabus Glossary &amp; Terminology</span>
+            </Link>
+            <Link
+              to="/failure-gallery"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 py-1 text-xs font-semibold text-foreground dark:text-white hover:text-brand"
+            >
+              <AlertTriangle className="size-3.5 text-red-400" />
+              <span>Make It Fail: 12 Failure Traps</span>
             </Link>
           </div>
         </div>
