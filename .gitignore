@@ -47,6 +47,8 @@ Thumbs.db
 .idea/
 
 # Local documentation and AI instructions
+skills-lock.json
+skills.md
 01_MASTER_PROMPT.md
 AGENT.md
 Automated Verification Loops.md
