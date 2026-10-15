@@ -12,8 +12,11 @@ import {
   GitCompare,
   GraduationCap,
   AlertTriangle,
+  Search,
+  Presentation,
 } from 'lucide-react';
 import { useProgressStore } from '@/features/progress/useProgressStore';
+import { SearchModal } from '@/features/search/SearchModal';
 
 interface UnitNavItem {
   id: string;
@@ -198,15 +201,38 @@ export function Navbar() {
   const location = useLocation();
   const theme = useProgressStore((state) => state.theme);
   const toggleTheme = useProgressStore((state) => state.toggleTheme);
+  const teacherMode = useProgressStore((state) => state.teacherMode);
+  const toggleTeacherMode = useProgressStore((state) => state.toggleTeacherMode);
   const [scrolled, setScrolled] = useState(false);
   const [unitsOpen, setUnitsOpen] = useState(false);
   const [labsOpen, setLabsOpen] = useState(false);
   const [cheatsheetsOpen, setCheatsheetsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
 
   const unitsRef = useRef<HTMLDivElement>(null);
   const labsRef = useRef<HTMLDivElement>(null);
   const cheatsheetsRef = useRef<HTMLDivElement>(null);
+
+  // Global search shortcut listener (Ctrl+K or Cmd+K or /)
+  useEffect(() => {
+    function handleGlobalKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setSearchModalOpen((prev) => !prev);
+      }
+      if (
+        e.key === '/' &&
+        document.activeElement?.tagName !== 'INPUT' &&
+        document.activeElement?.tagName !== 'TEXTAREA'
+      ) {
+        e.preventDefault();
+        setSearchModalOpen(true);
+      }
+    }
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -557,8 +583,45 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Right side: Theme toggle + Mobile Menu Button */}
+        {/* Right side: Search, Teacher Mode, Theme toggle, Mobile Menu Button */}
         <div className="flex items-center space-x-2">
+          {/* Quick Search Launcher */}
+          <button
+            type="button"
+            onClick={() => setSearchModalOpen(true)}
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-orange-50/15 bg-neutral-900/60 text-xs text-neutral-400 hover:text-neutral-200 hover:border-orange-50/30 transition-all font-mono"
+            aria-label="Search syllabus topics (Ctrl+K)"
+          >
+            <Search className="size-3.5 text-neutral-400" />
+            <span className="hidden xl:inline text-[11px]">Search...</span>
+            <kbd className="hidden sm:inline-block text-[10px] bg-black/40 px-1.5 py-0.5 rounded border border-orange-50/10 text-neutral-400">
+              Ctrl K
+            </kbd>
+          </button>
+
+          {/* Teacher Presentation Mode Toggle */}
+          <button
+            type="button"
+            onClick={toggleTeacherMode}
+            className={`flex h-8 items-center gap-1.5 px-2.5 rounded-full border text-xs font-mono transition-colors ${
+              teacherMode
+                ? 'border-brand bg-brand/20 text-brand font-bold'
+                : 'border-border bg-card/60 text-neutral-500 hover:text-neutral-300'
+            }`}
+            title={
+              teacherMode
+                ? 'Teacher presentation mode active'
+                : 'Switch to teacher presentation mode'
+            }
+            aria-label="Toggle teacher presentation mode"
+          >
+            <Presentation className="size-3.5" />
+            <span className="hidden sm:inline text-[11px]">
+              {teacherMode ? 'Teacher ON' : 'Teacher'}
+            </span>
+          </button>
+
+          {/* Theme Toggle */}
           <button
             type="button"
             onClick={toggleTheme}
@@ -713,6 +776,16 @@ export function Navbar() {
               <BookOpen className="size-3.5 text-brand" />
               <span>Syllabus Glossary &amp; Terminology</span>
             </Link>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setSearchModalOpen(true);
+              }}
+              className="w-full flex items-center gap-2 py-1.5 text-xs font-semibold text-foreground dark:text-white hover:text-brand"
+            >
+              <Search className="size-3.5 text-brand" />
+              <span>Search Syllabus (Ctrl+K)</span>
+            </button>
             <Link
               to="/failure-gallery"
               onClick={() => setMobileMenuOpen(false)}
@@ -724,6 +797,9 @@ export function Navbar() {
           </div>
         </div>
       )}
+
+      {/* Global Search Modal */}
+      <SearchModal isOpen={searchModalOpen} onClose={() => setSearchModalOpen(false)} />
     </header>
   );
 }

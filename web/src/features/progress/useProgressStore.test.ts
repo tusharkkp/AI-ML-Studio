@@ -39,4 +39,12 @@ describe('useProgressStore', () => {
     expect(success).toBe(true);
     expect(useProgressStore.getState().getConceptProgress('u1-agents')?.read).toBe(true);
   });
+
+  it('toggles teacher presentation mode', () => {
+    expect(useProgressStore.getState().teacherMode).toBe(false);
+    useProgressStore.getState().toggleTeacherMode();
+    expect(useProgressStore.getState().teacherMode).toBe(true);
+    useProgressStore.getState().toggleTeacherMode();
+    expect(useProgressStore.getState().teacherMode).toBe(false);
+  });
 });

@@ -13,8 +13,10 @@ export interface ConceptProgress {
 export interface ProgressState {
   concepts: Record<string, ConceptProgress>;
   theme: 'light' | 'dark';
+  teacherMode: boolean;
   toggleTheme: () => void;
   setTheme: (theme: 'light' | 'dark') => void;
+  toggleTeacherMode: () => void;
   markRead: (conceptId: string) => void;
   markLabCompleted: (conceptId: string) => void;
   recordQuizScore: (conceptId: string, score: number, passingThreshold?: number) => void;
@@ -31,6 +33,17 @@ export const useProgressStore = create<ProgressState>()(
     (set, get) => ({
       concepts: {},
       theme: 'light',
+      teacherMode: false,
+
+      toggleTeacherMode: () => {
+        set((state) => {
+          const next = !state.teacherMode;
+          if (typeof document !== 'undefined') {
+            document.documentElement.classList.toggle('teacher-mode', next);
+          }
+          return { teacherMode: next };
+        });
+      },
 
       toggleTheme: () => {
         set((state) => {
