@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIML Studio — MIT Academy of Engineering</title>
+    <script>
+      // Single Page Application redirect for static hosting (GitHub Pages, Cloudflare Pages, etc.)
+      // Preserves route path and query parameters across reloads
+      (function () {
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        // Redirect to index.html with path encoded in query or session
+        sessionStorage.setItem('aiml_redirect', path + search + hash);
+        window.location.replace('/');
+      })();
+    </script>
+  </head>
+  <body
+    style="
+      background-color: #0a0a0a;
+      color: #fafafa;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    "
+  >
+    <div style="text-align: center">
+      <p style="font-size: 14px; color: #a3a3a3">Redirecting to learning module...</p>
+    </div>
+  </body>
+</html>

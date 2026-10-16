@@ -159,6 +159,16 @@
   }
 }
 
+/* Teacher Presentation Mode (High contrast, enlarged typography for classroom projectors) */
+html.teacher-mode {
+  font-size: 17px;
+}
+
+html.teacher-mode .card-chai {
+  border-width: 1.5px !important;
+  border-color: rgba(255, 247, 237, 0.35) !important;
+}
+
 /* Print styles for cheat sheets */
 @media print {
   nav,

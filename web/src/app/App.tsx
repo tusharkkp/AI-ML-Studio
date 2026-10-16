@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Backdrop } from '@/components/layout/Backdrop';
+import { ErrorBoundary } from '@/components/layout/ErrorBoundary';
 
 // Lazy-loaded route pages for code-splitting and instant initial route payload
 const LandingPage = lazy(() =>
@@ -310,19 +311,43 @@ function PageLoadingFallback() {
 
 function NotFoundPage() {
   return (
-    <div className="mx-auto max-w-2xl px-6 py-24 text-center">
-      <h1 className="font-display text-4xl font-semibold tracking-tight text-foreground">
-        404: Topic Not Found
-      </h1>
-      <p className="mt-3 text-neutral-600 dark:text-neutral-400">
-        The concept you are looking for has not been explored yet or the path has changed.
-      </p>
-      <div className="mt-6">
+    <div className="mx-auto max-w-2xl px-6 py-20 text-center space-y-6">
+      <div className="size-16 rounded-2xl bg-neutral-900 border border-orange-50/15 flex items-center justify-center mx-auto text-brand text-2xl font-mono font-bold">
+        404
+      </div>
+
+      <div className="space-y-2">
+        <h1 className="font-manrope text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+          Topic not found
+        </h1>
+        <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-montserrat leading-relaxed max-w-md mx-auto">
+          The concept or simulation you requested could not be located. Continue your journey
+          through{' '}
+          <span className="font-montserrat font-medium text-yellow-800 dark:text-orange-100">
+            the syllabus curriculum or interactive laboratories
+          </span>
+          .
+        </p>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
         <Link
           to="/"
-          className="btn-asym inline-flex h-9 items-center gap-2 bg-neutral-900 px-4 text-sm font-medium text-white transition-colors duration-200 hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+          className="inline-flex h-9 items-center gap-2 rounded-lg rounded-br-none bg-neutral-900 px-4 text-xs font-semibold text-white transition-colors duration-200 hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200 shadow-none"
         >
-          Return to Course Home
+          <span>Return to course home</span>
+        </Link>
+        <Link
+          to="/learn/unit-1"
+          className="inline-flex h-9 items-center gap-2 rounded-lg border border-orange-50/15 bg-black/20 px-4 text-xs font-semibold text-neutral-300 transition-colors duration-200 hover:bg-white/5"
+        >
+          <span>Explore curriculum</span>
+        </Link>
+        <Link
+          to="/lab"
+          className="inline-flex h-9 items-center gap-2 rounded-lg border border-orange-50/15 bg-black/20 px-4 text-xs font-semibold text-neutral-300 transition-colors duration-200 hover:bg-white/5"
+        >
+          <span>Interactive labs</span>
         </Link>
       </div>
     </div>
@@ -333,158 +358,187 @@ export function App() {
   return (
     <BrowserRouter>
       <div className="relative isolate min-h-screen flex flex-col overflow-x-clip bg-background text-foreground">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand focus:text-white focus:rounded-lg focus:font-mono focus:text-xs"
+        >
+          Skip to main content
+        </a>
         <Backdrop />
         <Navbar />
-        <main className="flex-1">
-          <Suspense fallback={<PageLoadingFallback />}>
-            <Routes>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/learn/unit-1" element={<Unit1LandingPage />} />
-              <Route path="/learn/unit-1/history-foundations" element={<AiHistoryPage />} />
-              <Route path="/learn/unit-1/types-applications" element={<AiTypesPage />} />
-              <Route path="/learn/unit-1/intelligent-agents" element={<IntelligentAgentsPage />} />
-              <Route
-                path="/learn/unit-1/knowledge-representation"
-                element={<KnowledgeRepresentationPage />}
-              />
-              <Route path="/learn/unit-1/first-order-logic" element={<FirstOrderLogicPage />} />
-              <Route
-                path="/learn/unit-1/rule-based-reasoning"
-                element={<RuleBasedReasoningPage />}
-              />
-              <Route path="/learn/unit-1/expert-systems" element={<ExpertSystemsPage />} />
-              <Route
-                path="/case-studies/medical-diagnosis"
-                element={<MedicalDiagnosisCaseStudy />}
-              />
-              <Route path="/case-studies/self-driving-vehicle" element={<SelfDrivingCaseStudy />} />
-              <Route path="/learn/unit-1/ethics-impact" element={<EthicsImpactPage />} />
-              <Route
-                path="/learn/unit-1/chatbot-prompt-engineering"
-                element={<ChatbotPromptEngPage />}
-              />
-              <Route path="/learn/unit-1/agi" element={<AgiFrontiersPage />} />
-              <Route path="/learn/unit-1/exam" element={<Unit1ExamPage />} />
-              <Route path="/cheatsheets/unit-1" element={<Unit1CheatSheetPage />} />
-              <Route path="/learn/unit-2" element={<Unit2LandingPage />} />
-              <Route path="/learn/unit-2/state-space-search" element={<StateSpaceSearchPage />} />
-              <Route path="/learn/unit-2/uninformed-search" element={<UninformedSearchPage />} />
-              <Route path="/learn/unit-2/informed-search" element={<HeuristicSearchPage />} />
-              <Route path="/learn/unit-2/local-search" element={<LocalSearchPage />} />
-              <Route path="/case-studies/gps-navigation" element={<GpsNavigationCaseStudyPage />} />
-              <Route path="/learn/unit-2/csp" element={<CspPage />} />
-              <Route path="/learn/unit-2/adversarial-search" element={<AdversarialSearchPage />} />
-              <Route path="/case-studies/chess-game-engine" element={<ChessCaseStudyPage />} />
-              <Route path="/learn/unit-2/genetic-algorithms" element={<GeneticAlgorithmsPage />} />
-              <Route path="/learn/unit-2/game-theory" element={<GameTheoryPage />} />
-              <Route path="/learn/unit-2/exam" element={<Unit2ExamPage />} />
-              <Route path="/cheatsheets/unit-2" element={<Unit2CheatSheetPage />} />
-              <Route path="/learn/unit-2/bfs" element={<BfsConceptPage />} />
-              <Route path="/lab/warehouse-bfs" element={<WarehouseLabPage />} />
-              <Route path="/learn/unit-3" element={<Unit3LandingPage />} />
-              <Route path="/learn/unit-3/ml-paradigms" element={<MlParadigmsPage />} />
-              <Route
-                path="/learn/unit-3/simple-linear-regression"
-                element={<SimpleLinearRegressionPage />}
-              />
-              <Route path="/learn/unit-3/gradient-descent" element={<GradientDescentPage />} />
-              <Route
-                path="/learn/unit-3/multiple-linear-regression"
-                element={<MultipleLinearRegressionPage />}
-              />
-              <Route
-                path="/learn/unit-3/polynomial-regression"
-                element={<PolynomialRegressionPage />}
-              />
-              <Route path="/learn/unit-3/bias-variance-tradeoff" element={<BiasVariancePage />} />
-              <Route
-                path="/learn/unit-3/locally-weighted-regression"
-                element={<LocallyWeightedRegressionPage />}
-              />
-              <Route
-                path="/learn/unit-3/feature-engineering"
-                element={<FeatureEngineeringPage />}
-              />
-              <Route path="/learn/unit-3/regression-metrics" element={<RegressionMetricsPage />} />
-              <Route
-                path="/case-studies/real-estate-pricing"
-                element={<RealEstateCaseStudyPage />}
-              />
-              <Route
-                path="/case-studies/healthcare-regression"
-                element={<HealthcareCaseStudyPage />}
-              />
-              <Route path="/learn/unit-3/regularization" element={<RegularizationPage />} />
-              <Route
-                path="/learn/unit-3/kfold-cross-validation"
-                element={<CrossValidationPage />}
-              />
-              <Route path="/learn/unit-3/exam" element={<Unit3ExamPage />} />
-              <Route path="/cheatsheets/unit-3" element={<Unit3CheatSheetPage />} />
-              <Route path="/learn/unit-4" element={<Unit4LandingPage />} />
-              <Route path="/learn/unit-4/bayes-theorem" element={<BayesTheoremPage />} />
-              <Route path="/learn/unit-4/naive-bayes" element={<NaiveBayesPage />} />
-              <Route path="/learn/unit-4/laplace-smoothing" element={<LaplaceSmoothingPage />} />
-              <Route
-                path="/learn/unit-4/logistic-regression"
-                element={<LogisticRegressionPage />}
-              />
-              <Route
-                path="/learn/unit-4/classification-metrics"
-                element={<ClassificationMetricsPage />}
-              />
-              <Route path="/learn/unit-4/roc-auc" element={<RocAucPage />} />
-              <Route path="/learn/unit-4/knn" element={<KnnPage />} />
-              <Route path="/case-studies/customer-churn" element={<CustomerChurnCaseStudyPage />} />
-              <Route
-                path="/learn/unit-4/variational-inference"
-                element={<VariationalInferencePage />}
-              />
-              <Route path="/learn/unit-4/exam" element={<Unit4ExamPage />} />
-              <Route path="/cheatsheets/unit-4" element={<Unit4CheatSheetPage />} />
-              <Route path="/learn/unit-5" element={<Unit5LandingPage />} />
-              <Route path="/learn/unit-5/decision-trees" element={<DecisionTreesPage />} />
-              <Route
-                path="/learn/unit-5/impurity-split-criteria"
-                element={<ImpurityCriteriaPage />}
-              />
-              <Route path="/learn/unit-5/tree-pruning" element={<TreePruningPage />} />
-              <Route path="/learn/unit-5/svm-fundamentals" element={<SvmFundamentalsPage />} />
-              <Route path="/learn/unit-5/svm-kernels" element={<SvmKernelsPage />} />
-              <Route
-                path="/learn/unit-5/ensemble-significance"
-                element={<EnsembleSignificancePage />}
-              />
-              <Route
-                path="/learn/unit-5/bagging-random-forests"
-                element={<BaggingRandomForestsPage />}
-              />
-              <Route path="/learn/unit-5/boosting-stacking" element={<BoostingStackingPage />} />
-              <Route
-                path="/learn/unit-5/performance-evaluation"
-                element={<PerformanceEvaluationPage />}
-              />
-              <Route
-                path="/case-studies/diabetes-prediction"
-                element={<DiabetesPredictionCaseStudyPage />}
-              />
-              <Route path="/learn/unit-5/adaboost" element={<AdaBoostPage />} />
-              <Route
-                path="/learn/unit-5/decision-tree-regression"
-                element={<DecisionTreeRegressionPage />}
-              />
-              <Route path="/learn/unit-5/exam" element={<Unit5ExamPage />} />
-              <Route path="/cheatsheets/unit-5" element={<Unit5CheatSheetPage />} />
-              <Route path="/cheatsheets" element={<CheatsheetsDirectoryPage />} />
-              <Route path="/lab" element={<LabsDirectoryPage />} />
-              <Route path="/compare" element={<ComparePage />} />
-              <Route path="/practice" element={<PracticePage />} />
-              <Route path="/glossary" element={<GlossaryPage />} />
-              <Route path="/failure-gallery" element={<FailureGalleryPage />} />
-              <Route path="/make-it-fail" element={<FailureGalleryPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Suspense>
+        <main id="main-content" className="flex-1">
+          <ErrorBoundary>
+            <Suspense fallback={<PageLoadingFallback />}>
+              <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/learn/unit-1" element={<Unit1LandingPage />} />
+                <Route path="/learn/unit-1/history-foundations" element={<AiHistoryPage />} />
+                <Route path="/learn/unit-1/types-applications" element={<AiTypesPage />} />
+                <Route
+                  path="/learn/unit-1/intelligent-agents"
+                  element={<IntelligentAgentsPage />}
+                />
+                <Route
+                  path="/learn/unit-1/knowledge-representation"
+                  element={<KnowledgeRepresentationPage />}
+                />
+                <Route path="/learn/unit-1/first-order-logic" element={<FirstOrderLogicPage />} />
+                <Route
+                  path="/learn/unit-1/rule-based-reasoning"
+                  element={<RuleBasedReasoningPage />}
+                />
+                <Route path="/learn/unit-1/expert-systems" element={<ExpertSystemsPage />} />
+                <Route
+                  path="/case-studies/medical-diagnosis"
+                  element={<MedicalDiagnosisCaseStudy />}
+                />
+                <Route
+                  path="/case-studies/self-driving-vehicle"
+                  element={<SelfDrivingCaseStudy />}
+                />
+                <Route path="/learn/unit-1/ethics-impact" element={<EthicsImpactPage />} />
+                <Route
+                  path="/learn/unit-1/chatbot-prompt-engineering"
+                  element={<ChatbotPromptEngPage />}
+                />
+                <Route path="/learn/unit-1/agi" element={<AgiFrontiersPage />} />
+                <Route path="/learn/unit-1/exam" element={<Unit1ExamPage />} />
+                <Route path="/cheatsheets/unit-1" element={<Unit1CheatSheetPage />} />
+                <Route path="/learn/unit-2" element={<Unit2LandingPage />} />
+                <Route path="/learn/unit-2/state-space-search" element={<StateSpaceSearchPage />} />
+                <Route path="/learn/unit-2/uninformed-search" element={<UninformedSearchPage />} />
+                <Route path="/learn/unit-2/informed-search" element={<HeuristicSearchPage />} />
+                <Route path="/learn/unit-2/local-search" element={<LocalSearchPage />} />
+                <Route
+                  path="/case-studies/gps-navigation"
+                  element={<GpsNavigationCaseStudyPage />}
+                />
+                <Route path="/learn/unit-2/csp" element={<CspPage />} />
+                <Route
+                  path="/learn/unit-2/adversarial-search"
+                  element={<AdversarialSearchPage />}
+                />
+                <Route path="/case-studies/chess-game-engine" element={<ChessCaseStudyPage />} />
+                <Route
+                  path="/learn/unit-2/genetic-algorithms"
+                  element={<GeneticAlgorithmsPage />}
+                />
+                <Route path="/learn/unit-2/game-theory" element={<GameTheoryPage />} />
+                <Route path="/learn/unit-2/exam" element={<Unit2ExamPage />} />
+                <Route path="/cheatsheets/unit-2" element={<Unit2CheatSheetPage />} />
+                <Route path="/learn/unit-2/bfs" element={<BfsConceptPage />} />
+                <Route path="/lab/warehouse-bfs" element={<WarehouseLabPage />} />
+                <Route path="/learn/unit-3" element={<Unit3LandingPage />} />
+                <Route path="/learn/unit-3/ml-paradigms" element={<MlParadigmsPage />} />
+                <Route
+                  path="/learn/unit-3/simple-linear-regression"
+                  element={<SimpleLinearRegressionPage />}
+                />
+                <Route path="/learn/unit-3/gradient-descent" element={<GradientDescentPage />} />
+                <Route
+                  path="/learn/unit-3/multiple-linear-regression"
+                  element={<MultipleLinearRegressionPage />}
+                />
+                <Route
+                  path="/learn/unit-3/polynomial-regression"
+                  element={<PolynomialRegressionPage />}
+                />
+                <Route path="/learn/unit-3/bias-variance-tradeoff" element={<BiasVariancePage />} />
+                <Route
+                  path="/learn/unit-3/locally-weighted-regression"
+                  element={<LocallyWeightedRegressionPage />}
+                />
+                <Route
+                  path="/learn/unit-3/feature-engineering"
+                  element={<FeatureEngineeringPage />}
+                />
+                <Route
+                  path="/learn/unit-3/regression-metrics"
+                  element={<RegressionMetricsPage />}
+                />
+                <Route
+                  path="/case-studies/real-estate-pricing"
+                  element={<RealEstateCaseStudyPage />}
+                />
+                <Route
+                  path="/case-studies/healthcare-regression"
+                  element={<HealthcareCaseStudyPage />}
+                />
+                <Route path="/learn/unit-3/regularization" element={<RegularizationPage />} />
+                <Route
+                  path="/learn/unit-3/kfold-cross-validation"
+                  element={<CrossValidationPage />}
+                />
+                <Route path="/learn/unit-3/exam" element={<Unit3ExamPage />} />
+                <Route path="/cheatsheets/unit-3" element={<Unit3CheatSheetPage />} />
+                <Route path="/learn/unit-4" element={<Unit4LandingPage />} />
+                <Route path="/learn/unit-4/bayes-theorem" element={<BayesTheoremPage />} />
+                <Route path="/learn/unit-4/naive-bayes" element={<NaiveBayesPage />} />
+                <Route path="/learn/unit-4/laplace-smoothing" element={<LaplaceSmoothingPage />} />
+                <Route
+                  path="/learn/unit-4/logistic-regression"
+                  element={<LogisticRegressionPage />}
+                />
+                <Route
+                  path="/learn/unit-4/classification-metrics"
+                  element={<ClassificationMetricsPage />}
+                />
+                <Route path="/learn/unit-4/roc-auc" element={<RocAucPage />} />
+                <Route path="/learn/unit-4/knn" element={<KnnPage />} />
+                <Route
+                  path="/case-studies/customer-churn"
+                  element={<CustomerChurnCaseStudyPage />}
+                />
+                <Route
+                  path="/learn/unit-4/variational-inference"
+                  element={<VariationalInferencePage />}
+                />
+                <Route path="/learn/unit-4/exam" element={<Unit4ExamPage />} />
+                <Route path="/cheatsheets/unit-4" element={<Unit4CheatSheetPage />} />
+                <Route path="/learn/unit-5" element={<Unit5LandingPage />} />
+                <Route path="/learn/unit-5/decision-trees" element={<DecisionTreesPage />} />
+                <Route
+                  path="/learn/unit-5/impurity-split-criteria"
+                  element={<ImpurityCriteriaPage />}
+                />
+                <Route path="/learn/unit-5/tree-pruning" element={<TreePruningPage />} />
+                <Route path="/learn/unit-5/svm-fundamentals" element={<SvmFundamentalsPage />} />
+                <Route path="/learn/unit-5/svm-kernels" element={<SvmKernelsPage />} />
+                <Route
+                  path="/learn/unit-5/ensemble-significance"
+                  element={<EnsembleSignificancePage />}
+                />
+                <Route
+                  path="/learn/unit-5/bagging-random-forests"
+                  element={<BaggingRandomForestsPage />}
+                />
+                <Route path="/learn/unit-5/boosting-stacking" element={<BoostingStackingPage />} />
+                <Route
+                  path="/learn/unit-5/performance-evaluation"
+                  element={<PerformanceEvaluationPage />}
+                />
+                <Route
+                  path="/case-studies/diabetes-prediction"
+                  element={<DiabetesPredictionCaseStudyPage />}
+                />
+                <Route path="/learn/unit-5/adaboost" element={<AdaBoostPage />} />
+                <Route
+                  path="/learn/unit-5/decision-tree-regression"
+                  element={<DecisionTreeRegressionPage />}
+                />
+                <Route path="/learn/unit-5/exam" element={<Unit5ExamPage />} />
+                <Route path="/cheatsheets/unit-5" element={<Unit5CheatSheetPage />} />
+                <Route path="/cheatsheets" element={<CheatsheetsDirectoryPage />} />
+                <Route path="/lab" element={<LabsDirectoryPage />} />
+                <Route path="/compare" element={<ComparePage />} />
+                <Route path="/practice" element={<PracticePage />} />
+                <Route path="/glossary" element={<GlossaryPage />} />
+                <Route path="/failure-gallery" element={<FailureGalleryPage />} />
+                <Route path="/make-it-fail" element={<FailureGalleryPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Suspense>
+          </ErrorBoundary>
         </main>
         <Footer />
       </div>
