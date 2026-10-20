@@ -293,7 +293,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-12">
         {/* Brand: Onest wordmark with signature orange dot */}
-        <Link to="/" className="flex items-center gap-2 group">
+        {/* <Link to="/" className="flex items-center gap-2 group">
           <div className="flex flex-col">
             <span className="font-brand text-xl font-medium tracking-tight text-foreground flex items-center">
               AIML Studio
@@ -303,7 +303,24 @@ export function Navbar() {
               MIT AOE · Rev. 2023 NEP
             </span>
           </div>
-        </Link>
+        </Link> */}
+
+        {/* Brand: Fixed-width logo */}
+{/* <Link
+  to="/"
+  className="group flex shrink-0 items-center"
+>
+  <div className="flex min-w-fit flex-col">
+    <span className="flex items-center whitespace-nowrap font-brand text-2xl font-semibold tracking-tight text-foreground">
+      AIML Studio
+      <span className="ml-1.5 inline-block size-1.5 shrink-0 rounded-full bg-brand animate-pulse" />
+    </span>
+
+    <span className="whitespace-nowrap text-[11px] font-sans text-neutral-500 dark:text-neutral-400">
+      MIT AOE · Rev. 2023 NEP
+    </span>
+  </div>
+</Link> */}
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-1 font-sans">

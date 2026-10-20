@@ -74,3 +74,4 @@ npm --prefix web run check:bundle
 ```
 
 All 32 test files must pass with zero TypeScript errors and zero ESLint warnings. Initial route JS payload must remain $\le 200\text{ KB}$ gzip, and each individual chunk must be $\le 150\text{ KB}$ gzip.
+
