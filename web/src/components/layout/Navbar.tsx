@@ -13,7 +13,6 @@ import {
   GraduationCap,
   AlertTriangle,
   Search,
-  Presentation,
 } from 'lucide-react';
 import { useProgressStore } from '@/features/progress/useProgressStore';
 import { SearchModal } from '@/features/search/SearchModal';
@@ -201,8 +200,6 @@ export function Navbar() {
   const location = useLocation();
   const theme = useProgressStore((state) => state.theme);
   const toggleTheme = useProgressStore((state) => state.toggleTheme);
-  const teacherMode = useProgressStore((state) => state.teacherMode);
-  const toggleTeacherMode = useProgressStore((state) => state.toggleTeacherMode);
   const [scrolled, setScrolled] = useState(false);
   const [unitsOpen, setUnitsOpen] = useState(false);
   const [labsOpen, setLabsOpen] = useState(false);
@@ -585,7 +582,7 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Right side: Search, Teacher Mode, Theme toggle, Mobile Menu Button */}
+        {/* Right side: Search, Theme toggle, Mobile Menu Button */}
         <div className="flex items-center space-x-2">
           {/* Quick Search Launcher */}
           <button
@@ -599,28 +596,6 @@ export function Navbar() {
             <kbd className="hidden sm:inline-block text-[10px] bg-background px-1.5 py-0.5 rounded border border-border text-muted-foreground">
               Ctrl K
             </kbd>
-          </button>
-
-          {/* Teacher Presentation Mode Toggle */}
-          <button
-            type="button"
-            onClick={toggleTeacherMode}
-            className={`flex h-8 items-center gap-1.5 px-2.5 rounded-full border text-xs font-mono transition-colors ${
-              teacherMode
-                ? 'border-brand bg-brand/15 text-brand font-bold'
-                : 'border-border bg-muted/40 text-muted-foreground hover:text-foreground'
-            }`}
-            title={
-              teacherMode
-                ? 'Teacher presentation mode active'
-                : 'Switch to teacher presentation mode'
-            }
-            aria-label="Toggle teacher presentation mode"
-          >
-            <Presentation className="size-3.5" />
-            <span className="hidden sm:inline text-[11px]">
-              {teacherMode ? 'Teacher ON' : 'Teacher'}
-            </span>
           </button>
 
           {/* Theme Toggle */}

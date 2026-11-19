@@ -45,7 +45,6 @@ The platform is mapped directly to the official MIT AOE syllabus and Course Outc
 - **Interactive Laboratories Directory (`/lab`):** Direct catalog access to all 24 standalone algorithm laboratories.
 - **Revision Cheat Sheets (`/cheatsheets`):** High-density printable revision guides with formula cards and viva questions.
 - **Global Search Modal (`Ctrl+K` or `/`):** Instant keyboard-navigable search across all concepts, labs, case studies, formulas, and glossary terms.
-- **Teacher Presentation Mode:** Projector-optimized high-contrast styling and enlarged typography for classroom lectures.
 
 ---
 
