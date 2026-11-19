@@ -52,12 +52,12 @@ export function EnsembleDiversityLab() {
   const simulatedEnsembleError = 1 - simResult.simulatedMajorityAccuracy;
 
   return (
-    <Card className="p-6 border border-orange-50/15 bg-neutral-900/50 backdrop-blur-sm space-y-6">
+    <Card className="p-6 border border-border bg-card shadow-subtle backdrop-blur-sm space-y-6">
       {/* Header bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-orange-50/10 pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-card-edge pb-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex size-6 items-center justify-center rounded border border-orange-50/20 bg-black/40 text-[10px] font-mono font-bold text-orange-200">
+            <span className="flex size-6 items-center justify-center rounded border border-brand/20 bg-brand/10 text-[10px] font-mono font-bold text-brand">
               LAB
             </span>
             <h3 className="font-manrope text-lg font-semibold text-foreground dark:text-white">
@@ -130,7 +130,7 @@ export function EnsembleDiversityLab() {
 
       {/* Primary Metrics Comparison */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="p-4 rounded-lg bg-black/40 border border-orange-50/10">
+        <div className="p-4 rounded-lg bg-muted/50 border border-card-edge">
           <div className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">
             Single model baseline
           </div>
@@ -142,7 +142,7 @@ export function EnsembleDiversityLab() {
           </div>
         </div>
 
-        <div className="p-4 rounded-lg bg-black/40 border border-orange-50/10">
+        <div className="p-4 rounded-lg bg-muted/50 border border-card-edge">
           <div className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">
             Theoretical independent jury
           </div>
@@ -152,7 +152,7 @@ export function EnsembleDiversityLab() {
           <div className="text-[11px] text-neutral-500 mt-0.5">Binomial CDF with ρ = 0</div>
         </div>
 
-        <div className="p-4 rounded-lg bg-black/40 border border-orange-50/10">
+        <div className="p-4 rounded-lg bg-muted/50 border border-card-edge">
           <div className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">
             Simulated ensemble (with ρ)
           </div>
@@ -173,7 +173,7 @@ export function EnsembleDiversityLab() {
       </div>
 
       {/* Single Trial Voters Matrix */}
-      <div className="p-4 rounded-lg bg-black/30 border border-orange-50/10 space-y-3">
+      <div className="p-4 rounded-lg bg-muted/40 border border-card-edge space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <Users className="size-4 text-orange-200" />
@@ -229,7 +229,7 @@ export function EnsembleDiversityLab() {
       </div>
 
       {/* Krogh-Vedelsby Ambiguity Decomposition Visualizer */}
-      <div className="p-4 rounded-lg bg-black/40 border border-orange-50/10 space-y-2">
+      <div className="p-4 rounded-lg bg-muted/50 border border-card-edge space-y-2">
         <div className="flex items-center justify-between text-xs">
           <span className="font-semibold text-neutral-300 font-manrope">
             Ambiguity Decomposition (Krogh & Vedelsby, 1995)
@@ -248,7 +248,7 @@ export function EnsembleDiversityLab() {
             <span>Ensemble Diversity Term (Subtracted Bonus):</span>
             <span>-{(theoreticalDiversity * 100).toFixed(1)}%</span>
           </div>
-          <div className="flex items-center justify-between text-orange-200 border-t border-neutral-800 pt-1 font-bold">
+          <div className="flex items-center justify-between text-orange-200 border-t border-border pt-1 font-bold">
             <span>Net Ensemble Error:</span>
             <span>{(simulatedEnsembleError * 100).toFixed(1)}%</span>
           </div>

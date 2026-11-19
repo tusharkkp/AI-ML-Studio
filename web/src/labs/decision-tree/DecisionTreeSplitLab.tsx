@@ -202,7 +202,7 @@ export const DecisionTreeSplitLab: React.FC = () => {
       {activeTab === 'visualizer' ? (
         <div className="space-y-6">
           {/* Split Architecture Diagram */}
-          <div className="p-4 rounded-xl border border-border/60 bg-black/30 space-y-4">
+          <div className="p-4 rounded-xl border border-border/60 bg-muted/40 space-y-4">
             {/* Parent Node */}
             <div className="flex flex-col items-center">
               <div className="p-4 rounded-lg border border-border/80 bg-muted/30 text-center w-full max-w-sm">

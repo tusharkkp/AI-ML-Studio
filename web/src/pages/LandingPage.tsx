@@ -35,8 +35,8 @@ export function LandingPage() {
       icon: Compass,
       description:
         'Uninformed BFS and DFS races, A* admissibility, CSP constraint propagation, Minimax, and Genetic Algorithms.',
-      href: '/learn/unit-2/bfs',
-      activeBadge: 'Vertical Slice Ready',
+      href: '/learn/unit-2',
+      activeBadge: 'Interactive Labs',
     },
     {
       number: 3,
@@ -76,7 +76,9 @@ export function LandingPage() {
       icon: BookOpen,
       description:
         'Apriori association rules, k-Means elbow and silhouette, Hierarchical dendrograms, DBSCAN density, and PCA axes rotation.',
-      href: '/learn/unit-6',
+      href: '/cheatsheets',
+      activeBadge: 'Upcoming',
+      isUpcoming: true,
     },
   ];
 
@@ -209,7 +211,7 @@ export function LandingPage() {
                 <CardContent className="pt-4 border-t border-card-edge">
                   <Link to={u.href}>
                     <Button variant="secondary" size="sm" className="w-full justify-between">
-                      <span>Start learning</span>
+                      <span>{u.isUpcoming ? 'View upcoming topics' : 'Start learning'}</span>
                       <ArrowRight className="h-3.5 w-3.5" />
                     </Button>
                   </Link>

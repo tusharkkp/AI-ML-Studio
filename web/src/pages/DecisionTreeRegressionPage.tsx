@@ -150,7 +150,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
   return (
     <div className="mx-auto max-w-5xl px-6 py-10 sm:px-12 space-y-12">
       {/* 1. Hero Header & Syllabus Mapping */}
-      <div className="border-b border-orange-50/15 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
           <nav
             aria-label="Breadcrumb"
@@ -241,7 +241,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
           3. Step-by-step on paper: Splitting on variance reduction
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-montserrat">
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="font-bold font-manrope text-sm text-foreground flex items-center gap-2">
               <span className="w-5 h-5 rounded-full bg-brand/20 text-brand flex items-center justify-center font-mono">
                 1
@@ -256,7 +256,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
             </div>
           </Card>
 
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="font-bold font-manrope text-sm text-foreground flex items-center gap-2">
               <span className="w-5 h-5 rounded-full bg-brand/20 text-brand flex items-center justify-center font-mono">
                 2
@@ -274,7 +274,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
             </div>
           </Card>
 
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="font-bold font-manrope text-sm text-foreground flex items-center gap-2">
               <span className="w-5 h-5 rounded-full bg-brand/20 text-brand flex items-center justify-center font-mono">
                 3
@@ -297,7 +297,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
         <h2 className="text-xl sm:text-2xl font-semibold text-foreground font-manrope">
           4. Formal mathematical foundations: CART continuous regression
         </h2>
-        <div className="p-5 rounded-xl border border-orange-50/15 bg-neutral-900/50 space-y-4 text-xs font-montserrat leading-relaxed">
+        <div className="p-5 rounded-xl border border-border bg-neutral-900/50 space-y-4 text-xs font-montserrat leading-relaxed">
           <p className="text-neutral-300">
             Consider a continuous dataset{' '}
             {'\\(D = \\{(\\mathbf{x}_1, y_1), \\dots, (\\mathbf{x}_N, y_N)\\}\\)'} where{' '}
@@ -341,7 +341,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
         <h2 className="text-xl sm:text-2xl font-semibold text-foreground font-manrope">
           5. Algorithm pseudocode: CART recursive regression tree
         </h2>
-        <Card className="p-5 border-orange-50/15 bg-black/30 font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
+        <Card className="p-5 border-border bg-card shadow-subtle font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
           <pre>{`ALGORITHM BuildRegressionTree(Dataset S, current_depth, max_depth, min_samples):
   1. Calculate sample mean: c_hat = Mean(y_i for all i in S)
   2. Calculate node SSE: SSE = SUM_{i in S} (y_i - c_hat)^2
@@ -406,7 +406,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
             )}
           </Button>
         </div>
-        <Card className="p-5 border-orange-50/15 bg-black/40 font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
+        <Card className="p-5 border-border bg-card shadow-subtle font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
           <pre>{pythonSnippet}</pre>
         </Card>
       </section>
@@ -512,7 +512,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
               fact: 'Because tree splitting depends solely on ordering inequalities (x_j <= s), monotonic scaling transformations have zero effect on split locations or tree topology.',
             },
           ].map((item, idx) => (
-            <Card key={idx} className="p-4 border-orange-50/10 bg-neutral-900/40 space-y-1">
+            <Card key={idx} className="p-4 border-card-edge bg-neutral-900/40 space-y-1">
               <div className="font-bold text-red-400 font-manrope text-sm">Myth: "{item.myth}"</div>
               <div className="text-neutral-300 leading-relaxed">
                 <span className="text-emerald-400 font-semibold">Reality:</span> {item.fact}
@@ -538,7 +538,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
           11. Exam & viva corner
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-montserrat">
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <h4 className="font-bold text-foreground font-manrope text-sm">
               Viva Question 1: How does CART choose the prediction value in each leaf?
             </h4>
@@ -549,7 +549,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
             </p>
           </Card>
 
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <h4 className="font-bold text-foreground font-manrope text-sm">
               Viva Question 2: Why are regression trees dangerous for financial forecasting?
             </h4>
@@ -568,7 +568,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
         <h2 className="text-xl sm:text-2xl font-semibold text-foreground font-manrope">
           12. Summary & key takeaways
         </h2>
-        <Card className="p-5 border-orange-50/15 bg-black/20 space-y-2 text-xs font-montserrat text-neutral-300 leading-relaxed">
+        <Card className="p-5 border-border bg-card shadow-subtle space-y-2 text-xs font-montserrat text-neutral-300 leading-relaxed">
           <p>
             1. <strong className="text-foreground">Continuous Variance Reduction:</strong> CART
             regression trees recursively split feature space by finding thresholds that maximize
@@ -588,7 +588,7 @@ print(f"Extrapolation check at x=7.5: Pred={y_pred2[-1]:.3f} (Constant step trap
       </section>
 
       {/* 14. What's Next */}
-      <section className="border-t border-orange-50/15 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <section className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <div className="text-xs text-neutral-400 font-mono">Unit 5 Capstone</div>
           <div className="text-base font-semibold text-foreground font-manrope">

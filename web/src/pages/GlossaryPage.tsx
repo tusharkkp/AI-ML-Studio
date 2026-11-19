@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
+import { Input } from '@/components/ui/Input';
 import { GLOSSARY } from '@/features/glossary/glossaryData';
 import { Search, BookOpen, ArrowUpRight, Filter, X, Layers, Sparkles } from 'lucide-react';
 
@@ -87,7 +88,7 @@ export function GlossaryPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-10 sm:px-12 space-y-10">
       {/* 1. Header Banner */}
-      <div className="border-b border-orange-50/15 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <Badge variant="unit">Syllabus Glossary</Badge>
           <Badge variant="outline">MIT AOE Course 2304322T</Badge>
@@ -97,9 +98,9 @@ export function GlossaryPage() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground font-manrope">
           Technical glossary &amp; terminology
         </h1>
-        <p className="mt-3 text-sm sm:text-base text-neutral-600 dark:text-neutral-300 font-montserrat leading-relaxed max-w-3xl">
+        <p className="mt-3 text-sm sm:text-base text-muted-foreground font-montserrat leading-relaxed max-w-3xl">
           Quickly search, clarify, and master formal AI and machine learning definitions with{' '}
-          <span className="font-montserrat font-medium text-yellow-800 dark:text-orange-100">
+          <span className="font-montserrat font-medium text-brand">
             cross-unit mathematical notations, related terminology networks, and direct concept
             links
           </span>
@@ -111,18 +112,17 @@ export function GlossaryPage() {
       <div className="space-y-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-neutral-500" />
-            <input
+            <Input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by term, formula, category, or keyword (e.g. Heuristic, OLS, Entropy)..."
-              className="w-full pl-10 pr-10 py-2.5 rounded-lg border border-orange-50/15 bg-neutral-900/60 text-sm text-foreground placeholder:text-neutral-500 focus:outline-none focus:border-brand transition-all"
+              icon={<Search className="size-4 text-muted-foreground" />}
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-neutral-300"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                 aria-label="Clear search"
               >
                 <X className="size-4" />
@@ -144,7 +144,7 @@ export function GlossaryPage() {
 
         {/* Unit Selector Tabs */}
         <div className="flex flex-wrap items-center gap-2 pt-1">
-          <span className="text-xs font-mono text-neutral-500 mr-2 flex items-center gap-1">
+          <span className="text-xs font-mono text-muted-foreground mr-2 flex items-center gap-1">
             <Filter className="size-3" />
             <span>Unit:</span>
           </span>
@@ -154,8 +154,8 @@ export function GlossaryPage() {
               onClick={() => setSelectedUnit(tab.id)}
               className={`px-3 py-1.5 rounded-lg text-xs font-manrope font-semibold transition-all border ${
                 selectedUnit === tab.id
-                  ? 'border-brand bg-brand text-white shadow-none'
-                  : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200'
+                  ? 'border-brand bg-brand text-white shadow-subtle'
+                  : 'border-border bg-muted/40 text-muted-foreground hover:text-foreground'
               }`}
             >
               {tab.label}
@@ -164,14 +164,14 @@ export function GlossaryPage() {
         </div>
 
         {/* Alphabet Jump Strip */}
-        <div className="flex flex-wrap items-center gap-1 pt-1 border-t border-orange-50/10">
-          <span className="text-xs font-mono text-neutral-500 mr-2">Jump:</span>
+        <div className="flex flex-wrap items-center gap-1 pt-1 border-t border-border/60">
+          <span className="text-xs font-mono text-muted-foreground mr-2">Jump:</span>
           <button
             onClick={() => setSelectedLetter('all')}
             className={`size-7 rounded text-[11px] font-mono font-semibold transition-all ${
               selectedLetter === 'all'
                 ? 'bg-brand text-white'
-                : 'text-neutral-400 hover:text-neutral-200 hover:bg-white/5'
+                : 'text-muted-foreground hover:text-foreground hover:bg-muted'
             }`}
           >
             All
@@ -187,8 +187,8 @@ export function GlossaryPage() {
                   selectedLetter === char
                     ? 'bg-brand text-white'
                     : hasEntries
-                      ? 'text-neutral-300 hover:text-white hover:bg-white/5'
-                      : 'text-neutral-700 cursor-not-allowed opacity-40'
+                      ? 'text-foreground/80 hover:text-foreground hover:bg-muted'
+                      : 'text-muted-foreground/30 cursor-not-allowed'
                 }`}
               >
                 {char}
@@ -199,7 +199,7 @@ export function GlossaryPage() {
       </div>
 
       {/* 3. Results Header */}
-      <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-2 border-b border-orange-50/10 pb-3">
+      <div className="flex items-center justify-between text-xs font-mono text-muted-foreground pt-2 border-b border-border/60 pb-3">
         <div>
           Showing <span className="text-foreground font-semibold">{filteredEntries.length}</span> of{' '}
           <span className="text-foreground font-semibold">{entriesList.length}</span> defined terms
@@ -214,14 +214,14 @@ export function GlossaryPage() {
 
       {/* 4. Glossary Cards Grid */}
       {filteredEntries.length === 0 ? (
-        <Card className="p-10 text-center border-orange-50/15 bg-neutral-900/30 rounded-xl space-y-4">
-          <div className="size-12 rounded-full bg-neutral-800 mx-auto flex items-center justify-center text-neutral-400">
+        <Card className="p-10 text-center border-border bg-card/60 rounded-xl space-y-4">
+          <div className="size-12 rounded-full bg-muted mx-auto flex items-center justify-center text-muted-foreground">
             <BookOpen className="size-6" />
           </div>
           <h3 className="font-manrope text-base font-semibold text-foreground">
             No terms match your search
           </h3>
-          <p className="text-xs text-neutral-400 font-montserrat max-w-md mx-auto">
+          <p className="text-xs text-muted-foreground font-montserrat max-w-md mx-auto">
             Try adjusting your search query, selecting another unit, or resetting the active
             filters.
           </p>
@@ -235,7 +235,7 @@ export function GlossaryPage() {
             return (
               <Card
                 key={entry.key}
-                className="p-5 border-orange-50/15 bg-neutral-900/40 rounded-xl flex flex-col justify-between space-y-4 hover:border-orange-50/30 transition-all backdrop-blur-sm"
+                className="p-5 border-border bg-card/80 rounded-xl flex flex-col justify-between space-y-4 hover:border-brand/40 shadow-subtle transition-all backdrop-blur-sm"
               >
                 <div className="space-y-3">
                   {/* Card Header */}
@@ -256,14 +256,14 @@ export function GlossaryPage() {
                   </div>
 
                   {/* Definition */}
-                  <p className="text-xs text-neutral-300 font-montserrat leading-relaxed">
+                  <p className="text-xs text-muted-foreground font-montserrat leading-relaxed">
                     {entry.definition}
                   </p>
 
                   {/* Formula / Formal Notation Box if present */}
                   {entry.formula && (
-                    <div className="p-2.5 rounded-lg bg-neutral-950/80 border border-orange-50/10 font-mono text-[11px] text-yellow-800 dark:text-orange-100/90 overflow-x-auto">
-                      <span className="text-[10px] text-neutral-500 uppercase block font-sans tracking-wider mb-0.5">
+                    <div className="p-2.5 rounded-lg bg-muted/60 border border-border font-mono text-[11px] text-foreground overflow-x-auto">
+                      <span className="text-[10px] text-muted-foreground uppercase block font-sans tracking-wider mb-0.5">
                         Mathematical expression:
                       </span>
                       <code>{entry.formula}</code>
@@ -272,8 +272,8 @@ export function GlossaryPage() {
 
                   {/* Related Terms Network */}
                   {entry.relatedTerms && entry.relatedTerms.length > 0 && (
-                    <div className="pt-2 border-t border-orange-50/10">
-                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-500 mb-1.5 flex items-center gap-1">
+                    <div className="pt-2 border-t border-border/60">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-1.5 flex items-center gap-1">
                         <Sparkles className="size-3 text-brand" />
                         <span>Connected concepts:</span>
                       </div>
@@ -285,7 +285,7 @@ export function GlossaryPage() {
                             <button
                               key={relKey}
                               onClick={() => handleRelatedClick(relKey)}
-                              className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/5 hover:bg-brand/20 hover:text-brand border border-orange-50/10 transition-colors text-neutral-400"
+                              className="text-[11px] font-mono px-2 py-0.5 rounded bg-muted hover:bg-brand/15 hover:text-brand border border-border transition-colors text-muted-foreground"
                             >
                               {displayLabel}
                             </button>
@@ -298,7 +298,7 @@ export function GlossaryPage() {
 
                 {/* Footer Jump Button */}
                 {entry.conceptHref && (
-                  <div className="pt-3 border-t border-orange-50/10 flex justify-end">
+                  <div className="pt-3 border-t border-border/60 flex justify-end">
                     <Link to={entry.conceptHref}>
                       <Button
                         variant="ghost"

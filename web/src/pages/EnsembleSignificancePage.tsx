@@ -176,7 +176,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
   return (
     <div className="mx-auto max-w-5xl px-6 py-10 sm:px-12 space-y-12">
       {/* 1. Hero Header & Syllabus Mapping */}
-      <div className="border-b border-orange-50/15 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
           <nav
             aria-label="Breadcrumb"
@@ -243,7 +243,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30">
+          <Card className="p-4 border border-border bg-neutral-900/30">
             <h4 className="font-manrope text-sm font-semibold text-foreground dark:text-white">
               The Individual Flaw
             </h4>
@@ -252,7 +252,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
               local minima.
             </p>
           </Card>
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30">
+          <Card className="p-4 border border-border bg-neutral-900/30">
             <h4 className="font-manrope text-sm font-semibold text-foreground dark:text-white">
               Error Decoupling
             </h4>
@@ -261,7 +261,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
               vote remains correct.
             </p>
           </Card>
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30">
+          <Card className="p-4 border border-border bg-neutral-900/30">
             <h4 className="font-manrope text-sm font-semibold text-foreground dark:text-white">
               Variance Shrinkage
             </h4>
@@ -299,7 +299,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
           individual accuracy probability $p = 0.60$ (so error rate $q = 1 - p = 0.40$).
         </p>
 
-        <Card className="p-5 border border-orange-50/15 bg-neutral-900/40 space-y-4 font-mono text-xs">
+        <Card className="p-5 border border-border bg-card shadow-subtle space-y-4 font-mono text-xs">
           <div>
             <div className="text-orange-200 font-bold mb-1">
               Step 1: Determine the Majority Threshold
@@ -310,7 +310,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
             </p>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-3">
+          <div className="border-t border-card-edge pt-3">
             <div className="text-orange-200 font-bold mb-1">
               Step 2: Calculate Binomial Term Probabilities
             </div>
@@ -334,7 +334,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
             </div>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-3">
+          <div className="border-t border-card-edge pt-3">
             <div className="text-orange-200 font-bold mb-1">
               Step 3: Sum the Mutually Exclusive Events
             </div>
@@ -360,7 +360,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
           formulation.
         </p>
 
-        <Card className="p-6 border border-orange-50/15 bg-neutral-900/40 space-y-4 text-xs font-montserrat">
+        <Card className="p-6 border border-border bg-card shadow-subtle space-y-4 text-xs font-montserrat">
           <div>
             <h3 className="font-manrope text-sm font-semibold text-orange-200">
               The Krogh-Vedelsby Ambiguity Identity (1995)
@@ -369,7 +369,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
               For an ensemble of $M$ regressors $f_m(x)$ with weights $w_m \ge 0, \sum w_m = 1$, the
               ensemble squared error decomposes exactly into:
             </p>
-            <div className="my-2 p-3 bg-black/50 border border-orange-50/10 rounded font-mono text-neutral-200 text-center">
+            <div className="my-2 p-3 bg-black/50 border border-card-edge rounded font-mono text-neutral-200 text-center">
               {
                 '$$ (f_{\\text{ens}}(x) - y)^2 = \\sum_{m=1}^M w_m (f_m(x) - y)^2 - \\sum_{m=1}^M w_m (f_m(x) - f_{\\text{ens}}(x))^2 $$'
               }
@@ -385,7 +385,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
             </p>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-4">
+          <div className="border-t border-card-edge pt-4">
             <h3 className="font-manrope text-sm font-semibold text-orange-200">
               Variance-Covariance Decomposition
             </h3>
@@ -393,7 +393,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
               If $M$ estimators each have variance $\sigma^2$ and pairwise correlation coefficient
               $\rho \in [0, 1]$, the variance of their simple average f_avg = (1/M) sum(f_m) is:
             </p>
-            <div className="my-2 p-3 bg-black/50 border border-orange-50/10 rounded font-mono text-neutral-200 text-center">
+            <div className="my-2 p-3 bg-black/50 border border-card-edge rounded font-mono text-neutral-200 text-center">
               {'$$ \\text{Var}(\\bar{f}) = \\rho \\sigma^2 + \\frac{1 - \\rho}{M} \\sigma^2 $$'}
             </div>
             <p className="text-neutral-400">Notice the two asymptotic limits:</p>
@@ -416,7 +416,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
         <h2 className="font-manrope text-2xl font-semibold tracking-tight text-foreground">
           5. Algorithm pseudocode: majority voting ensemble
         </h2>
-        <Card className="p-4 border border-orange-50/15 bg-neutral-900/40 font-mono text-xs text-neutral-300 space-y-1">
+        <Card className="p-4 border border-border bg-card shadow-subtle font-mono text-xs text-neutral-300 space-y-1">
           <div className="text-neutral-500">
             {'// Algorithm: Majority Voting Classifier (Hard & Soft)'}
           </div>
@@ -481,7 +481,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
             <span>{copiedPython ? 'Copied' : 'Copy Code'}</span>
           </Button>
         </div>
-        <Card className="p-4 border border-orange-50/15 bg-black/60 font-mono text-xs text-neutral-300 overflow-x-auto">
+        <Card className="p-4 border border-border bg-black/60 font-mono text-xs text-neutral-300 overflow-x-auto">
           <pre>{pythonSnippet}</pre>
         </Card>
       </section>
@@ -536,7 +536,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
           8. Strengths, limitations & when NOT to use
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-montserrat">
-          <Card className="p-5 border border-orange-50/15 bg-neutral-900/30 space-y-3">
+          <Card className="p-5 border border-border bg-neutral-900/30 space-y-3">
             <h3 className="font-manrope text-sm font-semibold text-emerald-400">
               When Ensembles Excel
             </h3>
@@ -557,7 +557,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
             </ul>
           </Card>
 
-          <Card className="p-5 border border-orange-50/15 bg-neutral-900/30 space-y-3">
+          <Card className="p-5 border border-border bg-neutral-900/30 space-y-3">
             <h3 className="font-manrope text-sm font-semibold text-rose-400">
               When NOT to Use Ensembles
             </h3>
@@ -586,7 +586,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
           9. Common misconceptions
         </h2>
         <div className="space-y-3 text-xs font-montserrat">
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30">
+          <Card className="p-4 border border-border bg-neutral-900/30">
             <div className="font-semibold text-orange-200">
               Myth: &quot;Ensembling always produces higher test accuracy than any single
               constituent model.&quot;
@@ -599,7 +599,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
             </p>
           </Card>
 
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30">
+          <Card className="p-4 border border-border bg-neutral-900/30">
             <div className="font-semibold text-orange-200">
               Myth: &quot;A soft voting ensemble simply calculates the same prediction as hard
               voting.&quot;
@@ -634,7 +634,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-montserrat">
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30 space-y-2">
+          <Card className="p-4 border border-border bg-neutral-900/30 space-y-2">
             <div className="font-semibold text-foreground dark:text-white">
               Q1: State the Condorcet Jury Theorem and its two core assumptions.
             </div>
@@ -648,7 +648,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
             </p>
           </Card>
 
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30 space-y-2">
+          <Card className="p-4 border border-border bg-neutral-900/30 space-y-2">
             <div className="font-semibold text-foreground dark:text-white">
               Q2: Distinguish between Hard Voting and Soft Voting in ensemble classification.
             </div>
@@ -668,7 +668,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
         <h2 className="font-manrope text-2xl font-semibold tracking-tight text-foreground">
           12. Summary & key takeaways
         </h2>
-        <Card className="p-6 border border-orange-50/15 bg-neutral-900/40 space-y-3 text-xs font-montserrat">
+        <Card className="p-6 border border-border bg-card shadow-subtle space-y-3 text-xs font-montserrat">
           <ul className="space-y-2 text-neutral-300 list-disc pl-4">
             <li>
               <strong>Ensemble Promise:</strong> Combining diverse, competent hypotheses reduces
@@ -688,7 +688,7 @@ print(f"Accuracy Gain: +{(ens_acc - max(acc for acc in [accuracy_score(y_test, c
       </section>
 
       {/* 14. What's Next */}
-      <section className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-orange-50/15 pt-6">
+      <section className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-border pt-6">
         <div>
           <div className="text-xs font-mono text-neutral-500 uppercase tracking-wider">
             Next Syllabus Topic

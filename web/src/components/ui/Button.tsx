@@ -43,27 +43,27 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const variantStyles = {
-      // Solid ChaiUI action (white on dark)
+      // Solid ChaiUI action (high contrast)
       primary:
-        'btn-asym bg-neutral-900 text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200 focus-visible:ring-neutral-400',
+        'btn-asym bg-neutral-900 text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200 focus-visible:ring-brand shadow-subtle',
       solid:
-        'btn-asym bg-neutral-900 text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200 focus-visible:ring-neutral-400',
-      asym: 'btn-asym bg-neutral-900 text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200 focus-visible:ring-neutral-400',
+        'btn-asym bg-neutral-900 text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200 focus-visible:ring-brand shadow-subtle',
+      asym: 'btn-asym bg-neutral-900 text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200 focus-visible:ring-brand shadow-subtle',
       // Soft ChaiUI default on cards
       secondary:
-        'rounded-md bg-neutral-200 text-neutral-800 hover:bg-neutral-300 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 focus-visible:ring-neutral-400 font-semibold',
-      soft: 'rounded-md bg-neutral-200 text-neutral-800 hover:bg-neutral-300 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 focus-visible:ring-neutral-400 font-semibold',
+        'rounded-md bg-muted text-foreground hover:bg-muted/80 border border-border/50 focus-visible:ring-brand font-semibold',
+      soft: 'rounded-md bg-muted text-foreground hover:bg-muted/80 border border-border/50 focus-visible:ring-brand font-semibold',
       // Mirrored outline
       outline:
-        'btn-asym-mirror border border-border bg-transparent text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-900 focus-visible:ring-neutral-400',
+        'btn-asym-mirror border border-border bg-transparent text-foreground hover:bg-muted focus-visible:ring-brand',
       'asym-mirror':
-        'btn-asym-mirror border border-border bg-transparent text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-900 focus-visible:ring-neutral-400',
+        'btn-asym-mirror border border-border bg-transparent text-foreground hover:bg-muted focus-visible:ring-brand',
       ghost:
-        'rounded-md bg-transparent text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-900 focus-visible:ring-neutral-400',
-      danger: 'rounded-md bg-rose-600 text-white hover:bg-rose-700 focus-visible:ring-rose-500',
+        'rounded-md bg-transparent text-foreground hover:bg-muted focus-visible:ring-brand',
+      danger: 'rounded-md bg-rose-600 text-white hover:bg-rose-700 focus-visible:ring-rose-500 shadow-subtle',
       accent: unitAccent
         ? `rounded-md bg-unit-${unitAccent} text-white hover:opacity-90 focus-visible:ring-unit-${unitAccent}`
-        : 'rounded-md bg-neutral-900 text-white dark:bg-white dark:text-black hover:opacity-90',
+        : 'rounded-md bg-brand text-white hover:bg-brand/90 focus-visible:ring-brand shadow-subtle',
     };
 
     return (

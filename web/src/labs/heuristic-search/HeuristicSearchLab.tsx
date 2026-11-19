@@ -385,7 +385,7 @@ export function HeuristicSearchLab() {
               const isClosed = currentStep?.closedSet.includes(key);
               const isOpen = currentStep?.openSet.includes(key);
 
-              let bgClass = 'bg-neutral-900/60 border-neutral-800';
+              let bgClass = 'bg-neutral-900/60 border-border';
               let textClass = 'text-neutral-600';
 
               if (isObstacle) {

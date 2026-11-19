@@ -188,7 +188,7 @@ export const ImpurityCriteriaPage: React.FC = () => {
       </div>
 
       {/* 2. The Hook */}
-      <Card className="p-6 border-orange-50/15 bg-black/10 space-y-3">
+      <Card className="p-6 border-border bg-card shadow-subtle space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground font-manrope">
           <Sparkles className="w-4 h-4 text-cream" />
           <span>The Hook: The unpredictability of coin tosses</span>
@@ -262,7 +262,7 @@ export const ImpurityCriteriaPage: React.FC = () => {
           training set:
         </p>
 
-        <div className="p-5 rounded-xl border border-border/60 bg-black/20 space-y-4 text-xs font-mono">
+        <div className="p-5 rounded-xl border border-border bg-muted/40 space-y-4 text-xs font-mono">
           <div>
             <div className="text-foreground font-bold">1. Calculate Parent Node Entropy H(S):</div>
             <p className="text-muted-foreground mt-1">
@@ -331,23 +331,23 @@ export const ImpurityCriteriaPage: React.FC = () => {
         </div>
 
         {showMath && (
-          <Card className="p-6 border-orange-50/15 bg-black/20 space-y-4 text-sm text-muted-foreground">
+          <Card className="p-6 border-border bg-card shadow-subtle space-y-4 text-sm text-muted-foreground">
             <h3 className="font-semibold text-foreground text-base font-manrope">
               Formulas & Definitions
             </h3>
 
             <div className="space-y-4 font-mono text-xs">
-              <div className="p-3.5 rounded-lg bg-black/40 border border-border/40 space-y-1">
+              <div className="p-3.5 rounded-lg bg-muted/60 border border-border space-y-1">
                 <span className="text-foreground font-bold">Shannon Entropy:</span>
                 <div>{'$$H(S) = -\\sum_{i=1}^K p_i \\log_2(p_i)$$'}</div>
               </div>
 
-              <div className="p-3.5 rounded-lg bg-black/40 border border-border/40 space-y-1">
+              <div className="p-3.5 rounded-lg bg-muted/60 border border-border space-y-1">
                 <span className="text-foreground font-bold">Gini Impurity:</span>
                 <div>{'$$I_G(S) = 1 - \\sum_{i=1}^K p_i^2 = \\sum_{i \\neq j} p_i p_j$$'}</div>
               </div>
 
-              <div className="p-3.5 rounded-lg bg-black/40 border border-border/40 space-y-1">
+              <div className="p-3.5 rounded-lg bg-muted/60 border border-border space-y-1">
                 <span className="text-foreground font-bold">C4.5 Gain Ratio:</span>
                 <div>
                   {
@@ -368,7 +368,7 @@ export const ImpurityCriteriaPage: React.FC = () => {
         <h2 className="text-2xl font-medium text-foreground font-manrope">
           5. Algorithm Pseudocode (Impurity & Split Evaluation)
         </h2>
-        <Card className="p-5 border-border/60 bg-black/30 font-mono text-xs text-muted-foreground space-y-2 overflow-x-auto">
+        <Card className="p-5 border-border bg-muted/40 font-mono text-xs text-muted-foreground space-y-2 overflow-x-auto">
           <div className="text-cream font-bold">// Best Split Criterion Evaluator</div>
           <div>function FindBestSplit(dataset S, features F, criterion):</div>
           <div className="pl-4">parentImpurity = ComputeImpurity(S, criterion)</div>
@@ -394,8 +394,8 @@ export const ImpurityCriteriaPage: React.FC = () => {
         <h2 className="text-2xl font-medium text-foreground font-manrope">
           6. Code It in Python: Verifying with scikit-learn
         </h2>
-        <Card className="p-5 border-border/60 bg-black/30 font-mono text-xs text-muted-foreground space-y-3">
-          <pre className="text-emerald-300 overflow-x-auto">
+        <Card className="p-5 border-border bg-muted/40 font-mono text-xs text-muted-foreground space-y-3">
+          <pre className="text-emerald-600 dark:text-emerald-400 overflow-x-auto">
             {`import numpy as np
 
 def entropy(labels):
@@ -512,7 +512,7 @@ print(f"Root Gini:    {gini(y):.3f}")     # 0.459`}
           11. Exam & Viva Corner
         </h2>
         <div className="space-y-3">
-          <Card className="p-4 border-border/60 bg-black/20 space-y-2">
+          <Card className="p-4 border-border bg-muted/40 space-y-2">
             <span className="font-semibold text-sm text-cream font-mono">
               Q1: Define Information Gain and write its general mathematical expression.
             </span>
@@ -523,7 +523,7 @@ print(f"Root Gini:    {gini(y):.3f}")     # 0.459`}
             </p>
           </Card>
 
-          <Card className="p-4 border-border/60 bg-black/20 space-y-2">
+          <Card className="p-4 border-border bg-muted/40 space-y-2">
             <span className="font-semibold text-sm text-cream font-mono">
               Q2: Why does CART prefer Gini Impurity over Shannon Entropy?
             </span>
@@ -537,7 +537,7 @@ print(f"Root Gini:    {gini(y):.3f}")     # 0.459`}
       </div>
 
       {/* 14. Summary & Next Up */}
-      <Card className="p-6 border-orange-50/15 bg-black/20 space-y-4">
+      <Card className="p-6 border-border bg-card shadow-subtle space-y-4">
         <h2 className="text-xl font-medium text-foreground font-manrope">
           12. Summary & Key Takeaways
         </h2>

@@ -138,7 +138,7 @@ export function Unit5ExamPage() {
       </div>
 
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-orange-50/15">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
         <div>
           <div className="flex items-center gap-2">
             <Badge variant="outline">MIT AOE Unit 5 Assessment</Badge>
@@ -154,7 +154,7 @@ export function Unit5ExamPage() {
         </div>
 
         {/* Timer Box */}
-        <div className="flex items-center gap-3 bg-neutral-900 border border-orange-50/10 px-4 py-2 rounded-lg self-start sm:self-auto">
+        <div className="flex items-center gap-3 bg-neutral-900 border border-card-edge px-4 py-2 rounded-lg self-start sm:self-auto">
           <Clock
             className={`size-4 ${timeLeftSec < 300 ? 'text-red-400 animate-pulse' : 'text-amber-400'}`}
           />
@@ -176,7 +176,7 @@ export function Unit5ExamPage() {
       {/* Score Summary Banner if Submitted */}
       {submitted && (
         <Card className="p-6 border-amber-900/40 bg-neutral-950/80">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-orange-50/10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-card-edge">
             <div>
               <div className="flex items-center gap-2">
                 <Award
@@ -219,7 +219,7 @@ export function Unit5ExamPage() {
             {Object.entries(scoreStats.outcomeScores).map(([co, val]) => {
               const coPct = val.total > 0 ? Math.round((val.correct / val.total) * 100) : 0;
               return (
-                <div key={co} className="p-3 bg-neutral-900/60 rounded border border-orange-50/10">
+                <div key={co} className="p-3 bg-neutral-900/60 rounded border border-card-edge">
                   <div className="flex items-center justify-between text-xs font-mono">
                     <span className="text-neutral-400">{co} Mastery</span>
                     <span className="font-bold text-neutral-200">
@@ -256,8 +256,8 @@ export function Unit5ExamPage() {
                     ? 'border-emerald-500/40 bg-emerald-950/10'
                     : 'border-red-500/40 bg-red-950/10'
                   : isAnswered
-                    ? 'border-orange-50/30 bg-neutral-900/40'
-                    : 'border-orange-50/10 bg-neutral-900/20'
+                    ? 'border-brand/40 bg-neutral-900/40'
+                    : 'border-card-edge bg-neutral-900/20'
               }`}
             >
               <div className="flex items-start justify-between gap-4 mb-3">
@@ -309,7 +309,7 @@ export function Unit5ExamPage() {
                             ? 'border-red-500/60 bg-red-950/40 text-red-200'
                             : isSelected
                               ? 'border-brand bg-brand/10 text-white font-medium'
-                              : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200 hover:border-orange-50/20'
+                              : 'border-card-edge bg-black/20 text-neutral-400 hover:text-neutral-200 hover:border-border'
                       }`}
                     >
                       <div className="flex items-start gap-2.5">
@@ -319,7 +319,7 @@ export function Unit5ExamPage() {
                         <div className="flex-1 leading-relaxed">
                           <div>{opt.text}</div>
                           {submitted && (showCorrect || showWrong) && (
-                            <p className="text-[11px] text-neutral-400 mt-1.5 font-sans pt-1 border-t border-orange-50/10">
+                            <p className="text-[11px] text-neutral-400 mt-1.5 font-sans pt-1 border-t border-card-edge">
                               <span className="font-semibold text-neutral-300">Explanation:</span>{' '}
                               {opt.explanation}
                             </p>
@@ -337,7 +337,7 @@ export function Unit5ExamPage() {
 
       {/* Bottom Sticky Action Bar */}
       {!submitted && (
-        <div className="sticky bottom-4 bg-neutral-900/90 backdrop-blur-md p-4 rounded-xl border border-orange-50/15 flex items-center justify-between">
+        <div className="sticky bottom-4 bg-neutral-900/90 backdrop-blur-md p-4 rounded-xl border border-border flex items-center justify-between">
           <div className="text-xs font-mono text-neutral-400">
             Answered <span className="text-neutral-100 font-bold">{answeredCount}</span> of{' '}
             <span className="text-neutral-100 font-bold">{questions.length}</span> questions

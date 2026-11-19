@@ -2,28 +2,30 @@ import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 
 export function Footer() {
   return (
-    <footer className="relative w-full py-10 font-sans text-xs text-neutral-500 dark:text-neutral-400 before:absolute before:top-0 before:left-1/2 before:h-px before:w-full before:max-w-[1440px] before:-translate-x-1/2 before:bg-amber-600 before:opacity-10 before:[mask-image:linear-gradient(90deg,transparent_0%,black_40%,black_60%,transparent_100%)] dark:before:bg-orange-300">
-      <div className="mx-auto flex max-w-6xl flex-col sm:flex-row items-center justify-between gap-4 px-6 sm:px-12">
+    <footer className="relative w-full py-10 font-sans text-xs text-muted-foreground border-t border-border/60 bg-background/50">
+      <div className="mx-auto flex max-w-6xl flex-col sm:flex-row items-center justify-between gap-6 px-6 sm:px-12 text-center sm:text-left">
         <div>
-          <p className="font-semibold text-neutral-800 dark:text-neutral-200">
+          <p className="font-semibold text-foreground text-sm font-manrope">
             AIML Studio: Rev. 2023 NEP Curriculum
           </p>
-          <p className="mt-0.5">MIT Academy of Engineering · Third Year B.Tech (AY 2025-26)</p>
+          <p className="mt-1 text-muted-foreground">
+            MIT Academy of Engineering · Third Year B.Tech (AY 2025-26)
+          </p>
         </div>
 
-        <div className="flex flex-col items-center gap-2">
-          <p className="font-semibold text-neutral-800 dark:text-neutral-200">By Tushar Kaldate</p>
+        <div className="flex flex-col items-center sm:items-end gap-2">
+          <p className="font-medium text-foreground">Developed by Tushar Kaldate</p>
 
-          {/* Social media logos directly below your name */}
-          <div className="flex items-center justify-center gap-5">
+          {/* Social media links */}
+          <div className="flex items-center justify-center gap-4 pt-1">
             <a
               href="https://www.linkedin.com/in/tushar-kaldate-2b5276262/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-xl text-neutral-600 hover:text-[#0A66C2] transition-colors"
+              className="p-1.5 rounded-lg text-muted-foreground hover:text-[#0A66C2] hover:bg-muted transition-colors"
             >
-              <FaLinkedin />
+              <FaLinkedin className="size-4" />
             </a>
 
             <a
@@ -31,9 +33,9 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-xl text-neutral-600 hover:text-white transition-colors"
+              className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
             >
-              <FaGithub />
+              <FaGithub className="size-4" />
             </a>
 
             <a
@@ -41,9 +43,9 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-xl text-neutral-600 hover:text-[#E4405F] transition-colors"
+              className="p-1.5 rounded-lg text-muted-foreground hover:text-[#E4405F] hover:bg-muted transition-colors"
             >
-              <FaInstagram />
+              <FaInstagram className="size-4" />
             </a>
           </div>
         </div>

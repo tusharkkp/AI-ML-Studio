@@ -194,7 +194,7 @@ export function SvmKernelsPage() {
 
       {/* 2. The Hook (<= 80 words) */}
       <section className="mt-8">
-        <Card className="p-5 sm:p-6 rounded-xl border border-orange-50/15 bg-black/10 backdrop-blur-sm shadow-none">
+        <Card className="p-5 sm:p-6 rounded-xl border border-border bg-card shadow-subtle backdrop-blur-sm shadow-none">
           <div className="flex items-start gap-3">
             <Layers className="size-5 text-amber-300 shrink-0 mt-0.5" />
             <div>
@@ -352,7 +352,7 @@ export function SvmKernelsPage() {
         </p>
 
         {showMath && (
-          <Card className="p-5 sm:p-6 rounded-xl border border-orange-50/15 bg-black/15 backdrop-blur-sm space-y-4 text-xs leading-relaxed">
+          <Card className="p-5 sm:p-6 rounded-xl border border-border bg-black/15 backdrop-blur-sm space-y-4 text-xs leading-relaxed">
             <div>
               <h3 className="font-semibold text-amber-200 mb-1">
                 Dual Objective with Kernel Substitution
@@ -631,7 +631,7 @@ print(f"Active support vectors: {len(best_svm.support_)} / {len(X)}")`}
           </li>
         </ul>
 
-        <div className="flex items-center justify-between p-4 rounded-xl border border-orange-50/20 bg-black/20">
+        <div className="flex items-center justify-between p-4 rounded-xl border border-border bg-black/20">
           <div>
             <span className="text-[11px] text-neutral-400 block">Next topic</span>
             <span className="text-sm font-semibold text-foreground">

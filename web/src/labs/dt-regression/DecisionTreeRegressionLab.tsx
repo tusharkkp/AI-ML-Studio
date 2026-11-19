@@ -178,8 +178,8 @@ export const DecisionTreeRegressionLab: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Control Toolbar */}
-      <Card className="p-6 border-orange-50/15 bg-neutral-900/60 backdrop-blur-md">
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-orange-50/10 pb-4">
+      <Card className="p-6 border-border bg-card shadow-subtle/60 backdrop-blur-md">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-card-edge pb-4">
           <div className="flex items-center gap-2">
             <GitBranch className="w-5 h-5 text-emerald-400" />
             <h3 className="font-semibold text-lg text-foreground font-manrope">
@@ -270,7 +270,7 @@ export const DecisionTreeRegressionLab: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left 2 Cols: 1D Staircase Regression Plot */}
         <div className="lg:col-span-2 space-y-4">
-          <Card className="p-5 border-orange-50/15 bg-neutral-900/60">
+          <Card className="p-5 border-border bg-card shadow-subtle/60">
             <div className="flex items-center justify-between mb-3">
               <div>
                 <h4 className="font-semibold text-sm text-foreground font-manrope">
@@ -296,7 +296,7 @@ export const DecisionTreeRegressionLab: React.FC = () => {
             </div>
 
             {/* SVG Visualizer */}
-            <div className="relative w-full aspect-[16/9] bg-black/40 rounded-xl border border-orange-50/10 p-2 overflow-hidden">
+            <div className="relative w-full aspect-[16/9] bg-muted/50 rounded-xl border border-card-edge p-2 overflow-hidden">
               <svg className="w-full h-full" viewBox="0 0 600 320">
                 {/* Horizontal Zero Line */}
                 <line x1={40} y1={160} x2={560} y2={160} stroke="#3f3f46" strokeWidth={1} />
@@ -417,14 +417,14 @@ export const DecisionTreeRegressionLab: React.FC = () => {
         {/* Right Col: Mathematical Variance Reduction & Extrapolation Trap */}
         <div className="space-y-4">
           {/* Tree Structure & Error Metrics */}
-          <Card className="p-5 border-orange-50/15 bg-neutral-900/60 space-y-4">
+          <Card className="p-5 border-border bg-card shadow-subtle/60 space-y-4">
             <h4 className="font-semibold text-sm text-foreground font-manrope flex items-center gap-2">
               <TrendingUp className="w-4 h-4 text-emerald-400" />
               CART Regression Tree Metrics
             </h4>
 
             <div className="grid grid-cols-2 gap-2 text-center text-xs font-mono">
-              <div className="p-3 rounded-lg bg-black/30 border border-orange-50/10">
+              <div className="p-3 rounded-lg bg-muted/40 border border-card-edge">
                 <div className="text-[10px] text-neutral-400 uppercase font-semibold">
                   Mean Squared Error
                 </div>
@@ -432,7 +432,7 @@ export const DecisionTreeRegressionLab: React.FC = () => {
                 <div className="text-[10px] text-neutral-500">RMSE: {metrics.rmse.toFixed(3)}</div>
               </div>
 
-              <div className="p-3 rounded-lg bg-black/30 border border-orange-50/10">
+              <div className="p-3 rounded-lg bg-muted/40 border border-card-edge">
                 <div className="text-[10px] text-neutral-400 uppercase font-semibold">
                   Terminal Leaves
                 </div>
@@ -441,7 +441,7 @@ export const DecisionTreeRegressionLab: React.FC = () => {
               </div>
             </div>
 
-            <div className="space-y-2 pt-2 border-t border-orange-50/10 text-xs font-sans">
+            <div className="space-y-2 pt-2 border-t border-card-edge text-xs font-sans">
               <div className="flex justify-between items-center">
                 <span className="text-neutral-400">Split Criterion:</span>
                 <span className="font-mono font-semibold text-neutral-200">

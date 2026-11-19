@@ -116,12 +116,12 @@ export function Unit3LandingPage() {
   ];
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-10 sm:px-12 space-y-10 bg-[#0c0a09] text-stone-300 font-sans">
+    <div className="mx-auto max-w-6xl px-6 py-10 sm:px-12 space-y-10">
       {/* Header */}
-      <div className="border-b border-[#292524] pb-8">
+      <div className="border-b border-border pb-8">
         <Link
           to="/"
-          className="inline-flex items-center text-xs font-mono text-stone-500 hover:text-[#fef3c7] mb-4 transition-colors"
+          className="inline-flex items-center text-xs font-mono text-muted-foreground hover:text-brand mb-4 transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5 mr-1" />
           Back to Course Overview
@@ -131,36 +131,36 @@ export function Unit3LandingPage() {
           <Badge variant="outline" size="sm">
             Unit 3 of 6
           </Badge>
-          <span className="flex items-center text-xs text-stone-500 ml-auto font-mono">
-            <Clock className="w-3.5 h-3.5 mr-1 text-amber-400" /> 7 Syllabus Hours
+          <span className="flex items-center text-xs text-muted-foreground ml-auto font-mono">
+            <Clock className="w-3.5 h-3.5 mr-1 text-amber-500" /> 7 Syllabus Hours
           </span>
         </div>
 
-        <h1 className="font-heading text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+        <h1 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-5xl">
           Unit 3: ML Fundamentals
         </h1>
-        <p className="mt-4 text-base sm:text-lg text-stone-400 max-w-3xl leading-relaxed">
+        <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-3xl leading-relaxed">
           From discrete search to statistical optimization: master supervised learning paradigms,{' '}
-          <span className="font-heading text-[#fef3c7] font-semibold">convex loss surfaces</span>,
+          <span className="font-heading text-brand font-semibold">convex loss surfaces</span>,
           gradient descent dynamics, the bias-variance tradeoff, and regularized regression.
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#292524]">
-          <div className="flex flex-wrap items-center gap-6 text-xs text-stone-400">
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-card-edge">
+          <div className="flex flex-wrap items-center gap-6 text-xs text-muted-foreground">
             <div className="flex items-center gap-1.5">
-              <Award className="w-4 h-4 text-amber-400" />
+              <Award className="w-4 h-4 text-amber-500" />
               <span>
                 <strong>CO2:</strong> Apply Statistical Regression to Real Problems (L3)
               </span>
             </div>
             <div className="flex items-center gap-1.5">
-              <ShieldAlert className="w-4 h-4 text-sky-400" />
+              <ShieldAlert className="w-4 h-4 text-sky-500" />
               <span>
                 <strong>CO3:</strong> Systematic Hyperparameter Optimization (L4)
               </span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Award className="w-4 h-4 text-emerald-400" />
+              <Award className="w-4 h-4 text-emerald-500" />
               <span>
                 <strong>CO4:</strong> Analyze Model Strengths &amp; Failure Modes (L4)
               </span>
@@ -193,18 +193,18 @@ export function Unit3LandingPage() {
           return (
             <Card
               key={m.id}
-              className="group relative flex flex-col justify-between border-[#292524] bg-[#141210] p-5 transition-all duration-200 hover:border-stone-700 hover:bg-[#1a1715]"
+              className="group relative flex flex-col justify-between p-5 transition-all duration-200 hover:border-brand/40"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-2">
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-stone-500">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
                       {m.hours}
                     </span>
                     {m.kind === 'flagship' && (
                       <Badge
                         variant="default"
-                        className="text-[10px] text-amber-300 border-amber-800 bg-amber-950/40"
+                        className="text-[10px] text-amber-600 dark:text-amber-300 border-amber-500/30 bg-amber-500/10"
                       >
                         Flagship Lab
                       </Badge>
@@ -212,7 +212,7 @@ export function Unit3LandingPage() {
                     {m.kind === 'case-study' && (
                       <Badge
                         variant="default"
-                        className="text-[10px] text-sky-300 border-sky-800 bg-sky-950/40"
+                        className="text-[10px] text-sky-600 dark:text-sky-300 border-sky-500/30 bg-sky-500/10"
                       >
                         Case Study
                       </Badge>
@@ -220,34 +220,34 @@ export function Unit3LandingPage() {
                     {m.kind === 'self-study' && (
                       <Badge
                         variant="default"
-                        className="text-[10px] text-purple-300 border-purple-800 bg-purple-950/40"
+                        className="text-[10px] text-purple-600 dark:text-purple-300 border-purple-500/30 bg-purple-500/10"
                       >
                         Self-Study
                       </Badge>
                     )}
                   </div>
-                  {isDone && <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />}
+                  {isDone && <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0" />}
                 </div>
 
                 <CardHeader className="p-0 mb-3">
-                  <CardTitle className="text-base font-semibold text-stone-100 group-hover:text-[#fef3c7] transition-colors leading-snug">
+                  <CardTitle className="text-base font-semibold text-foreground group-hover:text-brand transition-colors leading-snug">
                     {m.title}
                   </CardTitle>
-                  <CardDescription className="text-xs text-stone-400 mt-1.5 leading-relaxed">
+                  <CardDescription className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
                     {m.desc}
                   </CardDescription>
                 </CardHeader>
               </div>
 
-              <CardContent className="p-0 pt-4 mt-auto border-t border-[#292524]/60">
+              <CardContent className="p-0 pt-4 mt-auto border-t border-card-edge">
                 <Link to={m.href} className="block">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full text-xs justify-between group-hover:border-stone-600 group-hover:text-white"
+                    className="w-full text-xs justify-between group-hover:border-brand group-hover:text-brand"
                   >
                     <span>{isDone ? 'Review Module' : 'Explore Concept'}</span>
-                    <span className="font-mono text-stone-500">&rarr;</span>
+                    <span className="font-mono text-muted-foreground">&rarr;</span>
                   </Button>
                 </Link>
               </CardContent>

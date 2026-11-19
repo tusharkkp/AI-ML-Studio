@@ -312,7 +312,7 @@ function PageLoadingFallback() {
 function NotFoundPage() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-20 text-center space-y-6">
-      <div className="size-16 rounded-2xl bg-neutral-900 border border-orange-50/15 flex items-center justify-center mx-auto text-brand text-2xl font-mono font-bold">
+      <div className="size-16 rounded-2xl bg-card border border-border flex items-center justify-center mx-auto text-brand text-2xl font-mono font-bold shadow-subtle">
         404
       </div>
 
@@ -320,10 +320,10 @@ function NotFoundPage() {
         <h1 className="font-manrope text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
           Topic not found
         </h1>
-        <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-montserrat leading-relaxed max-w-md mx-auto">
+        <p className="text-sm sm:text-base text-muted-foreground font-montserrat leading-relaxed max-w-md mx-auto">
           The concept or simulation you requested could not be located. Continue your journey
           through{' '}
-          <span className="font-montserrat font-medium text-yellow-800 dark:text-orange-100">
+          <span className="font-montserrat font-medium text-foreground">
             the syllabus curriculum or interactive laboratories
           </span>
           .
@@ -333,19 +333,19 @@ function NotFoundPage() {
       <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
         <Link
           to="/"
-          className="inline-flex h-9 items-center gap-2 rounded-lg rounded-br-none bg-neutral-900 px-4 text-xs font-semibold text-white transition-colors duration-200 hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-200 shadow-none"
+          className="inline-flex h-9 items-center gap-2 rounded-lg bg-primary px-4 text-xs font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90 shadow-subtle"
         >
           <span>Return to course home</span>
         </Link>
         <Link
           to="/learn/unit-1"
-          className="inline-flex h-9 items-center gap-2 rounded-lg border border-orange-50/15 bg-black/20 px-4 text-xs font-semibold text-neutral-300 transition-colors duration-200 hover:bg-white/5"
+          className="inline-flex h-9 items-center gap-2 rounded-lg border border-border bg-card px-4 text-xs font-semibold text-foreground transition-colors duration-200 hover:bg-muted"
         >
           <span>Explore curriculum</span>
         </Link>
         <Link
           to="/lab"
-          className="inline-flex h-9 items-center gap-2 rounded-lg border border-orange-50/15 bg-black/20 px-4 text-xs font-semibold text-neutral-300 transition-colors duration-200 hover:bg-white/5"
+          className="inline-flex h-9 items-center gap-2 rounded-lg border border-border bg-card px-4 text-xs font-semibold text-foreground transition-colors duration-200 hover:bg-muted"
         >
           <span>Interactive labs</span>
         </Link>

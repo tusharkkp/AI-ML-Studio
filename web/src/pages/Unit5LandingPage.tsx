@@ -136,7 +136,7 @@ export const Unit5LandingPage: React.FC = () => {
           The three master modeling paradigms compared
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="p-6 space-y-4 border-orange-50/15 bg-black/10">
+          <Card className="p-6 space-y-4">
             <div className="flex items-center justify-between">
               <span className="font-semibold text-lg text-foreground font-manrope">
                 Decision Trees
@@ -145,18 +145,18 @@ export const Unit5LandingPage: React.FC = () => {
             </div>
             <p className="text-sm text-muted-foreground font-montserrat">
               Recursive partitioning of feature space using{' '}
-              <span className="text-cream font-medium">orthogonal splits</span>. Zero scaling
+              <span className="text-brand font-medium">orthogonal splits</span>. Zero scaling
               assumptions and human-readable rules, but susceptible to high variance without
               regularization.
             </p>
-            <div className="space-y-1 text-xs font-mono text-muted-foreground border-t border-border/40 pt-3">
+            <div className="space-y-1 text-xs font-mono text-muted-foreground border-t border-card-edge pt-3">
               <div>Boundary: Axis-parallel hyperplanes</div>
               <div>Optimization: Greedy heuristic (Entropy / Gini)</div>
               <div>Key Parameter: Max Depth, Min Samples</div>
             </div>
           </Card>
 
-          <Card className="p-6 space-y-4 border-orange-50/15 bg-black/10">
+          <Card className="p-6 space-y-4">
             <div className="flex items-center justify-between">
               <span className="font-semibold text-lg text-foreground font-manrope">
                 Support Vector Machines
@@ -165,18 +165,18 @@ export const Unit5LandingPage: React.FC = () => {
             </div>
             <p className="text-sm text-muted-foreground font-montserrat">
               Finds the unique hyperplane that maximizes the{' '}
-              <span className="text-cream font-medium">geometric separation margin</span>. Uses
+              <span className="text-brand font-medium">geometric separation margin</span>. Uses
               kernel functions to solve non-linear classification without expanding features
               explicitly.
             </p>
-            <div className="space-y-1 text-xs font-mono text-muted-foreground border-t border-border/40 pt-3">
+            <div className="space-y-1 text-xs font-mono text-muted-foreground border-t border-card-edge pt-3">
               <div>Boundary: Linear in kernel feature space</div>
               <div>Optimization: Global convex quadratic program</div>
               <div>Key Parameter: Regularization C, Kernel Gamma</div>
             </div>
           </Card>
 
-          <Card className="p-6 space-y-4 border-orange-50/15 bg-black/10">
+          <Card className="p-6 space-y-4">
             <div className="flex items-center justify-between">
               <span className="font-semibold text-lg text-foreground font-manrope">
                 Ensemble Methods
@@ -185,11 +185,11 @@ export const Unit5LandingPage: React.FC = () => {
             </div>
             <p className="text-sm text-muted-foreground font-montserrat">
               Combines an array of base estimators to achieve{' '}
-              <span className="text-cream font-medium">superior generalization</span>. Bagging cuts
+              <span className="text-brand font-medium">superior generalization</span>. Bagging cuts
               variance, Boosting drives down bias, and Stacking leverages diverse model
               architectures.
             </p>
-            <div className="space-y-1 text-xs font-mono text-muted-foreground border-t border-border/40 pt-3">
+            <div className="space-y-1 text-xs font-mono text-muted-foreground border-t border-card-edge pt-3">
               <div>Boundary: Smooth non-linear consensus voting</div>
               <div>Optimization: Bootstrap sampling or Gradient Descent</div>
               <div>Key Parameter: Number of Estimators, Learning Rate</div>
@@ -221,7 +221,7 @@ export const Unit5LandingPage: React.FC = () => {
             const isCompleted = p?.labCompleted || p?.read;
             return (
               <Link key={t.id} to={t.path} className="group">
-                <Card className="p-5 h-full transition-all border-orange-50/15 bg-black/10 hover:border-orange-50/30 flex flex-col justify-between space-y-3">
+                <Card className="p-5 h-full transition-all hover:border-brand/40 flex flex-col justify-between space-y-3">
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-2">
                       <Badge variant="outline" size="sm">
@@ -232,7 +232,7 @@ export const Unit5LandingPage: React.FC = () => {
                         <span>{t.duration}</span>
                       </div>
                     </div>
-                    <h3 className="font-semibold text-foreground group-hover:text-cream transition-colors text-base font-manrope">
+                    <h3 className="font-semibold text-foreground group-hover:text-brand transition-colors text-base font-manrope">
                       {t.title}
                     </h3>
                     <p className="text-xs text-muted-foreground font-montserrat mt-1.5 leading-relaxed">
@@ -240,10 +240,10 @@ export const Unit5LandingPage: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-2 border-t border-border/30 text-xs">
+                  <div className="flex items-center justify-between pt-2 border-t border-card-edge text-xs">
                     <span className="text-muted-foreground font-mono">
                       {isCompleted ? (
-                        <span className="text-emerald-400 font-semibold">Completed</span>
+                        <span className="text-emerald-500 font-semibold">Completed</span>
                       ) : (
                         'Ready to explore'
                       )}
@@ -262,10 +262,10 @@ export const Unit5LandingPage: React.FC = () => {
 
       {/* Flagship Assessment Hub */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-        <Card className="p-6 border-orange-50/15 bg-black/10 flex flex-col justify-between space-y-4">
+        <Card className="p-6 flex flex-col justify-between space-y-4">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <Award className="w-5 h-5 text-cream" />
+              <Award className="w-5 h-5 text-brand" />
               <h3 className="font-semibold text-lg text-foreground font-manrope">
                 Unit 5 timed exam
               </h3>
@@ -282,10 +282,10 @@ export const Unit5LandingPage: React.FC = () => {
           </Link>
         </Card>
 
-        <Card className="p-6 border-orange-50/15 bg-black/10 flex flex-col justify-between space-y-4">
+        <Card className="p-6 flex flex-col justify-between space-y-4">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-cream" />
+              <BookOpen className="w-5 h-5 text-brand" />
               <h3 className="font-semibold text-lg text-foreground font-manrope">
                 Unit 5 revision cheat sheet
               </h3>

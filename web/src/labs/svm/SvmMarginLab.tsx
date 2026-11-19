@@ -138,7 +138,7 @@ export function SvmMarginLab() {
   }, [model]);
 
   return (
-    <Card className="p-5 sm:p-6 rounded-xl border border-orange-50/15 bg-black/10 backdrop-blur-sm shadow-none font-sans">
+    <Card className="p-5 sm:p-6 rounded-xl border border-border bg-black/10 backdrop-blur-sm shadow-none font-sans">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-border/40">
         <div>
           <div className="flex items-center gap-2">

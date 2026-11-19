@@ -76,17 +76,17 @@ export function Player<S>({
 
   return (
     <div
-      className={`flex flex-col space-y-3 rounded-xl border border-card-edge bg-card-fill backdrop-blur-sm p-4 ${className}`}
+      className={`flex flex-col space-y-3 rounded-xl border border-border bg-card shadow-subtle p-4 ${className}`}
     >
       {/* Metrics strip */}
       {currentStep?.metrics && Object.keys(currentStep.metrics).length > 0 && (
-        <div className="flex flex-wrap items-center gap-3 border-b border-studio-100 pb-3 dark:border-studio-800">
+        <div className="flex flex-wrap items-center gap-3 border-b border-card-edge pb-3">
           {Object.entries(currentStep.metrics).map(([key, val]) => (
             <div key={key} className="flex items-center space-x-1.5 text-xs">
-              <span className="font-medium text-studio-500 dark:text-studio-400 capitalize">
+              <span className="font-medium text-muted-foreground capitalize">
                 {key.replace(/([A-Z])/g, ' $1').trim()}:
               </span>
-              <span className="font-mono font-bold text-studio-900 dark:text-studio-100 bg-studio-100 dark:bg-studio-800 px-1.5 py-0.5 rounded">
+              <span className="font-mono font-bold text-foreground bg-muted px-1.5 py-0.5 rounded border border-border/50">
                 {typeof val === 'number' && !Number.isInteger(val) ? val.toFixed(3) : val}
               </span>
             </div>
@@ -96,17 +96,17 @@ export function Player<S>({
 
       {/* Narrative Step Description with ARIA Live for accessibility */}
       <div
-        className="min-h-[48px] rounded-lg bg-studio-50 p-3 text-sm leading-relaxed text-studio-800 dark:bg-studio-800/50 dark:text-studio-200 border border-studio-200/60 dark:border-studio-700/60 flex items-center justify-between gap-4"
+        className="min-h-[48px] rounded-lg bg-muted/40 p-3 text-sm leading-relaxed text-foreground border border-border flex items-center justify-between gap-4"
         aria-live="polite"
         role="status"
       >
         <div className="flex items-center gap-2.5">
-          <span className="inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-unit-2 text-white text-xs font-mono font-bold">
+          <span className="inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-brand text-white text-xs font-mono font-bold">
             {currentStepIndex + 1}
           </span>
           <p className="font-medium">{currentStep?.description || 'Ready to run.'}</p>
         </div>
-        <span className="font-mono text-xs text-studio-400 flex-shrink-0">
+        <span className="font-mono text-xs text-muted-foreground flex-shrink-0">
           Step {currentStepIndex + 1} / {totalSteps}
         </span>
       </div>
@@ -123,7 +123,7 @@ export function Player<S>({
           max={Math.max(0, totalSteps - 1)}
           value={currentStepIndex}
           onChange={(e) => goToStep(parseInt(e.target.value, 10))}
-          className="w-full h-1.5 bg-studio-200 dark:bg-studio-700 rounded-lg appearance-none cursor-pointer accent-unit-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-unit-2"
+          className="w-full h-1.5 bg-muted rounded-lg appearance-none cursor-pointer accent-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
           aria-valuemin={0}
           aria-valuemax={Math.max(0, totalSteps - 1)}
           aria-valuenow={currentStepIndex}
@@ -205,7 +205,7 @@ export function Player<S>({
 
         {/* Speed selector */}
         <div className="flex items-center space-x-1 text-xs">
-          <span className="text-studio-500 font-medium mr-1 hidden sm:inline">Speed:</span>
+          <span className="text-muted-foreground font-medium mr-1 hidden sm:inline">Speed:</span>
           {speeds.map((s) => (
             <button
               key={s}
@@ -213,8 +213,8 @@ export function Player<S>({
               onClick={() => setSpeed(s)}
               className={`px-2 py-1 rounded font-mono font-bold transition-colors ${
                 speed === s
-                  ? 'bg-studio-900 text-white dark:bg-studio-100 dark:text-studio-900'
-                  : 'bg-studio-100 text-studio-600 hover:bg-studio-200 dark:bg-studio-800 dark:text-studio-400 dark:hover:bg-studio-700'
+                  ? 'bg-primary text-primary-foreground shadow-subtle'
+                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
               }`}
               aria-label={`Set speed to ${s}x`}
               aria-pressed={speed === s}
@@ -227,8 +227,8 @@ export function Player<S>({
 
       {/* Optional Pseudocode view with highlighted line */}
       {pseudocode && pseudocode.length > 0 && (
-        <div className="mt-3 rounded-lg bg-studio-950 p-3 text-xs font-mono text-studio-300 overflow-x-auto border border-studio-800">
-          <p className="text-[10px] uppercase font-bold tracking-wider text-studio-500 mb-2">
+        <div className="mt-3 rounded-lg bg-muted/40 p-3 text-xs font-mono text-foreground overflow-x-auto border border-border">
+          <p className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground mb-2">
             Algorithm Pseudocode
           </p>
           <div className="space-y-0.5">
@@ -240,11 +240,11 @@ export function Player<S>({
                   key={idx}
                   className={`flex items-start px-2 py-0.5 rounded transition-colors ${
                     isActive
-                      ? 'bg-unit-2/20 text-white font-bold border-l-2 border-unit-2'
-                      : 'text-studio-400'
+                      ? 'bg-brand/15 text-brand font-bold border-l-2 border-brand'
+                      : 'text-muted-foreground'
                   }`}
                 >
-                  <span className="w-6 text-studio-600 select-none">{lineNum}</span>
+                  <span className="w-6 text-muted-foreground/60 select-none">{lineNum}</span>
                   <pre className="font-mono whitespace-pre-wrap">{line}</pre>
                 </div>
               );

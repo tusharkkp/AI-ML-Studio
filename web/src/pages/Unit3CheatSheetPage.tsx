@@ -178,66 +178,66 @@ export function Unit3CheatSheetPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
-          <Card className="p-4 space-y-2 border-border/60 bg-neutral-950/60">
+          <Card className="p-4 space-y-2 border-border bg-card shadow-subtle">
             <div className="font-semibold text-brand">OLS Simple Linear Regression</div>
-            <div className="p-2.5 bg-neutral-900 rounded border border-neutral-800 text-neutral-300">
+            <div className="p-2.5 bg-muted/70 rounded border border-border/60 text-foreground font-medium">
               θ₁ = Σ(xᵢ - x̄)(yᵢ - ȳ) / Σ(xᵢ - x̄)²
               <br />
               θ₀ = ȳ - θ₁ · x̄
             </div>
-            <p className="text-neutral-400 font-sans text-[11px]">
+            <p className="text-muted-foreground font-sans text-[11px]">
               Minimizes sum of squared vertical residuals along y-axis.
             </p>
           </Card>
 
-          <Card className="p-4 space-y-2 border-border/60 bg-neutral-950/60">
+          <Card className="p-4 space-y-2 border-border bg-card shadow-subtle">
             <div className="font-semibold text-brand">Vectorized Gradient Descent Update</div>
-            <div className="p-2.5 bg-neutral-900 rounded border border-neutral-800 text-neutral-300">
+            <div className="p-2.5 bg-muted/70 rounded border border-border/60 text-foreground font-medium">
               θ := θ - (α / m) · Xᵀ (Xθ - y)
             </div>
-            <p className="text-neutral-400 font-sans text-[11px]">
+            <p className="text-muted-foreground font-sans text-[11px]">
               Step size α must satisfy α &lt; 2 / λ_max to avoid divergence.
             </p>
           </Card>
 
-          <Card className="p-4 space-y-2 border-border/60 bg-neutral-950/60">
+          <Card className="p-4 space-y-2 border-border bg-card shadow-subtle">
             <div className="font-semibold text-brand">Normal Equation (Multiple Regression)</div>
-            <div className="p-2.5 bg-neutral-900 rounded border border-neutral-800 text-sky-400">
+            <div className="p-2.5 bg-muted/70 rounded border border-border/60 text-sky-600 dark:text-sky-400 font-medium">
               θ = (Xᵀ X)⁻¹ Xᵀ y
             </div>
-            <p className="text-neutral-400 font-sans text-[11px]">
+            <p className="text-muted-foreground font-sans text-[11px]">
               Exact closed-form solution. Computational complexity O(np² + p³).
             </p>
           </Card>
 
-          <Card className="p-4 space-y-2 border-border/60 bg-neutral-950/60">
+          <Card className="p-4 space-y-2 border-border bg-card shadow-subtle">
             <div className="font-semibold text-brand">Ridge Regression Closed-Form (L2)</div>
-            <div className="p-2.5 bg-neutral-900 rounded border border-neutral-800 text-sky-400">
+            <div className="p-2.5 bg-muted/70 rounded border border-border/60 text-sky-600 dark:text-sky-400 font-medium">
               θ_Ridge = (Xᵀ X + α m I')⁻¹ Xᵀ y
             </div>
-            <p className="text-neutral-400 font-sans text-[11px]">
+            <p className="text-muted-foreground font-sans text-[11px]">
               Intercept row I'[0,0] = 0. Guarantees non-singular invertible matrix.
             </p>
           </Card>
 
-          <Card className="p-4 space-y-2 border-border/60 bg-neutral-950/60">
+          <Card className="p-4 space-y-2 border-border bg-card shadow-subtle">
             <div className="font-semibold text-brand">Lasso Soft-Thresholding Update (L1)</div>
-            <div className="p-2.5 bg-neutral-900 rounded border border-neutral-800 text-emerald-400">
+            <div className="p-2.5 bg-muted/70 rounded border border-border/60 text-emerald-600 dark:text-emerald-400 font-medium">
               θⱼ = sign(ρⱼ) · max(|ρⱼ| - α, 0) / zⱼ
             </div>
-            <p className="text-neutral-400 font-sans text-[11px]">
+            <p className="text-muted-foreground font-sans text-[11px]">
               Clamps weights strictly to 0 when |ρⱼ| ≤ α, producing sparsity.
             </p>
           </Card>
 
-          <Card className="p-4 space-y-2 border-border/60 bg-neutral-950/60">
+          <Card className="p-4 space-y-2 border-border bg-card shadow-subtle">
             <div className="font-semibold text-brand">Locally Weighted Linear Regression</div>
-            <div className="p-2.5 bg-neutral-900 rounded border border-neutral-800 text-purple-400">
+            <div className="p-2.5 bg-muted/70 rounded border border-border/60 text-purple-600 dark:text-purple-400 font-medium">
               θ(x) = (Xᵀ W X)⁻¹ Xᵀ W y
               <br />
               W_ii = exp(- (x^(i) - x)² / (2τ²))
             </div>
-            <p className="text-neutral-400 font-sans text-[11px]">
+            <p className="text-muted-foreground font-sans text-[11px]">
               Non-parametric bandwidth τ governs spatial smoothing window.
             </p>
           </Card>
@@ -250,14 +250,14 @@ export function Unit3CheatSheetPage() {
           <h2 className="font-display text-xl font-semibold text-foreground">
             2. Regression Model Architecture Comparison Matrix
           </h2>
-          <p className="text-xs text-neutral-400 mt-1">
+          <p className="text-xs text-muted-foreground mt-1">
             Algorithmic assumptions, sparsity, computational scaling, and optimal regimes
           </p>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs border border-border/60 rounded font-mono">
-            <thead className="bg-neutral-900 text-neutral-300">
+            <thead className="bg-muted text-foreground">
               <tr>
                 <th className="p-2.5 border-b border-border/60">Model Type</th>
                 <th className="p-2.5 border-b border-border/60">Parametric?</th>
@@ -267,53 +267,53 @@ export function Unit3CheatSheetPage() {
                 <th className="p-2.5 border-b border-border/60">Best Applied When</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-border/40 text-neutral-300">
-              <tr>
+            <tbody className="divide-y divide-border/40 text-foreground">
+              <tr className="hover:bg-muted/40 transition-colors">
                 <td className="p-2.5 font-bold text-foreground">OLS Linear</td>
                 <td className="p-2.5">Yes</td>
                 <td className="p-2.5">None</td>
-                <td className="p-2.5 text-red-400">No</td>
-                <td className="p-2.5 text-red-400">Singular matrix fails</td>
+                <td className="p-2.5 text-red-500">No</td>
+                <td className="p-2.5 text-red-500">Singular matrix fails</td>
                 <td className="p-2.5">n &gt;&gt; p, linear relationship</td>
               </tr>
-              <tr>
+              <tr className="hover:bg-muted/40 transition-colors">
                 <td className="p-2.5 font-bold text-foreground">Polynomial</td>
                 <td className="p-2.5">Yes</td>
                 <td className="p-2.5">None</td>
-                <td className="p-2.5 text-red-400">No</td>
-                <td className="p-2.5 text-red-400">Extreme Runge oscillations</td>
+                <td className="p-2.5 text-red-500">No</td>
+                <td className="p-2.5 text-red-500">Extreme Runge oscillations</td>
                 <td className="p-2.5">Known low-degree physical laws (d ≤ 3)</td>
               </tr>
-              <tr>
-                <td className="p-2.5 font-bold text-purple-400">Locally Weighted</td>
-                <td className="p-2.5 text-amber-400">No (Memory)</td>
+              <tr className="hover:bg-muted/40 transition-colors">
+                <td className="p-2.5 font-bold text-purple-600 dark:text-purple-400">Locally Weighted</td>
+                <td className="p-2.5 text-amber-600 dark:text-amber-400">No (Memory)</td>
                 <td className="p-2.5">Kernel Distance</td>
-                <td className="p-2.5 text-red-400">No</td>
-                <td className="p-2.5 text-amber-400">Moderate</td>
+                <td className="p-2.5 text-red-500">No</td>
+                <td className="p-2.5 text-amber-600 dark:text-amber-400">Moderate</td>
                 <td className="p-2.5">Low-dimensional non-linear sensor logs</td>
               </tr>
-              <tr>
-                <td className="p-2.5 font-bold text-sky-400">Ridge (L2)</td>
+              <tr className="hover:bg-muted/40 transition-colors">
+                <td className="p-2.5 font-bold text-sky-600 dark:text-sky-400">Ridge (L2)</td>
                 <td className="p-2.5">Yes</td>
                 <td className="p-2.5">α · Σ θⱼ²</td>
-                <td className="p-2.5 text-amber-400">No (Shrunk)</td>
-                <td className="p-2.5 text-emerald-400">Stable (groups collinear terms)</td>
+                <td className="p-2.5 text-amber-600 dark:text-amber-400">No (Shrunk)</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Stable (groups collinear terms)</td>
                 <td className="p-2.5">Many correlated predictors</td>
               </tr>
-              <tr>
-                <td className="p-2.5 font-bold text-emerald-400">Lasso (L1)</td>
+              <tr className="hover:bg-muted/40 transition-colors">
+                <td className="p-2.5 font-bold text-emerald-600 dark:text-emerald-400">Lasso (L1)</td>
                 <td className="p-2.5">Yes</td>
                 <td className="p-2.5">α · Σ |θⱼ|</td>
-                <td className="p-2.5 text-emerald-400">Yes (Exact 0)</td>
-                <td className="p-2.5 text-amber-400">Arbitrarily selects one</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Yes (Exact 0)</td>
+                <td className="p-2.5 text-amber-600 dark:text-amber-400">Arbitrarily selects one</td>
                 <td className="p-2.5">Embedded feature selection, sparse true signals</td>
               </tr>
-              <tr>
+              <tr className="hover:bg-muted/40 transition-colors">
                 <td className="p-2.5 font-bold text-brand">Elastic Net</td>
                 <td className="p-2.5">Yes</td>
                 <td className="p-2.5">L1 + L2</td>
-                <td className="p-2.5 text-emerald-400">Yes (Exact 0)</td>
-                <td className="p-2.5 text-emerald-400">Excellent (groups + prunes)</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Yes (Exact 0)</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Excellent (groups + prunes)</td>
                 <td className="p-2.5">High-dimensional genomics & NLP (p &gt; n)</td>
               </tr>
             </tbody>
@@ -327,17 +327,17 @@ export function Unit3CheatSheetPage() {
           <h2 className="font-display text-xl font-semibold text-foreground">
             3. Residual Diagnostic Plots Guide
           </h2>
-          <p className="text-xs text-neutral-400 mt-1">
+          <p className="text-xs text-muted-foreground mt-1">
             How to diagnose violations of Gauss-Markov assumptions from residual geometry
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-          <Card className="p-4 space-y-1.5 border-border/60 bg-neutral-950/60">
+          <Card className="p-4 space-y-1.5 border-border bg-card shadow-subtle">
             <div className="font-semibold text-foreground">
               Residuals vs Fitted (Linearity & Variance)
             </div>
-            <p className="text-neutral-400">
+            <p className="text-muted-foreground leading-relaxed">
               <strong>Healthy:</strong> Random, unpatterned horizontal band centered at e = 0.
               <br />
               <strong>Funnel Shape:</strong> Indicates heteroscedasticity (expanding error
@@ -347,11 +347,11 @@ export function Unit3CheatSheetPage() {
             </p>
           </Card>
 
-          <Card className="p-4 space-y-1.5 border-border/60 bg-neutral-950/60">
+          <Card className="p-4 space-y-1.5 border-border bg-card shadow-subtle">
             <div className="font-semibold text-foreground">
               Normal Q-Q Plot (Gaussian Residuals)
             </div>
-            <p className="text-neutral-400">
+            <p className="text-muted-foreground leading-relaxed">
               <strong>Healthy:</strong> Standardized residuals trace the 45-degree diagonal line.
               <br />
               <strong>S-Shape Curve:</strong> Indicates heavy-tailed error distributions (kurtosis).
@@ -369,7 +369,7 @@ export function Unit3CheatSheetPage() {
             <h2 className="font-display text-xl font-semibold text-foreground">
               4. Oral Viva Voce Defense Flashcards (15 Questions)
             </h2>
-            <p className="text-xs text-neutral-400 mt-1">
+            <p className="text-xs text-muted-foreground mt-1">
               Click any question to reveal model answers for MIT AOE oral exam defense
             </p>
           </div>
@@ -389,29 +389,29 @@ export function Unit3CheatSheetPage() {
             return (
               <div
                 key={card.id}
-                className="border border-border/60 rounded-lg overflow-hidden bg-neutral-950/40"
+                className="border border-border rounded-lg overflow-hidden bg-card shadow-subtle"
               >
                 <div
                   onClick={() => toggleCard(card.id)}
-                  className="p-3.5 flex items-center justify-between cursor-pointer hover:bg-neutral-900/60 transition-colors"
+                  className="p-3.5 flex items-center justify-between cursor-pointer hover:bg-muted/50 transition-colors"
                 >
                   <div className="flex items-center gap-2.5 text-xs font-medium text-foreground">
                     <span className="font-mono text-brand font-bold text-[11px]">Q{idx + 1}.</span>
                     <span>{card.question}</span>
                   </div>
                   {isExpanded ? (
-                    <ChevronUp className="size-4 text-neutral-400" />
+                    <ChevronUp className="size-4 text-muted-foreground" />
                   ) : (
-                    <ChevronDown className="size-4 text-neutral-400" />
+                    <ChevronDown className="size-4 text-muted-foreground" />
                   )}
                 </div>
 
                 {isExpanded && (
-                  <div className="p-3.5 pt-0 border-t border-border/40 bg-neutral-900/40 text-xs text-neutral-300 leading-relaxed space-y-1">
+                  <div className="p-3.5 pt-0 border-t border-border/60 bg-muted/30 text-xs text-foreground leading-relaxed space-y-1">
                     <div className="font-semibold text-brand text-[10px] uppercase tracking-wider font-mono">
                       Model Answer:
                     </div>
-                    <p className="text-neutral-300">{card.answer}</p>
+                    <p className="text-muted-foreground">{card.answer}</p>
                   </div>
                 )}
               </div>

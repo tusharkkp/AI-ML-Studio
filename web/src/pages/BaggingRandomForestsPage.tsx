@@ -195,7 +195,7 @@ for idx in top_indices:
   return (
     <div className="mx-auto max-w-5xl px-6 py-10 sm:px-12 space-y-12">
       {/* 1. Hero Header & Syllabus Mapping */}
-      <div className="border-b border-orange-50/15 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
           <nav
             aria-label="Breadcrumb"
@@ -290,7 +290,7 @@ for idx in top_indices:
           dataset?&quot; Let us derive this fundamental probability step by step.
         </p>
 
-        <Card className="p-5 border border-orange-50/15 bg-neutral-900/40 space-y-4 font-mono text-xs">
+        <Card className="p-5 border border-border bg-card shadow-subtle space-y-4 font-mono text-xs">
           <div>
             <div className="text-orange-200 font-bold mb-1">
               Step 1: Probability of a Specific Sample Not Being Picked
@@ -307,7 +307,7 @@ for idx in top_indices:
             </div>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-3">
+          <div className="border-t border-card-edge pt-3">
             <div className="text-orange-200 font-bold mb-1">
               Step 2: Probability Across N Independent Draws
             </div>
@@ -320,7 +320,7 @@ for idx in top_indices:
             </div>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-3">
+          <div className="border-t border-card-edge pt-3">
             <div className="text-orange-200 font-bold mb-1">
               Step 3: Evaluate Asymptotic Limit as N → ∞
             </div>
@@ -354,7 +354,7 @@ for idx in top_indices:
           Bagging.
         </p>
 
-        <Card className="p-6 border border-orange-50/15 bg-neutral-900/40 space-y-4 text-xs font-montserrat">
+        <Card className="p-6 border border-border bg-card shadow-subtle space-y-4 text-xs font-montserrat">
           <div>
             <h3 className="font-manrope text-sm font-semibold text-orange-200">
               The Variance of Averaged Correlated Random Variables
@@ -364,7 +364,7 @@ for idx in top_indices:
               distinct trees have pairwise correlation coefficient $\rho$, the variance of their
               simple average T_avg(x) = (1/B) sum(T_b(x)) is:
             </p>
-            <div className="my-2 p-3 bg-black/50 border border-orange-50/10 rounded font-mono text-neutral-200 text-center">
+            <div className="my-2 p-3 bg-black/50 border border-card-edge rounded font-mono text-neutral-200 text-center">
               {'$$ \\text{Var}(\\bar{T}(x)) = \\rho \\sigma^2 + \\frac{1 - \\rho}{B} \\sigma^2 $$'}
             </div>
             <p className="text-neutral-400">
@@ -377,7 +377,7 @@ for idx in top_indices:
             </p>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-4">
+          <div className="border-t border-card-edge pt-4">
             <h3 className="font-manrope text-sm font-semibold text-orange-200">
               The Breiman Subspace Solution (m ≈ √d)
             </h3>
@@ -390,11 +390,11 @@ for idx in top_indices:
             </p>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-4">
+          <div className="border-t border-card-edge pt-4">
             <h3 className="font-manrope text-sm font-semibold text-orange-200">
               Out-of-Bag (OOB) Generalization Risk
             </h3>
-            <div className="my-2 p-3 bg-black/50 border border-orange-50/10 rounded font-mono text-neutral-200 text-center">
+            <div className="my-2 p-3 bg-black/50 border border-card-edge rounded font-mono text-neutral-200 text-center">
               {
                 '$$ \\text{Err}_{\\text{OOB}} = \\frac{1}{N} \\sum_{i=1}^N L\\left(y_i, \\text{mode}_{b \\in \\mathcal{B}_i} \\{ T_b(x_i) \\}\\right) $$'
               }
@@ -413,7 +413,7 @@ for idx in top_indices:
         <h2 className="font-manrope text-2xl font-semibold tracking-tight text-foreground">
           5. Algorithm pseudocode: Breiman Random Forest
         </h2>
-        <Card className="p-4 border border-orange-50/15 bg-neutral-900/40 font-mono text-xs text-neutral-300 space-y-1">
+        <Card className="p-4 border border-border bg-card shadow-subtle font-mono text-xs text-neutral-300 space-y-1">
           <div className="text-neutral-500">
             {'// Algorithm: Breiman Random Forest Training & Inference'}
           </div>
@@ -474,7 +474,7 @@ for idx in top_indices:
             <span>{copiedPython ? 'Copied' : 'Copy Code'}</span>
           </Button>
         </div>
-        <Card className="p-4 border border-orange-50/15 bg-black/60 font-mono text-xs text-neutral-300 overflow-x-auto">
+        <Card className="p-4 border border-border bg-black/60 font-mono text-xs text-neutral-300 overflow-x-auto">
           <pre>{pythonSnippet}</pre>
         </Card>
       </section>
@@ -521,7 +521,7 @@ for idx in top_indices:
           8. Strengths, limitations & when NOT to use
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-montserrat">
-          <Card className="p-5 border border-orange-50/15 bg-neutral-900/30 space-y-3">
+          <Card className="p-5 border border-border bg-neutral-900/30 space-y-3">
             <h3 className="font-manrope text-sm font-semibold text-emerald-400">
               Strengths of Random Forests
             </h3>
@@ -545,7 +545,7 @@ for idx in top_indices:
             </ul>
           </Card>
 
-          <Card className="p-5 border border-orange-50/15 bg-neutral-900/30 space-y-3">
+          <Card className="p-5 border border-border bg-neutral-900/30 space-y-3">
             <h3 className="font-manrope text-sm font-semibold text-rose-400">
               Limitations & When NOT to Use
             </h3>
@@ -573,7 +573,7 @@ for idx in top_indices:
           9. Common misconceptions
         </h2>
         <div className="space-y-3 text-xs font-montserrat">
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30">
+          <Card className="p-4 border border-border bg-neutral-900/30">
             <div className="font-semibold text-orange-200">
               Myth: &quot;Adding more trees (e.g. 1000 instead of 100) causes Random Forests to
               overfit the training data.&quot;
@@ -586,7 +586,7 @@ for idx in top_indices:
             </p>
           </Card>
 
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30">
+          <Card className="p-4 border border-border bg-neutral-900/30">
             <div className="font-semibold text-orange-200">
               Myth: &quot;Random Forests require pre-pruning like max_depth to avoid high
               error.&quot;
@@ -620,7 +620,7 @@ for idx in top_indices:
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-montserrat">
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30 space-y-2">
+          <Card className="p-4 border border-border bg-neutral-900/30 space-y-2">
             <div className="font-semibold text-foreground dark:text-white">
               Q1: Differentiate between Bagging and Random Forests.
             </div>
@@ -633,7 +633,7 @@ for idx in top_indices:
             </p>
           </Card>
 
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30 space-y-2">
+          <Card className="p-4 border border-border bg-neutral-900/30 space-y-2">
             <div className="font-semibold text-foreground dark:text-white">
               Q2: What is Mean Decrease in Impurity (MDI) feature importance?
             </div>
@@ -652,7 +652,7 @@ for idx in top_indices:
         <h2 className="font-manrope text-2xl font-semibold tracking-tight text-foreground">
           12. Summary & key takeaways
         </h2>
-        <Card className="p-6 border border-orange-50/15 bg-neutral-900/40 space-y-3 text-xs font-montserrat">
+        <Card className="p-6 border border-border bg-card shadow-subtle space-y-3 text-xs font-montserrat">
           <ul className="space-y-2 text-neutral-300 list-disc pl-4">
             <li>
               <strong>Bootstrap Coverage:</strong> Drawing $N$ times with replacement captures
@@ -673,7 +673,7 @@ for idx in top_indices:
       </section>
 
       {/* 14. What's Next */}
-      <section className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-orange-50/15 pt-6">
+      <section className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-border pt-6">
         <div>
           <div className="text-xs font-mono text-neutral-500 uppercase tracking-wider">
             Next Syllabus Topic

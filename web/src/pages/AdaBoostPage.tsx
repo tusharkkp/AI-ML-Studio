@@ -185,7 +185,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
   return (
     <div className="mx-auto max-w-5xl px-6 py-10 sm:px-12 space-y-12">
       {/* 1. Hero Header & Syllabus Mapping */}
-      <div className="border-b border-orange-50/15 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
           <nav
             aria-label="Breadcrumb"
@@ -272,7 +272,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
           3. Step-by-step on paper: The three core formulas
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-montserrat">
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="font-bold font-manrope text-sm text-amber-400">
               Step 1: Weighted Error (ε_t)
             </div>
@@ -284,7 +284,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
             </div>
           </Card>
 
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="font-bold font-manrope text-sm text-emerald-400">
               Step 2: Learner Weight (α_t)
             </div>
@@ -298,7 +298,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
             </div>
           </Card>
 
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="font-bold font-manrope text-sm text-blue-400">
               Step 3: Weight Update (w_i)
             </div>
@@ -318,7 +318,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
         <h2 className="text-xl sm:text-2xl font-semibold text-foreground font-manrope">
           4. Formal mathematical foundations: Exponential loss minimization
         </h2>
-        <div className="p-5 rounded-xl border border-orange-50/15 bg-neutral-900/50 space-y-4 text-xs font-montserrat leading-relaxed">
+        <div className="p-5 rounded-xl border border-border bg-neutral-900/50 space-y-4 text-xs font-montserrat leading-relaxed">
           <p className="text-neutral-300">
             Jerome Friedman, Trevor Hastie, and Robert Tibshirani (2000) proved that AdaBoost is an
             exact form of sequential stage-wise additive modeling minimizing the exponential loss
@@ -363,7 +363,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
         <h2 className="text-xl sm:text-2xl font-semibold text-foreground font-manrope">
           5. Algorithm pseudocode: AdaBoost.M1
         </h2>
-        <Card className="p-5 border-orange-50/15 bg-black/30 font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
+        <Card className="p-5 border-border bg-card shadow-subtle font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
           <pre>{`ALGORITHM AdaBoost_M1(Dataset D = {(x_1, y_1), ..., (x_n, y_n)}, Rounds T):
   1. Initialize weights: w_i^(1) = 1 / n for all i = 1, ..., n
   
@@ -416,7 +416,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
             )}
           </Button>
         </div>
-        <Card className="p-5 border-orange-50/15 bg-black/40 font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
+        <Card className="p-5 border-border bg-card shadow-subtle font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
           <pre>{pythonSnippet}</pre>
         </Card>
       </section>
@@ -516,7 +516,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
               fact: 'A weak learner only needs to be slightly better than random guessing (error < 50%). Even a 51% accurate stump contributes positive boosting signal.',
             },
           ].map((item, idx) => (
-            <Card key={idx} className="p-4 border-orange-50/10 bg-neutral-900/40 space-y-1">
+            <Card key={idx} className="p-4 border-card-edge bg-neutral-900/40 space-y-1">
               <div className="font-bold text-red-400 font-manrope text-sm">Myth: "{item.myth}"</div>
               <div className="text-neutral-300 leading-relaxed">
                 <span className="text-emerald-400 font-semibold">Reality:</span> {item.fact}
@@ -542,7 +542,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
           11. Exam & viva corner
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-montserrat">
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <h4 className="font-bold text-foreground font-manrope text-sm">
               Viva Question 1: What happens if error ε_t &gt; 0.5?
             </h4>
@@ -554,7 +554,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
             </p>
           </Card>
 
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <h4 className="font-bold text-foreground font-manrope text-sm">
               Viva Question 2: How does AdaBoost differ fundamentally from Random Forests?
             </h4>
@@ -572,7 +572,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
         <h2 className="text-xl sm:text-2xl font-semibold text-foreground font-manrope">
           12. Summary & key takeaways
         </h2>
-        <Card className="p-5 border-orange-50/15 bg-black/20 space-y-2 text-xs font-montserrat text-neutral-300 leading-relaxed">
+        <Card className="p-5 border-border bg-card shadow-subtle space-y-2 text-xs font-montserrat text-neutral-300 leading-relaxed">
           <p>
             1. <strong className="text-foreground">Sequential Adaptive Weighting:</strong> Points
             misclassified in round {'\\(t\\)'} have their weights scaled up by{' '}
@@ -595,7 +595,7 @@ print(f"Ensemble Accuracy Gain:            +{(ada_acc - base_acc) * 100:.2f}%")
       </section>
 
       {/* 14. What's Next */}
-      <section className="border-t border-orange-50/15 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <section className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <div className="text-xs text-neutral-400 font-mono">Next Further Reading</div>
           <div className="text-base font-semibold text-foreground font-manrope">

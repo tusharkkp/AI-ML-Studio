@@ -184,7 +184,7 @@ export const TreePruningPage: React.FC = () => {
       </div>
 
       {/* 2. The Hook */}
-      <Card className="p-6 border-orange-50/15 bg-black/10 space-y-3">
+      <Card className="p-6 border-border bg-card shadow-subtle space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground font-manrope">
           <Scissors className="w-4 h-4 text-cream" />
           <span>The Hook: Why do gardeners prune bonsai trees?</span>
@@ -261,7 +261,7 @@ export const TreePruningPage: React.FC = () => {
           {'$$R_\\alpha(T) = R(T) + \\alpha |T|$$'}
         </p>
 
-        <div className="p-5 rounded-xl border border-border/60 bg-black/20 space-y-3 text-xs font-mono">
+        <div className="p-5 rounded-xl border border-border bg-muted/40 space-y-3 text-xs font-mono">
           <div className="flex items-center gap-2 text-foreground">
             <span className="text-cream font-bold">1. Understand the Variables:</span>
           </div>
@@ -310,7 +310,7 @@ export const TreePruningPage: React.FC = () => {
         </div>
 
         {showMath && (
-          <Card className="p-6 border-orange-50/15 bg-black/20 space-y-4 text-sm text-muted-foreground">
+          <Card className="p-6 border-border bg-card shadow-subtle space-y-4 text-sm text-muted-foreground">
             <h3 className="font-semibold text-foreground text-base font-manrope">
               Reduced Error Pruning (REP) vs Cost-Complexity Pruning (CCP)
             </h3>
@@ -331,7 +331,7 @@ export const TreePruningPage: React.FC = () => {
         <h2 className="text-2xl font-medium text-foreground font-manrope">
           5. Algorithm Pseudocode (Cost-Complexity Pruning)
         </h2>
-        <Card className="p-5 border-border/60 bg-black/30 font-mono text-xs text-muted-foreground space-y-2 overflow-x-auto">
+        <Card className="p-5 border-border bg-muted/40 font-mono text-xs text-muted-foreground space-y-2 overflow-x-auto">
           <div className="text-cream font-bold">// Minimal Cost-Complexity Pruning Algorithm</div>
           <div>function PruneTree(rootNode, alpha):</div>
           <div className="pl-4">function Traverse(node):</div>
@@ -355,8 +355,8 @@ export const TreePruningPage: React.FC = () => {
         <h2 className="text-2xl font-medium text-foreground font-manrope">
           6. Code It in Python: scikit-learn Cost Complexity Pruning Path
         </h2>
-        <Card className="p-5 border-border/60 bg-black/30 font-mono text-xs text-muted-foreground space-y-3">
-          <pre className="text-emerald-300 overflow-x-auto">
+        <Card className="p-5 border-border bg-muted/40 font-mono text-xs text-muted-foreground space-y-3">
+          <pre className="text-emerald-600 dark:text-emerald-400 overflow-x-auto">
             {`from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 
@@ -472,7 +472,7 @@ print(f"Pruned Tree Depth: {best_clf.get_depth()}, Leaves: {best_clf.get_n_leave
           11. Exam & Viva Corner
         </h2>
         <div className="space-y-3">
-          <Card className="p-4 border-border/60 bg-black/20 space-y-2">
+          <Card className="p-4 border-border bg-muted/40 space-y-2">
             <span className="font-semibold text-sm text-cream font-mono">
               Q1: Differentiate between pre-pruning and post-pruning with suitable examples.
             </span>
@@ -485,7 +485,7 @@ print(f"Pruned Tree Depth: {best_clf.get_depth()}, Leaves: {best_clf.get_n_leave
             </p>
           </Card>
 
-          <Card className="p-4 border-border/60 bg-black/20 space-y-2">
+          <Card className="p-4 border-border bg-muted/40 space-y-2">
             <span className="font-semibold text-sm text-cream font-mono">
               Q2: State the formula for Minimal Cost-Complexity Pruning and explain its terms.
             </span>
@@ -499,7 +499,7 @@ print(f"Pruned Tree Depth: {best_clf.get_depth()}, Leaves: {best_clf.get_n_leave
       </div>
 
       {/* 14. Summary & Next Up */}
-      <Card className="p-6 border-orange-50/15 bg-black/20 space-y-4">
+      <Card className="p-6 border-border bg-card shadow-subtle space-y-4">
         <h2 className="text-xl font-medium text-foreground font-manrope">
           12. Summary & Key Takeaways
         </h2>

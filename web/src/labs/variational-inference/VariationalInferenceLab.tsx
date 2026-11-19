@@ -200,7 +200,7 @@ export function VariationalInferenceLab() {
   }, []);
 
   return (
-    <Card className="rounded-xl border border-orange-50/15 bg-black/20 backdrop-blur-sm shadow-none">
+    <Card className="rounded-xl border border-border bg-muted/40 backdrop-blur-sm shadow-none">
       <CardHeader>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>

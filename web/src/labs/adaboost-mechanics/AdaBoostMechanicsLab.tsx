@@ -170,8 +170,8 @@ export const AdaBoostMechanicsLab: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Control Toolbar */}
-      <Card className="p-6 border-orange-50/15 bg-neutral-900/60 backdrop-blur-md">
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-orange-50/10 pb-4">
+      <Card className="p-6 border-border bg-card shadow-subtle/60 backdrop-blur-md">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-card-edge pb-4">
           <div className="flex items-center gap-2">
             <Zap className="w-5 h-5 text-amber-400" />
             <h3 className="font-semibold text-lg text-foreground font-manrope">
@@ -213,7 +213,7 @@ export const AdaBoostMechanicsLab: React.FC = () => {
                 className={`w-8 h-8 rounded-lg text-xs font-mono font-bold transition-all border ${
                   currentRound === r
                     ? 'border-brand bg-brand text-white shadow-none'
-                    : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-white'
+                    : 'border-card-edge bg-muted/40 text-neutral-400 hover:text-white'
                 }`}
               >
                 {r}
@@ -240,7 +240,7 @@ export const AdaBoostMechanicsLab: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left 2 Cols: 2D Plane with Dynamic Weight Circles */}
         <div className="lg:col-span-2 space-y-4">
-          <Card className="p-5 border-orange-50/15 bg-neutral-900/60">
+          <Card className="p-5 border-border bg-card shadow-subtle/60">
             <div className="flex items-center justify-between mb-3">
               <div>
                 <h4 className="font-semibold text-sm text-foreground font-manrope">
@@ -264,7 +264,7 @@ export const AdaBoostMechanicsLab: React.FC = () => {
             </div>
 
             {/* SVG Visualizer */}
-            <div className="relative w-full aspect-square max-h-[460px] bg-black/40 rounded-xl border border-orange-50/10 p-2 overflow-hidden mx-auto">
+            <div className="relative w-full aspect-square max-h-[460px] bg-muted/50 rounded-xl border border-card-edge p-2 overflow-hidden mx-auto">
               <svg className="w-full h-full" viewBox="0 0 500 500">
                 {/* Coordinate Grid */}
                 {[0.2, 0.4, 0.6, 0.8].map((g) => {
@@ -405,14 +405,14 @@ export const AdaBoostMechanicsLab: React.FC = () => {
         {/* Right Col: Mathematical Breakdown & Interactive Alpha Explorer */}
         <div className="space-y-4">
           {/* Round Metrics Card */}
-          <Card className="p-5 border-orange-50/15 bg-neutral-900/60 space-y-4">
+          <Card className="p-5 border-border bg-card shadow-subtle/60 space-y-4">
             <h4 className="font-semibold text-sm text-foreground font-manrope flex items-center gap-2">
               <TrendingUp className="w-4 h-4 text-brand" />
               Round {currentRound} Mathematical Ledger
             </h4>
 
             <div className="space-y-3 text-xs font-mono">
-              <div className="p-2.5 rounded-lg bg-black/30 border border-orange-50/10 space-y-1">
+              <div className="p-2.5 rounded-lg bg-muted/40 border border-card-edge space-y-1">
                 <div className="text-neutral-400 text-[10px] uppercase">
                   Weighted Training Error (ε_{currentRound})
                 </div>
@@ -424,7 +424,7 @@ export const AdaBoostMechanicsLab: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-2.5 rounded-lg bg-black/30 border border-orange-50/10 space-y-1">
+              <div className="p-2.5 rounded-lg bg-muted/40 border border-card-edge space-y-1">
                 <div className="text-neutral-400 text-[10px] uppercase">
                   Classifier Voting Weight (α_{currentRound})
                 </div>
@@ -436,7 +436,7 @@ export const AdaBoostMechanicsLab: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-2.5 rounded-lg bg-black/30 border border-orange-50/10 space-y-1">
+              <div className="p-2.5 rounded-lg bg-muted/40 border border-card-edge space-y-1">
                 <div className="text-neutral-400 text-[10px] uppercase">
                   Normalization Factor (Z_{currentRound})
                 </div>
@@ -451,7 +451,7 @@ export const AdaBoostMechanicsLab: React.FC = () => {
           </Card>
 
           {/* Alpha Sensitivity Explorer */}
-          <Card className="p-5 border-orange-50/15 bg-neutral-900/60 space-y-3">
+          <Card className="p-5 border-border bg-card shadow-subtle/60 space-y-3">
             <h4 className="font-semibold text-sm text-foreground font-manrope">
               Interactive Alpha Curve: α(ε)
             </h4>
@@ -469,7 +469,7 @@ export const AdaBoostMechanicsLab: React.FC = () => {
               onChange={(val) => setCustomError(val)}
             />
 
-            <div className="p-3 rounded-lg bg-black/40 border border-orange-50/10 flex items-center justify-between text-xs font-mono">
+            <div className="p-3 rounded-lg bg-muted/50 border border-card-edge flex items-center justify-between text-xs font-mono">
               <span className="text-neutral-400">Resulting Weight α:</span>
               <span className="font-bold text-amber-300 text-sm">{computedAlpha.toFixed(4)}</span>
             </div>

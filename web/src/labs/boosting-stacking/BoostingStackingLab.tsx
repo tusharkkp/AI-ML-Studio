@@ -110,12 +110,12 @@ export function BoostingStackingLab() {
   });
 
   return (
-    <Card className="p-6 border border-orange-50/15 bg-neutral-900/50 backdrop-blur-sm space-y-6">
+    <Card className="p-6 border border-border bg-card shadow-subtle backdrop-blur-sm space-y-6">
       {/* Header bar & tab selector */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-orange-50/10 pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-card-edge pb-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex size-6 items-center justify-center rounded border border-orange-50/20 bg-black/40 text-[10px] font-mono font-bold text-orange-200">
+            <span className="flex size-6 items-center justify-center rounded border border-brand/20 bg-brand/10 text-[10px] font-mono font-bold text-brand">
               LAB
             </span>
             <h3 className="font-manrope text-lg font-semibold text-foreground dark:text-white">
@@ -129,7 +129,7 @@ export function BoostingStackingLab() {
         </div>
 
         {/* Tab pills */}
-        <div className="flex items-center p-0.5 rounded-lg border border-orange-50/15 bg-black/40 text-xs">
+        <div className="flex items-center p-0.5 rounded-lg border border-border bg-muted/50 text-xs">
           <button
             onClick={() => setActiveTab('adaboost')}
             className={`px-3 py-1 rounded-md transition-colors flex items-center gap-1.5 ${
@@ -158,7 +158,7 @@ export function BoostingStackingLab() {
       {activeTab === 'adaboost' && (
         <div className="space-y-6">
           {/* Controls Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 p-3 rounded-lg bg-black/40 border border-orange-50/10">
+          <div className="flex flex-wrap items-center justify-between gap-4 p-3 rounded-lg bg-muted/50 border border-card-edge">
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono text-neutral-400">Round {safeRound} of 8:</span>
               <div className="flex items-center gap-1">
@@ -189,7 +189,7 @@ export function BoostingStackingLab() {
                 <span>Next Round</span>
               </Button>
 
-              <div className="flex items-center p-0.5 rounded border border-orange-50/10 bg-black/50 text-[11px]">
+              <div className="flex items-center p-0.5 rounded border border-card-edge bg-black/50 text-[11px]">
                 <button
                   onClick={() => setViewBoundary('cumulative')}
                   className={`px-2 py-0.5 rounded ${
@@ -218,7 +218,7 @@ export function BoostingStackingLab() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             {/* Visual Canvas */}
             <div className="lg:col-span-7 flex flex-col items-center">
-              <div className="relative border border-orange-50/15 rounded-lg overflow-hidden bg-black/70">
+              <div className="relative border border-border rounded-lg overflow-hidden bg-black/70">
                 <svg width={width} height={height} className="block">
                   {/* Background grid */}
                   {boundaryGrid &&
@@ -293,7 +293,7 @@ export function BoostingStackingLab() {
                   })}
                 </svg>
 
-                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/80 border border-orange-50/20 text-[10px] font-mono text-neutral-300">
+                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/80 border border-border text-[10px] font-mono text-neutral-300">
                   Circle radius = Sample weight $w_i$ (Misclassified points swell)
                 </div>
               </div>
@@ -301,7 +301,7 @@ export function BoostingStackingLab() {
 
             {/* Metrics Panel */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="p-4 rounded-lg bg-black/40 border border-orange-50/10 space-y-3">
+              <div className="p-4 rounded-lg bg-muted/50 border border-card-edge space-y-3">
                 <div className="text-xs font-semibold text-neutral-300 uppercase tracking-wider font-mono">
                   Round {safeRound} Parameters
                 </div>
@@ -329,7 +329,7 @@ export function BoostingStackingLab() {
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between text-neutral-400 border-t border-neutral-800 pt-2">
+                  <div className="flex items-center justify-between text-neutral-400 border-t border-border pt-2">
                     <span>Cumulative Accuracy:</span>
                     <span className="text-brand font-bold text-sm">
                       {((activeRoundData?.trainingAccuracy ?? 0) * 100).toFixed(1)}%
@@ -339,7 +339,7 @@ export function BoostingStackingLab() {
               </div>
 
               {/* Theory Box */}
-              <div className="p-3 rounded-lg bg-black/30 border border-orange-50/10 text-xs text-neutral-400 font-montserrat leading-relaxed">
+              <div className="p-3 rounded-lg bg-muted/40 border border-card-edge text-xs text-neutral-400 font-montserrat leading-relaxed">
                 Notice how misclassified points swell in radius on the next round. Their increased
                 weight forces the subsequent decision stump to focus almost entirely on rectifying
                 earlier errors.
@@ -352,7 +352,7 @@ export function BoostingStackingLab() {
       {activeTab === 'stacking' && (
         <div className="space-y-6">
           {/* Stacking Pipeline Diagram */}
-          <div className="p-5 rounded-lg bg-black/40 border border-orange-50/10 space-y-4">
+          <div className="p-5 rounded-lg bg-muted/50 border border-card-edge space-y-4">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold uppercase tracking-wider text-neutral-300 font-mono">
                 Level-0 Base Models to Level-1 Meta Blender
@@ -363,7 +363,7 @@ export function BoostingStackingLab() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Card className="p-3 border border-orange-50/10 bg-neutral-900/40">
+              <Card className="p-3 border border-card-edge bg-neutral-900/40">
                 <div className="text-[11px] font-mono text-neutral-400">Base Learner 1</div>
                 <div className="text-xs font-semibold text-neutral-200 mt-0.5">Decision Stump</div>
                 <div className="text-[11px] text-neutral-500 mt-1">Inductive Bias: Axis split</div>
@@ -380,7 +380,7 @@ export function BoostingStackingLab() {
                 </div>
               </Card>
 
-              <Card className="p-3 border border-orange-50/10 bg-neutral-900/40">
+              <Card className="p-3 border border-card-edge bg-neutral-900/40">
                 <div className="text-[11px] font-mono text-neutral-400">Base Learner 2</div>
                 <div className="text-xs font-semibold text-neutral-200 mt-0.5">
                   Centroid Separator
@@ -401,7 +401,7 @@ export function BoostingStackingLab() {
                 </div>
               </Card>
 
-              <Card className="p-3 border border-orange-50/10 bg-neutral-900/40">
+              <Card className="p-3 border border-card-edge bg-neutral-900/40">
                 <div className="text-[11px] font-mono text-neutral-400">Base Learner 3</div>
                 <div className="text-xs font-semibold text-neutral-200 mt-0.5">
                   3-NN Local Voting
@@ -424,7 +424,7 @@ export function BoostingStackingLab() {
             </div>
 
             {/* Out-of-fold Leakage Warning */}
-            <div className="p-3 rounded bg-black/60 border border-orange-50/10 text-xs text-neutral-300 font-montserrat flex items-start gap-2">
+            <div className="p-3 rounded bg-muted/60 border border-card-edge text-xs text-neutral-300 font-montserrat flex items-start gap-2">
               <Sliders className="size-4 text-orange-200 shrink-0 mt-0.5" />
               <div>
                 <strong>Wolpert Stacking Protocol:</strong> The Level-1 meta-features must be

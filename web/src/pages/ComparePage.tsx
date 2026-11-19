@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
+import { Select } from '@/components/ui/Select';
+import { Input } from '@/components/ui/Input';
+import {
+  TableContainer,
+  Table,
+  TableHeader,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+} from '@/components/ui/Table';
 import {
   Scale,
   Sparkles,
@@ -475,7 +486,7 @@ export function ComparePage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-10 sm:px-12 space-y-10">
       {/* 1. Header Banner */}
-      <div className="border-b border-orange-50/15 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <Badge variant="unit">Algorithm Chooser</Badge>
           <Badge variant="outline">Cross-Unit Benchmark</Badge>
@@ -486,9 +497,9 @@ export function ComparePage() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground font-manrope">
           Which algorithm should I use?
         </h1>
-        <p className="mt-3 text-sm sm:text-base text-neutral-600 dark:text-neutral-300 font-montserrat leading-relaxed max-w-3xl">
+        <p className="mt-3 text-sm sm:text-base text-muted-foreground font-montserrat leading-relaxed max-w-3xl">
           An interactive decision helper and comparative engineering workbench evaluating{' '}
-          <span className="font-montserrat font-medium text-yellow-800 dark:text-orange-100">
+          <span className="font-montserrat font-medium text-brand">
             computational complexity, interpretability, and failure modes
           </span>{' '}
           across all units of the curriculum.
@@ -508,8 +519,8 @@ export function ComparePage() {
                 onClick={() => setActiveTab(tab.id as 'chooser' | 'matrix' | 'duel')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-manrope font-semibold transition-all border ${
                   activeTab === tab.id
-                    ? 'border-brand bg-brand text-white shadow-none'
-                    : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200'
+                    ? 'border-brand bg-brand text-white shadow-subtle'
+                    : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                 }`}
               >
                 <Icon className="size-3.5" />
@@ -526,8 +537,8 @@ export function ComparePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left 7 Cols: Question Criteria Inputs */}
             <div className="lg:col-span-7 space-y-6">
-              <Card className="p-6 border-orange-50/15 bg-neutral-900/50 space-y-5">
-                <div className="flex items-center gap-2 border-b border-orange-50/10 pb-3">
+              <Card className="p-6 border-border bg-card shadow-subtle space-y-5">
+                <div className="flex items-center gap-2 border-b border-card-edge pb-3">
                   <Sliders className="size-4 text-brand" />
                   <h3 className="font-manrope font-semibold text-base text-foreground">
                     Define Your Project Requirements
@@ -552,12 +563,12 @@ export function ComparePage() {
                         onClick={() => setWizardGoal(opt.id)}
                         className={`p-3 rounded-lg text-left border text-xs transition-all ${
                           wizardGoal === opt.id
-                            ? 'border-brand bg-brand/10 text-white font-medium'
-                            : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200'
+                            ? 'border-brand bg-brand/10 text-brand font-medium'
+                            : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                         }`}
                       >
-                        <div className="font-semibold">{opt.label}</div>
-                        <div className="text-[10px] text-neutral-500 font-sans">{opt.desc}</div>
+                        <div className="font-semibold text-foreground">{opt.label}</div>
+                        <div className="text-[10px] text-muted-foreground font-sans">{opt.desc}</div>
                       </button>
                     ))}
                   </div>
@@ -565,7 +576,7 @@ export function ComparePage() {
 
                 {/* 2. Dataset Scale */}
                 <div className="space-y-2">
-                  <label className="text-xs font-mono font-semibold uppercase text-neutral-300">
+                  <label className="text-xs font-mono font-semibold uppercase text-foreground/80">
                     2. Dataset Scale (Sample Size N)
                   </label>
                   <div className="grid grid-cols-3 gap-2">
@@ -581,12 +592,12 @@ export function ComparePage() {
                         onClick={() => setWizardSize(opt.id)}
                         className={`p-2.5 rounded-lg text-left border text-xs transition-all ${
                           wizardSize === opt.id
-                            ? 'border-brand bg-brand/10 text-white font-medium'
-                            : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200'
+                            ? 'border-brand bg-brand/10 text-brand font-medium'
+                            : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                         }`}
                       >
-                        <div className="font-semibold">{opt.label}</div>
-                        <div className="text-[10px] text-neutral-500 font-sans">{opt.desc}</div>
+                        <div className="font-semibold text-foreground">{opt.label}</div>
+                        <div className="text-[10px] text-muted-foreground font-sans">{opt.desc}</div>
                       </button>
                     ))}
                   </div>
@@ -594,7 +605,7 @@ export function ComparePage() {
 
                 {/* 3. Interpretability Priority */}
                 <div className="space-y-2">
-                  <label className="text-xs font-mono font-semibold uppercase text-neutral-300">
+                  <label className="text-xs font-mono font-semibold uppercase text-foreground/80">
                     3. Model Interpretability &amp; Auditability
                   </label>
                   <div className="grid grid-cols-2 gap-2">
@@ -617,12 +628,12 @@ export function ComparePage() {
                         onClick={() => setWizardInterpretability(opt.id)}
                         className={`p-2.5 rounded-lg text-left border text-xs transition-all ${
                           wizardInterpretability === opt.id
-                            ? 'border-brand bg-brand/10 text-white font-medium'
-                            : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200'
+                            ? 'border-brand bg-brand/10 text-brand font-medium'
+                            : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                         }`}
                       >
-                        <div className="font-semibold">{opt.label}</div>
-                        <div className="text-[10px] text-neutral-500 font-sans">{opt.desc}</div>
+                        <div className="font-semibold text-foreground">{opt.label}</div>
+                        <div className="text-[10px] text-muted-foreground font-sans">{opt.desc}</div>
                       </button>
                     ))}
                   </div>
@@ -631,26 +642,26 @@ export function ComparePage() {
                 {/* 4. Non-linearity & Outliers */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono font-semibold uppercase text-neutral-300">
+                    <label className="text-xs font-mono font-semibold uppercase text-foreground/80">
                       4. Geometric Separability
                     </label>
                     <div className="grid grid-cols-2 gap-1.5">
                       <button
                         onClick={() => setWizardNonlinear('complex')}
-                        className={`p-2 rounded-lg text-center border text-xs ${
+                        className={`p-2 rounded-lg text-center border text-xs transition-colors ${
                           wizardNonlinear === 'complex'
-                            ? 'border-brand bg-brand/10 text-white font-semibold'
-                            : 'border-orange-50/10 bg-black/20 text-neutral-400'
+                            ? 'border-brand bg-brand/10 text-brand font-semibold'
+                            : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                         }`}
                       >
                         Complex / Curvilinear
                       </button>
                       <button
                         onClick={() => setWizardNonlinear('linear')}
-                        className={`p-2 rounded-lg text-center border text-xs ${
+                        className={`p-2 rounded-lg text-center border text-xs transition-colors ${
                           wizardNonlinear === 'linear'
-                            ? 'border-brand bg-brand/10 text-white font-semibold'
-                            : 'border-orange-50/10 bg-black/20 text-neutral-400'
+                            ? 'border-brand bg-brand/10 text-brand font-semibold'
+                            : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                         }`}
                       >
                         Strictly Linear
@@ -659,26 +670,26 @@ export function ComparePage() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono font-semibold uppercase text-neutral-300">
+                    <label className="text-xs font-mono font-semibold uppercase text-foreground/80">
                       5. Noise &amp; Outliers
                     </label>
                     <div className="grid grid-cols-2 gap-1.5">
                       <button
                         onClick={() => setWizardOutliers('noisy')}
-                        className={`p-2 rounded-lg text-center border text-xs ${
+                        className={`p-2 rounded-lg text-center border text-xs transition-colors ${
                           wizardOutliers === 'noisy'
-                            ? 'border-brand bg-brand/10 text-white font-semibold'
-                            : 'border-orange-50/10 bg-black/20 text-neutral-400'
+                            ? 'border-brand bg-brand/10 text-brand font-semibold'
+                            : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                         }`}
                       >
                         Noisy / Sensor Glitches
                       </button>
                       <button
                         onClick={() => setWizardOutliers('clean')}
-                        className={`p-2 rounded-lg text-center border text-xs ${
+                        className={`p-2 rounded-lg text-center border text-xs transition-colors ${
                           wizardOutliers === 'clean'
-                            ? 'border-brand bg-brand/10 text-white font-semibold'
-                            : 'border-orange-50/10 bg-black/20 text-neutral-400'
+                            ? 'border-brand bg-brand/10 text-brand font-semibold'
+                            : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                         }`}
                       >
                         Clean Curated
@@ -691,11 +702,11 @@ export function ComparePage() {
 
             {/* Right 5 Cols: Recommended Algorithm Card */}
             <div className="lg:col-span-5 space-y-4">
-              <Card className="p-6 border-orange-50/20 bg-neutral-900/80 sticky top-20 space-y-5">
-                <div className="flex items-center justify-between border-b border-orange-50/10 pb-3">
+              <Card className="p-6 border-border bg-card/90 shadow-studio sticky top-20 space-y-5">
+                <div className="flex items-center justify-between border-b border-border/60 pb-3">
                   <div className="flex items-center gap-2">
                     <Sparkles className="size-4 text-brand" />
-                    <span className="text-xs font-mono uppercase tracking-wider text-neutral-400">
+                    <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
                       Recommended Best Match
                     </span>
                   </div>
@@ -708,59 +719,59 @@ export function ComparePage() {
                   <h3 className="font-manrope text-2xl font-bold text-foreground">
                     {recommendation.name}
                   </h3>
-                  <p className="text-xs text-neutral-400 font-montserrat mt-1 leading-relaxed">
+                  <p className="text-xs text-muted-foreground font-montserrat mt-1 leading-relaxed">
                     {recommendation.objective}
                   </p>
                 </div>
 
                 <div className="space-y-3 pt-2 text-xs font-montserrat">
-                  <div className="p-3 rounded-lg bg-emerald-950/20 border border-emerald-500/20 space-y-1">
-                    <span className="font-semibold text-emerald-400 flex items-center gap-1.5 font-manrope">
+                  <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 space-y-1">
+                    <span className="font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 font-manrope">
                       <CheckCircle2 className="size-3.5" />
                       Why It Fits Your Criteria:
                     </span>
-                    <p className="text-neutral-300 leading-relaxed">{recommendation.bestFor}</p>
+                    <p className="text-foreground/80 leading-relaxed">{recommendation.bestFor}</p>
                   </div>
 
-                  <div className="p-3 rounded-lg bg-red-950/20 border border-red-500/20 space-y-1">
-                    <span className="font-semibold text-red-400 flex items-center gap-1.5 font-manrope">
+                  <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/20 space-y-1">
+                    <span className="font-semibold text-rose-600 dark:text-rose-400 flex items-center gap-1.5 font-manrope">
                       <XCircle className="size-3.5" />
                       Engineering Warning / Trap:
                     </span>
-                    <p className="text-neutral-300 leading-relaxed">{recommendation.fatalFlaw}</p>
+                    <p className="text-foreground/80 leading-relaxed">{recommendation.fatalFlaw}</p>
                   </div>
                 </div>
 
                 {/* Specs Pill Matrix */}
                 <div className="grid grid-cols-2 gap-2 text-[11px] font-mono pt-1">
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 block text-[10px]">Training Time:</span>
-                    <span className="text-cream font-bold">
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground block text-[10px]">Training Time:</span>
+                    <span className="text-foreground font-bold font-mono">
                       {recommendation.timeComplexityTrain}
                     </span>
                   </div>
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 block text-[10px]">Prediction Time:</span>
-                    <span className="text-cream font-bold">
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground block text-[10px]">Prediction Time:</span>
+                    <span className="text-foreground font-bold font-mono">
                       {recommendation.timeComplexityPredict}
                     </span>
                   </div>
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 block text-[10px]">Interpretability:</span>
-                    <span className="text-neutral-200 font-bold">
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground block text-[10px]">Interpretability:</span>
+                    <span className="text-foreground font-bold">
                       {recommendation.interpretability}
                     </span>
                   </div>
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 block text-[10px]">Outlier Sensitivity:</span>
-                    <span className="text-neutral-200 font-bold">
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground block text-[10px]">Outlier Sensitivity:</span>
+                    <span className="text-foreground font-bold">
                       {recommendation.outlierSensitivity}
                     </span>
                   </div>
                 </div>
 
                 {/* Direct Launch Actions */}
-                <div className="flex items-center gap-3 pt-2 border-t border-orange-50/10">
+                <div className="flex items-center gap-3 pt-2 border-t border-border/60">
                   <Link to={recommendation.learnPath} className="flex-1">
                     <Button
                       variant="primary"
@@ -792,55 +803,45 @@ export function ComparePage() {
       {activeTab === 'duel' && (
         <div className="space-y-6">
           {/* Algorithm Pickers */}
-          <Card className="p-6 border-orange-50/15 bg-neutral-900/50">
+          <Card className="p-6 border-border bg-card/80 shadow-subtle">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-              <div className="space-y-2">
-                <label className="text-xs font-mono font-semibold uppercase text-amber-400">
-                  Select Contender A:
-                </label>
-                <select
-                  value={duelAlgoA}
-                  onChange={(e) => setDuelAlgoA(e.target.value)}
-                  className="w-full bg-neutral-950 border border-orange-50/20 text-neutral-100 rounded-lg px-3 py-2 text-xs font-montserrat focus:outline-none focus:border-brand"
-                >
-                  {ALGORITHMS.map((algo) => (
-                    <option key={algo.id} value={algo.id}>
-                      [{algo.unitBadge}] {algo.name} ({algo.domain})
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <Select
+                label="Select Contender A:"
+                value={duelAlgoA}
+                onChange={(e) => setDuelAlgoA(e.target.value)}
+              >
+                {ALGORITHMS.map((algo) => (
+                  <option key={algo.id} value={algo.id}>
+                    [{algo.unitBadge}] {algo.name} ({algo.domain})
+                  </option>
+                ))}
+              </Select>
 
-              <div className="space-y-2">
-                <label className="text-xs font-mono font-semibold uppercase text-blue-400">
-                  Select Contender B:
-                </label>
-                <select
-                  value={duelAlgoB}
-                  onChange={(e) => setDuelAlgoB(e.target.value)}
-                  className="w-full bg-neutral-950 border border-orange-50/20 text-neutral-100 rounded-lg px-3 py-2 text-xs font-montserrat focus:outline-none focus:border-brand"
-                >
-                  {ALGORITHMS.map((algo) => (
-                    <option key={algo.id} value={algo.id}>
-                      [{algo.unitBadge}] {algo.name} ({algo.domain})
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <Select
+                label="Select Contender B:"
+                value={duelAlgoB}
+                onChange={(e) => setDuelAlgoB(e.target.value)}
+              >
+                {ALGORITHMS.map((algo) => (
+                  <option key={algo.id} value={algo.id}>
+                    [{algo.unitBadge}] {algo.name} ({algo.domain})
+                  </option>
+                ))}
+              </Select>
             </div>
           </Card>
 
           {/* Duel Comparison Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Contender A Card */}
-            <Card className="p-6 border-amber-500/30 bg-neutral-900/60 space-y-4">
-              <div className="flex items-center justify-between border-b border-orange-50/10 pb-3">
+            <Card className="p-6 border-amber-500/30 bg-card/90 shadow-studio space-y-4">
+              <div className="flex items-center justify-between border-b border-border/60 pb-3">
                 <div className="flex items-center gap-2">
                   <Badge variant="warning">{algoA.unitBadge}</Badge>
                   <h3 className="font-manrope text-xl font-bold text-foreground">{algoA.name}</h3>
                 </div>
                 <Link to={algoA.learnPath}>
-                  <Button variant="ghost" size="sm" className="text-xs p-1">
+                  <Button variant="ghost" size="sm" className="text-xs p-1" aria-label={`Learn more about ${algoA.name}`}>
                     <ExternalLink className="size-3.5" />
                   </Button>
                 </Link>
@@ -848,56 +849,56 @@ export function ComparePage() {
 
               <div className="space-y-3 text-xs font-montserrat">
                 <div>
-                  <span className="text-neutral-500 font-mono uppercase text-[10px]">
+                  <span className="text-muted-foreground font-mono uppercase text-[10px]">
                     Objective:
                   </span>
-                  <p className="text-neutral-200 mt-0.5">{algoA.objective}</p>
+                  <p className="text-foreground/90 mt-0.5">{algoA.objective}</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2 font-mono text-[11px] pt-1">
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 text-[10px] block">Train Time:</span>
-                    <span className="text-cream">{algoA.timeComplexityTrain}</span>
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground text-[10px] block">Train Time:</span>
+                    <span className="text-foreground font-bold">{algoA.timeComplexityTrain}</span>
                   </div>
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 text-[10px] block">Query Time:</span>
-                    <span className="text-cream">{algoA.timeComplexityPredict}</span>
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground text-[10px] block">Query Time:</span>
+                    <span className="text-foreground font-bold">{algoA.timeComplexityPredict}</span>
                   </div>
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 text-[10px] block">Interpretability:</span>
-                    <span className="text-neutral-200">{algoA.interpretability}</span>
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground text-[10px] block">Interpretability:</span>
+                    <span className="text-foreground font-bold">{algoA.interpretability}</span>
                   </div>
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 text-[10px] block">Non-Linearity:</span>
-                    <span className="text-neutral-200">{algoA.nonLinearity}</span>
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground text-[10px] block">Non-Linearity:</span>
+                    <span className="text-foreground font-bold">{algoA.nonLinearity}</span>
                   </div>
                 </div>
 
-                <div className="p-3 rounded-lg bg-emerald-950/20 border border-emerald-500/20">
-                  <span className="font-semibold text-emerald-400 font-manrope">
+                <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+                  <span className="font-semibold text-emerald-600 dark:text-emerald-400 font-manrope">
                     Primary Advantage:
                   </span>
-                  <p className="text-neutral-300 text-xs mt-1 leading-relaxed">{algoA.bestFor}</p>
+                  <p className="text-foreground/80 text-xs mt-1 leading-relaxed">{algoA.bestFor}</p>
                 </div>
 
-                <div className="p-3 rounded-lg bg-red-950/20 border border-red-500/20">
-                  <span className="font-semibold text-red-400 font-manrope">
+                <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/20">
+                  <span className="font-semibold text-rose-600 dark:text-rose-400 font-manrope">
                     Critical Vulnerability:
                   </span>
-                  <p className="text-neutral-300 text-xs mt-1 leading-relaxed">{algoA.fatalFlaw}</p>
+                  <p className="text-foreground/80 text-xs mt-1 leading-relaxed">{algoA.fatalFlaw}</p>
                 </div>
               </div>
             </Card>
 
             {/* Contender B Card */}
-            <Card className="p-6 border-blue-500/30 bg-neutral-900/60 space-y-4">
-              <div className="flex items-center justify-between border-b border-orange-50/10 pb-3">
+            <Card className="p-6 border-blue-500/30 bg-card/90 shadow-studio space-y-4">
+              <div className="flex items-center justify-between border-b border-border/60 pb-3">
                 <div className="flex items-center gap-2">
                   <Badge variant="outline">{algoB.unitBadge}</Badge>
                   <h3 className="font-manrope text-xl font-bold text-foreground">{algoB.name}</h3>
                 </div>
                 <Link to={algoB.learnPath}>
-                  <Button variant="ghost" size="sm" className="text-xs p-1">
+                  <Button variant="ghost" size="sm" className="text-xs p-1" aria-label={`Learn more about ${algoB.name}`}>
                     <ExternalLink className="size-3.5" />
                   </Button>
                 </Link>
@@ -905,43 +906,43 @@ export function ComparePage() {
 
               <div className="space-y-3 text-xs font-montserrat">
                 <div>
-                  <span className="text-neutral-500 font-mono uppercase text-[10px]">
+                  <span className="text-muted-foreground font-mono uppercase text-[10px]">
                     Objective:
                   </span>
-                  <p className="text-neutral-200 mt-0.5">{algoB.objective}</p>
+                  <p className="text-foreground/90 mt-0.5">{algoB.objective}</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2 font-mono text-[11px] pt-1">
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 text-[10px] block">Train Time:</span>
-                    <span className="text-cream">{algoB.timeComplexityTrain}</span>
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground text-[10px] block">Train Time:</span>
+                    <span className="text-foreground font-bold">{algoB.timeComplexityTrain}</span>
                   </div>
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 text-[10px] block">Query Time:</span>
-                    <span className="text-cream">{algoB.timeComplexityPredict}</span>
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground text-[10px] block">Query Time:</span>
+                    <span className="text-foreground font-bold">{algoB.timeComplexityPredict}</span>
                   </div>
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 text-[10px] block">Interpretability:</span>
-                    <span className="text-neutral-200">{algoB.interpretability}</span>
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground text-[10px] block">Interpretability:</span>
+                    <span className="text-foreground font-bold">{algoB.interpretability}</span>
                   </div>
-                  <div className="p-2 rounded bg-black/40 border border-orange-50/10">
-                    <span className="text-neutral-500 text-[10px] block">Non-Linearity:</span>
-                    <span className="text-neutral-200">{algoB.nonLinearity}</span>
+                  <div className="p-2.5 rounded-lg bg-muted/50 border border-border">
+                    <span className="text-muted-foreground text-[10px] block">Non-Linearity:</span>
+                    <span className="text-foreground font-bold">{algoB.nonLinearity}</span>
                   </div>
                 </div>
 
-                <div className="p-3 rounded-lg bg-emerald-950/20 border border-emerald-500/20">
-                  <span className="font-semibold text-emerald-400 font-manrope">
+                <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+                  <span className="font-semibold text-emerald-600 dark:text-emerald-400 font-manrope">
                     Primary Advantage:
                   </span>
-                  <p className="text-neutral-300 text-xs mt-1 leading-relaxed">{algoB.bestFor}</p>
+                  <p className="text-foreground/80 text-xs mt-1 leading-relaxed">{algoB.bestFor}</p>
                 </div>
 
-                <div className="p-3 rounded-lg bg-red-950/20 border border-red-500/20">
-                  <span className="font-semibold text-red-400 font-manrope">
+                <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/20">
+                  <span className="font-semibold text-rose-600 dark:text-rose-400 font-manrope">
                     Critical Vulnerability:
                   </span>
-                  <p className="text-neutral-300 text-xs mt-1 leading-relaxed">{algoB.fatalFlaw}</p>
+                  <p className="text-foreground/80 text-xs mt-1 leading-relaxed">{algoB.fatalFlaw}</p>
                 </div>
               </div>
             </Card>
@@ -953,9 +954,9 @@ export function ComparePage() {
       {activeTab === 'matrix' && (
         <div className="space-y-6">
           {/* Filter Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-orange-50/10 pb-4">
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-neutral-400 font-mono uppercase">Domain Filter:</span>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border/60 pb-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs text-muted-foreground font-mono uppercase">Domain Filter:</span>
               {[
                 { id: 'all', label: 'All Models' },
                 { id: 'classification', label: 'Classification' },
@@ -967,8 +968,8 @@ export function ComparePage() {
                   onClick={() => setDomainFilter(f.id as ProblemDomain)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all border ${
                     domainFilter === f.id
-                      ? 'border-brand bg-brand text-white font-bold'
-                      : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-white'
+                      ? 'border-brand bg-brand text-white font-bold shadow-subtle'
+                      : 'border-border bg-muted/40 text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   {f.label}
@@ -976,37 +977,36 @@ export function ComparePage() {
               ))}
             </div>
 
-            <div className="relative w-full sm:w-64">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-3.5 text-neutral-500" />
-              <input
+            <div className="w-full sm:w-72">
+              <Input
                 type="text"
                 placeholder="Search algorithms..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-neutral-900 border border-orange-50/15 rounded-lg pl-9 pr-3 py-1.5 text-xs text-neutral-200 placeholder-neutral-500 focus:outline-none focus:border-brand"
+                icon={<Search className="size-3.5 text-muted-foreground" />}
               />
             </div>
           </div>
 
           {/* Matrix Table */}
-          <div className="overflow-x-auto rounded-xl border border-orange-50/15 bg-neutral-900/40">
-            <table className="w-full text-xs text-left border-collapse font-montserrat">
-              <thead>
-                <tr className="bg-neutral-950/80 text-neutral-300 font-manrope font-semibold border-b border-orange-50/15">
-                  <th className="p-3">Algorithm</th>
-                  <th className="p-3">Domain</th>
-                  <th className="p-3">Train Complexity</th>
-                  <th className="p-3">Query Complexity</th>
-                  <th className="p-3">Interpretability</th>
-                  <th className="p-3">Non-Linearity</th>
-                  <th className="p-3">Outlier Tolerance</th>
-                  <th className="p-3">Primary Best Use Case</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-orange-50/10 text-neutral-300 font-sans">
+          <TableContainer>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Algorithm</TableHead>
+                  <TableHead>Domain</TableHead>
+                  <TableHead>Train Complexity</TableHead>
+                  <TableHead>Query Complexity</TableHead>
+                  <TableHead>Interpretability</TableHead>
+                  <TableHead>Non-Linearity</TableHead>
+                  <TableHead>Outlier Tolerance</TableHead>
+                  <TableHead>Primary Best Use Case</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
                 {filteredAlgorithms.map((algo) => (
-                  <tr key={algo.id} className="hover:bg-neutral-900/60 transition-colors">
-                    <td className="p-3">
+                  <TableRow key={algo.id}>
+                    <TableCell>
                       <Link
                         to={algo.learnPath}
                         className="font-bold font-manrope text-foreground hover:text-brand flex items-center gap-1.5 transition-colors"
@@ -1016,51 +1016,51 @@ export function ComparePage() {
                         </Badge>
                         <span>{algo.name}</span>
                       </Link>
-                    </td>
-                    <td className="p-3 font-mono text-[11px] uppercase text-neutral-400">
+                    </TableCell>
+                    <TableCell className="font-mono text-[11px] uppercase text-muted-foreground">
                       {algo.domain}
-                    </td>
-                    <td className="p-3 font-mono text-cream text-[11px]">
+                    </TableCell>
+                    <TableCell className="font-mono text-[11px] font-semibold text-foreground">
                       {algo.timeComplexityTrain}
-                    </td>
-                    <td className="p-3 font-mono text-cream text-[11px]">
+                    </TableCell>
+                    <TableCell className="font-mono text-[11px] font-semibold text-foreground">
                       {algo.timeComplexityPredict}
-                    </td>
-                    <td className="p-3">
+                    </TableCell>
+                    <TableCell>
                       <span
                         className={`inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold ${
                           algo.interpretability === 'High'
-                            ? 'bg-emerald-950/60 text-emerald-300 border border-emerald-500/30'
+                            ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
                             : algo.interpretability === 'Medium'
-                              ? 'bg-amber-950/60 text-amber-300 border border-amber-500/30'
-                              : 'bg-red-950/60 text-red-300 border border-red-500/30'
+                              ? 'bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/30'
+                              : 'bg-rose-500/15 text-rose-700 dark:text-rose-300 border border-rose-500/30'
                         }`}
                       >
                         {algo.interpretability}
                       </span>
-                    </td>
-                    <td className="p-3 text-[11px] text-neutral-300">{algo.nonLinearity}</td>
-                    <td className="p-3">
+                    </TableCell>
+                    <TableCell className="text-[11px] text-foreground/80">{algo.nonLinearity}</TableCell>
+                    <TableCell>
                       <span
                         className={`text-[11px] font-semibold ${
                           algo.outlierSensitivity === 'Robust'
-                            ? 'text-emerald-400'
+                            ? 'text-emerald-600 dark:text-emerald-400'
                             : algo.outlierSensitivity === 'Moderate'
-                              ? 'text-amber-400'
-                              : 'text-red-400'
+                              ? 'text-amber-600 dark:text-amber-400'
+                              : 'text-rose-600 dark:text-rose-400'
                         }`}
                       >
                         {algo.outlierSensitivity}
                       </span>
-                    </td>
-                    <td className="p-3 text-[11px] text-neutral-400 max-w-xs leading-relaxed">
+                    </TableCell>
+                    <TableCell className="text-[11px] text-muted-foreground max-w-xs leading-relaxed">
                       {algo.bestFor}
-                    </td>
-                  </tr>
+                    </TableCell>
+                  </TableRow>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </TableBody>
+            </Table>
+          </TableContainer>
         </div>
       )}
     </div>

@@ -196,18 +196,18 @@ export function WarehouseBfsLab({
       )}
 
       {/* Interactive Tool selector */}
-      <div className="flex items-center justify-between text-xs text-studio-600 dark:text-studio-400">
-        <div className="flex items-center space-x-2">
-          <span>Click grid to place:</span>
+      <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="font-medium text-foreground">Click grid to place:</span>
           {(['obstacle', 'start', 'goal'] as const).map((tool) => (
             <button
               key={tool}
               type="button"
               onClick={() => setActiveTool(tool)}
-              className={`px-2.5 py-1 rounded font-medium capitalize border transition-colors ${
+              className={`px-2.5 py-1 rounded-lg text-xs font-medium capitalize border transition-all ${
                 activeTool === tool
-                  ? 'bg-studio-900 text-white border-studio-900 dark:bg-white dark:text-studio-900 dark:border-white'
-                  : 'bg-white text-studio-700 border-studio-200 hover:bg-studio-100 dark:bg-studio-800 dark:text-studio-300 dark:border-studio-700'
+                  ? 'bg-foreground text-background border-foreground font-bold shadow-subtle'
+                  : 'bg-card text-foreground/80 border-border hover:bg-muted'
               }`}
             >
               {tool === 'obstacle'
@@ -218,13 +218,13 @@ export function WarehouseBfsLab({
             </button>
           ))}
         </div>
-        <span className="hidden sm:inline">
+        <span className="text-xs font-mono text-muted-foreground">
           Grid: {gridInput.rows} × {gridInput.cols}
         </span>
       </div>
 
       {/* SVG Warehouse Grid Display */}
-      <div className="flex items-center justify-center p-3 rounded-xl bg-white dark:bg-studio-950 border border-studio-200 dark:border-studio-800 overflow-x-auto">
+      <div className="flex items-center justify-center p-3 rounded-xl bg-card border border-border overflow-x-auto shadow-subtle">
         <svg
           viewBox={`0 0 ${svgWidth} ${svgHeight}`}
           className="max-h-[380px] w-auto select-none"

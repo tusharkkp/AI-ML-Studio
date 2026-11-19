@@ -292,38 +292,25 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-12">
-        {/* Brand: Onest wordmark with signature orange dot */}
-        {/* <Link to="/" className="flex items-center gap-2 group">
+        {/* Brand: Wordmark with signature orange pulse dot */}
+        <Link
+          to="/"
+          className="group flex shrink-0 items-center gap-2"
+          aria-label="AIML Studio Home"
+        >
           <div className="flex flex-col">
-            <span className="font-brand text-xl font-medium tracking-tight text-foreground flex items-center">
+            <span className="flex items-center whitespace-nowrap font-brand text-lg sm:text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-brand">
               AIML Studio
-              <span className="inline-block size-1.5 rounded-full bg-brand ml-1 animate-pulse" />
+              <span className="ml-1.5 inline-block size-2 shrink-0 rounded-full bg-brand animate-pulse" />
             </span>
-            <span className="text-[11px] text-neutral-500 dark:text-neutral-400 font-sans">
+            <span className="hidden sm:inline-block whitespace-nowrap text-[10px] font-sans text-muted-foreground">
               MIT AOE · Rev. 2023 NEP
             </span>
           </div>
-        </Link> */}
-
-        {/* Brand: Fixed-width logo */}
-{/* <Link
-  to="/"
-  className="group flex shrink-0 items-center"
->
-  <div className="flex min-w-fit flex-col">
-    <span className="flex items-center whitespace-nowrap font-brand text-2xl font-semibold tracking-tight text-foreground">
-      AIML Studio
-      <span className="ml-1.5 inline-block size-1.5 shrink-0 rounded-full bg-brand animate-pulse" />
-    </span>
-
-    <span className="whitespace-nowrap text-[11px] font-sans text-neutral-500 dark:text-neutral-400">
-      MIT AOE · Rev. 2023 NEP
-    </span>
-  </div>
-</Link> */}
+        </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-1 font-sans">
+        <div className="hidden lg:flex items-center space-x-1 font-sans">
           <Link
             to="/"
             className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:text-brand ${
@@ -361,10 +348,10 @@ export function Navbar() {
 
             {unitsOpen && (
               <div
-                className="absolute top-full left-0 mt-2 w-80 rounded-xl border border-orange-50/15 dark:border-orange-50/15 border-amber-900/15 bg-[#0c0a09]/95 dark:bg-[#0c0a09]/95 bg-white/95 backdrop-blur-md p-2 shadow-none z-50"
+                className="absolute top-full left-0 mt-2 w-80 rounded-xl border border-border bg-card/95 backdrop-blur-md p-2 shadow-studio-lg z-50 animate-in fade-in zoom-in-95 duration-150"
                 role="menu"
               >
-                <div className="px-3 py-1.5 text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
+                <div className="px-3 py-1.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
                   Curriculum Units (NEP 2023)
                 </div>
                 <div className="space-y-1">
@@ -377,19 +364,19 @@ export function Navbar() {
                         onClick={() => setUnitsOpen(false)}
                         className={`flex items-start gap-3 rounded-lg p-2.5 transition-colors ${
                           isCurrent
-                            ? 'bg-neutral-100 dark:bg-white/10 text-foreground dark:text-white'
-                            : 'hover:bg-neutral-100 dark:hover:bg-white/5 text-neutral-700 dark:text-neutral-300'
+                            ? 'bg-muted text-foreground font-semibold'
+                            : 'hover:bg-muted/70 text-foreground/80 hover:text-foreground'
                         }`}
                         role="menuitem"
                       >
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-orange-50/20 bg-neutral-200 dark:bg-black/40 text-[10px] font-mono font-bold text-neutral-800 dark:text-neutral-200">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-border bg-muted text-[10px] font-mono font-bold text-foreground">
                           {unit.badge}
                         </span>
                         <div className="flex flex-col">
                           <span className="text-xs font-semibold font-manrope">
                             {unit.num}: {unit.name}
                           </span>
-                          <span className="text-[11px] text-neutral-500 dark:text-neutral-400 leading-snug">
+                          <span className="text-[11px] text-muted-foreground leading-snug">
                             {unit.desc}
                           </span>
                         </div>
@@ -427,11 +414,11 @@ export function Navbar() {
 
             {labsOpen && (
               <div
-                className="absolute top-full left-0 mt-2 w-[420px] rounded-xl border border-orange-50/15 dark:border-orange-50/15 border-amber-900/15 bg-[#0c0a09]/95 dark:bg-[#0c0a09]/95 bg-white/95 backdrop-blur-md p-2 shadow-none z-50 max-h-[80vh] overflow-y-auto"
+                className="absolute top-full left-0 mt-2 w-full max-w-[calc(100vw-2rem)] sm:w-[420px] rounded-xl border border-border bg-card/95 backdrop-blur-md p-2 shadow-studio-lg z-50 max-h-[80vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-150"
                 role="menu"
               >
-                <div className="flex items-center justify-between px-3 py-1.5 border-b border-orange-50/10 mb-1">
-                  <span className="text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
+                <div className="flex items-center justify-between px-3 py-1.5 border-b border-border/60 mb-1">
+                  <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
                     Interactive Laboratories
                   </span>
                   <Link
@@ -452,17 +439,17 @@ export function Navbar() {
                         onClick={() => setLabsOpen(false)}
                         className={`flex items-start gap-3 rounded-lg p-2.5 transition-colors ${
                           isCurrent
-                            ? 'bg-neutral-100 dark:bg-white/10 text-foreground dark:text-white'
-                            : 'hover:bg-neutral-100 dark:hover:bg-white/5 text-neutral-700 dark:text-neutral-300'
+                            ? 'bg-muted text-foreground font-semibold'
+                            : 'hover:bg-muted/70 text-foreground/80 hover:text-foreground'
                         }`}
                         role="menuitem"
                       >
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-orange-50/20 bg-neutral-200 dark:bg-black/40 text-[10px] font-mono font-bold text-neutral-800 dark:text-neutral-200">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-border bg-muted text-[10px] font-mono font-bold text-foreground">
                           {lab.badge}
                         </span>
                         <div className="flex flex-col">
                           <span className="text-xs font-semibold font-manrope">{lab.title}</span>
-                          <span className="text-[11px] text-neutral-500 dark:text-neutral-400 leading-snug">
+                          <span className="text-[11px] text-muted-foreground leading-snug">
                             {lab.desc}
                           </span>
                         </div>
@@ -500,11 +487,11 @@ export function Navbar() {
 
             {cheatsheetsOpen && (
               <div
-                className="absolute top-full right-0 mt-2 w-72 rounded-xl border border-orange-50/15 dark:border-orange-50/15 border-amber-900/15 bg-[#0c0a09]/95 dark:bg-[#0c0a09]/95 bg-white/95 backdrop-blur-md p-2 shadow-none z-50"
+                className="absolute top-full right-0 mt-2 w-72 rounded-xl border border-border bg-card/95 backdrop-blur-md p-2 shadow-studio-lg z-50 animate-in fade-in zoom-in-95 duration-150"
                 role="menu"
               >
-                <div className="flex items-center justify-between px-3 py-1.5 border-b border-orange-50/10 mb-1">
-                  <span className="text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
+                <div className="flex items-center justify-between px-3 py-1.5 border-b border-border/60 mb-1">
+                  <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
                     Exam Revision Sheets
                   </span>
                   <Link
@@ -525,19 +512,17 @@ export function Navbar() {
                         onClick={() => setCheatsheetsOpen(false)}
                         className={`flex items-center gap-3 rounded-lg p-2.5 transition-colors ${
                           isCurrent
-                            ? 'bg-neutral-100 dark:bg-white/10 text-foreground dark:text-white'
-                            : 'hover:bg-neutral-100 dark:hover:bg-white/5 text-neutral-700 dark:text-neutral-300'
+                            ? 'bg-muted text-foreground font-semibold'
+                            : 'hover:bg-muted/70 text-foreground/80 hover:text-foreground'
                         }`}
                         role="menuitem"
                       >
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-orange-50/20 bg-neutral-200 dark:bg-black/40 text-[10px] font-mono font-bold text-neutral-800 dark:text-neutral-200">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-border bg-muted text-[10px] font-mono font-bold text-foreground">
                           {item.badge}
                         </span>
                         <div className="flex flex-col">
                           <span className="text-xs font-semibold font-manrope">{item.title}</span>
-                          <span className="text-[10px] text-neutral-500 dark:text-neutral-400">
-                            {item.unit}
-                          </span>
+                          <span className="text-[10px] text-muted-foreground">{item.unit}</span>
                         </div>
                       </Link>
                     );
@@ -606,12 +591,12 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setSearchModalOpen(true)}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-orange-50/15 bg-neutral-900/60 text-xs text-neutral-400 hover:text-neutral-200 hover:border-orange-50/30 transition-all font-mono"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-muted/50 text-xs text-muted-foreground hover:text-foreground hover:border-brand/40 transition-all font-mono"
             aria-label="Search syllabus topics (Ctrl+K)"
           >
-            <Search className="size-3.5 text-neutral-400" />
+            <Search className="size-3.5 text-muted-foreground" />
             <span className="hidden xl:inline text-[11px]">Search...</span>
-            <kbd className="hidden sm:inline-block text-[10px] bg-black/40 px-1.5 py-0.5 rounded border border-orange-50/10 text-neutral-400">
+            <kbd className="hidden sm:inline-block text-[10px] bg-background px-1.5 py-0.5 rounded border border-border text-muted-foreground">
               Ctrl K
             </kbd>
           </button>
@@ -622,8 +607,8 @@ export function Navbar() {
             onClick={toggleTeacherMode}
             className={`flex h-8 items-center gap-1.5 px-2.5 rounded-full border text-xs font-mono transition-colors ${
               teacherMode
-                ? 'border-brand bg-brand/20 text-brand font-bold'
-                : 'border-border bg-card/60 text-neutral-500 hover:text-neutral-300'
+                ? 'border-brand bg-brand/15 text-brand font-bold'
+                : 'border-border bg-muted/40 text-muted-foreground hover:text-foreground'
             }`}
             title={
               teacherMode
@@ -642,7 +627,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={toggleTheme}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-card/60 text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-muted/40 text-foreground hover:bg-muted transition-colors"
             aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
           >
             {theme === 'light' ? (
@@ -656,7 +641,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card/60 text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+            className="lg:hidden flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-muted/40 text-foreground hover:bg-muted transition-colors"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -667,7 +652,7 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-border bg-background/95 backdrop-blur-md px-6 py-4 space-y-4 max-h-[85vh] overflow-y-auto">
+        <div className="lg:hidden border-b border-border bg-background/98 backdrop-blur-md px-6 py-4 space-y-4 max-h-[85vh] overflow-y-auto">
           <Link
             to="/"
             onClick={() => setMobileMenuOpen(false)}

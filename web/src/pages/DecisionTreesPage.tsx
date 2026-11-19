@@ -193,15 +193,15 @@ export const DecisionTreesPage: React.FC = () => {
       </div>
 
       {/* 2. The Hook */}
-      <Card className="p-6 border-orange-50/15 bg-black/10 space-y-3">
+      <Card className="p-6 border-border bg-card shadow-subtle space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground font-manrope">
-          <Sparkles className="w-4 h-4 text-cream" />
+          <Sparkles className="w-4 h-4 text-brand" />
           <span>The Hook: How do loan officers evaluate credit?</span>
         </div>
         <p className="text-sm text-muted-foreground leading-relaxed">
           When an underwriter reviews an applicant, they do not multiply 40 weights into a sigmoid
           function. They ask sequential questions:{' '}
-          <span className="text-cream font-medium">"Is income above ₹50,000?"</span> If yes: "Is
+          <span className="text-brand font-medium">"Is income above ₹50,000?"</span> If yes: "Is
           credit score above 750?" If yes, approve immediately. Decision trees mirror this natural
           human deductive flowchart by recursively slicing continuous and categorical features.
         </p>
@@ -323,9 +323,9 @@ export const DecisionTreesPage: React.FC = () => {
           . Here is how the trained Mitchell decision tree evaluates it step-by-step:
         </p>
 
-        <div className="p-5 rounded-xl border border-border/60 bg-black/20 space-y-3 text-xs font-mono">
+        <div className="p-5 rounded-xl border border-border bg-muted/40 space-y-3 text-xs font-mono">
           <div className="flex items-center gap-2 text-foreground">
-            <span className="text-cream font-bold">Step 1:</span>
+            <span className="text-brand font-bold">Step 1:</span>
             <span>
               Evaluate Root Node: <strong>Outlook = ?</strong>
             </span>
@@ -336,7 +336,7 @@ export const DecisionTreesPage: React.FC = () => {
           </p>
 
           <div className="flex items-center gap-2 text-foreground pt-2">
-            <span className="text-cream font-bold">Step 2:</span>
+            <span className="text-brand font-bold">Step 2:</span>
             <span>
               Evaluate Sub-Node: <strong>Humidity = ?</strong>
             </span>
@@ -347,7 +347,7 @@ export const DecisionTreesPage: React.FC = () => {
           </p>
 
           <div className="flex items-center gap-2 text-foreground pt-2">
-            <span className="text-cream font-bold">Step 3:</span>
+            <span className="text-brand font-bold">Step 3:</span>
             <span>
               Final Decision Emitted: <strong>No Tennis (Play = No)</strong>
             </span>
@@ -376,7 +376,7 @@ export const DecisionTreesPage: React.FC = () => {
         </div>
 
         {showMath && (
-          <Card className="p-6 border-orange-50/15 bg-black/20 space-y-4 text-sm text-muted-foreground">
+          <Card className="p-6 border-border bg-card shadow-subtle space-y-4 text-sm text-muted-foreground">
             <h3 className="font-semibold text-foreground text-base font-manrope">
               Tree Induction as Greedy Optimization
             </h3>
@@ -384,11 +384,11 @@ export const DecisionTreesPage: React.FC = () => {
               Finding the globally optimal minimal decision tree is known to be NP-complete.
               Algorithms like ID3 (Iterative Dichotomiser 3) and CART (Classification and Regression
               Trees) use a{' '}
-              <span className="text-cream font-medium">greedy, top-down recursive heuristic</span>:
+              <span className="text-brand font-medium">greedy, top-down recursive heuristic</span>:
               at each step, select the feature that maximizes impurity reduction.
             </p>
 
-            <div className="p-4 rounded-lg bg-black/40 border border-border/40 font-mono text-xs space-y-2">
+            <div className="p-4 rounded-lg bg-muted/60 border border-border font-mono text-xs space-y-2">
               <div className="text-foreground font-bold">Recursive Partitioning Objective:</div>
               <div>{'$$j^*, t^* = \\arg\\max_{j, t} \\Delta I(S, j, t)$$'}</div>
               <div>
@@ -410,8 +410,8 @@ export const DecisionTreesPage: React.FC = () => {
         <h2 className="text-2xl font-medium text-foreground font-manrope">
           5. Algorithm Pseudocode (ID3 / CART)
         </h2>
-        <Card className="p-5 border-border/60 bg-black/30 font-mono text-xs text-muted-foreground space-y-2 overflow-x-auto">
-          <div className="text-cream font-bold">// Recursive Decision Tree Induction</div>
+        <Card className="p-5 border-border bg-card shadow-subtle font-mono text-xs text-muted-foreground space-y-2 overflow-x-auto">
+          <div className="text-brand font-bold">// Recursive Decision Tree Induction</div>
           <div>function BuildTree(dataset S, features F, depth d):</div>
           <div className="pl-4">if AllInstancesSameClass(S): return Leaf(Class(S))</div>
           <div className="pl-4">if F is empty or d &gt;= maxDepth or |S| &lt; minSamples:</div>
@@ -440,14 +440,14 @@ export const DecisionTreesPage: React.FC = () => {
         <h2 className="text-2xl font-medium text-foreground font-manrope">
           6. Code It in Python (scikit-learn vs Pure TypeScript)
         </h2>
-        <Card className="p-5 border-border/60 bg-black/30 font-mono text-xs text-muted-foreground space-y-3">
+        <Card className="p-5 border-border bg-card shadow-subtle font-mono text-xs text-muted-foreground space-y-3">
           <div className="flex items-center justify-between text-foreground">
             <span className="font-semibold">Python (scikit-learn DecisionTreeClassifier)</span>
             <Badge variant="outline" size="sm">
               Standard Library
             </Badge>
           </div>
-          <pre className="text-emerald-300 overflow-x-auto">
+          <pre className="text-emerald-600 dark:text-emerald-400 overflow-x-auto">
             {`from sklearn.tree import DecisionTreeClassifier, export_text
 from sklearn.preprocessing import OrdinalEncoder
 import pandas as pd
@@ -577,8 +577,8 @@ print(export_text(clf, feature_names=['outlook', 'temp', 'humidity', 'wind']))`}
           11. Exam & Viva Corner
         </h2>
         <div className="space-y-3">
-          <Card className="p-4 border-border/60 bg-black/20 space-y-2">
-            <span className="font-semibold text-sm text-cream font-mono">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
+            <span className="font-semibold text-sm text-brand font-mono">
               Q1: What is the stopping condition for recursive tree induction?
             </span>
             <p className="text-xs text-muted-foreground leading-relaxed">
@@ -589,8 +589,8 @@ print(export_text(clf, feature_names=['outlook', 'temp', 'humidity', 'wind']))`}
             </p>
           </Card>
 
-          <Card className="p-4 border-border/60 bg-black/20 space-y-2">
-            <span className="font-semibold text-sm text-cream font-mono">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
+            <span className="font-semibold text-sm text-brand font-mono">
               Q2: Differentiate between ID3, C4.5, and CART decision tree algorithms.
             </span>
             <p className="text-xs text-muted-foreground leading-relaxed">
@@ -605,14 +605,14 @@ print(export_text(clf, feature_names=['outlook', 'temp', 'humidity', 'wind']))`}
       </div>
 
       {/* 14. Summary & Next Up */}
-      <Card className="p-6 border-orange-50/15 bg-black/20 space-y-4">
+      <Card className="p-6 border-border bg-card shadow-subtle space-y-4">
         <h2 className="text-xl font-medium text-foreground font-manrope">
           12. Summary & Key Takeaways
         </h2>
         <ul className="text-xs text-muted-foreground space-y-2 list-disc pl-4 leading-relaxed">
           <li>
             Decision trees recursively partition feature space into{' '}
-            <span className="text-cream font-medium">axis-aligned rectangular regions</span>.
+            <span className="text-brand font-medium">axis-aligned rectangular regions</span>.
           </li>
           <li>
             At each internal node, greedy selection picks the attribute yielding the highest

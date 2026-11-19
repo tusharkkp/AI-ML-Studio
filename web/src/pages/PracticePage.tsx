@@ -321,7 +321,7 @@ export function PracticePage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-10 sm:px-12 space-y-10">
       {/* 1. Header Banner */}
-      <div className="border-b border-orange-50/15 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <Badge variant="unit">Practice &amp; Assessment</Badge>
           <Badge variant="outline">MIT AOE Course 2304322T</Badge>
@@ -331,9 +331,9 @@ export function PracticePage() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground font-manrope">
           Practice &amp; examination hub
         </h1>
-        <p className="mt-3 text-sm sm:text-base text-neutral-600 dark:text-neutral-300 font-montserrat leading-relaxed max-w-3xl">
+        <p className="mt-3 text-sm sm:text-base text-muted-foreground font-montserrat leading-relaxed max-w-3xl">
           Prepare for university semester tests and oral viva examinations with{' '}
-          <span className="font-montserrat font-medium text-yellow-800 dark:text-orange-100">
+          <span className="font-montserrat font-medium text-brand">
             timed assessments, full-length cross-unit mock simulations, and viva cards
           </span>
           .
@@ -358,8 +358,8 @@ export function PracticePage() {
                 }}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-manrope font-semibold transition-all border ${
                   activeTab === tab.id
-                    ? 'border-brand bg-brand text-white shadow-none'
-                    : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200'
+                    ? 'border-brand bg-brand text-white shadow-subtle'
+                    : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                 }`}
               >
                 <Icon className="size-3.5" />
@@ -374,7 +374,7 @@ export function PracticePage() {
       {activeTab === 'hub' && (
         <div className="space-y-8">
           {/* Mock Exam Feature Card Banner */}
-          <Card className="p-6 border-orange-50/20 bg-neutral-900/60 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <Card className="p-6 border-border bg-card shadow-subtle rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="flex items-start gap-4">
               <div className="size-10 rounded-lg bg-brand/10 border border-brand/20 flex items-center justify-center text-brand shrink-0">
                 <Sparkles className="size-5" />
@@ -418,7 +418,7 @@ export function PracticePage() {
                 return (
                   <Card
                     key={exam.unit}
-                    className="p-5 border-orange-50/15 bg-neutral-900/40 flex flex-col justify-between space-y-4 hover:border-orange-50/30 transition-all"
+                    className="p-5 border-border bg-card flex flex-col justify-between space-y-4 hover:border-brand/40 shadow-subtle transition-all"
                   >
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
@@ -428,7 +428,7 @@ export function PracticePage() {
                             Score: {score}%
                           </Badge>
                         ) : (
-                          <span className="text-[10px] font-mono text-neutral-500 uppercase">
+                          <span className="text-[10px] font-mono text-muted-foreground uppercase">
                             Not Attempted
                           </span>
                         )}
@@ -437,14 +437,14 @@ export function PracticePage() {
                       <h4 className="font-manrope text-sm font-bold text-foreground">
                         {exam.title}
                       </h4>
-                      <p className="text-xs text-neutral-400 font-montserrat leading-relaxed">
+                      <p className="text-xs text-muted-foreground font-montserrat leading-relaxed">
                         {exam.desc}
                       </p>
                     </div>
 
-                    <div className="pt-2 border-t border-orange-50/10 flex items-center justify-between">
-                      <div className="flex items-center gap-1.5 text-[11px] font-mono text-neutral-400">
-                        <Clock className="size-3 text-neutral-500" />
+                    <div className="pt-2 border-t border-card-edge flex items-center justify-between">
+                      <div className="flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground">
+                        <Clock className="size-3 text-brand" />
                         <span>{exam.durationMins} Mins • 20 Qs</span>
                       </div>
                       <Link to={exam.href}>
@@ -465,7 +465,7 @@ export function PracticePage() {
       {activeTab === 'mock' && (
         <div className="space-y-8">
           {/* Header & Sticky Status */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-orange-50/15">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
             <div>
               <div className="flex items-center gap-2">
                 <Badge variant="unit">30 Questions</Badge>
@@ -478,17 +478,17 @@ export function PracticePage() {
             </div>
 
             {/* Timer Box */}
-            <div className="flex items-center gap-3 bg-neutral-900 border border-orange-50/15 px-4 py-2 rounded-lg self-start sm:self-auto">
+            <div className="flex items-center gap-3 bg-card border border-border px-4 py-2 rounded-lg self-start sm:self-auto shadow-subtle">
               <Clock
-                className={`size-4 ${mockTimeSec < 300 ? 'text-red-400 animate-pulse' : 'text-amber-400'}`}
+                className={`size-4 ${mockTimeSec < 300 ? 'text-rose-500 animate-pulse' : 'text-amber-500'}`}
               />
               <div className="text-right">
-                <div className="text-[10px] uppercase tracking-wider text-neutral-500 font-mono">
+                <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">
                   Time Remaining
                 </div>
                 <div
                   className={`font-mono text-base font-bold ${
-                    mockTimeSec < 300 ? 'text-red-400' : 'text-neutral-100'
+                    mockTimeSec < 300 ? 'text-rose-500' : 'text-foreground'
                   }`}
                 >
                   {formatTimer(mockTimeSec)}
@@ -499,14 +499,14 @@ export function PracticePage() {
 
           {/* Results Summary if Submitted */}
           {mockSubmitted && (
-            <Card className="p-6 border-amber-900/40 bg-neutral-950/80 space-y-4">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-orange-50/10">
+            <Card className="p-6 border-border bg-card/90 shadow-studio space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border/60">
                 <div>
                   <div className="flex items-center gap-2">
                     <Award
-                      className={`size-6 ${mockScoreStats.pct >= 70 ? 'text-emerald-400' : 'text-amber-400'}`}
+                      className={`size-6 ${mockScoreStats.pct >= 70 ? 'text-emerald-500' : 'text-amber-500'}`}
                     />
-                    <span className="text-xl font-bold text-neutral-100 font-manrope">
+                    <span className="text-xl font-bold text-foreground font-manrope">
                       {mockScoreStats.pct >= 70
                         ? 'Mock Exam Passed!'
                         : 'Targeted Revision Recommended'}
@@ -515,7 +515,7 @@ export function PracticePage() {
                       {mockScoreStats.pct}% Score
                     </Badge>
                   </div>
-                  <p className="text-xs text-neutral-400 mt-1 font-montserrat">
+                  <p className="text-xs text-muted-foreground mt-1 font-montserrat">
                     You answered {mockScoreStats.correct} of {mockScoreStats.total} questions
                     correctly across all five units.
                   </p>
@@ -539,10 +539,10 @@ export function PracticePage() {
                   return (
                     <div
                       key={co}
-                      className="p-2.5 bg-neutral-900/60 rounded border border-orange-50/10 text-xs font-mono"
+                      className="p-2.5 bg-muted/50 rounded-lg border border-border text-xs font-mono"
                     >
-                      <div className="text-neutral-400">{co} Mastery:</div>
-                      <div className="font-bold text-neutral-200 mt-0.5">
+                      <div className="text-muted-foreground">{co} Mastery:</div>
+                      <div className="font-bold text-foreground mt-0.5">
                         {data.correct} / {data.total} ({pct}%)
                       </div>
                     </div>
@@ -561,14 +561,14 @@ export function PracticePage() {
               return (
                 <Card
                   key={q.id}
-                  className={`p-6 border transition-colors ${
+                  className={`p-6 border transition-colors shadow-subtle ${
                     mockSubmitted
                       ? chosen === q.options.find((o) => o.isCorrect)?.id
-                        ? 'border-emerald-500/40 bg-emerald-950/10'
-                        : 'border-red-500/40 bg-red-950/10'
+                        ? 'border-emerald-500/40 bg-emerald-500/5 dark:bg-emerald-950/15'
+                        : 'border-red-500/40 bg-red-500/5 dark:bg-red-950/15'
                       : isAnswered
-                        ? 'border-orange-50/30 bg-neutral-900/40'
-                        : 'border-orange-50/10 bg-neutral-900/20'
+                        ? 'border-brand/40 bg-card'
+                        : 'border-border bg-card'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-4 mb-3">
@@ -613,23 +613,23 @@ export function PracticePage() {
                           onClick={() => handleSelectMockOption(q.id, opt.id)}
                           className={`p-3 rounded-lg border text-xs font-montserrat transition-all cursor-pointer ${
                             showCorrect
-                              ? 'border-emerald-500/60 bg-emerald-950/40 text-emerald-200 font-medium'
+                              ? 'border-emerald-500/60 bg-emerald-500/10 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-200 font-medium'
                               : showWrong
-                                ? 'border-red-500/60 bg-red-950/40 text-red-200'
+                                ? 'border-red-500/60 bg-red-500/10 dark:bg-red-950/40 text-red-700 dark:text-red-200'
                                 : isSelected
-                                  ? 'border-brand bg-brand/10 text-white font-medium'
-                                  : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200'
+                                  ? 'border-brand bg-brand/10 text-brand font-medium'
+                                  : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                           }`}
                         >
                           <div className="flex items-start gap-2.5">
-                            <span className="font-mono font-bold uppercase text-neutral-500 mt-0.5">
+                            <span className="font-mono font-bold uppercase text-muted-foreground mt-0.5">
                               {opt.id}.
                             </span>
                             <div className="flex-1 leading-relaxed">
                               <div>{opt.text}</div>
                               {mockSubmitted && (showCorrect || showWrong) && (
-                                <p className="text-[11px] text-neutral-400 mt-1.5 font-sans pt-1 border-t border-orange-50/10">
-                                  <span className="font-semibold text-neutral-300">
+                                <p className="text-[11px] text-muted-foreground mt-1.5 font-sans pt-1 border-t border-card-edge">
+                                  <span className="font-semibold text-foreground">
                                     Explanation:
                                   </span>{' '}
                                   {opt.explanation}
@@ -648,13 +648,13 @@ export function PracticePage() {
 
           {/* Sticky Submit Bar */}
           {!mockSubmitted && (
-            <div className="sticky bottom-4 bg-neutral-900/90 backdrop-blur-md p-4 rounded-xl border border-orange-50/15 flex items-center justify-between">
-              <div className="text-xs font-mono text-neutral-400">
+            <div className="sticky bottom-4 bg-card/95 backdrop-blur-md p-4 rounded-xl border border-border shadow-studio flex items-center justify-between">
+              <div className="text-xs font-mono text-muted-foreground">
                 Answered{' '}
-                <span className="text-neutral-100 font-bold">
+                <span className="text-foreground font-bold">
                   {Object.keys(mockSelected).length}
                 </span>{' '}
-                of <span className="text-neutral-100 font-bold">{mockQuestions.length}</span>{' '}
+                of <span className="text-foreground font-bold">{mockQuestions.length}</span>{' '}
                 questions
               </div>
               <Button
@@ -674,8 +674,8 @@ export function PracticePage() {
       {activeTab === 'viva' && (
         <div className="space-y-6">
           {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 border-b border-orange-50/10 pb-4">
-            <span className="text-xs font-mono text-neutral-400 uppercase">Filter by Unit:</span>
+          <div className="flex flex-wrap items-center gap-2 border-b border-border pb-4">
+            <span className="text-xs font-mono text-muted-foreground uppercase">Filter by Unit:</span>
             {[
               { id: 'all', label: 'All Units (10 Flagships)' },
               { id: 'u1', label: 'Unit 1: Basics' },
@@ -689,8 +689,8 @@ export function PracticePage() {
                 onClick={() => setVivaFilter(f.id)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all border ${
                   vivaFilter === f.id
-                    ? 'border-brand bg-brand text-white font-bold'
-                    : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-white'
+                    ? 'border-brand bg-brand text-white font-bold shadow-subtle'
+                    : 'border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted'
                 }`}
               >
                 {f.label}
@@ -707,17 +707,17 @@ export function PracticePage() {
                 <Card
                   key={card.id}
                   onClick={() => toggleViva(card.id)}
-                  className="p-5 border-orange-50/15 bg-neutral-900/40 hover:border-orange-50/30 transition-all cursor-pointer space-y-3"
+                  className="p-5 border-border bg-card hover:border-brand/40 shadow-subtle transition-all cursor-pointer space-y-3"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-2">
                       <Badge variant="outline" size="sm">
                         {card.unitBadge}
                       </Badge>
-                      <span className="text-xs font-mono text-neutral-400">{card.topic}</span>
+                      <span className="text-xs font-mono text-muted-foreground">{card.topic}</span>
                     </div>
 
-                    <Button variant="ghost" size="sm" className="p-1 h-auto text-neutral-400">
+                    <Button variant="ghost" size="sm" className="p-1 h-auto text-muted-foreground">
                       {isRevealed ? (
                         <ChevronUp className="size-4" />
                       ) : (
@@ -726,19 +726,19 @@ export function PracticePage() {
                     </Button>
                   </div>
 
-                  <p className="text-sm font-semibold text-neutral-100 font-montserrat leading-relaxed">
+                  <p className="text-sm font-semibold text-foreground font-montserrat leading-relaxed">
                     Q{idx + 1}. {card.question}
                   </p>
 
                   {isRevealed ? (
-                    <div className="text-xs text-neutral-300 font-sans leading-relaxed pt-3 border-t border-orange-50/10 bg-black/20 p-3 rounded-lg">
-                      <span className="font-semibold text-cream block mb-1">
+                    <div className="text-xs text-muted-foreground font-sans leading-relaxed pt-3 border-t border-card-edge bg-muted/40 p-3 rounded-lg">
+                      <span className="font-semibold text-brand block mb-1">
                         Model Answer Outline:
                       </span>
                       {card.answer}
                     </div>
                   ) : (
-                    <div className="text-[11px] font-mono text-neutral-500 italic">
+                    <div className="text-[11px] font-mono text-muted-foreground italic">
                       Click to reveal answer outline &rarr;
                     </div>
                   )}

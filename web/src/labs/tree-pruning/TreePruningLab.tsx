@@ -157,7 +157,7 @@ export const TreePruningLab: React.FC = () => {
       </div>
 
       {/* Control Sliders */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 rounded-xl border border-border/60 bg-black/20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 rounded-xl border border-border/60 bg-muted/40">
         {pruningMode === 'pre' ? (
           <>
             <div className="space-y-2">
@@ -276,7 +276,7 @@ export const TreePruningLab: React.FC = () => {
       </div>
 
       {/* Tree Visualization Hierarchy Render */}
-      <div className="p-5 rounded-xl border border-border/60 bg-black/40 space-y-4">
+      <div className="p-5 rounded-xl border border-border/60 bg-muted/50 space-y-4">
         <div className="flex items-center justify-between text-xs text-muted-foreground border-b border-border/40 pb-2">
           <span className="font-semibold text-foreground">Current Fitted Decision Tree</span>
           <span>

@@ -87,13 +87,13 @@ export function Unit5CheatSheetPage() {
         <div className="flex items-center gap-3">
           <Link
             to="/learn/unit-5"
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-400 hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-brand transition-colors"
           >
             <ArrowLeft className="size-3.5" />
             Unit 5 Directory
           </Link>
-          <span className="text-neutral-600">/</span>
-          <span className="text-xs font-mono text-neutral-300">Revision Cheat Sheet</span>
+          <span className="text-muted-foreground/60">/</span>
+          <span className="text-xs font-mono text-foreground">Revision Cheat Sheet</span>
         </div>
 
         <Button
@@ -108,7 +108,7 @@ export function Unit5CheatSheetPage() {
       </div>
 
       {/* Header Banner */}
-      <div className="border-b border-orange-50/15 pb-4">
+      <div className="border-b border-border pb-4">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <Badge variant="unit">Unit 5 Cheat Sheet</Badge>
           <Badge variant="outline">8 Hours Syllabus</Badge>
@@ -118,7 +118,7 @@ export function Unit5CheatSheetPage() {
         <h1 className="font-manrope text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
           Unit 5: Linear &amp; decision models revision sheet
         </h1>
-        <p className="text-xs text-neutral-400 mt-1 font-montserrat">
+        <p className="text-xs text-muted-foreground mt-1 font-montserrat">
           Mathematical formulas, margin derivations, kernel geometries, ensemble theorems, and viva
           interview flashcards.
         </p>
@@ -133,176 +133,176 @@ export function Unit5CheatSheetPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Card 1: Entropy & Information Gain */}
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/60 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold text-amber-400">
+              <span className="text-xs font-mono font-bold text-amber-600 dark:text-amber-400">
                 Shannon Entropy &amp; Information Gain
               </span>
               <Badge variant="outline" size="sm">
                 ID3 / C4.5
               </Badge>
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               H(S) = - Σ p_k log₂ p_k
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               IG(S, A) = H(S) - Σ (|S_v| / |S|) H(S_v)
             </div>
-            <p className="text-[11px] text-neutral-400 font-montserrat leading-relaxed">
+            <p className="text-[11px] text-muted-foreground font-montserrat leading-relaxed">
               Measures expected reduction in entropy. For binary classes, maximum entropy is 1.0 bit
               (at p=0.5), minimum is 0.0 bits.
             </p>
           </Card>
 
           {/* Card 2: Gini Impurity */}
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/60 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold text-emerald-400">
+              <span className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">
                 Gini Impurity &amp; Gain
               </span>
               <Badge variant="outline" size="sm">
                 Breiman CART
               </Badge>
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               Gini(S) = 1 - Σ (p_k)²
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               ΔGini = Gini(S) - [ (|S_L|/|S|) Gini(S_L) + (|S_R|/|S|) Gini(S_R) ]
             </div>
-            <p className="text-[11px] text-neutral-400 font-montserrat leading-relaxed">
+            <p className="text-[11px] text-muted-foreground font-montserrat leading-relaxed">
               Avoids log computations. Maximum binary Gini is 0.50 (at p=0.5), minimum is 0.0 (pure
               node).
             </p>
           </Card>
 
           {/* Card 3: SVM Hard Margin & Dual QP */}
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/60 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold text-blue-400">
+              <span className="text-xs font-mono font-bold text-blue-600 dark:text-blue-400">
                 SVM Maximum Geometric Margin
               </span>
               <Badge variant="outline" size="sm">
                 Vapnik 1995
               </Badge>
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               γ = 2 / ||w||₂ ⇒ min 0.5 ||w||² s.t. y_i(w^T x_i + b) ≥ 1
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               w* = Σ α_i y_i x_i (Only Support Vectors have α_i &gt; 0)
             </div>
-            <p className="text-[11px] text-neutral-400 font-montserrat leading-relaxed">
+            <p className="text-[11px] text-muted-foreground font-montserrat leading-relaxed">
               Separating hyperplane w^T x + b = 0. Gutters are at ±1. Dual QP solves for Lagrange
               multipliers α_i.
             </p>
           </Card>
 
           {/* Card 4: Soft-Margin SVM & Slack Variables */}
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/60 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold text-purple-400">
+              <span className="text-xs font-mono font-bold text-purple-600 dark:text-purple-400">
                 Soft-Margin SVM &amp; Box Constraint
               </span>
               <Badge variant="outline" size="sm">
                 C-SVC
               </Badge>
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               min 0.5 ||w||² + C Σ ξ_i s.t. y_i(w^T x_i + b) ≥ 1 - ξ_i, ξ_i ≥ 0
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               Dual Box Constraint: 0 ≤ α_i ≤ C
             </div>
-            <p className="text-[11px] text-neutral-400 font-montserrat leading-relaxed">
+            <p className="text-[11px] text-muted-foreground font-montserrat leading-relaxed">
               ξ_i = 0 (on/outside gutter), 0 &lt; ξ_i ≤ 1 (inside margin, correct), ξ_i &gt; 1
               (misclassified).
             </p>
           </Card>
 
           {/* Card 5: Common Kernel Functions */}
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/60 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold text-pink-400">
+              <span className="text-xs font-mono font-bold text-pink-600 dark:text-pink-400">
                 Kernel Trick Functions K(x, z)
               </span>
               <Badge variant="outline" size="sm">
                 RKHS Lift
               </Badge>
             </div>
-            <div className="p-2 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               Polynomial: K(x, z) = (x^T z + c)^d
             </div>
-            <div className="p-2 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               RBF (Gaussian): K(x, z) = exp(-γ ||x - z||²) [γ = 1 / 2σ²]
             </div>
-            <p className="text-[11px] text-neutral-400 font-montserrat leading-relaxed">
+            <p className="text-[11px] text-muted-foreground font-montserrat leading-relaxed">
               Computes inner products in infinite-dimensional Hilbert space at O(d) cost without
               explicit mapping.
             </p>
           </Card>
 
           {/* Card 6: Ensemble Diversity & Krogh-Vedelsby */}
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/60 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold text-yellow-400">
+              <span className="text-xs font-mono font-bold text-yellow-600 dark:text-yellow-400">
                 Ensemble Ambiguity Decomposition
               </span>
               <Badge variant="outline" size="sm">
                 Krogh-Vedelsby 1995
               </Badge>
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               E_ens = Mean Individual Error - Ensemble Diversity (Ambiguity)
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               Var(f̄) = ρ σ² + [(1 - ρ) / B] σ²
             </div>
-            <p className="text-[11px] text-neutral-400 font-montserrat leading-relaxed">
+            <p className="text-[11px] text-muted-foreground font-montserrat leading-relaxed">
               Ambiguity is non-negative, guaranteeing ensemble error ≤ average individual error.
               Diversity ρ controls variance reduction.
             </p>
           </Card>
 
           {/* Card 7: Random Forest & OOB Error */}
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/60 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold text-teal-400">
+              <span className="text-xs font-mono font-bold text-teal-600 dark:text-teal-400">
                 Random Forest &amp; Out-of-Bag (OOB)
               </span>
               <Badge variant="outline" size="sm">
                 Breiman 2001
               </Badge>
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               OOB Fraction = lim (1 - 1/N)^N = 1/e ≈ 36.8%
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               Feature Subspace: m = ⌊√d⌋ (Classif.) or m = ⌊d/3⌋ (Regr.)
             </div>
-            <p className="text-[11px] text-neutral-400 font-montserrat leading-relaxed">
+            <p className="text-[11px] text-muted-foreground font-montserrat leading-relaxed">
               Out-of-bag validation provides free unbiased cross-validation. Random feature
               subsetting decorrelates trees.
             </p>
           </Card>
 
           {/* Card 8: AdaBoost Weight & Alpha Updates */}
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/60 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold text-amber-400">
+              <span className="text-xs font-mono font-bold text-amber-600 dark:text-amber-400">
                 AdaBoost.M1 Weight Mechanics
               </span>
               <Badge variant="outline" size="sm">
                 Freund &amp; Schapire 1995
               </Badge>
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               α_t = 0.5 · ln((1 - ε_t) / ε_t)
             </div>
-            <div className="p-2.5 rounded bg-black/40 font-mono text-xs text-cream text-center">
+            <div className="p-2.5 rounded bg-muted/70 border border-border/60 font-mono text-xs text-foreground text-center font-medium">
               w_i^(t+1) = [w_i^(t) · exp(-α_t y_i h_t(x_i))] / Z_t
             </div>
-            <p className="text-[11px] text-neutral-400 font-montserrat leading-relaxed">
+            <p className="text-[11px] text-muted-foreground font-montserrat leading-relaxed">
               Z_t = 2√(ε_t(1 - ε_t)). Exponential loss minimizer; misclassified instances expand
               weights exponentially.
             </p>
@@ -318,67 +318,67 @@ export function Unit5CheatSheetPage() {
         </h2>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-xs text-left border-collapse border border-orange-50/15 font-montserrat">
+          <table className="w-full text-xs text-left border-collapse border border-border font-montserrat">
             <thead>
-              <tr className="bg-neutral-900/80 text-neutral-300 font-manrope font-semibold">
-                <th className="p-2.5 border border-orange-50/15">Model</th>
-                <th className="p-2.5 border border-orange-50/15">Bias / Variance</th>
-                <th className="p-2.5 border border-orange-50/15">Interpretability</th>
-                <th className="p-2.5 border border-orange-50/15">Training Speed</th>
-                <th className="p-2.5 border border-orange-50/15">High Dim (d &gt;&gt; N)</th>
-                <th className="p-2.5 border border-orange-50/15">Outlier Sensitivity</th>
+              <tr className="bg-muted text-foreground font-manrope font-semibold">
+                <th className="p-2.5 border border-border">Model</th>
+                <th className="p-2.5 border border-border">Bias / Variance</th>
+                <th className="p-2.5 border border-border">Interpretability</th>
+                <th className="p-2.5 border border-border">Training Speed</th>
+                <th className="p-2.5 border border-border">High Dim (d &gt;&gt; N)</th>
+                <th className="p-2.5 border border-border">Outlier Sensitivity</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-orange-50/10 text-neutral-300 font-sans">
-              <tr className="hover:bg-neutral-900/30">
+            <tbody className="divide-y divide-border text-foreground font-sans">
+              <tr className="hover:bg-muted/40 transition-colors">
                 <td className="p-2.5 font-bold font-manrope text-foreground">
                   Decision Tree (Unpruned)
                 </td>
-                <td className="p-2.5 text-amber-300">Low Bias / High Var</td>
-                <td className="p-2.5 text-emerald-400">High (Visual IF-THEN)</td>
-                <td className="p-2.5 text-emerald-400">Fast O(d N log N)</td>
-                <td className="p-2.5 text-neutral-400">Moderate</td>
-                <td className="p-2.5 text-emerald-400">Robust (Rank splits)</td>
+                <td className="p-2.5 text-amber-600 dark:text-amber-400">Low Bias / High Var</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">High (Visual IF-THEN)</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Fast O(d N log N)</td>
+                <td className="p-2.5 text-muted-foreground">Moderate</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Robust (Rank splits)</td>
               </tr>
-              <tr className="hover:bg-neutral-900/30">
+              <tr className="hover:bg-muted/40 transition-colors">
                 <td className="p-2.5 font-bold font-manrope text-foreground">Linear SVM</td>
                 <td className="p-2.5">High Bias / Low Var</td>
                 <td className="p-2.5">Moderate (Weights w)</td>
-                <td className="p-2.5 text-emerald-400">Fast O(d N)</td>
-                <td className="p-2.5 text-emerald-400">Excellent (Margin bound)</td>
-                <td className="p-2.5 text-neutral-300">Moderate (Slack C)</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Fast O(d N)</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Excellent (Margin bound)</td>
+                <td className="p-2.5 text-muted-foreground">Moderate (Slack C)</td>
               </tr>
-              <tr className="hover:bg-neutral-900/30">
+              <tr className="hover:bg-muted/40 transition-colors">
                 <td className="p-2.5 font-bold font-manrope text-foreground">Kernel SVM (RBF)</td>
-                <td className="p-2.5 text-emerald-400">Tunable via C &amp; γ</td>
-                <td className="p-2.5 text-red-400">Low (Black box)</td>
-                <td className="p-2.5 text-red-400">Slow O(N² ~ N³)</td>
-                <td className="p-2.5 text-emerald-400">Strong (Infinite RKHS)</td>
-                <td className="p-2.5 text-amber-300">Sensitive to γ &amp; C</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Tunable via C &amp; γ</td>
+                <td className="p-2.5 text-red-500">Low (Black box)</td>
+                <td className="p-2.5 text-red-500">Slow O(N² ~ N³)</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Strong (Infinite RKHS)</td>
+                <td className="p-2.5 text-amber-600 dark:text-amber-400">Sensitive to γ &amp; C</td>
               </tr>
-              <tr className="hover:bg-neutral-900/30">
+              <tr className="hover:bg-muted/40 transition-colors">
                 <td className="p-2.5 font-bold font-manrope text-foreground">Random Forest</td>
-                <td className="p-2.5 text-emerald-400">Low Bias / Low Var</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Low Bias / Low Var</td>
                 <td className="p-2.5">Moderate (MDI Importance)</td>
                 <td className="p-2.5">Medium (Parallel B trees)</td>
-                <td className="p-2.5 text-emerald-400">Strong (Subspaces)</td>
-                <td className="p-2.5 text-emerald-400">Very Robust</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Strong (Subspaces)</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Very Robust</td>
               </tr>
-              <tr className="hover:bg-neutral-900/30">
+              <tr className="hover:bg-muted/40 transition-colors">
                 <td className="p-2.5 font-bold font-manrope text-foreground">AdaBoost</td>
-                <td className="p-2.5 text-emerald-400">Drives Bias Down</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Drives Bias Down</td>
                 <td className="p-2.5">Low-Medium (Stump sum)</td>
                 <td className="p-2.5">Medium (Sequential T)</td>
                 <td className="p-2.5">Moderate</td>
-                <td className="p-2.5 text-red-400">Severe (Exp weight)</td>
+                <td className="p-2.5 text-red-500">Severe (Exp weight)</td>
               </tr>
-              <tr className="hover:bg-neutral-900/30">
+              <tr className="hover:bg-muted/40 transition-colors">
                 <td className="p-2.5 font-bold font-manrope text-foreground">Stacking Blender</td>
-                <td className="p-2.5 text-emerald-400">Lowest Error Meta</td>
-                <td className="p-2.5 text-red-400">Low (Multi-tier blend)</td>
-                <td className="p-2.5 text-red-400">Slowest (K-Fold CV)</td>
+                <td className="p-2.5 text-emerald-600 dark:text-emerald-400">Lowest Error Meta</td>
+                <td className="p-2.5 text-red-500">Low (Multi-tier blend)</td>
+                <td className="p-2.5 text-red-500">Slowest (K-Fold CV)</td>
                 <td className="p-2.5">Depends on base models</td>
-                <td className="p-2.5 text-neutral-300">Inherits base mix</td>
+                <td className="p-2.5 text-muted-foreground">Inherits base mix</td>
               </tr>
             </tbody>
           </table>
@@ -399,19 +399,19 @@ export function Unit5CheatSheetPage() {
             return (
               <Card
                 key={card.id}
-                className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2 cursor-pointer transition-colors hover:border-orange-50/30"
+                className="p-4 border-border bg-card shadow-subtle space-y-2 cursor-pointer transition-colors hover:border-brand/40"
                 onClick={() => toggleCard(card.id)}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-xs text-neutral-500 font-bold">
+                    <span className="font-mono text-xs text-brand font-bold">
                       Q{idx + 1}.
                     </span>
-                    <span className="text-xs font-semibold text-neutral-100 font-montserrat">
+                    <span className="text-xs font-semibold text-foreground font-montserrat">
                       {card.question}
                     </span>
                   </div>
-                  <Button variant="ghost" size="sm" className="p-1 h-auto text-neutral-400">
+                  <Button variant="ghost" size="sm" className="p-1 h-auto text-muted-foreground">
                     {isExpanded ? (
                       <ChevronUp className="size-4" />
                     ) : (
@@ -421,8 +421,8 @@ export function Unit5CheatSheetPage() {
                 </div>
 
                 {isExpanded && (
-                  <div className="text-xs text-neutral-300 font-sans leading-relaxed pt-2 border-t border-orange-50/10">
-                    <span className="font-semibold text-cream">Answer:</span> {card.answer}
+                  <div className="text-xs text-muted-foreground font-sans leading-relaxed pt-2 border-t border-card-edge">
+                    <span className="font-semibold text-brand">Answer:</span> {card.answer}
                   </div>
                 )}
               </Card>
@@ -439,44 +439,44 @@ export function Unit5CheatSheetPage() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-montserrat">
-          <Card className="p-4 border-red-500/20 bg-red-950/10 space-y-1.5">
-            <h4 className="font-bold text-red-400 font-manrope">
+          <Card className="p-4 border-red-500/20 bg-red-500/5 dark:bg-red-950/15 space-y-1.5 shadow-subtle">
+            <h4 className="font-bold text-red-600 dark:text-red-400 font-manrope">
               Trap 1: Standardizing Features for Decision Trees
             </h4>
-            <p className="text-neutral-300 leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               Never waste compute applying StandardScaler or MinMaxScaler to Tree or Random Forest
               pipelines. Tree splits rely purely on rank inequalities (x_j ≤ s), making them
               completely invariant to monotonic scaling!
             </p>
           </Card>
 
-          <Card className="p-4 border-red-500/20 bg-red-950/10 space-y-1.5">
-            <h4 className="font-bold text-red-400 font-manrope">
+          <Card className="p-4 border-red-500/20 bg-red-500/5 dark:bg-red-950/15 space-y-1.5 shadow-subtle">
+            <h4 className="font-bold text-red-600 dark:text-red-400 font-manrope">
               Trap 2: Forgetting Scaling for SVM
             </h4>
-            <p className="text-neutral-300 leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               Unlike trees, SVM solves for a Euclidean geometric margin ||w||₂. If one feature has
               scale 10,000 and another has scale 0.1, the large feature completely dominates the
               norm, destroying SVM accuracy. Feature scaling is mandatory!
             </p>
           </Card>
 
-          <Card className="p-4 border-red-500/20 bg-red-950/10 space-y-1.5">
-            <h4 className="font-bold text-red-400 font-manrope">
+          <Card className="p-4 border-red-500/20 bg-red-500/5 dark:bg-red-950/15 space-y-1.5 shadow-subtle">
+            <h4 className="font-bold text-red-600 dark:text-red-400 font-manrope">
               Trap 3: Target Leakage in Stacking
             </h4>
-            <p className="text-neutral-300 leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               Never generate meta-features by training base models on dataset D and predicting on
               the same dataset D. Deep base models will output 100% accuracy, causing the meta-model
               to severely overfit. Always generate meta-features out-of-fold.
             </p>
           </Card>
 
-          <Card className="p-4 border-red-500/20 bg-red-950/10 space-y-1.5">
-            <h4 className="font-bold text-red-400 font-manrope">
+          <Card className="p-4 border-red-500/20 bg-red-500/5 dark:bg-red-950/15 space-y-1.5 shadow-subtle">
+            <h4 className="font-bold text-red-600 dark:text-red-400 font-manrope">
               Trap 4: Extrapolating with Regression Trees
             </h4>
-            <p className="text-neutral-300 leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               Decision tree regressors partition space into flat horizontal steps. If you query x
               &gt; x_max on trending time-series, the tree outputs the outermost leaf constant
               forever, failing to capture linear or exponential growth.

@@ -172,15 +172,15 @@ export function CheatsheetsDirectoryPage() {
         {CHEATSHEETS.map((sheet) => (
           <Card
             key={sheet.unitNumber}
-            className="p-6 border border-orange-50/15 bg-neutral-900/40 backdrop-blur-sm flex flex-col justify-between hover:border-orange-50/30 transition-colors"
+            className="p-6 border border-border bg-card/90 shadow-subtle backdrop-blur-sm flex flex-col justify-between hover:border-brand/40 transition-colors"
           >
             <div>
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <span className="flex size-7 items-center justify-center rounded border border-orange-50/20 bg-black/40 text-xs font-mono font-bold text-orange-200">
+                  <span className="flex size-7 items-center justify-center rounded border border-border bg-muted text-xs font-mono font-bold text-foreground">
                     {sheet.badge}
                   </span>
-                  <span className="text-xs font-mono text-neutral-400">
+                  <span className="text-xs font-mono text-muted-foreground">
                     Unit {sheet.unitNumber}
                   </span>
                 </div>
@@ -189,21 +189,21 @@ export function CheatsheetsDirectoryPage() {
                 </Badge>
               </div>
 
-              <h2 className="font-manrope text-xl font-semibold text-foreground dark:text-white">
+              <h2 className="font-manrope text-xl font-semibold text-foreground">
                 {sheet.title}
               </h2>
-              <p className="text-xs text-neutral-400 mt-1 mb-4 font-montserrat">{sheet.subtitle}</p>
+              <p className="text-xs text-muted-foreground mt-1 mb-4 font-montserrat">{sheet.subtitle}</p>
 
               {/* Core Syllabus Points */}
               <div className="space-y-2 mb-4">
-                <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">
+                <div className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
                   Key Formulas & Theoretical Pillars
                 </div>
                 <div className="space-y-1.5">
                   {sheet.formulas.map((form, idx) => (
                     <div
                       key={idx}
-                      className="text-xs font-mono bg-black/30 border border-orange-50/10 rounded px-2.5 py-1 text-neutral-300"
+                      className="text-xs font-mono bg-muted/50 border border-border rounded px-2.5 py-1 text-foreground"
                     >
                       {form}
                     </div>
@@ -211,8 +211,8 @@ export function CheatsheetsDirectoryPage() {
                 </div>
               </div>
 
-              <div className="space-y-1 text-xs text-neutral-400 mb-6 font-montserrat">
-                <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 mb-1">
+              <div className="space-y-1 text-xs text-muted-foreground mb-6 font-montserrat">
+                <div className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground mb-1">
                   Exam & Viva Highlights
                 </div>
                 <ul className="list-disc pl-4 space-y-1">
@@ -226,7 +226,7 @@ export function CheatsheetsDirectoryPage() {
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-4 border-t border-orange-50/10 flex items-center justify-between gap-3">
+            <div className="pt-4 border-t border-border/60 flex items-center justify-between gap-3">
               <Link to={sheet.examHref} className="flex-1">
                 <Button size="sm" variant="outline" className="w-full text-xs">
                   <GraduationCap className="size-3.5 mr-1" />
@@ -250,13 +250,13 @@ export function CheatsheetsDirectoryPage() {
       </div>
 
       {/* Unit 6 In-Progress Banner */}
-      <Card className="p-6 border border-dashed border-orange-50/20 bg-neutral-900/20 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <Card className="p-6 border border-dashed border-border bg-muted/20 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-start gap-3">
           <div className="size-8 rounded-lg bg-brand/10 border border-brand/20 flex items-center justify-center text-brand shrink-0">
             <Sparkles className="size-4" />
           </div>
           <div>
-            <h3 className="font-manrope text-base font-semibold text-foreground dark:text-white">
+            <h3 className="font-manrope text-base font-semibold text-foreground">
               Unit 6: Unsupervised Learning Cheat Sheet (Upcoming)
             </h3>
             <p className="text-xs text-neutral-400 mt-0.5 font-montserrat">

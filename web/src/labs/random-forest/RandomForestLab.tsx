@@ -106,12 +106,12 @@ export function RandomForestLab() {
   });
 
   return (
-    <Card className="p-6 border border-orange-50/15 bg-neutral-900/50 backdrop-blur-sm space-y-6">
+    <Card className="p-6 border border-border bg-card shadow-subtle backdrop-blur-sm space-y-6">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-orange-50/10 pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-card-edge pb-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex size-6 items-center justify-center rounded border border-orange-50/20 bg-black/40 text-[10px] font-mono font-bold text-orange-200">
+            <span className="flex size-6 items-center justify-center rounded border border-brand/20 bg-brand/10 text-[10px] font-mono font-bold text-brand">
               LAB
             </span>
             <h3 className="font-manrope text-lg font-semibold text-foreground dark:text-white">
@@ -126,7 +126,7 @@ export function RandomForestLab() {
 
         {/* View mode toggle */}
         <div className="flex items-center gap-2">
-          <div className="flex items-center p-0.5 rounded-lg border border-orange-50/15 bg-black/40 text-xs">
+          <div className="flex items-center p-0.5 rounded-lg border border-border bg-muted/50 text-xs">
             <button
               onClick={() => setViewMode('forest')}
               className={`px-3 py-1 rounded-md transition-colors ${
@@ -209,7 +209,7 @@ export function RandomForestLab() {
 
           {/* Quick Metrics */}
           <div className="grid grid-cols-2 gap-3 pt-2">
-            <div className="p-3 rounded bg-black/40 border border-orange-50/10">
+            <div className="p-3 rounded bg-muted/50 border border-card-edge">
               <div className="text-[10px] font-mono text-neutral-400 uppercase">
                 Training Accuracy
               </div>
@@ -218,7 +218,7 @@ export function RandomForestLab() {
               </div>
             </div>
 
-            <div className="p-3 rounded bg-black/40 border border-orange-50/10">
+            <div className="p-3 rounded bg-muted/50 border border-card-edge">
               <div className="text-[10px] font-mono text-neutral-400 uppercase">
                 {viewMode === 'forest' ? 'Out-Of-Bag (OOB) Error' : 'OOB Metric'}
               </div>
@@ -233,7 +233,7 @@ export function RandomForestLab() {
 
         {/* Right Column: 2D Visualizer */}
         <div className="lg:col-span-7 flex flex-col items-center">
-          <div className="relative border border-orange-50/15 rounded-lg overflow-hidden bg-black/70 shadow-none">
+          <div className="relative border border-border rounded-lg overflow-hidden bg-black/70 shadow-none">
             {/* SVG Decision Region Heatmap & Points */}
             <svg width={width} height={height} className="block">
               {/* Render background grid rectangles */}
@@ -280,7 +280,7 @@ export function RandomForestLab() {
             </svg>
 
             {/* Overlay mode badge */}
-            <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/80 border border-orange-50/20 text-[10px] font-mono text-neutral-300">
+            <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/80 border border-border text-[10px] font-mono text-neutral-300">
               {viewMode === 'forest'
                 ? `Random Forest (M = ${numTrees}, m = ${featureSubspaceSize})`
                 : `Single Decision Tree (Depth = ${maxDepth})`}
@@ -289,7 +289,7 @@ export function RandomForestLab() {
 
           {/* OOB Error Convergence Curve (for Forest) */}
           {viewMode === 'forest' && (
-            <div className="w-full mt-4 p-3 rounded-lg bg-black/40 border border-orange-50/10">
+            <div className="w-full mt-4 p-3 rounded-lg bg-muted/50 border border-card-edge">
               <div className="flex items-center justify-between text-xs mb-1">
                 <span className="font-mono text-neutral-400 flex items-center gap-1.5">
                   <Activity className="size-3 text-brand" />
@@ -320,7 +320,7 @@ export function RandomForestLab() {
       </div>
 
       {/* Failure mode presets */}
-      <div className="p-4 rounded-lg bg-black/30 border border-orange-50/10 flex flex-wrap items-center justify-between gap-3 text-xs">
+      <div className="p-4 rounded-lg bg-muted/40 border border-card-edge flex flex-wrap items-center justify-between gap-3 text-xs">
         <div className="flex items-center gap-2 text-neutral-400">
           <AlertCircle className="size-4 text-orange-200" />
           <span>Quick verification presets:</span>

@@ -126,41 +126,38 @@ export function Unit4LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c0a09] text-stone-300 font-sans">
-      <div className="max-w-6xl mx-auto px-4 py-12 space-y-12">
+    <div className="mx-auto max-w-6xl px-6 py-10 sm:px-12 space-y-10">
+      <div className="space-y-10">
         {/* Header Section */}
-        <div className="space-y-4 border-b border-[#292524] pb-8">
+        <div className="space-y-4 border-b border-border pb-8">
           <Link
             to="/"
-            className="inline-flex items-center gap-1 text-xs font-mono text-stone-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-brand transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            Home
+            Back to Course Overview
           </Link>
 
           <div className="flex flex-wrap items-center gap-3">
-            <Badge
-              variant="outline"
-              className="border-amber-500/40 text-amber-300 font-mono text-xs"
-            >
-              Unit 4: Instances & Probabilistic Models
+            <Badge variant="outline" size="sm">
+              Unit 4 of 6
             </Badge>
-            <span className="flex items-center gap-1 text-xs text-stone-400 font-mono">
-              <Clock className="w-3.5 h-3.5" />6 Syllabus Hours
+            <span className="flex items-center gap-1 text-xs text-muted-foreground font-mono">
+              <Clock className="w-3.5 h-3.5 text-amber-500" />6 Syllabus Hours
             </span>
-            <span className="flex items-center gap-1 text-xs text-emerald-400 font-mono">
+            <span className="flex items-center gap-1 text-xs text-emerald-500 font-mono">
               <Award className="w-3.5 h-3.5" />
               CO2, CO3, CO4 Mapped
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
-            Instances & Probabilistic Models
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-foreground tracking-tight font-heading">
+            Unit 4: Instances &amp; Probabilistic Models
           </h1>
 
-          <p className="text-stone-400 text-base leading-relaxed max-w-3xl">
+          <p className="text-muted-foreground text-base leading-relaxed max-w-3xl">
             Move beyond continuous regression into{' '}
-            <span className="text-[#fef3c7] font-medium font-sans">
+            <span className="text-brand font-medium">
               probabilistic decision making, generative versus discriminative classification, and
               instance-based reasoning
             </span>
@@ -169,100 +166,92 @@ export function Unit4LandingPage() {
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link to="/learn/unit-4/exam">
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-amber-500/40 text-amber-300 hover:bg-amber-950/20 text-xs font-mono"
-              >
-                Unit 4 Exam (20 Questions)
+            <Link to="/cheatsheets/unit-4">
+              <Button variant="secondary" size="sm" className="text-xs">
+                Revision Cheat Sheet &amp; Viva Voce
               </Button>
             </Link>
-            <Link to="/cheatsheets/unit-4">
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-[#292524] text-stone-300 hover:bg-[#1c1917] text-xs font-mono"
-              >
-                Master Revision Cheat Sheet & Viva Voce
+            <Link to="/learn/unit-4/exam">
+              <Button variant="primary" size="sm" className="text-xs">
+                Take Unit 4 Exam
               </Button>
             </Link>
           </div>
         </div>
 
         {/* Interactive Classifier Taxonomy Sorter */}
-        <Card className="bg-[#141210] border-[#292524]">
-          <CardHeader>
-            <CardTitle className="text-white text-lg font-mono flex items-center gap-2">
-              <BrainCircuit className="w-5 h-5 text-amber-400" />
+        <Card className="p-6 space-y-6">
+          <CardHeader className="p-0">
+            <CardTitle className="text-foreground text-lg font-heading flex items-center gap-2">
+              <BrainCircuit className="w-5 h-5 text-brand" />
               Classification Paradigms: Generative vs Discriminative vs Instance-Based
             </CardTitle>
-            <CardDescription className="text-stone-400 text-xs">
+            <CardDescription className="text-muted-foreground text-xs">
               Select a paradigm below to compare mathematical formulations, fundamental questions,
               and trade-offs.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="p-0 space-y-4">
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setSelectedParadigm('generative')}
-                className={`px-4 py-2 rounded-lg rounded-br-none text-xs font-mono font-bold transition-colors border ${
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-medium transition-colors border ${
                   selectedParadigm === 'generative'
-                    ? 'bg-amber-400 text-black border-amber-300'
-                    : 'bg-[#1c1917] text-stone-300 border-[#292524] hover:border-stone-500'
+                    ? 'bg-amber-500 text-white border-amber-600 dark:bg-amber-400 dark:text-black shadow-subtle'
+                    : 'bg-card text-muted-foreground border-border hover:bg-muted hover:text-foreground'
                 }`}
               >
                 Generative Models (Naive Bayes)
               </button>
               <button
                 onClick={() => setSelectedParadigm('discriminative')}
-                className={`px-4 py-2 rounded-lg rounded-br-none text-xs font-mono font-bold transition-colors border ${
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-medium transition-colors border ${
                   selectedParadigm === 'discriminative'
-                    ? 'bg-sky-400 text-black border-sky-300'
-                    : 'bg-[#1c1917] text-stone-300 border-[#292524] hover:border-stone-500'
+                    ? 'bg-sky-500 text-white border-sky-600 dark:bg-sky-400 dark:text-black shadow-subtle'
+                    : 'bg-card text-muted-foreground border-border hover:bg-muted hover:text-foreground'
                 }`}
               >
                 Discriminative Models (Logistic Regression)
               </button>
               <button
                 onClick={() => setSelectedParadigm('instance')}
-                className={`px-4 py-2 rounded-lg rounded-br-none text-xs font-mono font-bold transition-colors border ${
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-medium transition-colors border ${
                   selectedParadigm === 'instance'
-                    ? 'bg-emerald-400 text-black border-emerald-300'
-                    : 'bg-[#1c1917] text-stone-300 border-[#292524] hover:border-stone-500'
+                    ? 'bg-emerald-500 text-white border-emerald-600 dark:bg-emerald-400 dark:text-black shadow-subtle'
+                    : 'bg-card text-muted-foreground border-border hover:bg-muted hover:text-foreground'
                 }`}
               >
                 Instance-Based / Lazy (k-NN)
               </button>
             </div>
 
-            <div className="p-4 bg-[#0c0a09] border border-[#292524] rounded-lg space-y-3 font-mono text-xs">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-2 border-b border-[#292524] gap-2">
-                <span className="text-white font-bold text-sm">
+            <div className="p-4 bg-muted/40 border border-border rounded-lg space-y-3 font-mono text-xs">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-2 border-b border-border gap-2">
+                <span className="text-foreground font-bold text-sm">
                   {paradigms[selectedParadigm].name}
                 </span>
-                <span className="text-amber-300 font-mono">
+                <span className="text-brand font-mono">
                   {paradigms[selectedParadigm].formula}
                 </span>
               </div>
 
-              <div className="text-stone-300">
-                <strong className="text-stone-400 block mb-0.5">Core Question:</strong>"
+              <div className="text-foreground/90">
+                <strong className="text-muted-foreground block mb-0.5">Core Question:</strong>"
                 {paradigms[selectedParadigm].question}"
               </div>
 
-              <div className="text-stone-300">
-                <strong className="text-stone-400 block mb-0.5">Canonical Algorithms:</strong>
+              <div className="text-foreground/90">
+                <strong className="text-muted-foreground block mb-0.5">Canonical Algorithms:</strong>
                 {paradigms[selectedParadigm].examples}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-stone-300 font-sans">
-                <div className="p-3 bg-[#141210] border border-[#292524] rounded">
-                  <strong className="text-emerald-400 font-mono block mb-1">Strengths:</strong>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-foreground font-sans">
+                <div className="p-3 bg-card border border-border rounded">
+                  <strong className="text-emerald-600 dark:text-emerald-400 font-mono block mb-1">Strengths:</strong>
                   {paradigms[selectedParadigm].strengths}
                 </div>
-                <div className="p-3 bg-[#141210] border border-[#292524] rounded">
-                  <strong className="text-rose-400 font-mono block mb-1">Limitations:</strong>
+                <div className="p-3 bg-card border border-border rounded">
+                  <strong className="text-rose-600 dark:text-rose-400 font-mono block mb-1">Limitations:</strong>
                   {paradigms[selectedParadigm].limitations}
                 </div>
               </div>
@@ -272,16 +261,16 @@ export function Unit4LandingPage() {
 
         {/* Course Modules Grid */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-white font-mono flex items-center gap-2">
-            <span className="text-amber-400 text-base">02.</span>
+          <h2 className="text-2xl font-bold text-foreground font-heading flex items-center gap-2">
+            <span className="text-brand text-base">02.</span>
             Unit 4 Curriculum Road Map
           </h2>
-          <p className="text-stone-400 text-sm">
+          <p className="text-muted-foreground text-sm">
             Select a module below to launch the interactive lab, derivation walk-through, and
             micro-quiz.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {modules.map((m) => {
               const progress = getProgress(m.id);
               const isFlagship = m.kind === 'flagship';
@@ -294,47 +283,42 @@ export function Unit4LandingPage() {
                   className="group block transition-transform duration-150 hover:-translate-y-0.5"
                 >
                   <Card
-                    className={`h-full bg-[#141210] border transition-colors ${
+                    className={`h-full flex flex-col justify-between transition-colors ${
                       isFlagship
-                        ? 'border-amber-500/30 group-hover:border-amber-400/60'
+                        ? 'border-amber-500/30 group-hover:border-amber-500'
                         : isCaseStudy
-                          ? 'border-sky-500/30 group-hover:border-sky-400/60'
-                          : 'border-[#292524] group-hover:border-stone-500'
+                          ? 'border-sky-500/30 group-hover:border-sky-500'
+                          : 'border-border group-hover:border-brand/40'
                     }`}
                   >
                     <CardHeader className="pb-3">
                       <div className="flex items-center justify-between gap-2 mb-1">
                         <Badge
                           variant="outline"
-                          className={`text-[10px] font-mono ${
-                            isFlagship
-                              ? 'border-amber-500/40 text-amber-300'
-                              : isCaseStudy
-                                ? 'border-sky-500/40 text-sky-300'
-                                : 'border-[#292524] text-stone-400'
-                          }`}
+                          size="sm"
+                          className="text-[10px] font-mono"
                         >
                           {m.kind.toUpperCase()}
                         </Badge>
-                        <span className="text-[11px] font-mono text-stone-500">{m.hours}</span>
+                        <span className="text-[11px] font-mono text-muted-foreground">{m.hours}</span>
                       </div>
-                      <CardTitle className="text-white text-base group-hover:text-amber-300 transition-colors font-mono">
+                      <CardTitle className="text-foreground text-base group-hover:text-brand transition-colors font-heading leading-snug">
                         {m.title}
                       </CardTitle>
-                      <CardDescription className="text-stone-400 text-xs line-clamp-2">
+                      <CardDescription className="text-muted-foreground text-xs line-clamp-2">
                         {m.desc}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="pt-0">
-                      <div className="flex items-center justify-between pt-3 border-t border-[#292524] text-[11px] font-mono text-stone-500">
+                    <CardContent className="pt-0 mt-auto">
+                      <div className="flex items-center justify-between pt-3 border-t border-card-edge text-[11px] font-mono text-muted-foreground">
                         <span>Status</span>
                         {progress?.labCompleted || progress?.read ? (
-                          <span className="text-emerald-400 flex items-center gap-1 font-bold">
+                          <span className="text-emerald-500 flex items-center gap-1 font-bold">
                             <CheckCircle className="w-3 h-3" />
                             Completed
                           </span>
                         ) : (
-                          <span className="text-amber-400/80">Available →</span>
+                          <span className="text-brand font-medium">Available →</span>
                         )}
                       </div>
                     </CardContent>

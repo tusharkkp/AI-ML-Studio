@@ -312,7 +312,7 @@ export function FailureGalleryPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-10 sm:px-12 space-y-10">
       {/* 1. Header Banner */}
-      <div className="border-b border-orange-50/15 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <Badge variant="danger">Make It Fail Gallery</Badge>
           <Badge variant="outline">MIT AOE Course 2304322T</Badge>
@@ -322,10 +322,10 @@ export function FailureGalleryPage() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground font-manrope">
           Interactive failure laboratory
         </h1>
-        <p className="mt-3 text-sm sm:text-base text-neutral-600 dark:text-neutral-300 font-montserrat leading-relaxed max-w-3xl">
+        <p className="mt-3 text-sm sm:text-base text-muted-foreground font-montserrat leading-relaxed max-w-3xl">
           True mastery requires understanding how and why algorithms break. Explore, trigger, and
           dissect{' '}
-          <span className="font-montserrat font-medium text-yellow-800 dark:text-orange-100">
+          <span className="font-montserrat font-medium text-brand">
             the 12 most famous failure modes across artificial intelligence and machine learning
           </span>{' '}
           with live interactive experiments.
@@ -333,10 +333,10 @@ export function FailureGalleryPage() {
       </div>
 
       {/* 2. Filter Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl border border-orange-50/15 bg-neutral-900/40">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl border border-border bg-card/80 shadow-subtle">
         {/* Unit Filters */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-mono text-neutral-400 mr-1 flex items-center gap-1">
+          <span className="text-xs font-mono text-muted-foreground mr-1 flex items-center gap-1">
             <Layers className="size-3 text-brand" />
             <span>Unit:</span>
           </span>
@@ -346,8 +346,8 @@ export function FailureGalleryPage() {
               onClick={() => setSelectedUnit(u)}
               className={`px-3 py-1 rounded-lg text-xs font-manrope font-semibold transition-all border ${
                 selectedUnit === u
-                  ? 'border-brand bg-brand text-white'
-                  : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200'
+                  ? 'border-brand bg-brand text-white shadow-subtle'
+                  : 'border-border bg-muted/40 text-muted-foreground hover:text-foreground'
               }`}
             >
               {u === 'all' ? 'All Units' : `Unit ${u}`}
@@ -357,8 +357,8 @@ export function FailureGalleryPage() {
 
         {/* Severity Filters */}
         <div className="flex items-center gap-2">
-          <span className="text-xs font-mono text-neutral-400 mr-1 flex items-center gap-1">
-            <Flame className="size-3 text-red-400" />
+          <span className="text-xs font-mono text-muted-foreground mr-1 flex items-center gap-1">
+            <Flame className="size-3 text-rose-500" />
             <span>Severity:</span>
           </span>
           {['all', 'Critical', 'High', 'Medium'].map((s) => (
@@ -367,8 +367,8 @@ export function FailureGalleryPage() {
               onClick={() => setSelectedSeverity(s)}
               className={`px-2.5 py-1 rounded text-xs font-mono transition-all border ${
                 selectedSeverity === s
-                  ? 'border-neutral-200 bg-neutral-200 text-neutral-950 font-bold'
-                  : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200'
+                  ? 'border-foreground bg-foreground text-background font-bold shadow-subtle'
+                  : 'border-border bg-muted/40 text-muted-foreground hover:text-foreground'
               }`}
             >
               {s === 'all' ? 'All' : s}
@@ -383,17 +383,17 @@ export function FailureGalleryPage() {
           return (
             <Card
               key={mode.id}
-              className="p-6 border-orange-50/15 bg-neutral-900/40 rounded-xl space-y-6 hover:border-orange-50/30 transition-all backdrop-blur-sm"
+              className="p-6 border-border bg-card/90 rounded-xl space-y-6 hover:border-brand/40 shadow-subtle transition-all backdrop-blur-sm"
             >
               {/* Card Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-orange-50/10 pb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/60 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="size-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 shrink-0 font-mono font-bold text-xs">
+                  <div className="size-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-500 shrink-0 font-mono font-bold text-xs">
                     0{idx + 1}
                   </div>
                   <div>
                     <h2 className="font-manrope text-lg font-bold text-foreground">{mode.title}</h2>
-                    <div className="flex items-center gap-2 mt-0.5 text-xs font-mono text-neutral-400">
+                    <div className="flex items-center gap-2 mt-0.5 text-xs font-mono text-muted-foreground">
                       <span>{mode.unitBadge}</span>
                       <span>•</span>
                       <span>{mode.category}</span>
@@ -429,36 +429,36 @@ export function FailureGalleryPage() {
 
               {/* Trap & Diagnosis Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div className="p-3.5 rounded-lg bg-red-950/20 border border-red-500/20 space-y-1.5">
-                  <div className="flex items-center gap-1.5 text-red-400 font-mono font-semibold uppercase tracking-wider text-[10px]">
+                <div className="p-3.5 rounded-lg bg-rose-500/10 border border-rose-500/20 space-y-1.5">
+                  <div className="flex items-center gap-1.5 text-rose-500 font-mono font-semibold uppercase tracking-wider text-[10px]">
                     <AlertTriangle className="size-3" />
                     <span>The Failure Trap</span>
                   </div>
-                  <p className="text-neutral-300 font-montserrat leading-relaxed">
+                  <p className="text-foreground/80 font-montserrat leading-relaxed">
                     {mode.trapDesc}
                   </p>
-                  <p className="text-red-300/80 font-mono text-[11px] pt-1 border-t border-red-500/10">
+                  <p className="text-rose-600 dark:text-rose-400 font-mono text-[11px] pt-1 border-t border-rose-500/20">
                     Root cause: {mode.rootCause}
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-lg bg-emerald-950/20 border border-emerald-500/20 space-y-1.5">
-                  <div className="flex items-center gap-1.5 text-emerald-400 font-mono font-semibold uppercase tracking-wider text-[10px]">
+                <div className="p-3.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 space-y-1.5">
+                  <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-mono font-semibold uppercase tracking-wider text-[10px]">
                     <ShieldCheck className="size-3" />
                     <span>The Remedy &amp; Mitigation</span>
                   </div>
-                  <p className="text-neutral-300 font-montserrat leading-relaxed">{mode.remedy}</p>
+                  <p className="text-foreground/80 font-montserrat leading-relaxed">{mode.remedy}</p>
                 </div>
               </div>
 
               {/* Interactive Failure Experiment Sandbox */}
-              <div className="p-4 rounded-xl border border-orange-50/15 bg-neutral-950/70 space-y-4">
+              <div className="p-4 rounded-xl border border-border bg-muted/40 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 flex items-center gap-1.5">
-                    <Zap className="size-3.5 text-yellow-800 dark:text-orange-100" />
+                  <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                    <Zap className="size-3.5 text-brand" />
                     <span>Interactive Failure Sandbox</span>
                   </span>
-                  <span className="text-[11px] font-mono text-neutral-500">
+                  <span className="text-[11px] font-mono text-muted-foreground">
                     Adjust parameters to trigger failure
                   </span>
                 </div>
@@ -489,7 +489,7 @@ export function FailureGalleryPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">Queue Leaf Nodes:</div>
                         <div className="text-foreground font-bold text-sm">
@@ -541,7 +541,7 @@ export function FailureGalleryPage() {
                       </button>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-3 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">Fitted Slope (w1):</div>
                         <div
@@ -586,7 +586,7 @@ export function FailureGalleryPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">Optimization Behavior:</div>
                         <div className={`font-bold text-sm ${gdStatus.color}`}>
@@ -617,7 +617,7 @@ export function FailureGalleryPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-3 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">Dumb Majority Accuracy:</div>
                         <div className="text-amber-400 font-bold text-sm">
@@ -649,7 +649,7 @@ export function FailureGalleryPage() {
                           className={`px-3 py-1 rounded text-xs font-mono font-bold transition-all ${
                             laplaceAlpha === 0
                               ? 'bg-red-500/20 text-red-400 border border-red-500/40'
-                              : 'bg-black/20 text-neutral-400'
+                              : 'bg-muted text-muted-foreground'
                           }`}
                         >
                           alpha = 0 (Unsmoothed Trap)
@@ -659,7 +659,7 @@ export function FailureGalleryPage() {
                           className={`px-3 py-1 rounded text-xs font-mono font-bold transition-all ${
                             laplaceAlpha === 1
                               ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
-                              : 'bg-black/20 text-neutral-400'
+                              : 'bg-muted text-muted-foreground'
                           }`}
                         >
                           alpha = 1 (Laplace Remedy)
@@ -667,7 +667,7 @@ export function FailureGalleryPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">Posterior Probability:</div>
                         <div
@@ -706,7 +706,7 @@ export function FailureGalleryPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">
                           Relative Distance Spread (d_max - d_min) / d_min:
@@ -748,7 +748,7 @@ export function FailureGalleryPage() {
                           className={`px-3 py-1 rounded text-xs font-mono font-bold transition-all ${
                             treeFeatureChoice === 'id'
                               ? 'bg-red-500/20 text-red-400 border border-red-500/40'
-                              : 'bg-black/20 text-neutral-400'
+                              : 'bg-muted text-muted-foreground'
                           }`}
                         >
                           Student Roll Number (Unique ID)
@@ -758,7 +758,7 @@ export function FailureGalleryPage() {
                           className={`px-3 py-1 rounded text-xs font-mono font-bold transition-all ${
                             treeFeatureChoice === 'hours'
                               ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
-                              : 'bg-black/20 text-neutral-400'
+                              : 'bg-muted text-muted-foreground'
                           }`}
                         >
                           Weekly Study Hours (Continuous)
@@ -766,7 +766,7 @@ export function FailureGalleryPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-3 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">Information Gain:</div>
                         <div
@@ -813,7 +813,7 @@ export function FailureGalleryPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">
                           Decision Surface Topography:
@@ -857,7 +857,7 @@ export function FailureGalleryPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">
                           Weight Concentrated on Outliers:
@@ -900,7 +900,7 @@ export function FailureGalleryPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-3 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">True Underlying Trend:</div>
                         <div className="text-neutral-300 font-bold text-sm">
@@ -945,7 +945,7 @@ export function FailureGalleryPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-3 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">True Minimal Path Cost:</div>
                         <div className="text-emerald-400 font-bold text-sm">10.0</div>
@@ -990,7 +990,7 @@ export function FailureGalleryPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-black/40 border border-orange-50/10 font-mono text-xs">
+                    <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-muted/60 border border-border font-mono text-xs">
                       <div>
                         <div className="text-[10px] text-neutral-500">
                           Evaluated Queen Loss Threat:

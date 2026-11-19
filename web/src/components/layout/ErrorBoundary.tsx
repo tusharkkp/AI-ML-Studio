@@ -61,8 +61,8 @@ export class ErrorBoundary extends Component<Props, State> {
           role="alert"
           className="min-h-[60vh] flex items-center justify-center p-6 sm:p-12 font-sans"
         >
-          <Card className="max-w-xl w-full p-8 rounded-2xl border border-orange-50/20 bg-neutral-950/90 backdrop-blur-xl shadow-none space-y-6 text-center">
-            <div className="size-14 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 mx-auto">
+          <Card className="max-w-xl w-full p-8 rounded-2xl border border-border bg-card shadow-studio space-y-6 text-center">
+            <div className="size-14 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 mx-auto">
               <AlertOctagon className="size-7" />
             </div>
 
@@ -76,10 +76,10 @@ export class ErrorBoundary extends Component<Props, State> {
                 Laboratory execution encountered an issue
               </h2>
 
-              <p className="text-xs sm:text-sm text-neutral-400 font-montserrat leading-relaxed">
+              <p className="text-xs sm:text-sm text-muted-foreground font-montserrat leading-relaxed">
                 An unexpected mathematical or rendering exception occurred. Your local learning
                 progress is safe in{' '}
-                <span className="font-montserrat font-medium text-yellow-800 dark:text-orange-100">
+                <span className="font-montserrat font-medium text-brand">
                   client browser storage
                 </span>
                 .
@@ -88,8 +88,8 @@ export class ErrorBoundary extends Component<Props, State> {
 
             {/* Error Message Box */}
             {this.state.error && (
-              <div className="p-3 rounded-lg bg-red-950/20 border border-red-500/20 text-left font-mono text-xs text-red-300 overflow-x-auto">
-                <span className="text-[10px] text-red-400/80 uppercase tracking-wider block font-sans mb-1">
+              <div className="p-3 rounded-lg bg-red-500/5 dark:bg-red-950/20 border border-red-500/20 text-left font-mono text-xs text-red-600 dark:text-red-300 overflow-x-auto">
+                <span className="text-[10px] text-red-500/80 uppercase tracking-wider block font-sans mb-1 font-semibold">
                   Exception:
                 </span>
                 {this.state.error.message || 'Unknown runtime error'}
@@ -120,11 +120,11 @@ export class ErrorBoundary extends Component<Props, State> {
 
             {/* Collapsible Technical Stack Trace */}
             {this.state.errorInfo && (
-              <div className="pt-4 border-t border-orange-50/10 text-left">
+              <div className="pt-4 border-t border-border text-left">
                 <button
                   type="button"
                   onClick={this.toggleTrace}
-                  className="text-[11px] font-mono text-neutral-500 hover:text-neutral-300 flex items-center gap-1 transition-colors"
+                  className="text-[11px] font-mono text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
                 >
                   <span>Technical call trace</span>
                   {this.state.showTrace ? (
@@ -135,7 +135,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 </button>
 
                 {this.state.showTrace && (
-                  <pre className="mt-2 p-3 rounded-lg bg-black/60 border border-orange-50/10 text-[10px] font-mono text-neutral-400 overflow-x-auto max-h-48 leading-relaxed">
+                  <pre className="mt-2 p-3 rounded-lg bg-muted border border-border text-[10px] font-mono text-muted-foreground overflow-x-auto max-h-48 leading-relaxed">
                     {this.state.errorInfo.componentStack}
                   </pre>
                 )}

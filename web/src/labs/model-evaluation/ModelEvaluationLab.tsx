@@ -183,19 +183,19 @@ export function ModelEvaluationLab() {
   }, [scenario]);
 
   return (
-    <Card className="p-6 border border-orange-50/15 bg-neutral-900/50 backdrop-blur-sm space-y-6">
+    <Card className="p-6 border border-border bg-card shadow-subtle space-y-6">
       {/* Top Header & Scenario Selector */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-orange-50/10 pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-card-edge pb-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex size-6 items-center justify-center rounded border border-orange-50/20 bg-black/40 text-[10px] font-mono font-bold text-orange-200">
+            <span className="flex size-6 items-center justify-center rounded border border-brand/20 bg-brand/10 text-[10px] font-mono font-bold text-brand">
               LAB
             </span>
-            <h3 className="font-manrope text-lg font-semibold text-foreground dark:text-white">
-              Systematic model evaluation & benchmarking studio
+            <h3 className="font-manrope text-lg font-semibold text-foreground">
+              Systematic model evaluation &amp; benchmarking studio
             </h3>
           </div>
-          <p className="text-xs text-neutral-400 mt-0.5 font-montserrat">
+          <p className="text-xs text-muted-foreground mt-0.5 font-montserrat">
             Compare model performance across metrics, calibration quality, and cross-validation
             variance.
           </p>
@@ -203,13 +203,13 @@ export function ModelEvaluationLab() {
 
         {/* Scenario Selector */}
         <div className="flex items-center gap-2">
-          <div className="flex items-center p-0.5 rounded-lg border border-orange-50/15 bg-black/40 text-xs">
+          <div className="flex items-center p-0.5 rounded-lg border border-border bg-muted/50 text-xs">
             <button
               onClick={() => setScenario('imbalanced')}
               className={`px-3 py-1 rounded-md transition-colors ${
                 scenario === 'imbalanced'
-                  ? 'bg-brand text-white font-semibold'
-                  : 'text-neutral-400 hover:text-neutral-200'
+                  ? 'bg-primary text-primary-foreground font-semibold shadow-subtle'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               95:5 Imbalanced
@@ -218,8 +218,8 @@ export function ModelEvaluationLab() {
               onClick={() => setScenario('balanced')}
               className={`px-3 py-1 rounded-md transition-colors ${
                 scenario === 'balanced'
-                  ? 'bg-neutral-800 text-white font-semibold'
-                  : 'text-neutral-400 hover:text-neutral-200'
+                  ? 'bg-primary text-primary-foreground font-semibold shadow-subtle'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               Balanced Rings
@@ -228,8 +228,8 @@ export function ModelEvaluationLab() {
               onClick={() => setScenario('noisy')}
               className={`px-3 py-1 rounded-md transition-colors ${
                 scenario === 'noisy'
-                  ? 'bg-neutral-800 text-white font-semibold'
-                  : 'text-neutral-400 hover:text-neutral-200'
+                  ? 'bg-primary text-primary-foreground font-semibold shadow-subtle'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               15% Noisy Moons
@@ -239,7 +239,7 @@ export function ModelEvaluationLab() {
       </div>
 
       {/* Sub-view navigation tabs */}
-      <div className="flex flex-wrap items-center gap-2 border-b border-orange-50/10 pb-3 text-xs font-sans">
+      <div className="flex flex-wrap items-center gap-2 border-b border-card-edge pb-3 text-xs font-sans">
         {(
           [
             { id: 'metrics', label: '1. Metrics Matrix' },
@@ -253,8 +253,8 @@ export function ModelEvaluationLab() {
             onClick={() => setActiveTab(tab.id)}
             className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
               activeTab === tab.id
-                ? 'bg-neutral-800 text-white font-semibold border border-orange-50/20'
-                : 'text-neutral-400 hover:text-neutral-200 bg-black/20'
+                ? 'bg-primary text-primary-foreground font-semibold shadow-subtle'
+                : 'text-muted-foreground hover:text-foreground bg-card border border-border'
             }`}
           >
             {tab.label}
@@ -265,9 +265,9 @@ export function ModelEvaluationLab() {
       {/* Tab 1: Comprehensive Metrics Matrix Table */}
       {activeTab === 'metrics' && (
         <div className="space-y-4">
-          <div className="overflow-x-auto rounded-lg border border-orange-50/10 bg-black/40">
+          <div className="overflow-x-auto rounded-lg border border-border bg-card">
             <table className="w-full text-left text-xs font-mono">
-              <thead className="bg-black/60 text-neutral-400 uppercase tracking-wider text-[10px] border-b border-orange-50/10">
+              <thead className="bg-muted text-muted-foreground uppercase tracking-wider text-[10px] border-b border-border">
                 <tr>
                   <th className="py-2.5 px-3">Model Architecture</th>
                   <th className="py-2.5 px-3">Accuracy</th>
@@ -324,14 +324,14 @@ export function ModelEvaluationLab() {
       {/* Tab 2: ROC vs PR Curves */}
       {activeTab === 'curves' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="p-4 border border-orange-50/10 bg-black/40 space-y-2">
+          <Card className="p-4 border border-border bg-card shadow-subtle space-y-2">
             <div className="flex items-center justify-between text-xs">
-              <span className="font-semibold text-neutral-200 font-manrope">
+              <span className="font-semibold text-foreground font-manrope">
                 Receiver Operating Characteristic (ROC)
               </span>
-              <span className="font-mono text-[10px] text-neutral-400">TPR vs FPR</span>
+              <span className="font-mono text-[10px] text-muted-foreground">TPR vs FPR</span>
             </div>
-            <div className="h-44 border border-neutral-800 rounded bg-black/60 relative flex items-center justify-center p-4">
+            <div className="h-44 border border-border rounded-lg bg-muted/40 relative flex items-center justify-center p-4">
               <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">
                 {/* Diagonal random chance line */}
                 <line
@@ -348,27 +348,27 @@ export function ModelEvaluationLab() {
                 {/* Decision Tree curve */}
                 <path d="M 0 100 L 25 35 L 100 0" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
               </svg>
-              <div className="absolute bottom-2 right-2 text-[10px] font-mono text-neutral-400">
+              <div className="absolute bottom-2 right-2 text-[10px] font-mono text-muted-foreground">
                 FPR (0 → 1)
               </div>
-              <div className="absolute top-2 left-2 text-[10px] font-mono text-neutral-400">
+              <div className="absolute top-2 left-2 text-[10px] font-mono text-muted-foreground">
                 TPR (0 → 1)
               </div>
             </div>
-            <p className="text-[11px] text-neutral-400 font-montserrat">
+            <p className="text-[11px] text-muted-foreground font-montserrat">
               ROC measures the trade-off across all operating thresholds. Unaffected by class ratio
               shifts.
             </p>
           </Card>
 
-          <Card className="p-4 border border-orange-50/10 bg-black/40 space-y-2">
+          <Card className="p-4 border border-border bg-card shadow-subtle space-y-2">
             <div className="flex items-center justify-between text-xs">
-              <span className="font-semibold text-neutral-200 font-manrope">
+              <span className="font-semibold text-foreground font-manrope">
                 Precision-Recall (PR) Curve
               </span>
               <span className="font-mono text-[10px] text-brand">Critical for Imbalance</span>
             </div>
-            <div className="h-44 border border-neutral-800 rounded bg-black/60 relative flex items-center justify-center p-4">
+            <div className="h-44 border border-border rounded-lg bg-muted/40 relative flex items-center justify-center p-4">
               <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">
                 {/* Baseline horizontal line at prevalence */}
                 <line
@@ -385,14 +385,14 @@ export function ModelEvaluationLab() {
                 {/* Decision Tree PR curve */}
                 <path d="M 0 35 L 45 45 L 100 95" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
               </svg>
-              <div className="absolute bottom-2 right-2 text-[10px] font-mono text-neutral-400">
+              <div className="absolute bottom-2 right-2 text-[10px] font-mono text-muted-foreground">
                 Recall (0 → 1)
               </div>
-              <div className="absolute top-2 left-2 text-[10px] font-mono text-neutral-400">
+              <div className="absolute top-2 left-2 text-[10px] font-mono text-muted-foreground">
                 Precision (0 → 1)
               </div>
             </div>
-            <p className="text-[11px] text-neutral-400 font-montserrat">
+            <p className="text-[11px] text-muted-foreground font-montserrat">
               PR curves directly expose high false-positive rates that ROC curves mask in sparse
               classes.
             </p>
@@ -403,14 +403,14 @@ export function ModelEvaluationLab() {
       {/* Tab 3: Calibration & Brier Score */}
       {activeTab === 'calibration' && (
         <div className="space-y-4">
-          <Card className="p-5 border border-orange-50/10 bg-black/40 space-y-3">
+          <Card className="p-5 border border-border bg-card shadow-subtle space-y-3">
             <div className="flex items-center justify-between">
-              <h4 className="font-manrope text-sm font-semibold text-neutral-200">
+              <h4 className="font-manrope text-sm font-semibold text-foreground">
                 Reliability Diagram (Probability Calibration)
               </h4>
               <Badge variant="outline">Brier Score: Lower = Better</Badge>
             </div>
-            <p className="text-xs text-neutral-400 font-montserrat">
+            <p className="text-xs text-muted-foreground font-montserrat">
               Does a model output of 0.80 mean that 80% of those samples are truly positive?
               Well-calibrated models adhere to the 45° diagonal line.
             </p>
@@ -419,13 +419,13 @@ export function ModelEvaluationLab() {
               {benchmarks.map((m, idx) => (
                 <div
                   key={idx}
-                  className="p-3 rounded bg-black/60 border border-neutral-800 text-xs font-mono"
+                  className="p-3 rounded bg-muted/50 border border-border text-xs font-mono"
                 >
-                  <div className="text-neutral-400 text-[10px] truncate">{m.name}</div>
-                  <div className="text-sm font-bold text-neutral-200 mt-1">
+                  <div className="text-muted-foreground text-[10px] truncate">{m.name}</div>
+                  <div className="text-sm font-bold text-foreground mt-1">
                     Brier: {m.brierScore.toFixed(3)}
                   </div>
-                  <div className="text-[10px] text-neutral-500 mt-0.5">
+                  <div className="text-[10px] text-muted-foreground mt-0.5">
                     {m.brierScore < 0.08 ? 'Well Calibrated' : 'Under/Over-Confident'}
                   </div>
                 </div>
@@ -438,12 +438,12 @@ export function ModelEvaluationLab() {
       {/* Tab 4: 5-Fold Cross-Validation Variance */}
       {activeTab === 'cv' && (
         <div className="space-y-4">
-          <Card className="p-5 border border-orange-50/10 bg-black/40 space-y-3">
+          <Card className="p-5 border border-border bg-card shadow-subtle space-y-3">
             <div className="flex items-center justify-between">
-              <h4 className="font-manrope text-sm font-semibold text-neutral-200">
+              <h4 className="font-manrope text-sm font-semibold text-foreground">
                 5-Fold Cross-Validation Fold Distribution
               </h4>
-              <span className="text-xs font-mono text-neutral-400">
+              <span className="text-xs font-mono text-muted-foreground">
                 Variance across test partitions
               </span>
             </div>
@@ -457,11 +457,11 @@ export function ModelEvaluationLab() {
                 return (
                   <div
                     key={idx}
-                    className="p-3 rounded bg-black/60 border border-neutral-800 space-y-1.5 text-xs"
+                    className="p-3 rounded bg-muted/50 border border-border space-y-1.5 text-xs"
                   >
                     <div className="flex items-center justify-between font-mono">
-                      <span className="font-semibold text-neutral-200">{m.name}</span>
-                      <span className="text-neutral-400">
+                      <span className="font-semibold text-foreground">{m.name}</span>
+                      <span className="text-muted-foreground">
                         Spread: ±{(spread / 2).toFixed(2)}% (Fold range: {(minAcc * 100).toFixed(1)}
                         % → {(maxAcc * 100).toFixed(1)}%)
                       </span>
@@ -472,7 +472,7 @@ export function ModelEvaluationLab() {
                       {m.foldAccuracies.map((acc, fIdx) => (
                         <div
                           key={fIdx}
-                          className="flex-1 text-center py-1 rounded bg-neutral-900 border border-neutral-800 font-mono text-[11px] text-neutral-300"
+                          className="flex-1 text-center py-1 rounded bg-card border border-border font-mono text-[11px] text-foreground"
                         >
                           F{fIdx + 1}: {(acc * 100).toFixed(1)}%
                         </div>

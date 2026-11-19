@@ -193,7 +193,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
   return (
     <div className="mx-auto max-w-5xl px-6 py-10 sm:px-12 space-y-12">
       {/* 1. Hero Header & Syllabus Mapping */}
-      <div className="border-b border-orange-50/15 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
           <nav
             aria-label="Breadcrumb"
@@ -290,7 +290,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
           {4} = 0.25$.
         </p>
 
-        <Card className="p-5 border border-orange-50/15 bg-neutral-900/40 space-y-4 font-mono text-xs">
+        <Card className="p-5 border border-border bg-card shadow-subtle space-y-4 font-mono text-xs">
           <div>
             <div className="text-orange-200 font-bold mb-1">
               Step 1: Fit Weak Learner & Calculate Weighted Error ε_1
@@ -304,7 +304,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
             </div>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-3">
+          <div className="border-t border-card-edge pt-3">
             <div className="text-orange-200 font-bold mb-1">
               Step 2: Calculate Stump Voting Weight α_1
             </div>
@@ -315,7 +315,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
             </div>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-3">
+          <div className="border-t border-card-edge pt-3">
             <div className="text-orange-200 font-bold mb-1">
               Step 3: Update Unnormalized Sample Weights
             </div>
@@ -335,7 +335,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
             </div>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-3">
+          <div className="border-t border-card-edge pt-3">
             <div className="text-orange-200 font-bold mb-1">
               Step 4: Normalize by Partition Function Z_1
             </div>
@@ -361,7 +361,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
         <h2 className="font-manrope text-2xl font-semibold tracking-tight text-foreground">
           4. Formal mathematical foundations: exponential loss & meta-learning
         </h2>
-        <Card className="p-6 border border-orange-50/15 bg-neutral-900/40 space-y-4 text-xs font-montserrat">
+        <Card className="p-6 border border-border bg-card shadow-subtle space-y-4 text-xs font-montserrat">
           <div>
             <h3 className="font-manrope text-sm font-semibold text-orange-200">
               AdaBoost as Forward Stagewise Additive Modeling (SAMME)
@@ -370,7 +370,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
               AdaBoost minimizes the convex surrogate{' '}
               <strong className="text-white">Exponential Loss</strong>:
             </p>
-            <div className="my-2 p-3 bg-black/50 border border-orange-50/10 rounded font-mono text-neutral-200 text-center">
+            <div className="my-2 p-3 bg-black/50 border border-card-edge rounded font-mono text-neutral-200 text-center">
               {'$$ L_{\\text{exp}}(y, f(x)) = \\sum_{i=1}^N \\exp(-y_i f_m(x_i)) $$'}
             </div>
             <p className="text-neutral-400">
@@ -380,7 +380,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
             </p>
           </div>
 
-          <div className="border-t border-orange-50/10 pt-4">
+          <div className="border-t border-card-edge pt-4">
             <h3 className="font-manrope text-sm font-semibold text-orange-200">
               Wolpert Stacking (Stacked Generalization, 1992)
             </h3>
@@ -410,7 +410,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
         <h2 className="font-manrope text-2xl font-semibold tracking-tight text-foreground">
           5. Algorithm pseudocode: AdaBoost.M1
         </h2>
-        <Card className="p-4 border border-orange-50/15 bg-neutral-900/40 font-mono text-xs text-neutral-300 space-y-1">
+        <Card className="p-4 border border-border bg-card shadow-subtle font-mono text-xs text-neutral-300 space-y-1">
           <div className="text-neutral-500">{'// Algorithm: AdaBoost.M1 (Freund & Schapire)'}</div>
           <div>
             <strong className="text-orange-200">Input:</strong> D = {'{(x_i, y_i)}'}, y_i in{' '}
@@ -466,7 +466,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
             <span>{copiedPython ? 'Copied' : 'Copy Code'}</span>
           </Button>
         </div>
-        <Card className="p-4 border border-orange-50/15 bg-black/60 font-mono text-xs text-neutral-300 overflow-x-auto">
+        <Card className="p-4 border border-border bg-black/60 font-mono text-xs text-neutral-300 overflow-x-auto">
           <pre>{pythonSnippet}</pre>
         </Card>
       </section>
@@ -522,7 +522,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
           8. Strengths, limitations & when NOT to use
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-montserrat">
-          <Card className="p-5 border border-orange-50/15 bg-neutral-900/30 space-y-3">
+          <Card className="p-5 border border-border bg-neutral-900/30 space-y-3">
             <h3 className="font-manrope text-sm font-semibold text-emerald-400">
               Strengths of Boosting & Stacking
             </h3>
@@ -544,7 +544,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
             </ul>
           </Card>
 
-          <Card className="p-5 border border-orange-50/15 bg-neutral-900/30 space-y-3">
+          <Card className="p-5 border border-border bg-neutral-900/30 space-y-3">
             <h3 className="font-manrope text-sm font-semibold text-rose-400">
               Limitations & When NOT to Use
             </h3>
@@ -573,7 +573,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
           9. Common misconceptions
         </h2>
         <div className="space-y-3 text-xs font-montserrat">
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30">
+          <Card className="p-4 border border-border bg-neutral-900/30">
             <div className="font-semibold text-orange-200">
               Myth: &quot;A weak learner in AdaBoost must be at least 70% or 80% accurate to be
               useful.&quot;
@@ -586,7 +586,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
             </p>
           </Card>
 
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30">
+          <Card className="p-4 border border-border bg-neutral-900/30">
             <div className="font-semibold text-orange-200">
               Myth: &quot;Stacking is just a weighted average of model predictions.&quot;
             </div>
@@ -620,7 +620,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-montserrat">
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30 space-y-2">
+          <Card className="p-4 border border-border bg-neutral-900/30 space-y-2">
             <div className="font-semibold text-foreground dark:text-white">
               Q1: Derive the condition under which a base learner is rejected in AdaBoost.
             </div>
@@ -632,7 +632,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
             </p>
           </Card>
 
-          <Card className="p-4 border border-orange-50/15 bg-neutral-900/30 space-y-2">
+          <Card className="p-4 border border-border bg-neutral-900/30 space-y-2">
             <div className="font-semibold text-foreground dark:text-white">
               Q2: Explain why Level-1 meta-models in Stacking are typically simple linear or
               logistic models rather than deep neural networks.
@@ -653,7 +653,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
         <h2 className="font-manrope text-2xl font-semibold tracking-tight text-foreground">
           12. Summary & key takeaways
         </h2>
-        <Card className="p-6 border border-orange-50/15 bg-neutral-900/40 space-y-3 text-xs font-montserrat">
+        <Card className="p-6 border border-border bg-card shadow-subtle space-y-3 text-xs font-montserrat">
           <ul className="space-y-2 text-neutral-300 list-disc pl-4">
             <li>
               <strong>Sequential Error Correction:</strong> Boosting chains weak, high-bias models
@@ -673,7 +673,7 @@ print(f"Wolpert Stacking Blender Test Accuracy: {stack_acc * 100:.2f}%")
       </section>
 
       {/* 14. What's Next */}
-      <section className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-orange-50/15 pt-6">
+      <section className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-border pt-6">
         <div>
           <div className="text-xs font-mono text-neutral-500 uppercase tracking-wider">
             Next Syllabus Topic

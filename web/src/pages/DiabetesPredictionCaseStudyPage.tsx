@@ -170,7 +170,7 @@ for name, clf in models.items():
   return (
     <div className="mx-auto max-w-5xl px-6 py-10 sm:px-12 space-y-12">
       {/* 1. Hero Header & Syllabus Mapping */}
-      <div className="border-b border-orange-50/15 pb-6">
+      <div className="border-b border-border pb-6">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
           <nav
             aria-label="Breadcrumb"
@@ -263,7 +263,7 @@ for name, clf in models.items():
           3. Step-by-step on paper: Imputation & screening math
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-montserrat">
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="font-bold font-manrope text-sm text-foreground flex items-center gap-2">
               <span className="w-5 h-5 rounded-full bg-brand/20 text-brand flex items-center justify-center font-mono">
                 1
@@ -277,7 +277,7 @@ for name, clf in models.items():
             </p>
           </Card>
 
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="font-bold font-manrope text-sm text-foreground flex items-center gap-2">
               <span className="w-5 h-5 rounded-full bg-brand/20 text-brand flex items-center justify-center font-mono">
                 2
@@ -291,7 +291,7 @@ for name, clf in models.items():
             </p>
           </Card>
 
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <div className="font-bold font-manrope text-sm text-foreground flex items-center gap-2">
               <span className="w-5 h-5 rounded-full bg-brand/20 text-brand flex items-center justify-center font-mono">
                 3
@@ -315,7 +315,7 @@ for name, clf in models.items():
         <h2 className="text-xl sm:text-2xl font-semibold text-foreground font-manrope">
           4. Formal mathematical foundations
         </h2>
-        <div className="p-5 rounded-xl border border-orange-50/15 bg-neutral-900/50 space-y-4 text-xs font-montserrat leading-relaxed">
+        <div className="p-5 rounded-xl border border-border bg-neutral-900/50 space-y-4 text-xs font-montserrat leading-relaxed">
           <div>
             <h4 className="font-semibold text-sm text-foreground mb-1">
               1. Bayes Decision Rule with Asymmetric Clinical Losses
@@ -366,7 +366,7 @@ for name, clf in models.items():
         <h2 className="text-xl sm:text-2xl font-semibold text-foreground font-manrope">
           5. Algorithm pseudocode: Clinical diagnostic pipeline
         </h2>
-        <Card className="p-5 border-orange-50/15 bg-black/30 font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
+        <Card className="p-5 border-border bg-card shadow-subtle font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
           <pre>{`ALGORITHM PimaClinicalPipeline(Dataset D, TargetLabel y, Costs c_FN, c_FP):
   1. For each clinical biomarker feature f in ['glucose', 'bp', 'skin', 'insulin', 'bmi']:
        For each patient i in D:
@@ -424,7 +424,7 @@ for name, clf in models.items():
             )}
           </Button>
         </div>
-        <Card className="p-5 border-orange-50/15 bg-black/40 font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
+        <Card className="p-5 border-border bg-card shadow-subtle font-mono text-xs leading-relaxed overflow-x-auto text-neutral-300">
           <pre>{pythonSnippet}</pre>
         </Card>
       </section>
@@ -520,7 +520,7 @@ for name, clf in models.items():
               fact: 'Tree splits rely solely on feature order rank, not distance magnitude. Scaling features by mean and variance produces mathematically identical tree structures.',
             },
           ].map((item, idx) => (
-            <Card key={idx} className="p-4 border-orange-50/10 bg-neutral-900/40 space-y-1">
+            <Card key={idx} className="p-4 border-card-edge bg-neutral-900/40 space-y-1">
               <div className="font-bold text-red-400 font-manrope text-sm">Myth: "{item.myth}"</div>
               <div className="text-neutral-300 leading-relaxed">
                 <span className="text-emerald-400 font-semibold">Reality:</span> {item.fact}
@@ -546,7 +546,7 @@ for name, clf in models.items():
           11. Exam & viva corner
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-montserrat">
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <h4 className="font-bold text-foreground font-manrope text-sm">
               Viva Question 1: How do you justify class-aware imputation?
             </h4>
@@ -558,7 +558,7 @@ for name, clf in models.items():
             </p>
           </Card>
 
-          <Card className="p-4 border-orange-50/15 bg-neutral-900/40 space-y-2">
+          <Card className="p-4 border-border bg-card shadow-subtle space-y-2">
             <h4 className="font-bold text-foreground font-manrope text-sm">
               Viva Question 2: Why choose Sensitivity over Specificity here?
             </h4>
@@ -577,7 +577,7 @@ for name, clf in models.items():
         <h2 className="text-xl sm:text-2xl font-semibold text-foreground font-manrope">
           12. Summary & key takeaways
         </h2>
-        <Card className="p-5 border-orange-50/15 bg-black/20 space-y-2 text-xs font-montserrat text-neutral-300 leading-relaxed">
+        <Card className="p-5 border-border bg-card shadow-subtle space-y-2 text-xs font-montserrat text-neutral-300 leading-relaxed">
           <p>
             1. <strong className="text-foreground">Biological Data Cleaning:</strong> Zeroes in
             physiological variables (Insulin, Glucose, BMI) indicate missing clinical assays;
@@ -597,7 +597,7 @@ for name, clf in models.items():
       </section>
 
       {/* 14. What's Next */}
-      <section className="border-t border-orange-50/15 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <section className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <div className="text-xs text-neutral-400 font-mono">Next Self-Study Concept</div>
           <div className="text-base font-semibold text-foreground font-manrope">

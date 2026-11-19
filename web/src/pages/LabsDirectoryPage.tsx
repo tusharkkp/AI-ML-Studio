@@ -348,23 +348,23 @@ export function LabsDirectoryPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-10 sm:px-12 space-y-8">
       {/* Top Header */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-orange-50/15 pb-6">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-border pb-6">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-2">
+          <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground mb-2">
             <Link to="/" className="hover:text-brand transition-colors">
               AIML Studio
             </Link>
             <span>/</span>
-            <span className="text-foreground dark:text-neutral-200">Interactive Laboratories</span>
+            <span className="text-foreground">Interactive Laboratories</span>
           </div>
           <h1 className="font-manrope text-3xl font-semibold tracking-tight text-foreground sm:text-4xl flex items-center gap-3">
             <FlaskConical className="size-8 text-brand" />
             <span>Interactive lab sandbox directory</span>
           </h1>
-          <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 max-w-2xl font-montserrat">
+          <p className="mt-2 text-sm text-muted-foreground max-w-2xl font-montserrat">
             Hands-on zero-cost simulations across all 5 curriculum units. Experiment with
             parameters, break assumptions, and inspect mathematical state machines in real time with{' '}
-            <span className="font-montserrat font-medium text-yellow-800 dark:text-orange-100">
+            <span className="font-montserrat font-medium text-brand">
               zero installation required
             </span>
             .
@@ -418,8 +418,8 @@ export function LabsDirectoryPage() {
               onClick={() => setFilter(cat.id as CategoryFilter)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                 filter === cat.id
-                  ? 'bg-neutral-900 text-white dark:bg-white dark:text-black font-semibold'
-                  : 'bg-neutral-800/40 text-neutral-400 hover:text-foreground hover:bg-neutral-800/80 border border-orange-50/10'
+                  ? 'bg-primary text-primary-foreground font-semibold shadow-subtle'
+                  : 'bg-muted/60 text-muted-foreground hover:text-foreground hover:bg-muted border border-border'
               }`}
             >
               {cat.label} ({cat.count})
@@ -429,13 +429,13 @@ export function LabsDirectoryPage() {
 
         {/* Search input */}
         <div className="relative w-full sm:w-64">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-3.5 text-neutral-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground pointer-events-none" />
           <input
             type="text"
             placeholder="Search labs, algorithms..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-neutral-900/50 border border-orange-50/15 rounded-lg pl-9 pr-3 py-1.5 text-xs text-foreground placeholder:text-neutral-500 focus:outline-none focus:border-brand transition-colors"
+            className="w-full bg-card border border-border rounded-lg pl-9 pr-3 py-1.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand transition-colors"
           />
         </div>
       </div>
@@ -445,12 +445,12 @@ export function LabsDirectoryPage() {
         {filteredLabs.map((lab) => (
           <Card
             key={lab.id}
-            className="p-5 border border-orange-50/15 bg-neutral-900/40 backdrop-blur-sm flex flex-col justify-between hover:border-orange-50/30 transition-colors group"
+            className="p-5 flex flex-col justify-between hover:border-brand/40 transition-colors group"
           >
             <div>
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <span className="flex size-6 items-center justify-center rounded border border-orange-50/20 bg-black/40 text-[10px] font-mono font-bold text-orange-200">
+                  <span className="flex size-6 items-center justify-center rounded border border-brand/20 bg-brand/10 text-[10px] font-mono font-bold text-brand">
                     {lab.unitBadge}
                   </span>
                   <Badge variant="outline" size="sm" className="text-[10px]">
@@ -459,10 +459,10 @@ export function LabsDirectoryPage() {
                 </div>
               </div>
 
-              <h2 className="font-manrope text-base font-semibold text-foreground dark:text-white group-hover:text-brand transition-colors">
+              <h2 className="font-manrope text-base font-semibold text-foreground group-hover:text-brand transition-colors">
                 {lab.title}
               </h2>
-              <p className="text-xs text-neutral-400 mt-2 leading-relaxed font-montserrat">
+              <p className="text-xs text-muted-foreground mt-2 leading-relaxed font-montserrat">
                 {lab.description}
               </p>
 
@@ -471,7 +471,7 @@ export function LabsDirectoryPage() {
                 {lab.interactiveFeatures.map((feat, idx) => (
                   <span
                     key={idx}
-                    className="inline-block text-[10px] font-mono bg-black/30 border border-orange-50/10 rounded px-2 py-0.5 text-neutral-300"
+                    className="inline-block text-[10px] font-mono bg-muted/70 border border-border rounded px-2 py-0.5 text-muted-foreground"
                   >
                     {feat}
                   </span>
@@ -480,8 +480,8 @@ export function LabsDirectoryPage() {
             </div>
 
             {/* Launch CTA */}
-            <div className="pt-4 mt-4 border-t border-orange-50/10 flex items-center justify-between">
-              <span className="text-[11px] font-mono text-neutral-500">
+            <div className="pt-4 mt-4 border-t border-card-edge flex items-center justify-between">
+              <span className="text-[11px] font-mono text-muted-foreground">
                 Unit {lab.unit} Interactive
               </span>
               <Link to={lab.href}>
@@ -500,8 +500,8 @@ export function LabsDirectoryPage() {
       </div>
 
       {filteredLabs.length === 0 && (
-        <div className="text-center py-16 border border-dashed border-orange-50/20 rounded-xl bg-neutral-900/20">
-          <p className="text-sm text-neutral-400 font-montserrat">
+        <div className="text-center py-16 border border-dashed border-border rounded-xl bg-card">
+          <p className="text-sm text-muted-foreground font-montserrat">
             No interactive labs match your query &quot;{searchQuery}&quot;.
           </p>
           <button

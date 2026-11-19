@@ -274,8 +274,8 @@ export const DiabetesPredictionLab: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Interactive Controls Bar */}
-      <Card className="p-6 border-orange-50/15 bg-neutral-900/60 backdrop-blur-md">
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-orange-50/10 pb-4">
+      <Card className="p-6 border-border bg-card shadow-subtle/60 backdrop-blur-md">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-card-edge pb-4">
           <div className="flex items-center gap-2">
             <HeartPulse className="w-5 h-5 text-red-400" />
             <h3 className="font-semibold text-lg text-foreground font-manrope">
@@ -328,7 +328,7 @@ export const DiabetesPredictionLab: React.FC = () => {
                   className={`text-left p-2 rounded-lg text-xs transition-all border ${
                     imputation === strat.id
                       ? 'border-brand bg-brand/10 text-white font-medium'
-                      : 'border-orange-50/10 bg-black/20 text-neutral-400 hover:text-neutral-200'
+                      : 'border-card-edge bg-muted/40 text-neutral-400 hover:text-neutral-200'
                   }`}
                 >
                   <div className="font-semibold">{strat.label}</div>
@@ -407,7 +407,7 @@ export const DiabetesPredictionLab: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left 2 Cols: Scatter Visualizer of Glucose vs BMI with Decision Halo */}
         <div className="lg:col-span-2 space-y-4">
-          <Card className="p-5 border-orange-50/15 bg-neutral-900/60">
+          <Card className="p-5 border-border bg-card shadow-subtle/60">
             <div className="flex items-center justify-between mb-3">
               <div>
                 <h4 className="font-semibold text-sm text-foreground font-manrope">
@@ -430,7 +430,7 @@ export const DiabetesPredictionLab: React.FC = () => {
             </div>
 
             {/* 2D SVG Plot */}
-            <div className="relative w-full aspect-[16/9] bg-black/40 rounded-xl border border-orange-50/10 p-2 overflow-hidden">
+            <div className="relative w-full aspect-[16/9] bg-muted/50 rounded-xl border border-card-edge p-2 overflow-hidden">
               <svg className="w-full h-full" viewBox="0 0 600 340">
                 {/* Grid Lines */}
                 {[50, 100, 150, 200].map((g) => {
@@ -554,7 +554,7 @@ export const DiabetesPredictionLab: React.FC = () => {
         {/* Right Col: Clinical Confusion Matrix & Economic Loss */}
         <div className="space-y-4">
           {/* Confusion Matrix Card */}
-          <Card className="p-5 border-orange-50/15 bg-neutral-900/60 space-y-4">
+          <Card className="p-5 border-border bg-card shadow-subtle/60 space-y-4">
             <h4 className="font-semibold text-sm text-foreground font-manrope flex items-center gap-2">
               <Activity className="w-4 h-4 text-brand" />
               Clinical Confusion Matrix
@@ -590,7 +590,7 @@ export const DiabetesPredictionLab: React.FC = () => {
               </div>
 
               {/* True Negative */}
-              <div className="p-3 rounded-lg bg-neutral-900 border border-orange-50/10">
+              <div className="p-3 rounded-lg bg-neutral-900 border border-card-edge">
                 <div className="text-[10px] text-neutral-400 uppercase font-semibold">
                   True Negative (TN)
                 </div>
@@ -600,7 +600,7 @@ export const DiabetesPredictionLab: React.FC = () => {
             </div>
 
             {/* Diagnostic Metrics */}
-            <div className="space-y-2 pt-2 border-t border-orange-50/10 text-xs font-sans">
+            <div className="space-y-2 pt-2 border-t border-card-edge text-xs font-sans">
               <div className="flex justify-between items-center">
                 <span className="text-neutral-400">Clinical Sensitivity (Recall):</span>
                 <span className="font-mono font-semibold text-cream">

@@ -119,43 +119,43 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:p-6 md:p-20 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:p-6 md:p-20 bg-black/60 dark:bg-black/80 backdrop-blur-sm animate-in fade-in duration-150"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-2xl rounded-2xl border border-orange-50/20 bg-neutral-950/95 backdrop-blur-xl shadow-none overflow-hidden flex flex-col max-h-[85vh] animate-in zoom-in-95 duration-150"
+        className="w-full max-w-2xl rounded-2xl border border-border bg-card text-foreground backdrop-blur-xl shadow-studio-lg overflow-hidden flex flex-col max-h-[85vh] animate-in zoom-in-95 duration-150"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-label="Global Syllabus Search"
       >
         {/* Search Input Bar */}
-        <div className="flex items-center gap-3 p-4 border-b border-orange-50/15">
-          <Search className="size-5 text-neutral-400 shrink-0" />
+        <div className="flex items-center gap-3 p-4 border-b border-border">
+          <Search className="size-5 text-muted-foreground shrink-0" />
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search syllabus concepts, algorithms, labs, formulas (e.g. A*, Gini, OLS)..."
-            className="flex-1 bg-transparent text-sm sm:text-base text-foreground placeholder:text-neutral-500 focus:outline-none"
+            className="flex-1 bg-transparent text-sm sm:text-base text-foreground placeholder:text-muted-foreground focus:outline-none"
           />
           {query && (
             <button
               onClick={() => setQuery('')}
-              className="p-1 rounded text-neutral-500 hover:text-neutral-300 transition-colors"
+              className="p-1 rounded text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Clear query"
             >
               <X className="size-4" />
             </button>
           )}
-          <kbd className="hidden sm:inline-flex items-center gap-0.5 px-2 py-0.5 rounded border border-orange-50/15 bg-neutral-900 text-[10px] font-mono text-neutral-400">
+          <kbd className="hidden sm:inline-flex items-center gap-0.5 px-2 py-0.5 rounded border border-border bg-muted text-[10px] font-mono text-muted-foreground">
             Esc
           </kbd>
         </div>
 
         {/* Filter Category Tabs */}
-        <div className="flex items-center gap-1.5 px-4 py-2 border-b border-orange-50/10 bg-neutral-900/40 overflow-x-auto text-xs font-mono">
+        <div className="flex items-center gap-1.5 px-4 py-2 border-b border-border bg-muted/40 overflow-x-auto text-xs font-mono">
           {[
             { id: 'all', label: 'All Items' },
             { id: 'Concept', label: 'Concepts' },
@@ -170,7 +170,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
               className={`px-2.5 py-1 rounded text-[11px] whitespace-nowrap transition-all ${
                 selectedCategory === cat.id
                   ? 'bg-brand text-white font-semibold'
-                  : 'text-neutral-400 hover:text-neutral-200 hover:bg-white/5'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               }`}
             >
               {cat.label}
@@ -181,12 +181,12 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
         {/* Results List */}
         <div
           ref={listRef}
-          className="flex-1 overflow-y-auto p-2 space-y-1 divide-y divide-orange-50/5"
+          className="flex-1 overflow-y-auto p-2 space-y-1 divide-y divide-border/40"
         >
           {filteredItems.length === 0 ? (
-            <div className="py-12 text-center text-xs text-neutral-400 space-y-2">
+            <div className="py-12 text-center text-xs text-muted-foreground space-y-2">
               <p>No results found for &ldquo;{query}&rdquo;</p>
-              <p className="text-[11px] text-neutral-500 font-mono">
+              <p className="text-[11px] text-muted-foreground/75 font-mono">
                 Try searching by topic name, formula keyword, or unit number.
               </p>
             </div>
@@ -203,8 +203,8 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                   onMouseEnter={() => setSelectedIndex(idx)}
                   className={`flex items-start justify-between gap-3 p-3 rounded-xl cursor-pointer transition-all ${
                     isSelected
-                      ? 'bg-neutral-800/80 text-foreground border border-orange-50/20'
-                      : 'hover:bg-neutral-900/60 text-neutral-300'
+                      ? 'bg-muted text-foreground border border-border'
+                      : 'hover:bg-muted/60 text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   <div className="flex items-start gap-3 min-w-0">
@@ -213,12 +213,12 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         item.category === 'Concept'
                           ? 'border-brand/20 bg-brand/10 text-brand'
                           : item.category === 'Case Study'
-                            ? 'border-emerald-500/20 bg-emerald-500/10 text-emerald-400'
+                            ? 'border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
                             : item.category === 'Exam'
-                              ? 'border-amber-500/20 bg-amber-500/10 text-amber-400'
+                              ? 'border-amber-500/20 bg-amber-500/10 text-amber-600 dark:text-amber-400'
                               : item.category === 'Glossary'
-                                ? 'border-blue-500/20 bg-blue-500/10 text-blue-400'
-                                : 'border-purple-500/20 bg-purple-500/10 text-purple-400'
+                                ? 'border-blue-500/20 bg-blue-500/10 text-blue-600 dark:text-blue-400'
+                                : 'border-purple-500/20 bg-purple-500/10 text-purple-600 dark:text-purple-400'
                       }`}
                     >
                       {item.category === 'Concept' && <BookOpen className="size-4" />}
@@ -239,11 +239,11 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                             {item.unitBadge}
                           </Badge>
                         )}
-                        <span className="text-[10px] font-mono text-neutral-500 uppercase">
+                        <span className="text-[10px] font-mono text-muted-foreground uppercase">
                           {item.category}
                         </span>
                       </div>
-                      <p className="text-[11px] text-neutral-400 font-montserrat truncate mt-0.5">
+                      <p className="text-[11px] text-muted-foreground font-montserrat truncate mt-0.5">
                         {item.desc}
                       </p>
                     </div>
@@ -251,7 +251,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
                   <ArrowRight
                     className={`size-4 shrink-0 transition-transform ${
-                      isSelected ? 'text-brand translate-x-0.5' : 'text-neutral-600'
+                      isSelected ? 'text-brand translate-x-0.5' : 'text-muted-foreground/60'
                     }`}
                   />
                 </div>
@@ -261,16 +261,16 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
         </div>
 
         {/* Footer Shortcut Bar */}
-        <div className="p-3 border-t border-orange-50/15 bg-neutral-950 flex items-center justify-between text-[11px] font-mono text-neutral-500">
+        <div className="p-3 border-t border-border bg-muted/40 flex items-center justify-between text-[11px] font-mono text-muted-foreground">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 rounded border border-orange-50/10 bg-neutral-900 text-neutral-400">
+              <kbd className="px-1.5 py-0.5 rounded border border-border bg-background text-foreground">
                 &uarr;&darr;
               </kbd>
               <span>navigate</span>
             </span>
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 rounded border border-orange-50/10 bg-neutral-900 text-neutral-400">
+              <kbd className="px-1.5 py-0.5 rounded border border-border bg-background text-foreground">
                 &crarr;
               </kbd>
               <span>open</span>
@@ -278,7 +278,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
           </div>
 
           <div>
-            Showing <span className="text-neutral-300 font-semibold">{filteredItems.length}</span>{' '}
+            Showing <span className="text-foreground font-semibold">{filteredItems.length}</span>{' '}
             matches
           </div>
         </div>
