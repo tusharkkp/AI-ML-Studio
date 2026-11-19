@@ -345,36 +345,34 @@ export function Navbar() {
 
             {unitsOpen && (
               <div
-                className="absolute top-full left-0 mt-2 w-80 rounded-xl border border-border bg-card/95 backdrop-blur-md p-2 shadow-studio-lg z-50 animate-in fade-in zoom-in-95 duration-150"
+                className="absolute top-full left-0 mt-2 w-80 rounded-xl border border-orange-50/15 dark:border-orange-50/15 border-amber-900/15 bg-[#0c0a09]/95 dark:bg-[#0c0a09]/95 bg-white/95 backdrop-blur-md p-2 shadow-none z-50"
                 role="menu"
               >
-                <div className="px-3 py-1.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
+                <div className="px-3 py-1.5 text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
                   Curriculum Units (NEP 2023)
                 </div>
                 <div className="space-y-1">
-                  {UNITS.map((unit) => {
-                    const isCurrent = location.pathname.startsWith(unit.href);
+                  {UNITS.map((u) => {
+                    const isCurrent = location.pathname.startsWith(u.href);
                     return (
                       <Link
-                        key={unit.id}
-                        to={unit.href}
+                        key={u.id}
+                        to={u.href}
                         onClick={() => setUnitsOpen(false)}
                         className={`flex items-start gap-3 rounded-lg p-2.5 transition-colors ${
                           isCurrent
-                            ? 'bg-muted text-foreground font-semibold'
-                            : 'hover:bg-muted/70 text-foreground/80 hover:text-foreground'
+                            ? 'bg-neutral-100 dark:bg-white/10 text-foreground dark:text-white'
+                            : 'hover:bg-neutral-100 dark:hover:bg-white/5 text-neutral-700 dark:text-neutral-300'
                         }`}
                         role="menuitem"
                       >
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-border bg-muted text-[10px] font-mono font-bold text-foreground">
-                          {unit.badge}
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-orange-50/20 bg-neutral-200 dark:bg-black/40 text-[10px] font-mono font-bold text-neutral-800 dark:text-neutral-200">
+                          {u.badge}
                         </span>
                         <div className="flex flex-col">
-                          <span className="text-xs font-semibold font-manrope">
-                            {unit.num}: {unit.name}
-                          </span>
-                          <span className="text-[11px] text-muted-foreground leading-snug">
-                            {unit.desc}
+                          <span className="text-xs font-semibold font-manrope">{u.name}</span>
+                          <span className="text-[11px] text-neutral-500 dark:text-neutral-400 leading-snug">
+                            {u.desc}
                           </span>
                         </div>
                       </Link>
@@ -411,19 +409,19 @@ export function Navbar() {
 
             {labsOpen && (
               <div
-                className="absolute top-full left-0 mt-2 w-full max-w-[calc(100vw-2rem)] sm:w-[420px] rounded-xl border border-border bg-card/95 backdrop-blur-md p-2 shadow-studio-lg z-50 max-h-[80vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-150"
+                className="absolute top-full left-0 mt-2 w-80 rounded-xl border border-orange-50/15 dark:border-orange-50/15 border-amber-900/15 bg-[#0c0a09]/95 dark:bg-[#0c0a09]/95 bg-white/95 backdrop-blur-md p-2 shadow-none z-50"
                 role="menu"
               >
-                <div className="flex items-center justify-between px-3 py-1.5 border-b border-border/60 mb-1">
-                  <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
-                    Interactive Laboratories
+                <div className="flex items-center justify-between px-3 py-1.5 border-b border-orange-50/10 mb-1">
+                  <span className="text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
+                    Flagship Labs (15+ Total)
                   </span>
                   <Link
                     to="/lab"
                     onClick={() => setLabsOpen(false)}
                     className="text-[10px] font-mono text-brand hover:underline"
                   >
-                    View All &rarr;
+                    All Hub &rarr;
                   </Link>
                 </div>
                 <div className="space-y-1">
@@ -436,17 +434,17 @@ export function Navbar() {
                         onClick={() => setLabsOpen(false)}
                         className={`flex items-start gap-3 rounded-lg p-2.5 transition-colors ${
                           isCurrent
-                            ? 'bg-muted text-foreground font-semibold'
-                            : 'hover:bg-muted/70 text-foreground/80 hover:text-foreground'
+                            ? 'bg-neutral-100 dark:bg-white/10 text-foreground dark:text-white'
+                            : 'hover:bg-neutral-100 dark:hover:bg-white/5 text-neutral-700 dark:text-neutral-300'
                         }`}
                         role="menuitem"
                       >
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-border bg-muted text-[10px] font-mono font-bold text-foreground">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-orange-50/20 bg-neutral-200 dark:bg-black/40 text-[10px] font-mono font-bold text-neutral-800 dark:text-neutral-200">
                           {lab.badge}
                         </span>
                         <div className="flex flex-col">
                           <span className="text-xs font-semibold font-manrope">{lab.title}</span>
-                          <span className="text-[11px] text-muted-foreground leading-snug">
+                          <span className="text-[11px] text-neutral-500 dark:text-neutral-400 leading-snug">
                             {lab.desc}
                           </span>
                         </div>
@@ -484,11 +482,11 @@ export function Navbar() {
 
             {cheatsheetsOpen && (
               <div
-                className="absolute top-full right-0 mt-2 w-72 rounded-xl border border-border bg-card/95 backdrop-blur-md p-2 shadow-studio-lg z-50 animate-in fade-in zoom-in-95 duration-150"
+                className="absolute top-full right-0 mt-2 w-72 rounded-xl border border-orange-50/15 dark:border-orange-50/15 border-amber-900/15 bg-[#0c0a09]/95 dark:bg-[#0c0a09]/95 bg-white/95 backdrop-blur-md p-2 shadow-none z-50"
                 role="menu"
               >
-                <div className="flex items-center justify-between px-3 py-1.5 border-b border-border/60 mb-1">
-                  <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
+                <div className="flex items-center justify-between px-3 py-1.5 border-b border-orange-50/10 mb-1">
+                  <span className="text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
                     Exam Revision Sheets
                   </span>
                   <Link
@@ -509,17 +507,19 @@ export function Navbar() {
                         onClick={() => setCheatsheetsOpen(false)}
                         className={`flex items-center gap-3 rounded-lg p-2.5 transition-colors ${
                           isCurrent
-                            ? 'bg-muted text-foreground font-semibold'
-                            : 'hover:bg-muted/70 text-foreground/80 hover:text-foreground'
+                            ? 'bg-neutral-100 dark:bg-white/10 text-foreground dark:text-white'
+                            : 'hover:bg-neutral-100 dark:hover:bg-white/5 text-neutral-700 dark:text-neutral-300'
                         }`}
                         role="menuitem"
                       >
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-border bg-muted text-[10px] font-mono font-bold text-foreground">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded border border-orange-50/20 bg-neutral-200 dark:bg-black/40 text-[10px] font-mono font-bold text-neutral-800 dark:text-neutral-200">
                           {item.badge}
                         </span>
                         <div className="flex flex-col">
                           <span className="text-xs font-semibold font-manrope">{item.title}</span>
-                          <span className="text-[10px] text-muted-foreground">{item.unit}</span>
+                          <span className="text-[10px] text-neutral-500 dark:text-neutral-400">
+                            {item.unit}
+                          </span>
                         </div>
                       </Link>
                     );
